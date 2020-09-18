@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Unit.h"
+#include "Battle.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ int main(int argc, char* argv[])
 			Unit maple(argv[1], stoi(argv[2]), stoi(argv[3]));
 			Unit sally(argv[4], stoi(argv[5]), stoi(argv[6]));
 
-			Unit::Battle(maple, sally);
+			Battle(maple, sally);
 		}
 		catch (const exception& e)
 		{
