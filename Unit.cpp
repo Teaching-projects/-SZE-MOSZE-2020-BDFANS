@@ -12,7 +12,7 @@ void Unit::setDamage(int in)
 }
 
 
-int Unit::attack(Unit& target)
+void Unit::attack(Unit& target)
 {
 	std::cout << name << " -> " << target.getName() << std::endl;
 
@@ -28,7 +28,6 @@ int Unit::attack(Unit& target)
 
 		std::cout << target.getName() << " died. " << name << " wins.";
 	}
-	return 0;
 }
 
 //Static function
