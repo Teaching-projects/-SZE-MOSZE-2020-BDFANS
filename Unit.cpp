@@ -1,24 +1,11 @@
 #include "Unit.h"
 
-/*
-void Unit::setHealth(int in)
-{
-	Unit::health = in;
-}
-*/
-
-/*
-void Unit::setDamage(int in)
-{
-	Unit::damage = in;
-}
-*/
 
 void Unit::attack(Unit& target) const
 {
 	if (target.health > damage)
 	{
-		target.health = target.health - damage;
+		target.health -= damage;
 	}
 	else
 	{

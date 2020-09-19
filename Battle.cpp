@@ -5,8 +5,6 @@ void Battle(Unit& attacker, Unit& defender)
 	std::cout << attacker;
 	std::cout << defender;
 
-		//exit with break?
-		//while (attacker.getHealth() > 0 && defender.getHealth() > 0)
 		while (true)
 		{
 			std::cout << attacker.getName() << " -> " << defender.getName() << std::endl;
