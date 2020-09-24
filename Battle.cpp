@@ -2,37 +2,25 @@
 
 void Battle(Unit& attacker, Unit& defender)
 {
-	std::cout << attacker;
-	std::cout << defender;
+	while (true)
+	{
 
-		while (true)
+		attacker.attack(defender);
+
+		if (defender.getHealth() > 0)
 		{
-			std::cout << attacker.getName() << " -> " << defender.getName() << std::endl;
+			defender.attack(attacker);
 
-			attacker.attack(defender);
-
-			std::cout << attacker;
-			std::cout << defender;
-
-			if (defender.getHealth() > 0)
+			if (attacker.getHealth() <= 0)
 			{
-				std::cout << defender.getName() << " -> " << attacker.getName() << std::endl;
-				defender.attack(attacker);
-
-				std::cout << attacker;
-				std::cout << defender;
-
-
-				if (attacker.getHealth() <= 0)
-				{
-					std::cout << attacker.getName() << " died. " << defender.getName() << " wins.\n";
-					break;
-				}
-			}
-			else
-			{
-				std::cout << defender.getName() << " died. " << attacker.getName() << " wins.\n";
+				std::cout /*<< attacker.getName() << " died. "*/ << defender.getName() << " wins. Remaining HP: " << defender.getHealth() << ".\n";
 				break;
 			}
 		}
+		else
+		{
+			std::cout /*<< attacker.getName() << " died. "*/ << attacker.getName() << " wins. Remaining HP: " << attacker.getHealth() << ".\n";
+			break;
+		}
 	}
+}
