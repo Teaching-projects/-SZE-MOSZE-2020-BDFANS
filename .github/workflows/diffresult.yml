@@ -3,7 +3,7 @@ name: diffcheck result
 on:
     push
     
-jobs
+jobs:
     build_and_check:
         runs-on: ubuntu-latest
         steps:
