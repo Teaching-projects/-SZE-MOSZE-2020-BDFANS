@@ -13,13 +13,13 @@ void Battle(Unit& attacker, Unit& defender)
 
 			if (attacker.getHealth() <= 0)
 			{
-				std::cout /*<< attacker.getName() << " died. "*/ << defender.getName() << " wins. Remaining HP: " << defender.getHealth() << ".\n";
+				std::cout << defender.getName() << " wins. Remaining HP: " << defender.getHealth() << ".\n";
 				break;
 			}
 		}
 		else
 		{
-			std::cout /*<< attacker.getName() << " died. "*/ << attacker.getName() << " wins. Remaining HP: " << attacker.getHealth() << ".\n";
+			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getHealth() << ".\n";
 			break;
 		}
 	}
