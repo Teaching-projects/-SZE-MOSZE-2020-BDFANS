@@ -1,21 +1,28 @@
 #include "Unit.h"
 
 
-void Unit::attack(Unit& target) const
+void Battle(Unit& attacker, Unit& defender)
 {
-	if (target.health > damage)
-	{
-		target.health -= damage;
-	}
-	else
-	{
-		target.health = 0;
-	}
-}
 
-std::ostream& operator<<(std::ostream& os, const Unit& out)
-{
-	os << out.getName() << ": HP: " << out.getHealth() << " DMG: " << out.getDamage() << std::endl;
+	while (true)
+	{
 
-	return os;
+		attacker.attack(defender);
+
+		if (defender.getHealth() > 0)
+		{
+			defender.attack(attacker);
+
+			if (attacker.getHealth() <= 0)
+			{
+				std::cout << defender.getName() << " wins. Remaining HP: " << defender.getHealth() << ".\n";
+				break;
+			}
+		}
+		else
+		{
+			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getHealth() << ".\n";
+			break;
+		}
+	}
 }
