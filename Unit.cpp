@@ -52,7 +52,7 @@ Unit* Unit::praseUnit(std::string fnev) {
 		return new Unit(name, health, dmg);
 	}
 	else {
-		std::cout << "A megadott file nem letezik" << std::endl;
+		std::cerr << "A megadott file nem letezik" << std::endl;
 		return new Unit();
 	}
 	fin.close();

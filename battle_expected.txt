@@ -1,0 +1,6 @@
+Kakarott wins. Remaining HP: 20000.
+Kakarott wins. Remaining HP: 15000.
+Kakarott wins. Remaining HP: 10000.
+Molly wins. Remaining HP: 3000.
+Kakarott wins. Remaining HP: 12000.
+Sally wins. Remaining HP: 10000.
