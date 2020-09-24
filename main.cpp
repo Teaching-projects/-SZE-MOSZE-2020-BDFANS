@@ -7,9 +7,11 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+	cout << "Adja meg az elso fajl nevet:"  << endl ;
 	string fnev;
 	cin >> fnev;
 	Unit* a = Unit::praseUnit(fnev);
+	cout << "Adja meg a masodik fajl nevet:" << endl;
 	cin >> fnev;
 	Unit* b = Unit::praseUnit(fnev);
 	Battle(*a, *b);
