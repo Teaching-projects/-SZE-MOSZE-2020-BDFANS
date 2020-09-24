@@ -49,11 +49,11 @@ Unit* Unit::praseUnit(std::string fnev) {
 				dmg = stoi(s.substr(3));
 			}
 		}
+		fin.close();
 		return new Unit(name, health, dmg);
 	}
 	else {
-		std::cerr << "A megadott file nem letezik" << std::endl;
-		return new Unit();
+		throw std::exception();
+		return nullptr;
 	}
-	fin.close();
 };
