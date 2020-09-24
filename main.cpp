@@ -7,7 +7,13 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-
+	string fnev;
+	cin >> fnev;
+	Unit* a = Unit::praseUnit(fnev);
+	cin >> fnev;
+	Unit* b = Unit::praseUnit(fnev);
+	Battle(*a, *b);
+	
 	if (argc == 7)
 	{
 		try
@@ -22,7 +28,9 @@ int main(int argc, char* argv[])
 			cerr << "[ERROR]: Program failed to initialise combatants! Make soure the input parameters are valid." << endl;
 		}
 	}
-
+	
+	delete a;
+	delete b;
 	return 0;
 }
 
