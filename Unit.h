@@ -21,8 +21,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, const Unit& out);
 
-
-
+	static Unit* praseUnit(std::string fnev);
 
 };
 
