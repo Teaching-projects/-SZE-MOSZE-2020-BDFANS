@@ -9,4 +9,4 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - run: g++ -Wall *.cpp -o battle
-            - run: outcheck.sh battle battle_expected.txt
+            - run: ./outcheck.sh battle battle_expected.txt
