@@ -3,17 +3,17 @@
 
 touch output.txt
 
-./$1 Units/a.txt units/b.txt > output.txt
+./$1 Units/a.txt Units/b.txt > output.txt
 echo "" >> output.txt
-./$1 Units/a.txt units/c.txt >> output.txt
+./$1 Units/a.txt Units/c.txt >> output.txt
 echo "" >> output.txt
-./$1 Units/b.txt units/a.txt >> output.txt
+./$1 Units/b.txt Units/a.txt >> output.txt
 echo "" >> output.txt
-./$1 Units/b.txt units/c.txt >> output.txt
+./$1 Units/b.txt Units/c.txt >> output.txt
 echo "" >> output.txt
-./$1 Units/c.txt units/a.txt >> output.txt
+./$1 Units/c.txt Units/a.txt >> output.txt
 echo "" >> output.txt
-./$1 Units/c.txt units/b.txt >> output.txt
+./$1 Units/c.txt Units/b.txt >> output.txt
 echo "" >> output.txt
 
 diff output.txt $2
