@@ -1,0 +1,12 @@
+name: diffcheck result
+
+on:
+    push
+    
+jobs:
+    build_and_check:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: g++ -Wall *.cpp -o battle
+            - run: ./outcheck.sh battle battle_expected.txt

@@ -7,21 +7,22 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-
-	if (argc == 7)
+	try
 	{
-		try
-		{
-			Unit maple(argv[1], stoi(argv[2]), stoi(argv[3]));
-			Unit sally(argv[4], stoi(argv[5]), stoi(argv[6]));
+		Unit* a = Unit::praseUnit(argv[1]);
+		Unit* b = Unit::praseUnit(argv[2]);
 
-			Battle(maple, sally);
-		}
-		catch (const exception& e)
-		{
-			cerr << "[ERROR]: Program failed to initialise combatants! Make soure the input parameters are valid." << endl;
-		}
+		Battle(*a, *b);
+
+		delete a;
+		delete b;
 	}
+	catch (const exception& e)
+	{
+		cerr << "[ERROR]: Program failed to initialise combatants! Make sure the combatant files provided are valid!" << endl;
+		return 1;
+	}
+	
 
 	return 0;
 }

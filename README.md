@@ -7,7 +7,14 @@ Ennek az osztálynak 3 belső változója van:
 	int health: Az NPC életereje.
 	int damage: Az NPC alapból mennyi életerőt vesz el támadáskor.
 
-Az osztály létrejöttéért a konstruktornak a bemeneti adatokat "name, health, damage" sorrendben kell megadni. abban az esetben ha valamelyik bemenetre nem adunk értéket(vagy default konstruktort hívás történik) akkor az objektum default értékeket kap.
+Az osztály létrejöttéért a konstruktornak a bemeneti adatokat 2 szövegfájlal kell megadni, amelyek a kövekező JSON jelölés segítségével:
+
+{
+  "name" : [karakter neve],
+  "hp" : [karakter életereje],
+  "dmg" : [karakter támadóereje]
+}
+
 
 A harcot a statikus "Battle(Unit& attacker, Unit& defender)" függvényel lehet, ami a következőképpen működik:
     1.  kiírja a harcoló felek adatait.
