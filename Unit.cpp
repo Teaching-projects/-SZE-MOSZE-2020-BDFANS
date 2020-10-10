@@ -41,7 +41,6 @@ void Unit::gainExp(int xp) {
 		int lvlup = 100;
 		while (exp >= lvlup and lvl < maxlvl) {
 			lvl++;
-			std::cout << "lvl " << lvl;
 			exp = exp - lvlup;
 			if (maxhealth < INT_MAX - nearbyint(maxhealth*0.10)) {
 				maxhealth = nearbyint(maxhealth * 1.10);
