@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <math.h>
+#include <climits>
 
 int Unit::attack(Unit& target) const
 {
@@ -35,18 +36,17 @@ void Unit::setUnit(Unit player) {
 
 void Unit::gainExp(int xp) {
 	int maxlvl=100;
-	if (lvl <= maxlvl and exp+xp < INT_MAX and exp+xp>INT_MIN) {
+	if (exp < INT_MAX - xp and lvl<maxlvl) {
 		exp = exp + xp;
-		std::cout << "exp " << exp;
 		int lvlup = 100;
 		while (exp >= lvlup and lvl < maxlvl) {
 			lvl++;
 			std::cout << "lvl " << lvl;
 			exp = exp - lvlup;
-			if (nearbyint(maxhealth) * 1.10 < INT_MAX and maxhealth > INT_MIN) {
+			if (maxhealth < INT_MAX - nearbyint(maxhealth*0.10)) {
 				maxhealth = nearbyint(maxhealth * 1.10);
 			}
-			if (nearbyint(damage * 1.10) < INT_MAX and damage > INT_MIN) { damage = nearbyint(damage * 1.10); };
+			if (damage < INT_MAX -nearbyint(maxhealth*0.10)) { damage = nearbyint(damage * 1.10); };
 			akthealth = maxhealth;
 		}
 	}
