@@ -34,15 +34,22 @@ void Unit::setUnit(Unit player) {
 }
 
 void Unit::gainExp(int xp) {
-	exp = exp + xp;
-	int lvlup = 100;
-	while (exp >= lvlup) {
-		lvl++;
-		exp -= lvlup;
-		maxhealth = nearbyint((maxhealth * 1.10));
-		akthealth = maxhealth;
-		damage = nearbyint((damage * 1.10));
-	};
+	int maxlvl=100;
+	if (lvl <= maxlvl and exp+xp < INT_MAX and exp+xp>INT_MIN) {
+		exp = exp + xp;
+		std::cout << "exp " << exp;
+		int lvlup = 100;
+		while (exp >= lvlup and lvl < maxlvl) {
+			lvl++;
+			std::cout << "lvl " << lvl;
+			exp = exp - lvlup;
+			if (nearbyint(maxhealth) * 1.10 < INT_MAX and maxhealth > INT_MIN) {
+				maxhealth = nearbyint(maxhealth * 1.10);
+			}
+			if (nearbyint(damage * 1.10) < INT_MAX and damage > INT_MIN) { damage = nearbyint(damage * 1.10); };
+			akthealth = maxhealth;
+		}
+	}
 }
 
 Unit* Unit::praseUnit(std::string fnev) {
