@@ -1,36 +1,59 @@
 #include "Unit.h"
 #include <fstream>
 #include <string>
+#include <math.h>
 
-
-void Unit::attack(Unit& target) const
+int Unit::attack(Unit& target) const
 {
-	if (target.health > damage)
+	if (target.akthealth > damage)
 	{
-		target.health -= damage;
+		target.akthealth -= damage;
+		return damage;
 	}
 	else
 	{
-		target.health = 0;
+		int i = target.akthealth;
+		target.akthealth = 0;
+		return i;
 	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Unit& out)
 {
-	os << out.getName() << ": HP: " << out.getHealth() << " DMG: " << out.getDamage() << std::endl;
+	os << out.getName() << ": HP: " << out.getmaxHealth() << " DMG: " << out.getDamage() << std::endl;
 
 	return os;
+}
+
+void Unit::setUnit(Unit player) {
+	damage = player.damage;
+	akthealth = player.akthealth;
+	maxhealth = player.maxhealth;
+	exp = player.exp;
+	lvl = player.lvl;
+}
+
+void Unit::gainExp(int xp) {
+	exp = exp + xp;
+	int lvlup = 100;
+	while (exp >= lvlup) {
+		lvl++;
+		exp -= lvlup;
+		maxhealth = nearbyint((maxhealth * 1.10));
+		akthealth = maxhealth;
+		damage = nearbyint((damage * 1.10));
+	};
 }
 
 Unit* Unit::praseUnit(std::string fnev) {
 	std::ifstream fin(fnev);
 	if (fin) {
-		int health, dmg;
+		int health=0, dmg=0;
 		std::string x, name;
 		while (!fin.eof()) {
 			std::getline(fin, x);
 			std::string s;
-			for (int i = 0; i < x.size(); i++) {
+			for (int i = 0; i < static_cast<int>(x.size()); i++) {
 
 				if ((x[i] >= 'A' && x[i] <= 'Z') ||
 					(x[i] >= 'a' && x[i] <= 'z') ||
