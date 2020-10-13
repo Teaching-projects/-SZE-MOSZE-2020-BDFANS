@@ -1,6 +1,7 @@
 #include "Unit.h"
 #include <fstream>
 #include <string>
+#include "jsonparser.h"
 
 
 void Unit::attack(Unit& target) const
@@ -23,37 +24,22 @@ std::ostream& operator<<(std::ostream& os, const Unit& out)
 }
 
 Unit* Unit::praseUnit(std::string fnev) {
-	std::ifstream fin(fnev);
-	if (fin) {
-		int health, dmg;
-		std::string x, name;
-		while (!fin.eof()) {
-			std::getline(fin, x);
-			std::string s;
-			for (int i = 0; i < x.size(); i++) {
+	
+	try
+	{
+		std::map<std::string,std::string> data = jsonparser::jsonparse_f(fnev);
 
-				if ((x[i] >= 'A' && x[i] <= 'Z') ||
-					(x[i] >= 'a' && x[i] <= 'z') ||
-					(x[i] >= '0' && x[i] <= '9'))
-				{
-					s = s + x[i];
-				}
-			}
-			if (s.find("name") != std::string::npos) {
-				name = s.substr(4);
-			}
-			else if (s.find("hp") != std::string::npos) {
-				health = stoi(s.substr(2));
-			}
-			else if (s.find("dmg") != std::string::npos) {
-				dmg = stoi(s.substr(3));
-			}
-		}
-		fin.close();
-		return new Unit(name, health, dmg);
+		std::string innev = data.find("name")->second;
+		int inhp = stoi(data.find("hp")->second);
+		int indmg = stoi(data.find("dmg")->second);
+		/* attackcooldown
+		double inattackcd = stod(data,find("attackcooldown")-second);
+		return new Unit(innev,inhp,indmg,inattackcd);
+		*/
+		return new Unit(innev,inhp,indmg);
 	}
-	else {
-		throw std::exception();
-		return nullptr;
+	catch(const std::exception& e)
+	{
+		throw  std::exception();
 	}
 };
