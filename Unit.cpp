@@ -38,11 +38,11 @@ Unit* Unit::praseUnit(std::string fnev) {
 		}
 		if(data.count("hp") > 0)
 		{
-		int inhp = stoi(data.find("hp")->second);
+		inhp = stoi(data.find("hp")->second);
 		}
 		if(data.count("dmg") > 0)
 		{
-		int indmg = stoi(data.find("dmg")->second);
+		indmg = stoi(data.find("dmg")->second);
 		}
 		/* attackcooldown
 		if(data.count("attackcooldown") > 0)
