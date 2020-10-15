@@ -4,11 +4,11 @@ on:
     push
     
 jobs:
-    build_and_check:
+    jparsetest:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - run: sudo ./gtestinit.sh
+            - run: sudo apt install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo ln -s /usr/lib/ /usr/src/gtest/libgtest.a && sudo ln -s /usr/lib/ /usr/src/gtest/libgtest_main.a
             - run: ./jparsetest.sh --gtest_list_tests
             - uses: actions/upload-artifact@v2
               with:
