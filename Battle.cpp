@@ -16,7 +16,7 @@ void Battle(Unit& attacker, Unit& defender)
 			{
 				defender.setUnit(Tdefender);
 				attacker.setAkthp(0);
-				std::cout << defender.getName() << " wins. Remaining HP: " <<defender.getmaxHealth() << ".\n";
+				std::cout << defender.getName() << " wins. Remaining HP: " <<defender.getaktHealth() << ".\n";
 				break;
 			}
 		}
@@ -24,7 +24,7 @@ void Battle(Unit& attacker, Unit& defender)
 		{
 			attacker.setUnit(Tattacker);
 			defender.setAkthp(0);
-			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getmaxHealth() << ".\n";
+			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getaktHealth() << ".\n";
 			break;
 		}
 		
