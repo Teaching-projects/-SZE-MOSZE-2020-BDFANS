@@ -14,3 +14,5 @@ jobs:
             - run: clang++ *.cpp -o battle -Wall -Wextra 
             - run: cppcheck *.cpp --enable=warning
             - run: valgrind --track-origins=yes ./battle
+            - run: a.txt
+            - run: b.txt
