@@ -1,0 +1,14 @@
+name: Analysis/Memtest
+
+on:
+    push
+    
+jobs:
+    build_and_check:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: clang++ *.cpp -o battle -Wall -Wextra
+            - run: cppcheck *.cpp -o battle --enable=warning
+            - run: valgrind --track-origins=yes ./a.out
+            - run: ./outcheck.sh battle battle_expected.txt
