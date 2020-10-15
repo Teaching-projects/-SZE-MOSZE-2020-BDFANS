@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - attackspeed
-      - gh-pages
 
     
 jobs:
@@ -16,13 +15,8 @@ jobs:
             - run: sudo apt-get install doxygen
             - run: sudo apt-get install graphviz
             - run: doxygen doxygenconfig
-
-
-            - name: push to gh-paged
-            - uses: s0/git-publish-subdir-action@v2.4.0
-
-              env:
-               REPO: self
-               BRANCH: gh-pages
-               FOLDER: docs/html
-               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - name: Upload docxygen documents
+              uses: actions/upload-artifact@v2
+              with:
+                name: documents
+                path: docs
