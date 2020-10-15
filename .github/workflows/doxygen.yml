@@ -18,7 +18,7 @@ jobs:
             - run: doxygen doxygenconfig
 
 
-            name: push to gh-paged
+            - name: push to gh-paged
             uses: s0/git-publish-subdir-action@v2.4.0
             env:
               REPO: self
