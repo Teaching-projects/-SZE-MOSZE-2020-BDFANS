@@ -12,6 +12,6 @@ jobs:
             - run: sudo apt install clang
             - run: sudo apt install cppcheck
             - run: clang++ *.cpp -o battle -Wall -Wextra
-            - run: cppcheck *.cpp -o battle --enable=warning
+            - run: cppcheck *.cpp --enable=warning
             - run: valgrind --track-origins=yes ./a.out
             - run: ./outcheck.sh battle battle_expected.txt
