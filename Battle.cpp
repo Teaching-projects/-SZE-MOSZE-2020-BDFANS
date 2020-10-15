@@ -2,8 +2,6 @@
 
 void Battle(Unit& attacker, Unit& defender)
 {
-	std::cout << "Attacker attacks/second " << attacker.getAttackspeed() << std::endl;
-	std::cout << "Defender attacks/second " << defender.getAttackspeed() << std::endl;
 	while (attacker.getHealth() > 0 && defender.getHealth() > 0)
 	{	
 		Unit::attackcd(attacker,defender);
