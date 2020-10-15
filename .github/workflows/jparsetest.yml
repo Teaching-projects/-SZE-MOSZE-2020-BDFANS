@@ -1,0 +1,16 @@
+name: jparser test
+
+on:
+    push
+    
+jobs:
+    build_and_check:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: ./gtest_init.sh
+            - run: ./jparsetest.sh --gtest_list_tests
+            - uses: actions/upload-artifact@v2
+              with:
+                name: JparseTest Artifact
+                path: jparsetest_output.txt
