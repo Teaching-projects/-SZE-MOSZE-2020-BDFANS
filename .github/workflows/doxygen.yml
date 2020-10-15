@@ -21,8 +21,8 @@ jobs:
             - name: push to gh-paged
             - uses: s0/git-publish-subdir-action@v2.4.0
 
-            -  env:
-              - REPO: self
-              - BRANCH: gh-pages
-              - FOLDER: docs/html
-              - GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              env:
+               REPO: self
+               BRANCH: gh-pages
+               FOLDER: docs/html
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
