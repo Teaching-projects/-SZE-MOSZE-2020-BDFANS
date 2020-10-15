@@ -13,6 +13,5 @@ jobs:
             - run: sudo apt install cppcheck
             - run: clang++ *.cpp -o battle -Wall -Wextra 
             - run: cppcheck *.cpp --enable=warning
-            - run: valgrind --track-origins=yes ./battle
-            - run: Units/a.txt
-            - run: Units/b.txt
+            - run: valgrind --track-origins=yes ./battle Units/a.txt Units/b.txt
+          
