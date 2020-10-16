@@ -23,3 +23,6 @@ A harcot a statikus "Battle(Unit& attacker, Unit& defender)" függvényel lehet,
         Ezután függvény a csata következményét kiírja.
     3.  Ha a "defendernek" maradt még életereje, akkor ő is meghívja az "attack" függvényt az "attacker"-re
     4.  Ha mindkét félnek maradt még életereje, akkor a függvény a 2. lépéstől megismétlődik.
+
+A program dokumentációja az alábbi linken található:
+    https://github.com/Teaching-projects/-SZE-MOSZE-2020-BDFANS/tree/gh-pages
