@@ -2,7 +2,10 @@ name: doxygen generate
 
 on:
   push:
-    
+    branches:	
+      - attackspeed
+      - gh-pages
+
 jobs:
     generate_documentation:
         name: generate and artifact doxygen docs
@@ -15,7 +18,10 @@ jobs:
             - run: doxygen doxygenconfig
 
             - name: Upload docxygen documents
-              uses: actions/upload-artifact@v2
-              with:
-                name: documents
-                path: docs
+              uses: s0/git-publish-subdir-action@v2.4.0
+
+              env:
+                REPO: self
+                BRANCH: gh-pages
+                FOLDER: docs/html
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
