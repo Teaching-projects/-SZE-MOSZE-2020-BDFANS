@@ -25,4 +25,4 @@ A harcot a statikus "Battle(Unit& attacker, Unit& defender)" függvényel lehet,
     4.  Ha mindkét félnek maradt még életereje, akkor a függvény a 2. lépéstől megismétlődik.
 
 A program dokumentációja az alábbi linken található:
-    https://github.com/Teaching-projects/-SZE-MOSZE-2020-BDFANS/tree/gh-pages
+    https://teaching-projects.github.io/-SZE-MOSZE-2020-BDFANS
