@@ -1,6 +1,6 @@
 {
   "str1" : "test",
   "int1" : 2,
-  "int2" : 3,
+  "int2" : 3.3,
   "str2" : "tset"
 }

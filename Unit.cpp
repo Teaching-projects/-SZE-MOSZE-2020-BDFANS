@@ -31,7 +31,6 @@ Unit* Unit::praseUnit(std::string fnev) {
 		std::string innev = "default";
 		int inhp = 1;
 		int indmg = 1;
-		//double inattackcd = 1;
 		if(data.count("name") > 0)
 		{
 		innev = data.find("name")->second;
@@ -44,13 +43,6 @@ Unit* Unit::praseUnit(std::string fnev) {
 		{
 		indmg = stoi(data.find("dmg")->second);
 		}
-		/* attackcooldown
-		if(data.count("attackcooldown") > 0)
-		{
-		double inattackcd = stod(data,find("attackcooldown")-second);
-		}
-		return new Unit(innev,inhp,indmg,inattackcd);
-		*/
 		return new Unit(innev,inhp,indmg);
 	}
 	catch(const std::exception& e)

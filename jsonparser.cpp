@@ -4,49 +4,243 @@
 #include <sstream>
 #include <algorithm>
 
+
+enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
+
     std::map<std::string,std::string> jsonparser::jsonparse_i(std::istream& stream)
     {
         std::map<std::string,std::string> out;
 
         std::string input;
-        stream >> input;
-        if(input == "{")
+        char inchar;
+        stream.get(inchar);
+        if(inchar == '{')
         {
+            Processing p = INIT;
+
             std::string key;
-            bool has_key = false;
-            while(stream >> input && input != "}")
+
+            //check if numeric value has a separator
+            bool has_numdot = false;
+            //check in SWITCH state if the ':' character is present
+            bool has_switch = false;
+
+            while(stream.get(inchar))
             {
-                if(input != ":")
+                switch (p)
                 {
-                    //value
-                    if(has_key)
+                    //Initialise object reading
+                case INIT:
+                {
+                    if (inchar == '"')
+                        p = READKEY;
+                    //ignore whitespace characters defined in JSON
+                    else if (!isspace(inchar))
                     {
-                        //last value
-                        if(input[input.length() - 1] == ',')
-                        {
-                            input = input.substr(0, input.size()-1);
-                        }
-                        input.erase(std::remove(input.begin(), input.end(), '"'), input.end());
-                        out.insert({ key, input });
-                        has_key = false;
+                        std::cerr << "[ERROR]: Failed to read key (expected \"), make sure the input streams formatting is correct!\n";
+                        out.clear();
+                        return out;
                     }
-                    //key
+                    break;
+                }
+
+                //reading key
+                case READKEY:
+                {
+                    //end of key
+                    if (inchar == '"')
+                    {
+                        p = SWITCH;
+                        key = input;
+                        input.clear();
+                    }
+                    //part of key
                     else
                     {
-                        input.erase(std::remove(input.begin(), input.end(), '"'), input.end());
-                        key = input;
+                        input += inchar;
+
                     }
+                    break;
                 }
-                //":"
-                else
+
+                //switching from reading key to reading value
+                case SWITCH:
                 {
-                    has_key = true;
+                    switch (inchar)
+                    {
+                    case ':':
+                        //dividing character found
+                        if (!has_switch)
+                        {
+                            has_switch = true;
+                            break;
+                        }
+                        //Error
+                        else
+                        {
+                            "[ERROR]: Invalid starting character for value (expected \" or a number ), make sure the input streams formatting is correct!\n";
+                            out.clear();
+                            return out;
+                        }
+                        //beginning of string value
+                    case '"':
+                        if (has_switch)
+                        {
+                            p = READSTRVAL;
+                            has_switch = false;
+                        }
+                        else
+                        {
+                            std::cerr << "[ERROR]: Invalid dividing character (expected : ), make sure the input streams formatting is correct!\n";
+                            out.clear();
+                            return out;
+                        }
+                        break;
+
+                    default:
+                        //check for numbers
+                        if (inchar >= '0' && inchar <= '9')
+                        {
+                            if (has_switch)
+                            {
+                                has_numdot = false;
+                                p = READNUMVAL;
+                                input += inchar;
+                                has_switch = false;
+                            }
+                            else
+                            {
+                                std::cerr << "[ERROR]: Invalid dividing character (expected : ), make sure the input streams formatting is correct!\n";
+                                out.clear();
+                                return out;
+                            }
+                        }
+                        else
+                        {
+                            //Check for whitespace
+                            if (!isspace(inchar))
+                            {
+                                std::cerr << "[ERROR]: Invalid dividing character (expected : ), make sure the input streams formatting is correct!\n";
+                                out.clear();
+                                return out;
+                            }
+                            break;
+                        }
+                    }
+                    break;
+                }
+
+                //reading string value
+                case READSTRVAL:
+                {
+                    //end of value
+                    if (inchar == '"')
+                    {
+
+                        p = END;
+                        out.insert({ key,input });
+                        key.clear();
+                        input.clear();
+                    }
+                    //part of value
+                    else
+                    {
+                        input += inchar;
+                    }
+                    break;
+                }
+
+                //reading numeric value
+                case READNUMVAL:
+                {
+                    //Check for number
+                    if (inchar >= '0' && inchar <= '9')
+                    {
+                        input += inchar;
+                    }
+                    else
+                    {
+                        //Check for separator
+                        if (inchar == '.')
+                        {
+                            if (has_numdot)
+                            {
+                                std::cerr << "[ERROR]: Number already has separator, make sure the input streams formatting is correct!\n";
+                                out.clear();
+                                return out;
+                            }
+                            else
+                            {
+                                input += inchar;
+                                has_numdot = true;
+                            }
+                        }
+                        else
+                        {
+                            //Check for end of value
+                            if (isspace(inchar) || inchar == '}')
+                            {
+                                if (input.back() == '.')
+                                {
+                                    input.pop_back();
+                                }
+                                else {}
+                                out.insert({ key,input });
+                                key.clear();
+                                input.clear();
+                                p = END;
+                            }
+                            else
+                            {
+                                if (inchar == ',')
+                                {
+                                    out.insert({ key,input });
+                                    key.clear();
+                                    input.clear();
+                                    p = INIT;
+                                }
+                                else
+                                {
+                                    std::cerr << "[ERROR]: Invalid input character (expected number) make sure the input streams formatting is correct!\n";
+                                    out.clear();
+                                    return out;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                }
+
+                //end of object reading
+                case END:
+                {
+                    switch (inchar)
+                    {
+                        //read next object
+                    case ',':
+                        p = INIT;
+                        break;
+                        //end of parse
+                    case '}':
+                        return out;
+                        //error
+                    default:
+                        if (!isspace(inchar))
+                        {
+                            std::cerr << "[ERROR]: Invalid ending character (expected , or } ), make sure the input streams formatting is correct!\n";
+                            out.clear();
+                            return out;
+                        }
+                        break;
+                    }
+                    break;
+                }
                 }
             }
         }
         else
         {
-            std::cerr << "[ERROR]: Files content is not recognised as JSON!\n";
+            std::cerr << "[ERROR]: Input streams content is not recognised as JSON!\n";
         }
         
         return out;
