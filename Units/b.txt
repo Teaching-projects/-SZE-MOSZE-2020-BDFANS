@@ -1,5 +1,6 @@
 {
   "name" : "Molly",
   "hp" : 15000,
-  "dmg" : 10000
+  "dmg" : 10000,
+  "attackcooldown" : 2
 }
