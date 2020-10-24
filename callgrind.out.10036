@@ -1,5 +1,5 @@
 # callgrind format
-version: 1
+
 creator: callgrind-3.15.0
 pid: 10036
 cmd:  ./a.out
