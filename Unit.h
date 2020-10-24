@@ -3,7 +3,7 @@
 
 class Unit
 {
-	const std::string name;
+	std::string name;
 	int maxhealth;
 	int akthealth=maxhealth;
 	int damage;
