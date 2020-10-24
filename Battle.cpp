@@ -14,7 +14,7 @@ void Battle(Unit& attacker, Unit& defender)
 
 			if (Tattacker.getaktHealth() <= 0)
 			{
-				defender.setUnit(Tdefender);
+				defender = Tdefender;
 				attacker.setAkthp(0);
 				std::cout << defender.getName() << " wins. Remaining HP: " <<defender.getaktHealth() << ".\n";
 				break;
@@ -22,7 +22,7 @@ void Battle(Unit& attacker, Unit& defender)
 		}
 		else
 		{
-			attacker.setUnit(Tattacker);
+			attacker = Tattacker;
 			defender.setAkthp(0);
 			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getaktHealth() << ".\n";
 			break;
