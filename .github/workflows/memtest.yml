@@ -11,7 +11,7 @@ jobs:
             - run: sudo apt-get install valgrind
             - run: sudo apt install clang
             - run: sudo apt install cppcheck
-            - run: clang++ *.cpp -o battle -Wall -Wextra 
-            - run: cppcheck *.cpp --enable=warning
-            - run: valgrind --track-origins=yes ./battle Units/a.txt Units/b.txt
+            - run: clang++ *.cpp -o battle -Wall -Wextra -Werror
+            - run: cppcheck *.cpp --enable=warning --error-exitcode=1
+            - run: valgrind --track-origins=yes --error-exitcode=1 --leak-check=full ./battle Units/a.txt Units/b.txt 
           
