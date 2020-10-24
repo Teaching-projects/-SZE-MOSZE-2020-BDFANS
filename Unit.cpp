@@ -1,7 +1,7 @@
 #include "Unit.h"
 #include <fstream>
 #include <string>
-#include <math.h>
+#include <cmath>
 #include <climits>
 
 int Unit::attack(Unit& target) const
@@ -24,14 +24,6 @@ std::ostream& operator<<(std::ostream& os, const Unit& out)
 	os << out.getName() << ": HP: " << out.getmaxHealth() << " DMG: " << out.getDamage() << std::endl;
 
 	return os;
-}
-
-void Unit::setUnit(Unit player) {
-	damage = player.damage;
-	akthealth = player.akthealth;
-	maxhealth = player.maxhealth;
-	exp = player.exp;
-	lvl = player.lvl;
 }
 
 void Unit::gainExp(int xp) {
