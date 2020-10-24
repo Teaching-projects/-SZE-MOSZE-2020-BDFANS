@@ -20,7 +20,6 @@ public:
 
 	int getExp() const { return exp; }
 	void gainExp(int xp);
-	void setUnit(Unit player);
 	void setAkthp(int i) { akthealth = i; }
 	int getLvl() const { return lvl; }
 	Unit(const std::string &inn = "default", int inh = 1, int ind = 1) :name(inn), maxhealth(inh), damage(ind) {}
