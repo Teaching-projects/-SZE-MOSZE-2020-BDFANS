@@ -24,7 +24,7 @@ class Unit
 	int lvl = 1;
 	void gainExp(int xp);
 	int damage; ///< the damage the character deals with a single attack
-	const double attackspeed; ///< the number of times the character can attack in a second
+	double attackspeed; ///< the number of times the character can attack in a second
 	double attackcooldown; ///< the remaining time, until the character can attack again
 
 	/**
