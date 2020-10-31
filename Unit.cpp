@@ -23,7 +23,7 @@ void Unit::attack(Unit& target)
 
 void Unit::setAttackCooldown(double in)
 {
-	if(in >= 0)
+	if (in >= 0)
 	{
 		attackcooldown = in;
 	}
@@ -31,22 +31,22 @@ void Unit::setAttackCooldown(double in)
 	{
 		attackcooldown = 0;
 	}
-	
+
 
 }
 
 void Unit::attackcd(Unit& attacker, Unit& defender)
 {
-	if(attacker.attackcooldown <= defender.attackcooldown)
+	if (attacker.attackcooldown <= defender.attackcooldown)
 	{
 		defender.setAttackCooldown(defender.attackcooldown - attacker.attackcooldown);
-		attacker.attackcooldown = 1/attacker.attackspeed;
+		attacker.attackcooldown = 1 / attacker.attackspeed;
 		attacker.attack(defender);
 	}
 	else
 	{
 		attacker.setAttackCooldown(attacker.attackcooldown - defender.attackcooldown);
-		defender.attackcooldown = 1/defender.attackspeed;
+		defender.attackcooldown = 1 / defender.attackspeed;
 		defender.attack(attacker);
 	}
 }
@@ -70,6 +70,7 @@ void Unit::gainExp(int xp) {
 				maxhealth = nearbyint(maxhealth * 1.10);
 			}
 			if (damage < INT_MAX - nearbyint(maxhealth * 0.10)) { damage = nearbyint(damage * 1.10); };
+			attackcooldown = attackcooldown * 0.9;
 			akthealth = maxhealth;
 		}
 	}
@@ -78,9 +79,9 @@ void Unit::gainExp(int xp) {
 Unit* Unit::praseUnit(std::string fnev) {
 	std::ifstream fin(fnev);
 	if (fin) {
-		int health=0, dmg=0;
+		int health = 0, dmg = 0;
 		std::string x, name;
-		double atckspd;
+		double atckspd{};
 		while (!fin.eof()) {
 			std::getline(fin, x);
 			std::string s;
