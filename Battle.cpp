@@ -2,31 +2,20 @@
 
 void Battle(Unit& attacker, Unit& defender)
 {
-	Unit Tattacker = attacker;
-	Unit Tdefender = defender;
-	while (true)
+
+	while (attacker.getHealth() > 0 && defender.getHealth() > 0)
+	{	
+		Unit::attackcd(attacker,defender);
+	}
+
+	if(attacker.getHealth() > 0)
 	{
-		Tattacker.attack(Tdefender);
-
-		if (Tdefender.getAktHealth() > 0)
-		{
-			Tdefender.attack(Tattacker);
-
-			if (Tattacker.getAktHealth() <= 0)
-			{
-				defender = Tdefender;
-				attacker.setAktHealth(0);
-				std::cout << defender.getName() << " wins. Remaining HP: " << defender.getAktHealth() << ".\n";
-				break;
-			}
-		}
-		else
-		{
-			attacker = Tattacker;
-			defender.setAktHealth(0);
-			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getAktHealth() << ".\n";
-			break;
-		}
+		std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getHealth() << ".\n";
+	}
+	else
+	{
+		std::cout << defender.getName() << " wins. Remaining HP: " << defender.getHealth() << ".\n";
 
 	}
+	
 }
