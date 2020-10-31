@@ -23,7 +23,7 @@ void Unit::attack(Unit& target)
 
 std::ostream& operator<<(std::ostream& os, const Unit& out)
 {
-	os << out.getName() << ": HP: " << out.getmaxHealth() << " DMG: " << out.getDamage() << std::endl;
+	os << out.getName() << ": HP: " << out.getMaxHealth() << " DMG: " << out.getDamage() << std::endl;
 
 	return os;
 }
