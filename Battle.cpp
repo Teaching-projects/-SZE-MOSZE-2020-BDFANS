@@ -6,27 +6,27 @@ void Battle(Unit& attacker, Unit& defender)
 	Unit Tdefender = defender;
 	while (true)
 	{
-		Tattacker.gainExp(Tattacker.attack(Tdefender));
+		Tattacker.attack(Tdefender);
 
-		if (Tdefender.getaktHealth() > 0)
+		if (Tdefender.getAktHealth() > 0)
 		{
-			Tdefender.gainExp(Tdefender.attack(Tattacker));
+			Tdefender.attack(Tattacker);
 
-			if (Tattacker.getaktHealth() <= 0)
+			if (Tattacker.getAktHealth() <= 0)
 			{
 				defender = Tdefender;
-				attacker.setAkthp(0);
-				std::cout << defender.getName() << " wins. Remaining HP: " <<defender.getaktHealth() << ".\n";
+				attacker.setAktHealth(0);
+				std::cout << defender.getName() << " wins. Remaining HP: " << defender.getAktHealth() << ".\n";
 				break;
 			}
 		}
 		else
 		{
 			attacker = Tattacker;
-			defender.setAkthp(0);
-			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getaktHealth() << ".\n";
+			defender.setAktHealth(0);
+			std::cout << attacker.getName() << " wins. Remaining HP: " << attacker.getAktHealth() << ".\n";
 			break;
 		}
-		
+
 	}
 }

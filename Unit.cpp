@@ -4,18 +4,20 @@
 #include <cmath>
 #include <climits>
 
-int Unit::attack(Unit& target) const
+void Unit::attack(Unit& target)
 {
+	int i = 0;
 	if (target.akthealth > damage)
 	{
 		target.akthealth -= damage;
-		return damage;
+		i = damage;
+		Unit::gainExp(this, i);
 	}
 	else
 	{
-		int i = target.akthealth;
+		i = target.akthealth;
+		Unit::gainExp(this, i);
 		target.akthealth = 0;
-		return i;
 	}
 }
 
@@ -26,18 +28,18 @@ std::ostream& operator<<(std::ostream& os, const Unit& out)
 	return os;
 }
 
-void Unit::gainExp(int xp) {
-	int maxlvl=100;
-	if (exp < INT_MAX - xp and lvl<maxlvl) {
+void Unit::gainExp(Unit* player, int xp) {
+	int maxlvl = 100;
+	if (exp < INT_MAX - xp and lvl < maxlvl) {
 		exp = exp + xp;
 		int lvlup = 100;
 		while (exp >= lvlup and lvl < maxlvl) {
 			lvl++;
 			exp = exp - lvlup;
-			if (maxhealth < INT_MAX - nearbyint(maxhealth*0.10)) {
+			if (maxhealth < INT_MAX - nearbyint(maxhealth * 0.10)) {
 				maxhealth = nearbyint(maxhealth * 1.10);
 			}
-			if (damage < INT_MAX -nearbyint(maxhealth*0.10)) { damage = nearbyint(damage * 1.10); };
+			if (damage < INT_MAX - nearbyint(maxhealth * 0.10)) { damage = nearbyint(damage * 1.10); };
 			akthealth = maxhealth;
 		}
 	}

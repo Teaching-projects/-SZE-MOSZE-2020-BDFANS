@@ -5,26 +5,25 @@ class Unit
 {
 	std::string name;
 	int maxhealth;
-	int akthealth=maxhealth;
+	int akthealth = maxhealth;
 	int damage;
-	int exp=0;
-	int lvl=1;
-
-
+	int exp = 0;
+	int lvl = 1;
+	void gainExp(Unit* player, int xp);
 public:
 
 	std::string getName() const { return name; }
-	int getaktHealth() const { return akthealth; }
-	int getmaxHealth() const { return maxhealth; }
+	int getMaxHealth() const { return maxhealth; }
+	int getAktHealth() const { return akthealth; }
 	int getDamage() const { return damage; }
-
 	int getExp() const { return exp; }
-	void gainExp(int xp);
-	void setAkthp(int i) { akthealth = i; }
 	int getLvl() const { return lvl; }
-	Unit(const std::string &inn = "default", int inh = 1, int ind = 1) :name(inn), maxhealth(inh), damage(ind) {}
 
-	int attack(Unit& target) const;
+	void setAktHealth(int i) { akthealth = i; }
+
+	Unit(const std::string& inn = "default", int inh = 1, int ind = 1) :name(inn), maxhealth(inh), damage(ind) {}
+
+	void attack(Unit& target);
 
 	friend std::ostream& operator<<(std::ostream& os, const Unit& out);
 
