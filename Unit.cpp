@@ -11,12 +11,12 @@ void Unit::attack(Unit& target)
 	{
 		target.akthealth -= damage;
 		i = damage;
-		Unit::gainExp(this, i);
+		Unit::gainExp(i);
 	}
 	else
 	{
 		i = target.akthealth;
-		Unit::gainExp(this, i);
+		Unit::gainExp(i);
 		target.akthealth = 0;
 	}
 }
@@ -28,7 +28,7 @@ std::ostream& operator<<(std::ostream& os, const Unit& out)
 	return os;
 }
 
-void Unit::gainExp(Unit* player, int xp) {
+void Unit::gainExp(int xp) {
 	int maxlvl = 100;
 	if (exp < INT_MAX - xp and lvl < maxlvl) {
 		exp = exp + xp;

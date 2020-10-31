@@ -9,7 +9,7 @@ class Unit
 	int damage;
 	int exp = 0;
 	int lvl = 1;
-	void gainExp(Unit* player, int xp);
+	void gainExp(int xp);
 public:
 
 	std::string getName() const { return name; }
