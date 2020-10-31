@@ -70,7 +70,9 @@ void Unit::gainExp(int xp) {
 				maxhealth = nearbyint(maxhealth * 1.10);
 			}
 			if (damage < INT_MAX - nearbyint(maxhealth * 0.10)) { damage = nearbyint(damage * 1.10); };
-			attackcooldown = attackcooldown * 0.9;
+			if (attackspeed * 1.10 < 100) { attackspeed = attackspeed * 1.10; }
+			else { attackspeed = 100; };
+			std::cout << getName() << getAttackspeed() << std::endl;
 			akthealth = maxhealth;
 		}
 	}
