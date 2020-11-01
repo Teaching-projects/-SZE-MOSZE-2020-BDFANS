@@ -2,23 +2,29 @@
 #include <fstream>
 #include <string>
 #include "jsonparser.h"
+#include <cmath>
+#include <climits>
 
-
-void Unit::attack(Unit& target) const
+void Unit::attack(Unit& target)
 {
-	if (target.health > damage)
+	int i = 0;
+	if (target.akthealth > damage)
 	{
-		target.health -= damage;
+		target.akthealth -= damage;
+		i = damage;
+		Unit::gainExp(i);
 	}
 	else
 	{
-		target.health = 0;
+		i = target.akthealth;
+		Unit::gainExp(i);
+		target.akthealth = 0;
 	}
 }
 
 void Unit::setAttackCooldown(double in)
 {
-	if(in >= 0)
+	if (in >= 0)
 	{
 		attackcooldown = in;
 	}
@@ -26,31 +32,50 @@ void Unit::setAttackCooldown(double in)
 	{
 		attackcooldown = 0;
 	}
-	
+
 
 }
 
 void Unit::attackcd(Unit& attacker, Unit& defender)
 {
-	if(attacker.attackcooldown <= defender.attackcooldown)
+	if (attacker.attackcooldown <= defender.attackcooldown)
 	{
 		defender.setAttackCooldown(defender.attackcooldown - attacker.attackcooldown);
-		attacker.attackcooldown = 1/attacker.attackspeed;
+		attacker.attackcooldown = 1 / attacker.attackspeed;
 		attacker.attack(defender);
 	}
 	else
 	{
 		attacker.setAttackCooldown(attacker.attackcooldown - defender.attackcooldown);
-		defender.attackcooldown = 1/defender.attackspeed;
+		defender.attackcooldown = 1 / defender.attackspeed;
 		defender.attack(attacker);
 	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Unit& out)
 {
-	os << out.getName() << ": HP: " << out.getHealth() << " DMG: " << out.getDamage() << std::endl;
+	os << out.getName() << ": HP: " << out.getMaxHealth() << " DMG: " << out.getDamage() << std::endl;
 
 	return os;
+}
+
+void Unit::gainExp(int xp) {
+	int maxlvl = 100;
+	if (exp < INT_MAX - xp && lvl < maxlvl) {
+		exp = exp + xp;
+		int lvlup = 100;
+		while (exp >= lvlup && lvl < maxlvl) {
+			lvl++;
+			exp = exp - lvlup;
+			if (maxhealth < INT_MAX - nearbyint(maxhealth * 0.10)) {
+				maxhealth = nearbyint(maxhealth * 1.10);
+			}
+			if (damage < INT_MAX - nearbyint(maxhealth * 0.10)) { damage = nearbyint(damage * 1.10); };
+			if (attackspeed * 1.10 < 100) { attackspeed = attackspeed * 1.10; }
+			else { attackspeed = 100; };
+			akthealth = maxhealth;
+		}
+	}
 }
 
 Unit* Unit::praseUnit(std::string fnev) {
@@ -72,6 +97,7 @@ Unit* Unit::praseUnit(std::string fnev) {
 		if(data.count("dmg") > 0)
 		{
 		indmg = stoi(data.find("dmg")->second);
+
 		}
 		if(data.count("attackcooldown") > 0)
 		{
