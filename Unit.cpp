@@ -85,7 +85,7 @@ Unit* Unit::praseUnit(std::string fnev) {
 		std::string innev = "default";
 		int inhp = 1;
 		int indmg = 1;
-		double inaspeed;
+		double inaspeed = 1.0;
 		if(data.count("name") > 0)
 		{
 		innev = data.find("name")->second;
@@ -97,7 +97,6 @@ Unit* Unit::praseUnit(std::string fnev) {
 		if(data.count("dmg") > 0)
 		{
 		indmg = stoi(data.find("dmg")->second);
-
 		}
 		if(data.count("attackcooldown") > 0)
 		{

@@ -78,7 +78,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                         //Error
                         else
                         {
-                            "[ERROR]: Invalid starting character for value (expected \" or a number ), make sure the input streams formatting is correct!\n";
+                            std::cerr << "[ERROR]: Invalid starting character for value (expected \" or a number ), make sure the input streams formatting is correct!\n";
                             out.clear();
                             return out;
                         }
