@@ -12,11 +12,11 @@ jobs:
             - run: sudo apt install clang
             - run: sudo apt install cppcheck
             - run: clang++ *.cpp -o battle -Wall -Wextra -Werror
-            - run: cppcheck *.cpp --enable=warning --error-exitcode=1
             - run: cppcheck *.cpp --enable=all --output-file=cppcheckartifact.txt
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
                  name: cppcheckartifact
                  path: ./cppcheckartifact.txt
+            - run: cppcheck *.cpp --enable=warning --error-exitcode=1
             - run: valgrind --track-origins=yes --error-exitcode=1 --leak-check=full ./battle Units/a.txt Units/b.txt
