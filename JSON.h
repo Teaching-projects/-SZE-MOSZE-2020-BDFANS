@@ -6,6 +6,7 @@
 #include <exception>
 #include <iostream>
 #include <type_traits>
+#include <any>
 
 class JSON
 {
@@ -37,32 +38,33 @@ public:
     template<typename T> 
     T get(std::string key)
     {
-            T outval;
+        std::any outval;
         for(auto const& iter : json_list)
         {
+            
             if(iter.find(key) == 0)
             {
                 std::string val = iter;
                 val.erase(0,key.length()+2);
 
-                if  (constexpr std::is_same<T, int>::value)
+                
+                if (std::is_same<T, int>::value)
                 {
                     outval = stoi(val);
                 }
-                else if  (constexpr std::is_same<T, double>::value)
+                else if  (std::is_same<T, double>::value)
                     {
                         outval = stod(val);
                     }
                     else
                     {
-                        if  (constexpr std::is_same<T, std::string>::value)
+                        if  (std::is_same<T, std::string>::value)
                         {
                             outval = val;
-                        }
-                        
+                        } 
                     }    
                     
-                return outval;
+                return std::any_cast<T>(outval);
             }
         }  
         return static_cast<T>(NULL);
