@@ -22,5 +22,5 @@ jobs:
             - run: valgrind --track-origins=yes --error-exitcode=1 --leak-check=full ./battle scenario2.json
 
 
-            - run: ./outcheck.sh battle Scenario1.json output1.txt
-            - run: ./outcheck.sh battle Scenario2.json output2.txt
+            - run: ./outcheck.sh battle scenario1.json output1.txt
+            - run: ./outcheck.sh battle scenario2.json output2.txt
