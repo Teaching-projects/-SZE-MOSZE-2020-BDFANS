@@ -11,7 +11,7 @@ jobs:
             - run: sudo apt-get install valgrind
             - run: sudo apt install clang
             - run: sudo apt install cppcheck
-            - run: clang++ *.cpp -o battle -Wall -Wextra -Werror
+            - run: clang++ -std=c++17 *.cpp -o battle -Wall -Wextra -Werror
             - run: cppcheck *.cpp --enable=all --output-file=cppcheckartifact.txt
             - name: Upload artifact
               uses: actions/upload-artifact@v2

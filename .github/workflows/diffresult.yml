@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - run: g++ -std=c++17 -Wall *.cpp -o battle
+            - run: g++ -Wall -std=c++17 *.cpp -o battle
             - run: ./outcheck.sh battle battle_expected.txt
             - uses: actions/upload-artifact@v2
               with:

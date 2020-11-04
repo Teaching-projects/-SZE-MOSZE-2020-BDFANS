@@ -7,7 +7,6 @@
 
  void Unit::attack(Unit& target)
 {
-	int i = 0;
 	if (target.akthealth > damage)
 	{
 		target.akthealth -= damage;
