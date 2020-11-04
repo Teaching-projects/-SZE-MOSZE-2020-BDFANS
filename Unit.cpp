@@ -1,6 +1,7 @@
 #include "Unit.h"
 #include <fstream>
 #include <string>
+#include "jsonparser.h"
 #include <cmath>
 #include <climits>
 
@@ -60,10 +61,10 @@ std::ostream& operator<<(std::ostream& os, const Unit& out)
 
 void Unit::gainExp(int xp) {
 	int maxlvl = 100;
-	if (exp < INT_MAX - xp and lvl < maxlvl) {
+	if (exp < INT_MAX - xp && lvl < maxlvl) {
 		exp = exp + xp;
 		int lvlup = 100;
-		while (exp >= lvlup and lvl < maxlvl) {
+		while (exp >= lvlup && lvl < maxlvl) {
 			lvl++;
 			exp = exp - lvlup;
 			if (maxhealth < INT_MAX - nearbyint(maxhealth * 0.10)) {
@@ -78,41 +79,34 @@ void Unit::gainExp(int xp) {
 }
 
 Unit* Unit::praseUnit(std::string fnev) {
-	std::ifstream fin(fnev);
-	if (fin) {
-		int health = 0, dmg = 0;
-		std::string x, name;
-		double atckspd{};
-		while (!fin.eof()) {
-			std::getline(fin, x);
-			std::string s;
-			for (int i = 0; i < static_cast<int>(x.size()); i++) {
-
-				if ((x[i] >= 'A' && x[i] <= 'Z') ||
-					(x[i] >= 'a' && x[i] <= 'z') ||
-					(x[i] >= '0' && x[i] <= '9'))
-				{
-					s = s + x[i];
-				}
-			}
-			if (s.find("name") != std::string::npos) {
-				name = s.substr(4);
-			}
-			else if (s.find("hp") != std::string::npos) {
-				health = stoi(s.substr(2));
-			}
-			else if (s.find("dmg") != std::string::npos) {
-				dmg = stoi(s.substr(3));
-			}
-			else if (s.find("attackcooldown") != std::string::npos) {
-				atckspd = stod(s.substr(14));
-			}
+	try
+	{
+		std::map<std::string,std::string> data = jsonparser::jsonparse_f(fnev);
+		std::string innev = "default";
+		int inhp = 1;
+		int indmg = 1;
+		double inaspeed = 1.0;
+		if(data.count("name") > 0)
+		{
+		innev = data.find("name")->second;
 		}
-		fin.close();
-		return new Unit(name, health, dmg, atckspd);
+		if(data.count("hp") > 0)
+		{
+		inhp = stoi(data.find("hp")->second);
+		}
+		if(data.count("dmg") > 0)
+		{
+		indmg = stoi(data.find("dmg")->second);
+		}
+		if(data.count("attackcooldown") > 0)
+		{
+		inaspeed = stod(data.find("attackcooldown")->second);
+		}
+		return new Unit(innev,inhp,indmg,inaspeed);
+
 	}
-	else {
-		throw std::exception();
-		return nullptr;
+	catch(const std::exception& e)
+	{
+		throw  std::exception();
 	}
 };

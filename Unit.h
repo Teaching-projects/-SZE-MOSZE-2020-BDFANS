@@ -45,7 +45,7 @@ class Unit
 	 */
 	void attack(Unit& target);
 
-public:
+	public:
 
 	///this is a getter function for name
 	std::string getName() const { return name; }
