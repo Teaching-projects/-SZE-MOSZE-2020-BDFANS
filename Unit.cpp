@@ -71,3 +71,5 @@ bool Unit::isAlive()
 		}
 		
 	}
+
+Unit::~Unit() {}

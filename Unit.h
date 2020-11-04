@@ -75,6 +75,8 @@ class Unit
 		attackcooldown = attackspeed;
 	}
 
+	virtual ~Unit();
+
 	/**
 	 * @brief the functio responsible for deciding who attacks when based on the attackcooldown
 	 *

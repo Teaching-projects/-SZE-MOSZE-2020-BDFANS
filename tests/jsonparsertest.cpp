@@ -1,4 +1,4 @@
-#include "../jsonparser.h"
+#include "../JSON.h"
 #include <gtest/gtest.h>
 #include <iostream>
 #include <map>
