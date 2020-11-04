@@ -35,9 +35,8 @@ public:
     //adott kulcshoz tatrtozó első változó értékét adja vissza
     template<typename T> 
     T get(std::string key)
-        {
-        T outval;
-
+    {
+            T outval;
         for(auto const& iter : json_list)
         {
             if(iter.find(key) == 0)
@@ -58,12 +57,13 @@ public:
                         {
                             outval = value;
                         }
+                        
                     }    
                     
                 return outval;
             }
         }  
-        return outval;
+        return static_cast<T>(NULL);
     }
 
 
