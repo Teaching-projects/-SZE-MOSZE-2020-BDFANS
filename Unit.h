@@ -17,12 +17,11 @@
 
 class Unit
 {
+	protected:
+
 	std::string name;
 	int maxhealth;
 	int akthealth = maxhealth;
-	int exp = 0;
-	int lvl = 1;
-	void gainExp(int xp);
 	int damage; ///< the damage the character deals with a single attack
 	double attackspeed; ///< the number of times the character can attack in a second
 	double attackcooldown; ///< the remaining time, until the character can attack again
@@ -36,6 +35,8 @@ class Unit
 	 */
 	void setAttackCooldown(double in);
 
+
+
 	/**
 	 * @brief this function executes the attack
 	 *
@@ -43,23 +44,21 @@ class Unit
 	 *
 	 * This function also prevents negative values by treating any possible negative result as 0
 	 */
-	void attack(Unit& target);
+	virtual void attack(Unit& target);
 
 	public:
 
 	///this is a getter function for name
 	std::string getName() const { return name; }
 
-	int getMaxHealth() const { return maxhealth; }
-	int getAktHealth() const { return akthealth; }
-	int getExp() const { return exp; }
-	int getLvl() const { return lvl; }
+	int getMaxHealthPoints() const { return maxhealth; }
+	int getHealthPoints() const { return akthealth; }
 	void setAktHealth(int i) { akthealth = i; }
 
 	///this is a getter function for damage
 	int getDamage() const { return damage; }
 	///this is a getter function for attaclspeed
-	double getAttackspeed() const { return attackspeed; }
+	double getAttackCoolDown() const { return attackspeed; }
 
 	/**
 	 * @brief Construct a new Unit object
@@ -73,7 +72,7 @@ class Unit
 	 */
 	Unit(std::string inn = "default", int inh = 1, int ind = 1, double ins = 1) :name(inn), maxhealth(inh), damage(ind), attackspeed(ins)
 	{
-		attackcooldown = 1 / attackspeed;
+		attackcooldown = attackspeed;
 	}
 
 	/**
@@ -97,6 +96,12 @@ class Unit
 	 *
 	 * @throw Exception this function throws an exception if the file cannot be accessed
 	 */
-	static Unit* praseUnit(std::string fnev);
+	static Unit praseUnit(std::string fnev);
+
+	//Éle e még a karakter
+	bool isAlive();
+
+	//set karakter aktuális HP
+	void setHealthPoints(int in);
 
 };
