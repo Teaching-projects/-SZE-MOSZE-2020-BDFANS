@@ -12,6 +12,12 @@ class JSON
 
     //tárolási formátum: "[kulcs]:[érték]"
     std::list<std::string> json_list;
+    
+    //JSON szövegből olvas
+    static std::list<std::string> jsonparse_s(std::string json_in);
+
+    //JSON iterátorból olvas
+    static std::list<std::string> jsonparse_i(std::istream& stream);
 
 public:
 
@@ -23,11 +29,6 @@ public:
     //JSON fájlt olvas
     static std::list<std::string> parseFromFile(std::string filename);
 
-    //JSON szövegből olvas
-    static std::list<std::string> jsonparse_s(std::string json_in);
-
-    //JSON iterátorból olvas
-    static std::list<std::string> jsonparse_i(std::istream& stream);
 
     //Megadott kulcs előfordulásának a számát adja meg
     int count(std::string key);
@@ -41,21 +42,22 @@ public:
         {
             if(iter.find(key) == 0)
             {
-                std::string value = iter;
-                value.erase(0,key.length()+2);
-                if constexpr (std::is_integral_v<T>)
+                std::string val = iter;
+                val.erase(0,key.length()+2);
+
+                if  (constexpr std::is_same<T, int>::value)
                 {
-                    outval = stoi(value);
+                    outval = stoi(val);
                 }
-                else if constexpr (std::is_floating_point_v<T>)
+                else if  (constexpr std::is_same<T, double>::value)
                     {
-                        outval = stod(value);
+                        outval = stod(val);
                     }
                     else
                     {
-                        if constexpr (std::is_class_v<std::string>)
+                        if  (constexpr std::is_same<T, std::string>::value)
                         {
-                            outval = value;
+                            outval = val;
                         }
                         
                     }    
