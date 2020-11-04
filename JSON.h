@@ -13,9 +13,6 @@ class JSON
 
     //tárolási formátum: "[kulcs]:[érték]"
     std::list<std::string> json_list;
-    
-    //JSON szövegből olvas
-    static std::list<std::string> jsonparse_s(std::string json_in);
 
     //JSON iterátorból olvas
     static std::list<std::string> jsonparse_i(std::istream& stream);
@@ -29,6 +26,10 @@ public:
 
     //JSON fájlt olvas
     static std::list<std::string> parseFromFile(std::string filename);
+
+    //JSON szövegből olvas
+    static std::list<std::string> jsonparse_s(std::string json_in);
+
 
 
     //Megadott kulcs előfordulásának a számát adja meg
