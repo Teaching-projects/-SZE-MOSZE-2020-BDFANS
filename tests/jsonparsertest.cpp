@@ -1,32 +1,32 @@
 #include "../JSON.h"
 #include <gtest/gtest.h>
 #include <iostream>
-#include <map>
+#include <list>
 
 
-std::map<std::string, std::string> make_compmap()
+std::list<std::string> make_compmap()
 {
-	std::map<std::string, std::string> comp;
-	comp.insert({ "str1", "test" });
-	comp.insert({ "int1", "2" });
-	comp.insert({ "int2", "3.3" });
-	comp.insert({ "str2", "tset" });
+	std::list<std::string> comp;
+	comp.push_back("str1: test");
+	comp.push_back( "int1: 2" );
+	comp.push_back({ "int2: 3.3" });
+	comp.push_back({ "str2: tset" });
 
 	return comp;
 }
 
 TEST(Fileparser, fileparse) {
-	std::map<std::string, std::string> comp = make_compmap();
+	std::list<std::string> comp = make_compmap();
 	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/jsonparsertest.txt"), comp);
 }
 
 TEST(Fileparser, no_whitespaces) {
-	std::map<std::string, std::string> comp = make_compmap();
+	std::list<std::string> comp = make_compmap();
 	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/nowhitespace.txt"), comp);
 }
 
 TEST(Fileparser, many_whitespaces) {
-	std::map<std::string, std::string> comp = make_compmap();
+	std::list<std::string> comp = make_compmap();
 	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/manywhitespace.txt"), comp);
 }
 
@@ -36,7 +36,7 @@ TEST(Fileparser, invalid_file) {
 
 TEST(Stringparser, stringparse) {
 	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\" }";
-	std::map<std::string, std::string> comp = make_compmap();
+	std::list<std::string> comp = make_compmap();
 	ASSERT_EQ(JSON::jsonparse_s(instring), comp);
 }
 
