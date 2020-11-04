@@ -68,5 +68,5 @@ public:
 
 
 
-    JSON(std::list<std::string> in_list) :json_list(in_list) {}
+    JSON(const std::list<std::string>& in_list) :json_list(in_list) {}
 };
