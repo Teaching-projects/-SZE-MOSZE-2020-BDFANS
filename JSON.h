@@ -5,6 +5,7 @@
 #include <list>
 #include <exception>
 #include <iostream>
+#include <type_traits>
 
 class JSON
 {
@@ -43,7 +44,22 @@ public:
             {
                 std::string value = iter;
                 value.erase(0,key.length()+2);
-                outval = value; //templateben definiált bemenetnek rendelkeznie kell egy T(std::string,...) konstruktorral
+                if constexpr (std::is_integral_v<T>)
+                {
+                    outval = stoi(value);
+                }
+                else if constexpr (std::is_floating_point_v<T>)
+                    {
+                        outval = stod(value);
+                    }
+                    else
+                    {
+                        if constexpr (std::is_class_v<std::string>)
+                        {
+                            outval = value;
+                        }
+                    }    
+                    
                 return outval;
             }
         }  

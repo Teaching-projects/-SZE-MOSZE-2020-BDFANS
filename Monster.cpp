@@ -14,15 +14,15 @@ Monster Monster::parse(std::string filename)
 		}
 		if(data.count("health_points") > 0)
 		{
-		inhp = stoi(data.get<std::string>("health_points"));
+		inhp = data.get<int>("health_points");
 		}
 		if(data.count("damage") > 0)
 		{
-		indmg = stoi(data.get<std::string>("damage"));
+		indmg = data.get<int>("damage");
 		}
 		if(data.count("attack_cooldown") > 0)
 		{
-		inaspeed = stod(data.get<std::string>("attack_cooldown"));
+		inaspeed = data.get<double>("attack_cooldown");
 		}
         return Monster(innev,inhp,indmg,inaspeed);
 }
