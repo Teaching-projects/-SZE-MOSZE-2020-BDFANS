@@ -17,84 +17,53 @@ std::map<std::string, std::string> make_compmap()
 
 TEST(Fileparser, fileparse) {
 	std::map<std::string, std::string> comp = make_compmap();
-	ASSERT_EQ(jsonparser::jsonparse_f("parsertestfiles/jsonparsertest.txt"), comp);
+	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/jsonparsertest.txt"), comp);
 }
 
 TEST(Fileparser, no_whitespaces) {
 	std::map<std::string, std::string> comp = make_compmap();
-	ASSERT_EQ(jsonparser::jsonparse_f("parsertestfiles/nowhitespace.txt"), comp);
+	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/nowhitespace.txt"), comp);
 }
 
 TEST(Fileparser, many_whitespaces) {
 	std::map<std::string, std::string> comp = make_compmap();
-	ASSERT_EQ(jsonparser::jsonparse_f("parsertestfiles/manywhitespace.txt"), comp);
+	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/manywhitespace.txt"), comp);
 }
 
 TEST(Fileparser, invalid_file) {
-	std::map<std::string, std::string> empty;
-
-	const char* expected = "[ERROR]: Input streams content is not recognised as JSON!\n";
-
-	testing::internal::CaptureStderr();
-
-	ASSERT_EQ(jsonparser::jsonparse_f("parsertestfiles/invalidfile.txt"), empty);
-
-	std::string output = testing::internal::GetCapturedStderr();
-
-	ASSERT_STREQ(expected, output.c_str());
+	ASSERT_THROW(JSON::parseFromFile("parsertestfiles/invalidfile.txt"),JSON::ParseException);
 }
 
 TEST(Stringparser, stringparse) {
 	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\" }";
 	std::map<std::string, std::string> comp = make_compmap();
-	ASSERT_EQ(jsonparser::jsonparse_s(instring), comp);
+	ASSERT_EQ(JSON::jsonparse_s(instring), comp);
 }
 
 TEST(Parsingerror, broken_key) {
-	std::map<std::string, std::string> empty;
-
-	const char* expected = "[ERROR]: Failed to read key (expected \"), make sure the input streams formatting is correct!\n";
 	std::string instring = "{	3 \"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3, \"str2\" : \"tset\" }";
 
-	testing::internal::CaptureStderr();
+	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
 
-	ASSERT_EQ(jsonparser::jsonparse_s(instring), empty);
-
-	std::string output = testing::internal::GetCapturedStderr();
-
-	ASSERT_STREQ(expected, output.c_str());
 }
 
 TEST(Parsingerror, broken_separator) {
-	std::map<std::string, std::string> empty;
-
-	const char* expected = "[ERROR]: Invalid dividing character (expected : ), make sure the input streams formatting is correct!\n";
 	std::string instring = "{	\"str1\" : \"test\", \"int1\" % 2, \"int2\" : 3, \"str2\" : \"tset\" }";
 
-	testing::internal::CaptureStderr();
-	ASSERT_EQ(jsonparser::jsonparse_s(instring), empty);
-	std::string output = testing::internal::GetCapturedStderr();
-	ASSERT_STREQ(expected, output.c_str());
+	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+
 }
 
 TEST(Parsingerror, broken_numvalue) {
-	std::map<std::string, std::string> empty;
-	const char* expected = "[ERROR]: Invalid input character (expected number) make sure the input streams formatting is correct!\n";
 	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2two, \"int2\" : 3, \"str2\" : \"tset\" }";
-	testing::internal::CaptureStderr();
-	ASSERT_EQ(jsonparser::jsonparse_s(instring), empty);
-	std::string output = testing::internal::GetCapturedStderr();
-	ASSERT_STREQ(expected, output.c_str());
+	
+	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
 }
 
 TEST(Parsingerror, broken_numvalue_separators) {
-	std::map<std::string, std::string> empty;
-	const char* expected = "[ERROR]: Number already has separator, make sure the input streams formatting is correct!\n";
 	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3.3, \"str2\" : \"tset\" }";
-	testing::internal::CaptureStderr();
-	ASSERT_EQ(jsonparser::jsonparse_s(instring), empty);
-	std::string output = testing::internal::GetCapturedStderr();
-	ASSERT_STREQ(expected, output.c_str());
+
+	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
 }
 
 

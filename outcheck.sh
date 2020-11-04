@@ -3,6 +3,6 @@
 
 touch output.txt
 
-./$1 $3 > output.txt
+./$1 $2 > output.txt
 
-diff output.txt $2
+diff output.txt $3

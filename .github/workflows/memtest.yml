@@ -19,11 +19,8 @@ jobs:
                  name: cppcheckartifact
                  path: ./cppcheckartifact.txt
             - run: cppcheck *.cpp --enable=warning --error-exitcode=1
-            - run: valgrind --track-origins=yes --error-exitcode=1 --leak-check=full ./battle Units/a.txt Units/b.txt
+            - run: valgrind --track-origins=yes --error-exitcode=1 --leak-check=full ./battle scenario2.json
 
 
-            - run: ./outcheck.sh battle battle_expected.txt
-            - uses: actions/upload-artifact@v2
-              with:
-                name: Diffresult Artifact
-                path: output.txt
+            - run: ./outcheck.sh battle Scenario1.json output1.txt
+            - run: ./outcheck.sh battle Scenario2.json output2.txt
