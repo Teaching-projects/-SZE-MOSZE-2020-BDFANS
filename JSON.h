@@ -2,7 +2,6 @@
 
 #include <string>
 #include <map>
-#include <list>
 #include <exception>
 #include <iostream>
 #include <type_traits>
@@ -12,10 +11,10 @@ class JSON
 {
 
     //tárolási formátum: "[kulcs]:[érték]"
-    std::list<std::string> json_list;
+    std::map<std::string,std::string> json_list;
 
     //JSON iterátorból olvas
-    static std::list<std::string> jsonparse_i(std::istream& stream);
+    static std::map<std::string,std::string> jsonparse_i(std::istream& stream);
 
 public:
 
@@ -25,10 +24,10 @@ public:
 
 
     //JSON fájlt olvas
-    static std::list<std::string> parseFromFile(std::string filename);
+    static std::map<std::string,std::string> parseFromFile(std::string filename);
 
     //JSON szövegből olvas
-    static std::list<std::string> jsonparse_s(std::string json_in);
+    static std::map<std::string,std::string> jsonparse_s(std::string json_in);
 
 
 
@@ -40,14 +39,10 @@ public:
     T get(std::string key)
     {
         std::any outval;
-        for(auto const& iter : json_list)
-        {
             
-            if(iter.find(key) == 0)
+            if(json_list.count(key) > 0)
             {
-                std::string val = iter;
-                val.erase(0,key.length()+2);
-
+                std::string val = json_list.find(key)->second;
                 
                 if (std::is_same<T, int>::value)
                 {
@@ -67,11 +62,15 @@ public:
                     
                 return std::any_cast<T>(outval);
             }
-        }  
+            else
+            {
+                throw std::exception();
+            }
+            
         return static_cast<T>(NULL);
     }
 
 
 
-    JSON(const std::list<std::string>& in_list) :json_list(in_list) {}
+    JSON(const std::map<std::string,std::string>& in_list) :json_list(in_list) {}
 };

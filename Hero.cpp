@@ -60,38 +60,23 @@ void Hero::fightTilDeath(Unit& defender)
         int indmgb = 1;
         int inexpreq = 1;
         double incdmul = 1;
-		if(data.count("name") > 0)
+		try
 		{
 		innev = data.get<std::string>("name");
-		}
-		if(data.count("base_health_points") > 0)
-		{
 		inhp = data.get<int>("base_health_points");
-		}
-		if(data.count("base_damage") > 0)
-		{
 		indmg = data.get<int>("base_damage");
-		}
-		if(data.count("base_attack_cooldown") > 0)
-		{
 		inaspeed = data.get<double>("base_attack_cooldown");
-		}
-        if(data.count("experience_per_level") > 0)
-		{
 		inexpreq = data.get<int>("experience_per_level");
-		}
-        if(data.count("health_point_bonus_per_level") > 0)
-		{
 		inhpb = data.get<int>("health_point_bonus_per_level");
-		}
-        if(data.count("damage_bonus_per_level") > 0)
-		{
 		indmgb = data.get<int>("damage_bonus_per_level");
-		}
-        if(data.count("cooldown_multiplier_per_level") > 0)
-		{
 		incdmul = data.get<double>("cooldown_multiplier_per_level");
 		}
+		catch(const std::exception& e)
+		{
+			std::cerr << "[ERROR] Missing value from input data! Make sure the JSON input data is valid!\n";
+		}
+		
+		
 		return Hero(innev,inhp,indmg,inaspeed,inexpreq,inhpb,indmgb,incdmul);
 
 	}

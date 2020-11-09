@@ -7,9 +7,9 @@
 
 enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
 
-    std::list<std::string> JSON::jsonparse_i(std::istream& stream)
+    std::map<std::string,std::string> JSON::jsonparse_i(std::istream& stream)
     {
-        std::list<std::string> out;
+        std::map<std::string,std::string> out;
 
         std::string input;
         char inchar;
@@ -127,7 +127,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                     {
 
                         p = END;
-                        out.push_back(key+": "+input);
+                        out.insert({ key,input });
                         key.clear();
                         input.clear();
                     }
@@ -172,7 +172,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                                     input.pop_back();
                                 }
                                 else {}
-                                out.push_back(key+": "+input);
+                                out.insert({ key,input });
                                 key.clear();
                                 input.clear();
                                 p = END;
@@ -181,7 +181,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                             {
                                 if (inchar == ',')
                                 {
-                                    out.push_back(key+": "+input);
+                                    out.insert({ key,input });
                                     key.clear();
                                     input.clear();
                                     p = INIT;
@@ -230,13 +230,13 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
     }
 
 
-    std::list<std::string> JSON::parseFromFile(std::string filename)
+    std::map<std::string,std::string> JSON::parseFromFile(std::string filename)
     {
         try
         {
             std::ifstream ifile;
             ifile.open(filename);
-            std::list<std::string> out = JSON::jsonparse_i(ifile);
+            std::map<std::string,std::string> out = JSON::jsonparse_i(ifile);
             ifile.close();
 
             return out;
@@ -247,7 +247,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
         } 
     }
 
-    std::list<std::string> JSON::jsonparse_s(std::string json_in)
+   std::map<std::string,std::string> JSON::jsonparse_s(std::string json_in)
     {
         
         std::stringstream sstream(json_in);
@@ -256,15 +256,6 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
     }
 
     int JSON::count(std::string key)
-    {
-        int keycount = 0;
-
-        for(auto const& iter : json_list)
-        {
-            if(iter.find(key))
-            {
-                keycount++;
-            }
-        }  
-        return keycount;
+    { 
+        return json_list.count(key);
     }

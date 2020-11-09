@@ -8,21 +8,18 @@ Monster Monster::parse(std::string filename)
 		int inhp = 1;
 		int indmg = 1;
 		double inaspeed = 1.0;
-		if(data.count("name") > 0)
+		try
 		{
 		innev = data.get<std::string>("name");
-		}
-		if(data.count("health_points") > 0)
-		{
 		inhp = data.get<int>("health_points");
-		}
-		if(data.count("damage") > 0)
-		{
 		indmg = data.get<int>("damage");
-		}
-		if(data.count("attack_cooldown") > 0)
-		{
 		inaspeed = data.get<double>("attack_cooldown");
+
 		}
-        return Monster(innev,inhp,indmg,inaspeed);
+		catch(const std::exception& e)
+		{
+			std::cerr << "[ERROR] Missing value from input data! Make sure the JSON input data is valid!\n";
+		}
+		
+    return Monster(innev,inhp,indmg,inaspeed);
 }
