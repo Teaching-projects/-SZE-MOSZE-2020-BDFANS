@@ -1,4 +1,4 @@
-#include "jsonparser.h"
+#include "JSON.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -7,7 +7,7 @@
 
 enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
 
-    std::map<std::string,std::string> jsonparser::jsonparse_i(std::istream& stream)
+    std::map<std::string,std::string> JSON::jsonparse_i(std::istream& stream)
     {
         std::map<std::string,std::string> out;
 
@@ -37,9 +37,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                     //ignore whitespace characters defined in JSON
                     else if (!isspace(inchar))
                     {
-                        std::cerr << "[ERROR]: Failed to read key (expected \"), make sure the input streams formatting is correct!\n";
-                        out.clear();
-                        return out;
+                        throw  ParseException();
                     }
                     break;
                 }
@@ -75,12 +73,9 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                             has_switch = true;
                             break;
                         }
-                        //Error
                         else
                         {
-                            std::cerr << "[ERROR]: Invalid starting character for value (expected \" or a number ), make sure the input streams formatting is correct!\n";
-                            out.clear();
-                            return out;
+                            throw  ParseException();
                         }
                         //beginning of string value
                     case '"':
@@ -91,9 +86,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                         }
                         else
                         {
-                            std::cerr << "[ERROR]: Invalid dividing character (expected : ), make sure the input streams formatting is correct!\n";
-                            out.clear();
-                            return out;
+                            throw  ParseException();
                         }
                         break;
 
@@ -110,9 +103,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                             }
                             else
                             {
-                                std::cerr << "[ERROR]: Invalid dividing character (expected : ), make sure the input streams formatting is correct!\n";
-                                out.clear();
-                                return out;
+                                throw  ParseException();
                             }
                         }
                         else
@@ -120,9 +111,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                             //Check for whitespace
                             if (!isspace(inchar))
                             {
-                                std::cerr << "[ERROR]: Invalid dividing character (expected : ), make sure the input streams formatting is correct!\n";
-                                out.clear();
-                                return out;
+                                throw  ParseException();
                             }
                             break;
                         }
@@ -165,9 +154,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                         {
                             if (has_numdot)
                             {
-                                std::cerr << "[ERROR]: Number already has separator, make sure the input streams formatting is correct!\n";
-                                out.clear();
-                                return out;
+                                throw  ParseException();
                             }
                             else
                             {
@@ -201,9 +188,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                                 }
                                 else
                                 {
-                                    std::cerr << "[ERROR]: Invalid input character (expected number) make sure the input streams formatting is correct!\n";
-                                    out.clear();
-                                    return out;
+                                    throw  ParseException();
                                 }
                             }
                         }
@@ -227,9 +212,7 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
                     default:
                         if (!isspace(inchar))
                         {
-                            std::cerr << "[ERROR]: Invalid ending character (expected , or } ), make sure the input streams formatting is correct!\n";
-                            out.clear();
-                            return out;
+                            throw  ParseException();
                         }
                         break;
                     }
@@ -240,38 +223,39 @@ enum Processing { INIT, READKEY, SWITCH, READNUMVAL, READSTRVAL, END };
         }
         else
         {
-            std::cerr << "[ERROR]: Input streams content is not recognised as JSON!\n";
+            throw  ParseException();
         }
         
         return out;
     }
 
 
-    std::map<std::string,std::string> jsonparser::jsonparse_f(std::string filename)
+    std::map<std::string,std::string> JSON::parseFromFile(std::string filename)
     {
         try
         {
             std::ifstream ifile;
             ifile.open(filename);
-
-            std::map<std::string,std::string> out = jsonparser::jsonparse_i(ifile);
-
+            std::map<std::string,std::string> out = JSON::jsonparse_i(ifile);
             ifile.close();
 
             return out;
         }
-        catch(const std::exception& e)
+        catch(const ParseException& e)
         {
-            std::cerr << "[ERROR]: jsonparser failed to read file! Make sure the file provided is valid!" << std::endl;
-            throw  std::exception();
+            throw  ParseException();
         } 
     }
 
-    std::map<std::string,std::string> jsonparser::jsonparse_s(std::string json_in)
+   std::map<std::string,std::string> JSON::jsonparse_s(std::string json_in)
     {
         
         std::stringstream sstream(json_in);
 
-        return jsonparser::jsonparse_i(sstream);
+        return JSON::jsonparse_i(sstream);
     }
 
+    int JSON::count(std::string key)
+    { 
+        return json_list.count(key);
+    }
