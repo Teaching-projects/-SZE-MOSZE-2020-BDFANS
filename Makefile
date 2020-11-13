@@ -36,7 +36,7 @@ doc:
 checkccpout:
 	$(cppobj) *.cpp $(cppout)
 
-checkcpp:
+analysis:
 	$(cppobj) *.cpp $(cppflag)
 
 
