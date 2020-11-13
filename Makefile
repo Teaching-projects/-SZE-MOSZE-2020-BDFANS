@@ -33,7 +33,7 @@ clean:
 doc:
 	doxygen doxygenconfig
 
-checkccpout:
+checkcppout:
 	$(cppobj) *.cpp $(cppout)
 
 analysis:
