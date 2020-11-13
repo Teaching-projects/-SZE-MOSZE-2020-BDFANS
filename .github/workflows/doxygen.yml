@@ -2,8 +2,7 @@ name: doxygen generate
 
 on:
   push:
-    branches:	
-      - attackspeed
+    branches:
       - gh-pages
       - makefile-doxy
 
