@@ -21,7 +21,7 @@ jobs:
                  name: cppcheckartifact
                  path: ./cppcheckartifact.txt
 
-            - name Running code analysis
+            - name Code analysis
               run: make checkcpp
 
             - name: Running memtest
