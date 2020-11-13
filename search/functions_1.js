@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['battle',['Battle',['../_battle_8h.html#afa4090cd2e5f394ac67c63b1282f5e76',1,'Battle.cpp']]]
+  ['count',['count',['../class_j_s_o_n.html#a896544dd87ac36e8d8e4137f51ade9c2',1,'JSON']]]
 ];

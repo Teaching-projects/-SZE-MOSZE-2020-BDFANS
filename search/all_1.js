@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['battle',['Battle',['../class_battle.html',1,'Battle'],['../_battle_8h.html#afa4090cd2e5f394ac67c63b1282f5e76',1,'Battle(Unit &amp;attacker, Unit &amp;defender):&#160;Battle.cpp']]],
-  ['battle_2eh',['Battle.h',['../_battle_8h.html',1,'']]]
+  ['count',['count',['../class_j_s_o_n.html#a896544dd87ac36e8d8e4137f51ade9c2',1,'JSON']]]
 ];

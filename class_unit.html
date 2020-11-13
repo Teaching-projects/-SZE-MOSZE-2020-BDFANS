@@ -63,6 +63,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_unit-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -74,6 +76,15 @@ $(function() {
  <a href="class_unit.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_unit_8h_source.html">Unit.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Unit:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit__inherit__graph.png" border="0" usemap="#_unit_inherit__map" alt="Inheritance graph"/></div>
+<map name="_unit_inherit__map" id="_unit_inherit__map">
+<area shape="rect" id="node2" href="class_hero.html" title="header for Hero class " alt="" coords="5,80,56,107"/>
+<area shape="rect" id="node3" href="class_monster.html" title="header for Monster class " alt="" coords="80,80,149,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -81,30 +92,80 @@ Public Member Functions</h2></td></tr>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a0497994e384db5c080ec78e9b645fa40">getName</a> () const</td></tr>
 <tr class="memdesc:a0497994e384db5c080ec78e9b645fa40"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for name <br /></td></tr>
 <tr class="separator:a0497994e384db5c080ec78e9b645fa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0196a14bd3a7403d87a5db4b1e69bc7"><td class="memItemLeft" align="right" valign="top"><a id="ab0196a14bd3a7403d87a5db4b1e69bc7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ab0196a14bd3a7403d87a5db4b1e69bc7">getHealth</a> () const</td></tr>
-<tr class="memdesc:ab0196a14bd3a7403d87a5db4b1e69bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for health <br /></td></tr>
-<tr class="separator:ab0196a14bd3a7403d87a5db4b1e69bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a371a9431c2bbcab1f5373fe72a346ff4"><td class="memItemLeft" align="right" valign="top"><a id="a371a9431c2bbcab1f5373fe72a346ff4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a371a9431c2bbcab1f5373fe72a346ff4">getMaxHealthPoints</a> () const</td></tr>
+<tr class="memdesc:a371a9431c2bbcab1f5373fe72a346ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for Max Health points <br /></td></tr>
+<tr class="separator:a371a9431c2bbcab1f5373fe72a346ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5296f2ce5cb21eb323d5eb0bc104eba"><td class="memItemLeft" align="right" valign="top"><a id="ad5296f2ce5cb21eb323d5eb0bc104eba"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ad5296f2ce5cb21eb323d5eb0bc104eba">getHealthPoints</a> () const</td></tr>
+<tr class="memdesc:ad5296f2ce5cb21eb323d5eb0bc104eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for the current health points <br /></td></tr>
+<tr class="separator:ad5296f2ce5cb21eb323d5eb0bc104eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bdff78a6fa0bf000db28e3a9c979d06"><td class="memItemLeft" align="right" valign="top"><a id="a3bdff78a6fa0bf000db28e3a9c979d06"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a3bdff78a6fa0bf000db28e3a9c979d06">setAktHealth</a> (int i)</td></tr>
+<tr class="memdesc:a3bdff78a6fa0bf000db28e3a9c979d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a setter for the current health points <br /></td></tr>
+<tr class="separator:a3bdff78a6fa0bf000db28e3a9c979d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0062c5fab5677c6b47e1d881b4dcc53c"><td class="memItemLeft" align="right" valign="top"><a id="a0062c5fab5677c6b47e1d881b4dcc53c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a0062c5fab5677c6b47e1d881b4dcc53c">getDamage</a> () const</td></tr>
 <tr class="memdesc:a0062c5fab5677c6b47e1d881b4dcc53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for damage <br /></td></tr>
 <tr class="separator:a0062c5fab5677c6b47e1d881b4dcc53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed49ee7d22318092beac61ffda262610"><td class="memItemLeft" align="right" valign="top"><a id="aed49ee7d22318092beac61ffda262610"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aed49ee7d22318092beac61ffda262610">getAttackspeed</a> () const</td></tr>
-<tr class="memdesc:aed49ee7d22318092beac61ffda262610"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for attaclspeed <br /></td></tr>
-<tr class="separator:aed49ee7d22318092beac61ffda262610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba9ff456bd52cff5e94ddc159b376a1"><td class="memItemLeft" align="right" valign="top"><a id="a5ba9ff456bd52cff5e94ddc159b376a1"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a5ba9ff456bd52cff5e94ddc159b376a1">getAttackCoolDown</a> () const</td></tr>
+<tr class="memdesc:a5ba9ff456bd52cff5e94ddc159b376a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for attaclspeed <br /></td></tr>
+<tr class="separator:a5ba9ff456bd52cff5e94ddc159b376a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1687f76fca26090ba6e4e92f642bb58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ad1687f76fca26090ba6e4e92f642bb58">Unit</a> (std::string inn=&quot;default&quot;, int inh=1, int ind=1, double ins=1)</td></tr>
 <tr class="memdesc:ad1687f76fca26090ba6e4e92f642bb58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_unit.html" title="header for Unit class ">Unit</a> object.  <a href="#ad1687f76fca26090ba6e4e92f642bb58">More...</a><br /></td></tr>
 <tr class="separator:ad1687f76fca26090ba6e4e92f642bb58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4fda15363c7031d6e5190126569e11c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ac4fda15363c7031d6e5190126569e11c">isAlive</a> ()</td></tr>
+<tr class="separator:ac4fda15363c7031d6e5190126569e11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b28bebce697a1ce22695b6d416f3784"><td class="memItemLeft" align="right" valign="top"><a id="a6b28bebce697a1ce22695b6d416f3784"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a6b28bebce697a1ce22695b6d416f3784">setHealthPoints</a> (int in)</td></tr>
+<tr class="memdesc:a6b28bebce697a1ce22695b6d416f3784"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a setter for current health points <br /></td></tr>
+<tr class="separator:a6b28bebce697a1ce22695b6d416f3784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a052e4132be9d9460b10826fc14993b50"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a052e4132be9d9460b10826fc14993b50">attackcd</a> (<a class="el" href="class_unit.html">Unit</a> &amp;attacker, <a class="el" href="class_unit.html">Unit</a> &amp;defender)</td></tr>
 <tr class="memdesc:a052e4132be9d9460b10826fc14993b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">the functio responsible for deciding who attacks when based on the attackcooldown  <a href="#a052e4132be9d9460b10826fc14993b50">More...</a><br /></td></tr>
 <tr class="separator:a052e4132be9d9460b10826fc14993b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eea5f54429763ed88dec0bb3e7bb866"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_unit.html">Unit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a8eea5f54429763ed88dec0bb3e7bb866">praseUnit</a> (std::string fnev)</td></tr>
-<tr class="memdesc:a8eea5f54429763ed88dec0bb3e7bb866"><td class="mdescLeft">&#160;</td><td class="mdescRight">JSON parser for <a class="el" href="class_unit.html" title="header for Unit class ">Unit</a> class.  <a href="#a8eea5f54429763ed88dec0bb3e7bb866">More...</a><br /></td></tr>
-<tr class="separator:a8eea5f54429763ed88dec0bb3e7bb866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273239f361d35d5e76b5ecba6a17cb80"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_unit.html">Unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a273239f361d35d5e76b5ecba6a17cb80">praseUnit</a> (std::string fnev)</td></tr>
+<tr class="memdesc:a273239f361d35d5e76b5ecba6a17cb80"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_j_s_o_n.html" title="header for JSON class ">JSON</a> parser for <a class="el" href="class_unit.html" title="header for Unit class ">Unit</a> class.  <a href="#a273239f361d35d5e76b5ecba6a17cb80">More...</a><br /></td></tr>
+<tr class="separator:a273239f361d35d5e76b5ecba6a17cb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a82400a76b04a7bf2a9c60a37b4e5245e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a82400a76b04a7bf2a9c60a37b4e5245e">setAttackCooldown</a> (double in)</td></tr>
+<tr class="memdesc:a82400a76b04a7bf2a9c60a37b4e5245e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Attack Cooldown object.  <a href="#a82400a76b04a7bf2a9c60a37b4e5245e">More...</a><br /></td></tr>
+<tr class="separator:a82400a76b04a7bf2a9c60a37b4e5245e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d85e2b13c9a046789514deb0050459"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ae5d85e2b13c9a046789514deb0050459">attack</a> (<a class="el" href="class_unit.html">Unit</a> &amp;target)</td></tr>
+<tr class="memdesc:ae5d85e2b13c9a046789514deb0050459"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function executes a single attack  <a href="#ae5d85e2b13c9a046789514deb0050459">More...</a><br /></td></tr>
+<tr class="separator:ae5d85e2b13c9a046789514deb0050459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a03a2344fa6977a2ce44b320e44bc9caa"><td class="memItemLeft" align="right" valign="top"><a id="a03a2344fa6977a2ce44b320e44bc9caa"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a03a2344fa6977a2ce44b320e44bc9caa">name</a></td></tr>
+<tr class="memdesc:a03a2344fa6977a2ce44b320e44bc9caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character's name. <br /></td></tr>
+<tr class="separator:a03a2344fa6977a2ce44b320e44bc9caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f9d1ac08692874b85317ac4ebb33ae9"><td class="memItemLeft" align="right" valign="top"><a id="a6f9d1ac08692874b85317ac4ebb33ae9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a6f9d1ac08692874b85317ac4ebb33ae9">maxhealth</a></td></tr>
+<tr class="memdesc:a6f9d1ac08692874b85317ac4ebb33ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character's total health pool. <br /></td></tr>
+<tr class="separator:a6f9d1ac08692874b85317ac4ebb33ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99cdb47609963a65e9d71a3c452ad612"><td class="memItemLeft" align="right" valign="top"><a id="a99cdb47609963a65e9d71a3c452ad612"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a99cdb47609963a65e9d71a3c452ad612">akthealth</a> = <a class="el" href="class_unit.html#a6f9d1ac08692874b85317ac4ebb33ae9">maxhealth</a></td></tr>
+<tr class="memdesc:a99cdb47609963a65e9d71a3c452ad612"><td class="mdescLeft">&#160;</td><td class="mdescRight">current health before character dies <br /></td></tr>
+<tr class="separator:a99cdb47609963a65e9d71a3c452ad612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92bfb1430ab13e69d4c703a7fc8bafdb"><td class="memItemLeft" align="right" valign="top"><a id="a92bfb1430ab13e69d4c703a7fc8bafdb"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a92bfb1430ab13e69d4c703a7fc8bafdb">damage</a></td></tr>
+<tr class="memdesc:a92bfb1430ab13e69d4c703a7fc8bafdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">the damage the character deals with a single attack <br /></td></tr>
+<tr class="separator:a92bfb1430ab13e69d4c703a7fc8bafdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeccd13d7a4b6d9b6be3c46ebeaadb75e"><td class="memItemLeft" align="right" valign="top"><a id="aeccd13d7a4b6d9b6be3c46ebeaadb75e"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aeccd13d7a4b6d9b6be3c46ebeaadb75e">attackspeed</a></td></tr>
+<tr class="memdesc:aeccd13d7a4b6d9b6be3c46ebeaadb75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">the number of times the character can attack in a second <br /></td></tr>
+<tr class="separator:aeccd13d7a4b6d9b6be3c46ebeaadb75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b690e14b2f18e1a57b6ef86b8ea3ec"><td class="memItemLeft" align="right" valign="top"><a id="ad8b690e14b2f18e1a57b6ef86b8ea3ec"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ad8b690e14b2f18e1a57b6ef86b8ea3ec">attackcooldown</a></td></tr>
+<tr class="memdesc:ad8b690e14b2f18e1a57b6ef86b8ea3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">the remaining time, until the character can attack again <br /></td></tr>
+<tr class="separator:ad8b690e14b2f18e1a57b6ef86b8ea3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -116,8 +177,8 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>header for <a class="el" href="class_unit.html" title="header for Unit class ">Unit</a> class </p>
 <dl class="section author"><dt>Author</dt><dd>BDFANS</dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.3.0</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2020-10-15 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.4.0</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2020-11-13 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1687f76fca26090ba6e4e92f642bb58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1687f76fca26090ba6e4e92f642bb58">&#9670;&nbsp;</a></span>Unit()</h2>
@@ -180,6 +241,43 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae5d85e2b13c9a046789514deb0050459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d85e2b13c9a046789514deb0050459">&#9670;&nbsp;</a></span>attack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Unit::attack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_unit.html">Unit</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>this function executes a single attack </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>the unit, who is being attacked</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function also prevents negative values by treating any possible negative result as 0 </p>
+
+<p>Reimplemented in <a class="el" href="class_hero.html#abdbfbaf32d3d54eb4f2c11a145ade1ec">Hero</a>.</p>
+
+</div>
+</div>
 <a id="a052e4132be9d9460b10826fc14993b50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a052e4132be9d9460b10826fc14993b50">&#9670;&nbsp;</a></span>attackcd()</h2>
 
@@ -226,8 +324,26 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
-<a id="a8eea5f54429763ed88dec0bb3e7bb866"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eea5f54429763ed88dec0bb3e7bb866">&#9670;&nbsp;</a></span>praseUnit()</h2>
+<a id="ac4fda15363c7031d6e5190126569e11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fda15363c7031d6e5190126569e11c">&#9670;&nbsp;</a></span>isAlive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Unit::isAlive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>checks if character is still alive </p><dl class="section return"><dt>Returns</dt><dd>with true or false </dd></dl>
+
+</div>
+</div>
+<a id="a273239f361d35d5e76b5ecba6a17cb80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273239f361d35d5e76b5ecba6a17cb80">&#9670;&nbsp;</a></span>praseUnit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,7 +352,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_unit.html">Unit</a> * Unit::praseUnit </td>
+          <td class="memname">static <a class="el" href="class_unit.html">Unit</a> Unit::praseUnit </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>fnev</em></td><td>)</td>
@@ -250,10 +366,10 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </table>
 </div><div class="memdoc">
 
-<p>JSON parser for <a class="el" href="class_unit.html" title="header for Unit class ">Unit</a> class. </p>
+<p><a class="el" href="class_j_s_o_n.html" title="header for JSON class ">JSON</a> parser for <a class="el" href="class_unit.html" title="header for Unit class ">Unit</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fnev</td><td>the name of the JSON file </td></tr>
+    <tr><td class="paramname">fnev</td><td>the name of the <a class="el" href="class_j_s_o_n.html" title="header for JSON class ">JSON</a> file </td></tr>
   </table>
   </dd>
 </dl>
@@ -264,6 +380,41 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a82400a76b04a7bf2a9c60a37b4e5245e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82400a76b04a7bf2a9c60a37b4e5245e">&#9670;&nbsp;</a></span>setAttackCooldown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Unit::setAttackCooldown </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the Attack Cooldown object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>new value for the units attackcooldown</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function also prevents negative values by treating any possible negative inputs as 0 </p>
 
 </div>
 </div>
