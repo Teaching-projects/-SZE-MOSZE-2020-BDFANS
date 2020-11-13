@@ -9,18 +9,23 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - run: sudo apt-get install valgrind
-            - run: sudo apt install clang
             - run: sudo apt install cppcheck
-            - run: clang++ -std=c++17 *.cpp -o battle -Wall -Wextra -Werror
-            - run: cppcheck *.cpp --enable=all --output-file=cppcheckartifact.txt
+            - name: Build
+              run: make build
+
+            - name: Running code analysis
+              run: make checkcppout
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
                  name: cppcheckartifact
                  path: ./cppcheckartifact.txt
-            - run: cppcheck *.cpp --enable=warning --error-exitcode=1
-            - run: valgrind --track-origins=yes --error-exitcode=1 --leak-check=full ./battle scenario2.json
 
+            - name: Code analysis
+              run: make analysis
+
+            - name: Running memtest
+              run: make memtest
 
             - run: ./outcheck.sh battle scenario1.json output1.txt
             - run: ./outcheck.sh battle scenario2.json output2.txt
