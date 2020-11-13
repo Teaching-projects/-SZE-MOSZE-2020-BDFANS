@@ -5,10 +5,10 @@
  * @author BDFANS
  *
  * @brief header for Unit class
- * @version 0.3.0
+ * @version 0.4.0
  *
  *
- * @date 2020-10-15
+ * @date 2020-11-13
  *
  */
 
@@ -19,9 +19,9 @@ class Unit
 {
 	protected:
 
-	std::string name;
-	int maxhealth;
-	int akthealth = maxhealth;
+	std::string name; ///< Character's name 
+	int maxhealth; ///< Character's total health pool 
+	int akthealth = maxhealth; ///< current health before character dies
 	int damage; ///< the damage the character deals with a single attack
 	double attackspeed; ///< the number of times the character can attack in a second
 	double attackcooldown; ///< the remaining time, until the character can attack again
@@ -38,7 +38,7 @@ class Unit
 
 
 	/**
-	 * @brief this function executes the attack
+	 * @brief this function executes a single attack
 	 *
 	 * @param target the unit, who is being attacked
 	 *
@@ -50,9 +50,13 @@ class Unit
 
 	///this is a getter function for name
 	std::string getName() const { return name; }
-
+	
+	///this is a getter function for Max Health points
 	int getMaxHealthPoints() const { return maxhealth; }
+
+	///this is a getter function for the current health points 
 	int getHealthPoints() const { return akthealth; }
+	///this is a setter for the current health points
 	void setAktHealth(int i) { akthealth = i; }
 
 	///this is a getter function for damage
@@ -100,10 +104,13 @@ class Unit
 	 */
 	static Unit praseUnit(std::string fnev);
 
-	//Éle e még a karakter
+	/**
+	 * checks if character is still alive
+	 * @return with true or false
+	 */
 	bool isAlive();
 
-	//set karakter aktuális HP
+	///this is a setter for current health points
 	void setHealthPoints(int in);
 
 };

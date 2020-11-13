@@ -1,3 +1,16 @@
+/**
+ * @file JSON.h
+ * @class JSON
+ *
+ * @author BDFANS
+ *
+ * @brief header for JSON class
+ * @version 0.4.0
+ *
+ *
+ * @date 2020-11-13
+ *
+ */
 #pragma once
 
 #include <string>
@@ -10,10 +23,10 @@
 class JSON
 {
 
-    //tárolási formátum: "[kulcs]:[érték]"
+    ///tárolási formátum: "[key]:[value]"
     std::map<std::string,std::string> json_list;
 
-    //JSON iterátorból olvas
+    ///Reading from JSON iterator
     static std::map<std::string,std::string> jsonparse_i(std::istream& stream);
 
 public:
@@ -23,18 +36,18 @@ public:
 
 
 
-    //JSON fájlt olvas
+    ///Reading from JSON file
     static std::map<std::string,std::string> parseFromFile(std::string filename);
 
-    //JSON szövegből olvas
+    ///Reading from JSON text
     static std::map<std::string,std::string> jsonparse_s(std::string json_in);
 
 
 
-    //Megadott kulcs előfordulásának a számát adja meg
+    ///Gives back the number of occurrences of the specified key
     int count(std::string key);
 
-    //adott kulcshoz tatrtozó első változó értékét adja vissza
+    ///returns the value of the first variable associated with a given key
     template<typename T> 
     T get(std::string key)
     {
