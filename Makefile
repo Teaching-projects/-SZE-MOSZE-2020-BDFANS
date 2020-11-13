@@ -24,7 +24,7 @@ JSON.o: JSON.cpp JSON.h
 Monster.o: Monster.cpp Monster.h
 	$(CC) $(CFLAGS) Monster.cpp
 
-main.o: main.cpp JSON.h Hero.h Monster.h
+main.o: main.cpp Hero.h Monster.h
 	$(CC) $(CFLAGS) main.cpp
 
 clean:
