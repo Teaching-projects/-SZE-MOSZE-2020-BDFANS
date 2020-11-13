@@ -25,16 +25,22 @@ class Monster :public Unit
 	/**
 	* @brief JSON parser for Monster class
 	*
-	* @param filename is the name of the JSON file
-	* @param innev sets the name of the monster. The default name is "default"
-	* @param inhp sets the health of the monster. The default health is 1
-	* @param indmg sets the damage of the monster. The default damage is 1
-	* @param insaspeed sets the attackspeed of the monster. The default speed is 1.0
+    * @param filename is the name of the JSON file we read from
+    * 
 	* @return Monster object
 	*
 	* @throw Exception this function throws an exception if the file cannot be accessed
 	*/
     static Monster parse(std::string filename);
 
+
+    /**
+    * @brief Construct a new Monster object
+    *
+    * @param innev sets the name of the monster.The default name is "default"
+    * @param inhp sets the health of the monster.The default health is 1
+    * @param indmg sets the damage of the monster.The default damage is 1
+    * @param insaspeed sets the attackspeed of the monster.The default speed is 1.0
+    */
     Monster(std::string innev,int inhp,int indmg,double inaspeed) :Unit(innev,inhp,indmg,inaspeed)  {}
 };

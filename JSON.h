@@ -22,33 +22,63 @@
 
 class JSON
 {
-
-    ///tárolási formátum: "[key]:[value]"
+    /**Stores the  processed JSON data in a map
+    *Storage format: "[key]:[value]"
+    */
     std::map<std::string,std::string> json_list;
 
-    ///Reading from JSON iterator
+    /**
+    * @brief this function parses JSON data from an inputstream
+    *
+    * @param stream the name of the input stream
+    *
+    * @throw ParseException this function throws an exception if the parsing fails
+    */
     static std::map<std::string,std::string> jsonparse_i(std::istream& stream);
 
 public:
-
+    ///This is the exception thrown when the JSON parsing fails
     class ParseException :public std::exception
     {   };
 
-
-
-    ///Reading from JSON file
+    /**
+    * @brief this function parses JSON data from a file
+    *
+    * @param filename the name of the input file
+    *
+    * @throw ParseException this function throws an exception if the parsing fails  
+    */
     static std::map<std::string,std::string> parseFromFile(std::string filename);
 
-    ///Reading from JSON text
+    /**
+    * @brief this function parses JSON data from a text
+    *
+    * @param json_in the name of the input text
+    *
+    * @throw ParseException this function throws an exception if the parsing fails
+    */
     static std::map<std::string,std::string> jsonparse_s(std::string json_in);
 
 
 
-    ///Gives back the number of occurrences of the specified key
+    /**
+    * @brief Gives back the number of occurrences of the specified key
+    *
+    * @param key the object key being counted
+    */
     int count(std::string key);
 
-    ///returns the value of the first variable associated with a given key
-    template<typename T> 
+    /**
+    * @brief Returns the value of the first variable associated with a given key
+    *
+    * @param key the object key the function searches for
+    *
+    * The output typename(T) can be int, double, or string
+    *
+    * @throw Exception this function throws an exception if the function can't find the key, or can't process the output type
+    */   
+
+    template<typename T>
     T get(std::string key)
     {
         std::any outval;
@@ -84,6 +114,10 @@ public:
     }
 
 
-
+    /**
+    * @brief Construct a new JSON object
+    *
+    * @param in_list the input map containing processed JSON data
+    */
     JSON(const std::map<std::string,std::string>& in_list) :json_list(in_list) {}
 };

@@ -56,7 +56,9 @@ class Unit
 
 	///this is a getter function for the current health points 
 	int getHealthPoints() const { return akthealth; }
-	///this is a setter for the current health points
+	/**this is a setter for the current health points
+	* @param i sets the current health;
+	*/
 	void setAktHealth(int i) { akthealth = i; }
 
 	///this is a getter function for damage
@@ -66,7 +68,6 @@ class Unit
 
 	/**
 	 * @brief Construct a new Unit object
-	 *
 	 * @param inn sets the name of the character. The default name is "default"
 	 * @param inh sets the health of the character. The default health is 1
 	 * @param ind sets the damage of the character. The default damage is 1
@@ -97,7 +98,7 @@ class Unit
 	/**
 	 * @brief JSON parser for Unit class
 	 *
-	 * @param fnev the name of the JSON file
+	 * @param fnev the name of the JSON file we read from
 	 * @return Unit* the pointer for the newly generated Unit object
 	 *
 	 * @throw Exception this function throws an exception if the file cannot be accessed
@@ -110,7 +111,9 @@ class Unit
 	 */
 	bool isAlive();
 
-	///this is a setter for current health points
+	/**this is a setter for current health points
+	* @param in sets the current health
+	*/
 	void setHealthPoints(int in);
 
 };
