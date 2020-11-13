@@ -12,13 +12,17 @@ jobs:
             - run: sudo apt install cppcheck
             - name: Build
               run: make build
-            - name: Running code analysis 
-              run: make checkcpp
+
+            - name: Running code analysis
+              run: make checkcppout
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
                  name: cppcheckartifact
                  path: ./cppcheckartifact.txt
+
+            - name Running code analysis
+              run: make checkcpp
 
             - name: Running memtest
               run: make memtest
