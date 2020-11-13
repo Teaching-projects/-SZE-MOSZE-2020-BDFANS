@@ -7,10 +7,10 @@ cppflag := --enable=warning --error-exitcode=1
 cppout := --enable=all --output-file=cppcheckartifact.txt
 
 valobj := valgrind
-valflag := --track-origins=yes --error-exitcode=1 --leak-check=full
+valflag := --error-exitcode=1 --leak-check=full
 
 build: $(OBJS)
-	$(CC) $(CFLAGS) -o add $(OBJS)
+	$(CC) $(CFLAGS) -o battle $(OBJS)
 
 Unit.o: Unit.cpp Unit.h JSON.h
 	$(CC) $(CFLAGS) -c Unit.cpp
