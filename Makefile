@@ -1,6 +1,6 @@
 OBJS := Unit.o Hero.o JSON.o Monster.o main.o
 CFLAGS := -std=c++17 -Wall -Wextra -Werror -c
-CC := g++
+CC := g++-9
 
 cppobj := cppcheck
 cppflag := --enable=warning --error-exitcode=1
@@ -24,7 +24,7 @@ JSON.o: JSON.cpp JSON.h
 Monster.o: Monster.cpp Monster.h
 	$(CC) $(CFLAGS) Monster.cpp
 
-main.o: main.cpp Hero.h Monster.h
+main.o: main.cpp Hero.h JSON.h Monster.h
 	$(CC) $(CFLAGS) main.cpp
 
 clean:
