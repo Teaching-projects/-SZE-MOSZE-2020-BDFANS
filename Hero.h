@@ -91,6 +91,6 @@ class Hero :public Unit
      *
      * The constructor uses the attackspeed value to set the initial attackcooldown
      */
-    Hero(std::string innev, int inhp, int indmg, double inaspeed, int inexpreq, int inhpb, int indmgb, double incdmul) 
+    Hero(std::string innev, int inhp, int indmg, double inaspeed, int inexpreq = 1, int inhpb = 1, int indmgb = 1, double incdmul = 1) 
         :Unit(innev,inhp,indmg,inaspeed), exp_per_level(inexpreq), hp_per_level(inhpb), dmg_per_level(indmgb), cdmul_per_level(incdmul) {}
 };

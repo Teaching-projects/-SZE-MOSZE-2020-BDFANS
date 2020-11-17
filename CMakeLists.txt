@@ -15,7 +15,7 @@ use_cxx17()
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
  
-# Link runTests with what we want to test 
+# Link tester with what we want to test 
 # and the GTest and pthread library
-add_executable(jparsetest tests/jsonparsertest.cpp JSON.cpp)
+add_executable(jparsetest tests/jsonparsertest.cpp JSON.cpp Hero.cpp Monster.cpp Unit.cpp)
 target_link_libraries(jparsetest ${GTEST_LIBRARIES} pthread)
