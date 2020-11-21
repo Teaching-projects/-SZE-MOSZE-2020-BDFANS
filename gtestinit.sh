@@ -1,6 +1,5 @@
 #!/bin/bash
 
-container: luczadennis/mosze:latest
 cd /usr/src/gtest 
 cmake CMakeLists.txt 
 make 
