@@ -4,17 +4,16 @@ on:
   push:
     branches:
       - gh-pages
-      - makefile-doxy
+      - Docker
 
 jobs:
     generate_documentation:
         name: generate and artifact doxygen docs
         runs-on: ubuntu-latest
+        container: luczadennis/mosze:latest
         steps:
             - uses: actions/checkout@v2
 
-            - run: sudo apt-get install doxygen
-            - run: sudo apt-get install graphviz
             - run: make doc
 
             - name: Upload docxygen documents

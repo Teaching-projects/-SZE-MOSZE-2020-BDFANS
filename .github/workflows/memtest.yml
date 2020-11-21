@@ -6,10 +6,9 @@ on:
 jobs:
     build_and_check:
         runs-on: ubuntu-latest
+        container: luczadennis/mosze:latest
         steps:
             - uses: actions/checkout@v2
-            - run: sudo apt-get install valgrind
-            - run: sudo apt install cppcheck
             - name: Build
               run: make build
 
