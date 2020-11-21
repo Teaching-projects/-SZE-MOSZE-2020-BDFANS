@@ -10,4 +10,5 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
    cppcheck \
    make \
    cmake \
+   libgtest-dev\
 && rm -rf /var/lib/apt/lists/*
