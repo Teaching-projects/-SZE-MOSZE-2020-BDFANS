@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt install libgtest-dev 
+container: luczadennis/mosze:latest
 cd /usr/src/gtest 
 cmake CMakeLists.txt 
 make 
