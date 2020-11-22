@@ -1,6 +1,5 @@
 #!/bin/bash
 
-apt install libgtest-dev 
 cd /usr/src/gtest 
 cmake CMakeLists.txt 
 make 

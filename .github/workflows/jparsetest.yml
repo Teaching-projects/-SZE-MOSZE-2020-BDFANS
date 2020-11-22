@@ -6,9 +6,10 @@ on:
 jobs:
     jparsetest:
         runs-on: ubuntu-latest
+        container: luczadennis/mosze:latest
         steps:
             - uses: actions/checkout@v2
-            - run: sudo ./gtestinit.sh
+            - run: ./gtestinit.sh
             - run: ./jparsetest.sh
             - uses: actions/upload-artifact@v2
               with:
