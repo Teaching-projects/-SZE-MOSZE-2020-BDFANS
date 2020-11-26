@@ -24,8 +24,6 @@ enum type {Free,Wall};
 
 class Map
 {
-    ///The exception thrown when the map is indexed outside of its bounds
-    class WrongIndexException :public std::exception {  };
 
     //The actual map stored in a vector matrix of "type"
     MAPMATRIX loadedmap;
@@ -36,6 +34,9 @@ class Map
 
 
 public:
+
+    ///The exception thrown when the map is indexed outside of its bounds
+    class WrongIndexException :public std::exception {  };
 
     Map(std::string filename);
 
