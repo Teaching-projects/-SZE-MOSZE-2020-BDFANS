@@ -38,6 +38,15 @@ public:
     ///The exception thrown when the map is indexed outside of its bounds
     class WrongIndexException :public std::exception {  };
 
+    /**
+     * @brief Construct a new Map object
+     * 
+     * @param filename the name of the file used to generate the map
+     * 
+     * The with and the height of the mag gets automaticly calulated.
+     * Use '#', whitespace and linebreak characters to create the map. invalid characters get ignored when generating the map
+     * Undefined regions become "Wall" type on default
+     */
     Map(std::string filename);
 
     /**
@@ -46,6 +55,8 @@ public:
      * @param x the X coordinates
      * @param y the Y coordinates
      * @return type the type of the tile
+     * 
+     * @throw WrongIndexException this exception is thrown when the map is indexed outside of its bounds
      */
     type get(int x, int y) const;
 
