@@ -34,7 +34,7 @@ Map::Map(std::string filename)
         inY = 0;
         while(std::getline(infile,instring))
         {
-            for(inX = 0; inX < instring.length(); inX++)
+            for(inX = 0; inX < (int)instring.length(); inX++)
             {
                 switch(instring[inX])
                 {
