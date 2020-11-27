@@ -28,5 +28,9 @@ struct Damage {///< Damage is a struct which contains int physical and int magic
 		return *this;
 	}
 
+	friend std::ostream& operator<<(std::ostream& out, const Damage& dmg) {
+		out << "Physical: " << dmg.physical << ", Magical: " << dmg.magical;
+		return out;
+	}
 
 };
