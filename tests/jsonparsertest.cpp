@@ -2,6 +2,7 @@
 #include "../Damage.h"
 #include "../Hero.h"
 #include "../Monster.h"
+#include "../Map.h"
 #include <gtest/gtest.h>
 #include <iostream>
 #include <map>
@@ -154,7 +155,52 @@ TEST(Hero, lvlup) {
 	EXPECT_EQ(h.getAttackCoolDown(), 2*0.3);
 }
 
+//Map test
+//constructor
+TEST(Map, constructorNgettest) {
+	Map test = Map("parsertestfiles/Testmap.txt");
+	EXPECT_EQ(test.getlenX(), 14);
+	EXPECT_EQ(test.getlenY(), 7);
 
+	std::string expected =  "##############\n";
+				expected += "#   #  ####  #\n";
+				expected += "# ####  ##  ##\n";
+				expected += "#   #  ##  ###\n";
+				expected += "### # ##  ####\n";
+				expected += "#        #####\n";
+				expected += "##############\n";
+
+
+	std::string output;
+
+	for (int i = 0; i < test.getlenY(); i++)
+	{
+		for (int j = 0; j < test.getlenX(); j++)
+		{
+			switch (test.get(j, i))
+			{
+			case Free:
+				output += ' ';
+				break;
+			case Wall:
+				output += '#';
+				break;
+			}
+		}
+		output += '\n';
+	}
+	EXPECT_EQ(expected, output);
+}
+
+//get exception
+TEST(Map, WrongIndexException) {
+	Map test = Map("parsertestfiles/Testmap.txt");
+	EXPECT_EQ(test.getlenX(), 14);
+	EXPECT_EQ(test.getlenY(), 7);
+
+	ASSERT_THROW(test.get(10,30), Map::WrongIndexException);
+
+}
 
 int main(int argc, char** argv)
 {
