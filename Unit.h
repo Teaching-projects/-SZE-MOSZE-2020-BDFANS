@@ -68,9 +68,9 @@ public:
 
 	Damage getDamage() const { return damage; }
 	///this is a getter function for physical damage
-	int getPhysicalDamage() const { return Damage.physical; }
+	int getPhysicalDamage() const { return damage.physical; }
 	///this is a getter function for magical damage
-	int getMagicalDamage() const { return Damage.magical; }
+	int getMagicalDamage() const { return damage.magical; }
 	///this is a getter function for attaclspeed
 	double getAttackCoolDown() const { return attackspeed; }
 
