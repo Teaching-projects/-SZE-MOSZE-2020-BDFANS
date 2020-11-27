@@ -71,10 +71,10 @@ void Hero::fightTilDeath(Unit& defender)
 		{
 		innev = data.get<std::string>("name");
 		inhp = data.get<int>("base_health_points");
-		if (data.count("damage") >= 0) {
+		if (data.count("damage") > 0) {
 			inphys = data.get<int>("damage");
 		}
-		if (data.count("magical-damage") >= 0) {
+		if (data.count("magical-damage") > 0) {
 			inmagic = data.get<int>("magical-damage");
 		}
 		indef = data.get<int>("defense");
