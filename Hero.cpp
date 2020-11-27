@@ -73,10 +73,10 @@ void Hero::fightTilDeath(Unit& defender)
 		inhp = data.get<int>("base_health_points");
 
 		if (data.get<int>("damage")) {
-			dmg.physical = data.get<int>("damage");
+			indmg.physical = data.get<int>("damage");
 		}
 		if (data.get<int>("magical-damage")) {
-			dmg.magical = data.get<int>("magical-damage");
+			indmg.magical = data.get<int>("magical-damage");
 		}
 		indef = data.get<int>("defense");
 		inaspeed = data.get<double>("base_attack_cooldown");

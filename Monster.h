@@ -39,7 +39,8 @@ class Monster :public Unit
     *
     * @param innev sets the name of the monster.The default name is "default"
     * @param inhp sets the health of the monster.The default health is 1
-    * @param indmg sets the damage of the monster.The default damage is 1
+    * @param indmg sets the physical damage and magical damage of the monster.The default damages are 0
+    * @param indef sets the defense of the monster.Te default defense is 1
     * @param insaspeed sets the attackspeed of the monster.The default speed is 1.0
     */
     Monster(std::string innev,int inhp,Damage indmg,int indef,double inaspeed) :Unit(innev,inhp,indmg,indef,inaspeed)  {}

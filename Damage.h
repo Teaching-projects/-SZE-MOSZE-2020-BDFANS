@@ -2,7 +2,8 @@
 
 #include <iostream>
 
-struct Damage {///< Damage is a struct which contains int physical and int magical dmg.
+/// Damage is a struct which contains int physical and int magical dmg.
+struct Damage {
 	int physical = 0; ///< Physical damage can be reduced by defense.
 	int magical = 0; ///< Magical damage can't be reduced by defense.
 

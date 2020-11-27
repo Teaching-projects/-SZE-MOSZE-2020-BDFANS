@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - gh-pages
-      - Docker
+      - Damage
 
 jobs:
     generate_documentation:
