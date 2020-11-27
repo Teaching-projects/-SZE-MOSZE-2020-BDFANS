@@ -30,7 +30,7 @@ struct Damage {
 
 	bool operator==(const Damage& dmg) const
 	{
-		return (physical == dmg.x && magical == dmg.magical);
+		return (physical == dmg.physical && magical == dmg.magical);
 	}
 
 	friend std::ostream& operator<<(std::ostream& out, const Damage& dmg) {
