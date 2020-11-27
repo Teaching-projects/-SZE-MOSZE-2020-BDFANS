@@ -27,5 +27,5 @@ Monster Monster::parse(std::string filename)
 			std::cerr << "[ERROR] Missing value from input data! Make sure the JSON input data is valid!\n";
 		}
 		
-    return Monster(innev,inhp,indmg,indef,inaspeed);
+    return Monster(indmg,innev,inhp,indef,inaspeed);
 }
