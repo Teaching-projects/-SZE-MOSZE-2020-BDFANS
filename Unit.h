@@ -78,13 +78,13 @@ public:
 	 * @brief Construct a new Unit object
 	 * @param inn sets the name of the character. The default name is "default"
 	 * @param inh sets the health of the character. The default health is 1
-	 * @param indmg sets the damage of the character. The default damage is 1
-	 * @param indef sets te damage of the caracter. The default defense is 1
+	 * @param indmg sets the damage of the character.
+	 * @param indef sets the defense of the caracter. The default defense is 1
 	 * @param ins sets the attackspeed of the character. The default speed is 1
 	 *
 	 * The constructor uses the attackspeed value to set the initial attackcooldown
 	 */
-	Unit(std::string inn = "default", int inh = 1, indmg = Damage(0,0), int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(indmg),defense(indef), attackspeed(ins)
+	Unit(std::string inn = "default", int inh = 1, Damage indmg, int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(indmg),defense(indef), attackspeed(ins)
 	{
 		attackcooldown = attackspeed;
 	}
