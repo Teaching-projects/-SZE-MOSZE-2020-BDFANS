@@ -7,14 +7,21 @@
 
  void Unit::attack(Unit& target)
 {
-	if (target.akthealth > damage)
-	{
-		target.akthealth -= damage;
-	}
-	else
-	{
-		target.akthealth = 0;
-	}
+	 int reduceddmg = damage.physical - target.getDefense();
+	 int effectivedmg = damage.magical;
+	 if ( reduceddmg > 0) {
+		 effectivedmg += reduceddmg;
+	 }
+	 if (effectivedmg > 0) {
+		 if (target.akthealth > effectivedmg)
+		 {
+			 target.akthealth -= effectivedmg;
+		 }
+		 else
+		 {
+			 target.akthealth = 0;
+		 }
+	 }
 }
 
 void Unit::setHealthPoints(int in)

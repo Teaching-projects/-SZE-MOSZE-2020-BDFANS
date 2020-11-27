@@ -11,7 +11,9 @@ void Hero::gainExp(int xp) {
 			lvl++;
 			exp = exp - exp_per_level;
 			maxhealth += hp_per_level;
-			damage += dmg_per_level;
+			damage.physical += physicaldmg_per_level;
+			damage.magical += magicaldmg_per_level;
+			defense += defense_per_level;
 			attackspeed *= cdmul_per_level;
 			akthealth = maxhealth;
 
@@ -22,18 +24,23 @@ void Hero::gainExp(int xp) {
 
  void Hero::attack(Unit& target)
 {
-	int i = 0;
-	if (target.getHealthPoints() > damage)
-	{
-		target.setHealthPoints(target.getHealthPoints()-damage);
-		i = damage;
-		gainExp(i);
+	int reduceddmg = damage.physical - target.getDefense();
+	int effectivedmg = damage.magical;
+	if ( reduceddmg > 0 ) {
+		effectivedmg += reduceddmg;
 	}
-	else
-	{
-		i = target.getHealthPoints();
-		gainExp(i);
-		target.setHealthPoints(0);
+	if (effectivedmg > 0) {
+		if (target.getHealthPoints() > effectivedmg)
+		{
+			target.setHealthPoints(target.getHealthPoints() - effectivedmg);
+			gainExp(effectivedmg);
+		}
+		else
+		{
+			effectivedmg = target.getHealthPoints();
+			gainExp(effectivedmg);
+			target.setHealthPoints(0);
+		}
 	}
 }
 
@@ -53,22 +60,34 @@ void Hero::fightTilDeath(Unit& defender)
 	{
 		JSON data = JSON::parseFromFile(filename);
 		std::string innev = "default";
+		int inmagic = 0;
+		int inphys = 0;
 		int inhp = 1;
-		int indmg = 1;
 		double inaspeed = 1.0;
         int inhpb = 1;
-        int indmgb = 1;
+		int inphysb = 1;
+		int inmagicb = 1;
+		int indef = 1;
+		int indefb = 1;
         int inexpreq = 1;
         double incdmul = 1;
 		try
 		{
 		innev = data.get<std::string>("name");
 		inhp = data.get<int>("base_health_points");
-		indmg = data.get<int>("base_damage");
+		if (data.count("damage") > 0) {
+			inphys = data.get<int>("damage");
+		}
+		if (data.count("magical-damage") > 0) {
+			inmagic = data.get<int>("magical-damage");
+		}
+		indef = data.get<int>("defense");
 		inaspeed = data.get<double>("base_attack_cooldown");
 		inexpreq = data.get<int>("experience_per_level");
 		inhpb = data.get<int>("health_point_bonus_per_level");
-		indmgb = data.get<int>("damage_bonus_per_level");
+		inphysb = data.get<int>("physical_damage_bonus_per_level");
+		inmagicb = data.get <int>("magical_damage_bonus_per_level");
+		indefb = data.get<int>("defense_bonus_per_level");
 		incdmul = data.get<double>("cooldown_multiplier_per_level");
 		}
 		catch(const std::exception& e)
@@ -77,7 +96,7 @@ void Hero::fightTilDeath(Unit& defender)
 		}
 		
 		
-		return Hero(innev,inhp,indmg,inaspeed,inexpreq,inhpb,indmgb,incdmul);
+		return Hero(innev,inhp,inphys,inmagic,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
 
 	}
 	catch(const JSON::ParseException& e)

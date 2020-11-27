@@ -5,24 +5,27 @@
  * @author BDFANS
  *
  * @brief header for Unit class
- * @version 0.4.0
+ * @version 0.5.0
  *
  *
- * @date 2020-11-13
+ * @date 2020-11-27
  *
  */
 
 #pragma once
+
+#include "Damage.h"
 #include <iostream>
 
 class Unit
 {
-	protected:
+protected:
 
 	std::string name; ///< Character's name 
 	int maxhealth; ///< Character's total health pool 
 	int akthealth = maxhealth; ///< current health before character dies
-	int damage; ///< the damage the character deals with a single attack
+	Damage damage; ///< Damage is a struct which contains int physical and int magical dmg. Physical damage can be reduced by defense.
+	int defense; ///< Defense can only block physical damage;
 	double attackspeed; ///< the number of times the character can attack in a second
 	double attackcooldown; ///< the remaining time, until the character can attack again
 
@@ -46,11 +49,11 @@ class Unit
 	 */
 	virtual void attack(Unit& target);
 
-	public:
+public:
 
 	///this is a getter function for name
 	std::string getName() const { return name; }
-	
+
 	///this is a getter function for Max Health points
 	int getMaxHealthPoints() const { return maxhealth; }
 
@@ -60,22 +63,30 @@ class Unit
 	* @param i sets the current health;
 	*/
 	void setAktHealth(int i) { akthealth = i; }
-
-	///this is a getter function for damage
-	int getDamage() const { return damage; }
+	///this is a getter function for defense
+	int getDefense() const { return defense; }
+	///this getter function returns a damage struct
+	Damage getDamage() const { return damage; }
+	///this is a getter function for physical damage
+	int getPhysicalDamage() const { return damage.physical; }
+	///this is a getter function for magical damage
+	int getMagicalDamage() const { return damage.magical; }
 	///this is a getter function for attaclspeed
 	double getAttackCoolDown() const { return attackspeed; }
 
 	/**
 	 * @brief Construct a new Unit object
+	 *
 	 * @param inn sets the name of the character. The default name is "default"
 	 * @param inh sets the health of the character. The default health is 1
-	 * @param ind sets the damage of the character. The default damage is 1
+	 * @param inphys sets the physical damage of the character. The default physical damage is 1
+	 * @param inmagic sets te magical damage of te chharacter. The default magical damage is 1
+	 * @param indef sets the defense of the caracter. The default defense is 1
 	 * @param ins sets the attackspeed of the character. The default speed is 1
 	 *
 	 * The constructor uses the attackspeed value to set the initial attackcooldown
 	 */
-	Unit(std::string inn = "default", int inh = 1, int ind = 1, double ins = 1) :name(inn), maxhealth(inh), damage(ind), attackspeed(ins)
+	Unit(std::string inn = "default", int inh = 1,int inphys = 1, int inmagic = 1, int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(inphys,inmagic) ,defense(indef), attackspeed(ins)
 	{
 		attackcooldown = attackspeed;
 	}
@@ -83,7 +94,7 @@ class Unit
 	virtual ~Unit();
 
 	/**
-	 * @brief the functio responsible for deciding who attacks when based on the attackcooldown
+	 * @brief the function responsible for deciding who attacks when based on the attackcooldown
 	 *
 	 * @param attacker the attacker unit
 	 * @param defender the defender unit
