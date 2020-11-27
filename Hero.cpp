@@ -24,17 +24,16 @@ void Hero::gainExp(int xp) {
 
  void Hero::attack(Unit& target)
 {
-	int effectivedmg = damage.magical + (damage.physical-target.defense);
+	int effectivedmg = damage.magical + (damage.physical-target.getDefense());
 	if (target.getHealthPoints() > effectivedmg)
 	{
 		target.setHealthPoints(target.getHealthPoints()-effectivedmg);
-		i = effectivedmg;
-		gainExp(i);
+		gainExp(effectivedmg);
 	}
 	else
 	{
-		i = target.getHealthPoints();
-		gainExp(i);
+		effectivedmg = target.getHealthPoints();
+		gainExp(effectivedmg);
 		target.setHealthPoints(0);
 	}
 }
@@ -93,7 +92,7 @@ void Hero::fightTilDeath(Unit& defender)
 		}
 		
 		
-		return Hero(innev,inhp,indmg,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
+		return Hero(innev,inhp,indmg,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
 
 	}
 	catch(const JSON::ParseException& e)
