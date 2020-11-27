@@ -24,7 +24,11 @@ void Hero::gainExp(int xp) {
 
  void Hero::attack(Unit& target)
 {
-	int effectivedmg = damage.magical + (damage.physical-target.getDefense());
+	int reduceddmg = damage.physical - target.getDefense();
+	int effectivedmg = damage.magical;
+	if ((damage.physical - target.getDefense())>0) {
+		effectivedmg += reduceddmg
+	}
 	if (effectivedmg > 0) {
 		if (target.getHealthPoints() > effectivedmg)
 		{
