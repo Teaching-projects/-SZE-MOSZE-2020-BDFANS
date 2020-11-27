@@ -28,11 +28,9 @@ struct Damage {
 		return *this;
 	}
 
-	Damage& operator ==(const Damage& dmg) {
-		physical == dmg.physical;
-		magical == dmg.physical;
-
-		return *this;
+	bool operator==(const Damage& dmg) const
+	{
+		return (physical == dmg.x && magical == dmg.magical);
 	}
 
 	friend std::ostream& operator<<(std::ostream& out, const Damage& dmg) {
