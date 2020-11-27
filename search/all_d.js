@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unit_42',['Unit',['../class_unit.html',1,'Unit'],['../class_unit.html#a29723c3bf2780f4991bb9fa152e4ba05',1,'Unit::Unit()']]],
-  ['unit_2eh_43',['Unit.h',['../_unit_8h.html',1,'']]]
+  ['type_46',['type',['../_map_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d',1,'Map.h']]]
 ];
