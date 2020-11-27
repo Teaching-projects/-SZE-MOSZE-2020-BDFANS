@@ -28,6 +28,13 @@ struct Damage {
 		return *this;
 	}
 
+	Damage& operator ==(const Damage& dmg) {
+		physical == dmg.physical;
+		magical == dmg.physical;
+
+		return *this;
+	}
+
 	friend std::ostream& operator<<(std::ostream& out, const Damage& dmg) {
 		out << "Physical: " << dmg.physical << ", Magical: " << dmg.magical;
 		return out;

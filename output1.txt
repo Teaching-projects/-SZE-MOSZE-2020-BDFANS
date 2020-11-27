@@ -9,5 +9,5 @@ Prince Aidan of Khanduras(3) vs Blood Raven
 The hero won.
 Prince Aidan of Khanduras: LVL8
    HP: 65/65
-  DMG: Physical: 10, Magical: 7
-  ACD: 0.526127
+  DMG: Physical: 10, Magical: 9
+  ACD: 1.1

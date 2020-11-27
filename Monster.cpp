@@ -14,12 +14,9 @@ Monster Monster::parse(std::string filename)
 		{
 		innev = data.get<std::string>("name");
 		inhp = data.get<int>("health_points");
-		if (data.get<int>("damage")) {
-			inphys = data.get<int>("damage");
-		}
-		if (data.get<int>("magical-damage")) {
-			inmagic = data.get<int>("magical-damage");
-		}
+		inphys = data.get<int>("damage");
+		inmagic = data.get<int>("magical-damage");
+		indef = data.get<int>("defense");
 		inaspeed = data.get<double>("attack_cooldown");
 
 		}
