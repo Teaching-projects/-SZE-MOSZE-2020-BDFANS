@@ -83,6 +83,7 @@ void Hero::fightTilDeath(Unit& defender)
 		catch(const std::exception& e)
 		{
 			std::cerr << "[ERROR] Missing value from input data! Make sure the JSON input data is valid!\n";
+			continue;
 		}
 		
 		

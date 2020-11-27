@@ -5,10 +5,10 @@
  * @author BDFANS
  *
  * @brief header for Hero class
- * @version 0.4.0
+ * @version 0.5.0
  *
  *
- * @date 2020-11-13
+ * @date 2020-11-27
  *
  */
 #pragma once
@@ -22,7 +22,7 @@ class Hero :public Unit
 	int lvl = 1; ///< Hero's current lvl
     const int exp_per_level; ///< Exp required for the next lvl
     const int hp_per_level; ///< HP bonus after a lvling up
-    const int physicaldmg_per_level;///< Damage bonus after lvling up
+    const int physicaldmg_per_level;///< Physical damage bonus after lvling up
     const int magicaldmg_per_level;///< Magical damage bonus per lvl
     const int defense_per_level;///< Defense bonus after lvling up
     const double cdmul_per_level; ///< Cooldown multiplier bonus after lvling up
@@ -82,9 +82,10 @@ class Hero :public Unit
     /**
      * @brief Construct a new Unit object
      *
-     * @param indmg sets the damage of the character.
      * @param innev sets the name of the character.
      * @param inhp sets the health of the character.
+     * @param inphys sets the physical damage of the character.
+     * @param inmagic sets the magical damage of the character.
      * @param indef sets the defense of the character.
      * @param inaspeed sets the attackspeed of the character.
      * @param inexpreq sets the required experience of the character.

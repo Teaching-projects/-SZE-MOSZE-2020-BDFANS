@@ -5,10 +5,10 @@
  * @author BDFANS
  *
  * @brief header for Unit class
- * @version 0.4.0
+ * @version 0.5.0
  *
  *
- * @date 2020-11-13
+ * @date 2020-11-27
  *
  */
 
@@ -65,7 +65,7 @@ public:
 	void setAktHealth(int i) { akthealth = i; }
 	///this is a getter function for defense
 	int getDefense() const { return defense; }
-
+	///this getter function returns a damage struct
 	Damage getDamage() const { return damage; }
 	///this is a getter function for physical damage
 	int getPhysicalDamage() const { return damage.physical; }
@@ -77,9 +77,10 @@ public:
 	/**
 	 * @brief Construct a new Unit object
 	 *
-	 * @param indmg sets the damage of the character.
 	 * @param inn sets the name of the character. The default name is "default"
 	 * @param inh sets the health of the character. The default health is 1
+	 * @param inphys sets the physical damage of the character. The default physical damage is 1
+	 * @param inmagic sets te magical damage of te chharacter. The default magical damage is 1
 	 * @param indef sets the defense of the caracter. The default defense is 1
 	 * @param ins sets the attackspeed of the character. The default speed is 1
 	 *
@@ -93,7 +94,7 @@ public:
 	virtual ~Unit();
 
 	/**
-	 * @brief the functio responsible for deciding who attacks when based on the attackcooldown
+	 * @brief the function responsible for deciding who attacks when based on the attackcooldown
 	 *
 	 * @param attacker the attacker unit
 	 * @param defender the defender unit
