@@ -43,5 +43,5 @@ class Monster :public Unit
     * @param indef sets the defense of the monster.Te default defense is 1
     * @param insaspeed sets the attackspeed of the monster.The default speed is 1.0
     */
-    Monster(Damage indmg, std::string innev,int inhp,int indef,double inaspeed) :Unit(indmg,innev,inhp,indef,inaspeed)  {}
+    Monster(std::string innev,int inhp,damage indmg,int indef,double inaspeed) :Unit(innev,inhp,indmg,indef,inaspeed)  {}
 };

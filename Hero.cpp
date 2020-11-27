@@ -90,7 +90,7 @@ void Hero::fightTilDeath(Unit& defender)
 		}
 		
 		
-		return Hero(indmg,innev,inhp,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
+		return Hero(innev,inhp,indmg,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
 
 	}
 	catch(const JSON::ParseException& e)
