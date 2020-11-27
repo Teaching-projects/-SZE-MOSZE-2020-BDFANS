@@ -18,7 +18,7 @@ Monster Monster::parse(std::string filename)
 			inphys = data.get<int>("damage");
 		}
 		if (data.get<int>("magical-damage")) {
-			inmagical = data.get<int>("magical-damage");
+			inmagic = data.get<int>("magical-damage");
 		}
 		inaspeed = data.get<double>("attack_cooldown");
 
