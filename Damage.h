@@ -9,9 +9,7 @@ struct Damage {
 	Damage(int pdmg, int mdmg) :physical(pdmg), magical(mdmg) {}
 
 	Damage operator+(const Damage& dmg) {
-		Damage Returndmg;
-		Returndmg.physical = physical + dmg.physical;
-		Returndmg.magical = magical + dmg.magical;
+		Damage Returndmg(physical + dmg.physical, magical + dmg.magical);
 
 		return Returndmg;
 	}

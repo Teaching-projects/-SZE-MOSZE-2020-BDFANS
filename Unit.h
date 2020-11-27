@@ -84,10 +84,8 @@ public:
 	 *
 	 * The constructor uses the attackspeed value to set the initial attackcooldown
 	 */
-	Unit(std::string inn = "default", int inh = 1, int indef=1, double ins = 1) :name(inn), maxhealth(inh), defense(indef), attackspeed(ins)
+	Unit(std::string inn = "default",Damage indmg(0,0) ,int inh = 1, int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(indmg),defense(indef), attackspeed(ins)
 	{
-		damage.physical = 1;
-		damage.magical = 1;
 		attackcooldown = attackspeed;
 	}
 

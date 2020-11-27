@@ -1,4 +1,5 @@
 #include "../JSON.h"
+#include "../Damage.h"
 #include "../Hero.h"
 #include "../Monster.h"
 #include <gtest/gtest.h>

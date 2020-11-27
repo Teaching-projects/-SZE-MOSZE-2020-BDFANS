@@ -5,10 +5,8 @@ Monster Monster::parse(std::string filename)
 {
     JSON data = JSON::parseFromFile(filename);
 		std::string innev = "default";
-		Damage indmg;
+		Damage indmg(0,0);
 		int inhp = 1;
-		indmg.physical = 0;
-		indmg.magical = 0;
 		int indef = 1;
 		double inaspeed = 1.0;
 		try

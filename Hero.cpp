@@ -54,9 +54,7 @@ void Hero::fightTilDeath(Unit& defender)
 	{
 		JSON data = JSON::parseFromFile(filename);
 		std::string innev = "default";
-		Damage indmg;
-		indmg.physical = 0;
-		indmg.magical = 0;
+		Damage indmg(0, 0);
 		int inhp = 1;
 		double inaspeed = 1.0;
         int inhpb = 1;
