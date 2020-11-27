@@ -5,19 +5,20 @@ Monster Monster::parse(std::string filename)
 {
     JSON data = JSON::parseFromFile(filename);
 		std::string innev = "default";
-		Damage indmg(0,0);
 		int inhp = 1;
 		int indef = 1;
+		int inphys = 0;
+		int inmagic = 0;
 		double inaspeed = 1.0;
 		try
 		{
 		innev = data.get<std::string>("name");
 		inhp = data.get<int>("health_points");
 		if (data.get<int>("damage")) {
-			indmg.physical = data.get<int>("damage");
+			inphys = data.get<int>("damage");
 		}
 		if (data.get<int>("magical-damage")) {
-			indmg.magical = data.get<int>("magical-damage");
+			inmagical = data.get<int>("magical-damage");
 		}
 		inaspeed = data.get<double>("attack_cooldown");
 
@@ -27,5 +28,5 @@ Monster Monster::parse(std::string filename)
 			std::cerr << "[ERROR] Missing value from input data! Make sure the JSON input data is valid!\n";
 		}
 		
-    return Monster(innev,inhp,indmg,indef,inaspeed);
+    return Monster(innev,inhp,inphys,inmagic,indef,inaspeed);
 }

@@ -54,7 +54,8 @@ void Hero::fightTilDeath(Unit& defender)
 	{
 		JSON data = JSON::parseFromFile(filename);
 		std::string innev = "default";
-		Damage indmg(0, 0);
+		int inmagic = 0;
+		int inphys = 0;
 		int inhp = 1;
 		double inaspeed = 1.0;
         int inhpb = 1;
@@ -70,10 +71,10 @@ void Hero::fightTilDeath(Unit& defender)
 		inhp = data.get<int>("base_health_points");
 
 		if (data.get<int>("damage")) {
-			indmg.physical = data.get<int>("damage");
+			inphys = data.get<int>("damage");
 		}
 		if (data.get<int>("magical-damage")) {
-			indmg.magical = data.get<int>("magical-damage");
+			inmagic = data.get<int>("magical-damage");
 		}
 		indef = data.get<int>("defense");
 		inaspeed = data.get<double>("base_attack_cooldown");
@@ -90,7 +91,7 @@ void Hero::fightTilDeath(Unit& defender)
 		}
 		
 		
-		return Hero(innev,inhp,indmg,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
+		return Hero(innev,inhp,inphys,inmagic,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
 
 	}
 	catch(const JSON::ParseException& e)
