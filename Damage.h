@@ -6,6 +6,7 @@
 struct Damage {
 	int physical = 0; ///< Physical damage can be reduced by defense.
 	int magical = 0; ///< Magical damage can't be reduced by defense.
+	Damage(int pdmg, int mdmg) :physical(pdmg), magical(mdmg) {}
 
 	Damage operator+(const Damage& dmg) {
 		Damage Returndmg;
