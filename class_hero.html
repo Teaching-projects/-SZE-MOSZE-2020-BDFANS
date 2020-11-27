@@ -137,7 +137,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:aaf09131352e419af78ff0807fa8ddda3 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for defense <br /></td></tr>
 <tr class="separator:aaf09131352e419af78ff0807fa8ddda3 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83bf3fcbd94e455174cbfa2f59dcc109 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a83bf3fcbd94e455174cbfa2f59dcc109"></a>
-<a class="el" href="struct_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getDamage</b> () const</td></tr>
+<a class="el" href="struct_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a83bf3fcbd94e455174cbfa2f59dcc109">getDamage</a> () const</td></tr>
+<tr class="memdesc:a83bf3fcbd94e455174cbfa2f59dcc109 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">this getter function returns a damage struct <br /></td></tr>
 <tr class="separator:a83bf3fcbd94e455174cbfa2f59dcc109 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabcef04b0c60bdcc886bc3c9d7b048e5 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="aabcef04b0c60bdcc886bc3c9d7b048e5"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5">getPhysicalDamage</a> () const</td></tr>
@@ -166,7 +167,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a204672cf3e463ae45726cd9fa80a9910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_unit"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_unit')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_unit.html">Unit</a></td></tr>
 <tr class="memitem:a052e4132be9d9460b10826fc14993b50 inherit pub_static_methods_class_unit"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a052e4132be9d9460b10826fc14993b50">attackcd</a> (<a class="el" href="class_unit.html">Unit</a> &amp;attacker, <a class="el" href="class_unit.html">Unit</a> &amp;defender)</td></tr>
-<tr class="memdesc:a052e4132be9d9460b10826fc14993b50 inherit pub_static_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">the functio responsible for deciding who attacks when based on the attackcooldown  <a href="class_unit.html#a052e4132be9d9460b10826fc14993b50">More...</a><br /></td></tr>
+<tr class="memdesc:a052e4132be9d9460b10826fc14993b50 inherit pub_static_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">the function responsible for deciding who attacks when based on the attackcooldown  <a href="class_unit.html#a052e4132be9d9460b10826fc14993b50">More...</a><br /></td></tr>
 <tr class="separator:a052e4132be9d9460b10826fc14993b50 inherit pub_static_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a273239f361d35d5e76b5ecba6a17cb80 inherit pub_static_methods_class_unit"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_unit.html">Unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a273239f361d35d5e76b5ecba6a17cb80">praseUnit</a> (std::string fnev)</td></tr>
 <tr class="memdesc:a273239f361d35d5e76b5ecba6a17cb80 inherit pub_static_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> parser for <a class="el" href="class_unit.html" title="header for Unit class">Unit</a> class.  <a href="class_unit.html#a273239f361d35d5e76b5ecba6a17cb80">More...</a><br /></td></tr>
@@ -211,8 +212,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>header for <a class="el" href="class_hero.html" title="header for Hero class">Hero</a> class </p>
 <dl class="section author"><dt>Author</dt><dd>BDFANS</dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.4.0</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2020-11-13 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.5.0</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2020-11-27 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a49bde3a09b12953e7ba35dc2356b3df2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49bde3a09b12953e7ba35dc2356b3df2">&#9670;&nbsp;</a></span>Hero()</h2>
@@ -311,9 +312,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <p>Construct a new <a class="el" href="class_unit.html" title="header for Unit class">Unit</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">indmg</td><td>sets the damage of the character. </td></tr>
     <tr><td class="paramname">innev</td><td>sets the name of the character. </td></tr>
     <tr><td class="paramname">inhp</td><td>sets the health of the character. </td></tr>
+    <tr><td class="paramname">inphys</td><td>sets the physical damage of the character. </td></tr>
+    <tr><td class="paramname">inmagic</td><td>sets the magical damage of the character. </td></tr>
     <tr><td class="paramname">indef</td><td>sets the defense of the character. </td></tr>
     <tr><td class="paramname">inaspeed</td><td>sets the attackspeed of the character. </td></tr>
     <tr><td class="paramname">inexpreq</td><td>sets the required experience of the character. </td></tr>

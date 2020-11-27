@@ -1,6 +1,6 @@
 <map id="Hero.h" name="Hero.h">
 <area shape="rect" id="node1" title=" " alt="" coords="59,5,124,32"/>
 <area shape="rect" id="node2" href="$_unit_8h.html" title=" " alt="" coords="61,80,122,107"/>
-<area shape="rect" id="node3" href="$_damage_8h_source.html" title=" " alt="" coords="5,155,95,181"/>
+<area shape="rect" id="node3" href="$_damage_8h.html" title="header for Damage struct" alt="" coords="5,155,95,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="51,229,131,256"/>
 </map>
