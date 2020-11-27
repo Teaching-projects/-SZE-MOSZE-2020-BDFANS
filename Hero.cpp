@@ -25,16 +25,18 @@ void Hero::gainExp(int xp) {
  void Hero::attack(Unit& target)
 {
 	int effectivedmg = damage.magical + (damage.physical-target.getDefense());
-	if (target.getHealthPoints() > effectivedmg)
-	{
-		target.setHealthPoints(target.getHealthPoints()-effectivedmg);
-		gainExp(effectivedmg);
-	}
-	else
-	{
-		effectivedmg = target.getHealthPoints();
-		gainExp(effectivedmg);
-		target.setHealthPoints(0);
+	if (effectivedmg > 0) {
+		if (target.getHealthPoints() > effectivedmg)
+		{
+			target.setHealthPoints(target.getHealthPoints() - effectivedmg);
+			gainExp(effectivedmg);
+		}
+		else
+		{
+			effectivedmg = target.getHealthPoints();
+			gainExp(effectivedmg);
+			target.setHealthPoints(0);
+		}
 	}
 }
 
@@ -69,8 +71,12 @@ void Hero::fightTilDeath(Unit& defender)
 		{
 		innev = data.get<std::string>("name");
 		inhp = data.get<int>("base_health_points");
-		inphys = data.get<int>("damage");
-		inmagic = data.get<int>("magical-damage");
+		if (JSON::count("damage") >= 0) {
+			inphys = data.get<int>("damage");
+		}
+		if (JSON::count("magical-damage") >= 0) {
+			inmagic = data.get<int>("magical-damage");
+		}
 		indef = data.get<int>("defense");
 		inaspeed = data.get<double>("base_attack_cooldown");
 		inexpreq = data.get<int>("experience_per_level");
