@@ -90,16 +90,17 @@ Collaboration diagram for Monster:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_monster__coll__graph.png" border="0" usemap="#_monster_coll__map" alt="Collaboration graph"/></div>
 <map name="_monster_coll__map" id="_monster_coll__map">
-<area shape="rect" title="header for Monster class" alt="" coords="5,80,80,107"/>
-<area shape="rect" href="class_unit.html" title="header for Unit class" alt="" coords="18,5,67,32"/>
+<area shape="rect" title="header for Monster class" alt="" coords="7,171,81,197"/>
+<area shape="rect" href="class_unit.html" title="header for Unit class" alt="" coords="19,95,69,121"/>
+<area shape="rect" href="struct_damage.html" title="Damage is a struct which contains int physical and int magical dmg." alt="" coords="5,5,83,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae641272fcf82464c311e2bb8bc774a10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_monster.html#ae641272fcf82464c311e2bb8bc774a10">Monster</a> (std::string innev, int inhp, int indmg, double inaspeed)</td></tr>
-<tr class="memdesc:ae641272fcf82464c311e2bb8bc774a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_monster.html" title="header for Monster class">Monster</a> object.  <a href="class_monster.html#ae641272fcf82464c311e2bb8bc774a10">More...</a><br /></td></tr>
-<tr class="separator:ae641272fcf82464c311e2bb8bc774a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6100ad63c9c9b084dba618e15757f3c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_monster.html#a6100ad63c9c9b084dba618e15757f3c9">Monster</a> (std::string innev, int inhp, <a class="el" href="struct_damage.html">Damage</a> indmg, int indef, double inaspeed)</td></tr>
+<tr class="memdesc:a6100ad63c9c9b084dba618e15757f3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_monster.html" title="header for Monster class">Monster</a> object.  <a href="class_monster.html#a6100ad63c9c9b084dba618e15757f3c9">More...</a><br /></td></tr>
+<tr class="separator:a6100ad63c9c9b084dba618e15757f3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_unit"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_unit')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_unit.html">Unit</a></td></tr>
 <tr class="memitem:a0497994e384db5c080ec78e9b645fa40 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a0497994e384db5c080ec78e9b645fa40"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a0497994e384db5c080ec78e9b645fa40">getName</a> () const</td></tr>
@@ -115,17 +116,28 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="separator:ad5296f2ce5cb21eb323d5eb0bc104eba inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bdff78a6fa0bf000db28e3a9c979d06 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a3bdff78a6fa0bf000db28e3a9c979d06">setAktHealth</a> (int i)</td></tr>
 <tr class="separator:a3bdff78a6fa0bf000db28e3a9c979d06 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0062c5fab5677c6b47e1d881b4dcc53c inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a0062c5fab5677c6b47e1d881b4dcc53c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a0062c5fab5677c6b47e1d881b4dcc53c">getDamage</a> () const</td></tr>
-<tr class="memdesc:a0062c5fab5677c6b47e1d881b4dcc53c inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for damage <br /></td></tr>
-<tr class="separator:a0062c5fab5677c6b47e1d881b4dcc53c inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf09131352e419af78ff0807fa8ddda3 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="aaf09131352e419af78ff0807fa8ddda3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aaf09131352e419af78ff0807fa8ddda3">getDefense</a> () const</td></tr>
+<tr class="memdesc:aaf09131352e419af78ff0807fa8ddda3 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for defense <br /></td></tr>
+<tr class="separator:aaf09131352e419af78ff0807fa8ddda3 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83bf3fcbd94e455174cbfa2f59dcc109 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a83bf3fcbd94e455174cbfa2f59dcc109"></a>
+<a class="el" href="struct_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getDamage</b> () const</td></tr>
+<tr class="separator:a83bf3fcbd94e455174cbfa2f59dcc109 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabcef04b0c60bdcc886bc3c9d7b048e5 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="aabcef04b0c60bdcc886bc3c9d7b048e5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5">getPhysicalDamage</a> () const</td></tr>
+<tr class="memdesc:aabcef04b0c60bdcc886bc3c9d7b048e5 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for physical damage <br /></td></tr>
+<tr class="separator:aabcef04b0c60bdcc886bc3c9d7b048e5 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732bd9a8aac310db5fcdfdb872555221 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a732bd9a8aac310db5fcdfdb872555221"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a732bd9a8aac310db5fcdfdb872555221">getMagicalDamage</a> () const</td></tr>
+<tr class="memdesc:a732bd9a8aac310db5fcdfdb872555221 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for magical damage <br /></td></tr>
+<tr class="separator:a732bd9a8aac310db5fcdfdb872555221 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ba9ff456bd52cff5e94ddc159b376a1 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a5ba9ff456bd52cff5e94ddc159b376a1"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a5ba9ff456bd52cff5e94ddc159b376a1">getAttackCoolDown</a> () const</td></tr>
 <tr class="memdesc:a5ba9ff456bd52cff5e94ddc159b376a1 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is a getter function for attaclspeed <br /></td></tr>
 <tr class="separator:a5ba9ff456bd52cff5e94ddc159b376a1 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1687f76fca26090ba6e4e92f642bb58 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ad1687f76fca26090ba6e4e92f642bb58">Unit</a> (std::string inn=&quot;default&quot;, int inh=1, int ind=1, double ins=1)</td></tr>
-<tr class="memdesc:ad1687f76fca26090ba6e4e92f642bb58 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_unit.html" title="header for Unit class">Unit</a> object.  <a href="class_unit.html#ad1687f76fca26090ba6e4e92f642bb58">More...</a><br /></td></tr>
-<tr class="separator:ad1687f76fca26090ba6e4e92f642bb58 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb3aeae9bab8e8bb0532b747629b332 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a6fb3aeae9bab8e8bb0532b747629b332">Unit</a> (std::string inn=&quot;default&quot;, int inh=1, int indef=1, double ins=1)</td></tr>
+<tr class="memdesc:a6fb3aeae9bab8e8bb0532b747629b332 inherit pub_methods_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_unit.html" title="header for Unit class">Unit</a> object.  <a href="class_unit.html#a6fb3aeae9bab8e8bb0532b747629b332">More...</a><br /></td></tr>
+<tr class="separator:a6fb3aeae9bab8e8bb0532b747629b332 inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4fda15363c7031d6e5190126569e11c inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#ac4fda15363c7031d6e5190126569e11c">isAlive</a> ()</td></tr>
 <tr class="separator:ac4fda15363c7031d6e5190126569e11c inherit pub_methods_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b28bebce697a1ce22695b6d416f3784 inherit pub_methods_class_unit"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a6b28bebce697a1ce22695b6d416f3784">setHealthPoints</a> (int in)</td></tr>
@@ -166,10 +178,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a99cdb47609963a65e9d71a3c452ad612">akthealth</a> = <a class="el" href="class_unit.html#a6f9d1ac08692874b85317ac4ebb33ae9">maxhealth</a></td></tr>
 <tr class="memdesc:a99cdb47609963a65e9d71a3c452ad612 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">current health before character dies <br /></td></tr>
 <tr class="separator:a99cdb47609963a65e9d71a3c452ad612 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92bfb1430ab13e69d4c703a7fc8bafdb inherit pro_attribs_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a92bfb1430ab13e69d4c703a7fc8bafdb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a92bfb1430ab13e69d4c703a7fc8bafdb">damage</a></td></tr>
-<tr class="memdesc:a92bfb1430ab13e69d4c703a7fc8bafdb inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">the damage the character deals with a single attack <br /></td></tr>
-<tr class="separator:a92bfb1430ab13e69d4c703a7fc8bafdb inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfc783c03a714f6974323bda8e9c9e4 inherit pro_attribs_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="aedfc783c03a714f6974323bda8e9c9e4"></a>
+<a class="el" href="struct_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aedfc783c03a714f6974323bda8e9c9e4">damage</a></td></tr>
+<tr class="memdesc:aedfc783c03a714f6974323bda8e9c9e4 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_damage.html" title="Damage is a struct which contains int physical and int magical dmg.">Damage</a> is a struct which contains int physical and int magical dmg. Physical damage can be reduced by defense. <br /></td></tr>
+<tr class="separator:aedfc783c03a714f6974323bda8e9c9e4 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bd9607c907af5622632d880d9a3a0e3 inherit pro_attribs_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="a2bd9607c907af5622632d880d9a3a0e3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#a2bd9607c907af5622632d880d9a3a0e3">defense</a></td></tr>
+<tr class="memdesc:a2bd9607c907af5622632d880d9a3a0e3 inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defense can only block physical damage;. <br /></td></tr>
+<tr class="separator:a2bd9607c907af5622632d880d9a3a0e3 inherit pro_attribs_class_unit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeccd13d7a4b6d9b6be3c46ebeaadb75e inherit pro_attribs_class_unit"><td class="memItemLeft" align="right" valign="top"><a id="aeccd13d7a4b6d9b6be3c46ebeaadb75e"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit.html#aeccd13d7a4b6d9b6be3c46ebeaadb75e">attackspeed</a></td></tr>
 <tr class="memdesc:aeccd13d7a4b6d9b6be3c46ebeaadb75e inherit pro_attribs_class_unit"><td class="mdescLeft">&#160;</td><td class="mdescRight">the number of times the character can attack in a second <br /></td></tr>
@@ -185,8 +201,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <dl class="section version"><dt>Version</dt><dd>0.4.0</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2020-11-13 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae641272fcf82464c311e2bb8bc774a10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae641272fcf82464c311e2bb8bc774a10">&#9670;&nbsp;</a></span>Monster()</h2>
+<a id="a6100ad63c9c9b084dba618e15757f3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6100ad63c9c9b084dba618e15757f3c9">&#9670;&nbsp;</a></span>Monster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,8 +225,14 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_damage.html">Damage</a>&#160;</td>
           <td class="paramname"><em>indmg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indef</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -236,7 +258,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
   <table class="params">
     <tr><td class="paramname">innev</td><td>sets the name of the monster.The default name is "default" </td></tr>
     <tr><td class="paramname">inhp</td><td>sets the health of the monster.The default health is 1 </td></tr>
-    <tr><td class="paramname">indmg</td><td>sets the damage of the monster.The default damage is 1 </td></tr>
+    <tr><td class="paramname">indmg</td><td>sets the physical damage and magical damage of the monster.The default damages are 0 </td></tr>
+    <tr><td class="paramname">indef</td><td>sets the defense of the monster.Te default defense is 1 </td></tr>
     <tr><td class="paramname">insaspeed</td><td>sets the attackspeed of the monster.The default speed is 1.0 </td></tr>
   </table>
   </dd>

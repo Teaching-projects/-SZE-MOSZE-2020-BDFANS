@@ -1,0 +1,4 @@
+<map id="Unit" name="Unit">
+<area shape="rect" id="node1" title="header for Unit class" alt="" coords="19,95,69,121"/>
+<area shape="rect" id="node2" href="$struct_damage.html" title="Damage is a struct which contains int physical and int magical dmg." alt="" coords="5,5,83,32"/>
+</map>
