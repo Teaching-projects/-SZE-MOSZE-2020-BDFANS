@@ -22,7 +22,9 @@ class Hero :public Unit
 	int lvl = 1; ///< Hero's current lvl
     const int exp_per_level; ///< Exp required for the next lvl
     const int hp_per_level; ///< HP bonus after a lvling up
-    const int dmg_per_level; ///< Damage bonus after lvling up
+    const int physicaldmg_per_level;///< Damage bonus after lvling up
+    const int magicaldmg_per_level;///< Magical damage bonus per lvl
+    const int defense_per_level;///< Defense bonus after lvling up
     const double cdmul_per_level; ///< Cooldown multiplier bonus after lvling up
     
     
@@ -83,14 +85,17 @@ class Hero :public Unit
      * @param innev sets the name of the character.
      * @param inhp sets the health of the character.
      * @param indmg sets the damage of the character.
+     * @param indef sets the defense of the character.
      * @param inaspeed sets the attackspeed of the character.
      * @param inexpreq sets the required experience of the character.
      * @param inhbp sets the bonus health per level of the character.
-     * @param indmgb sets the bonus damage per level of the character.
+     * @param inphysb sets the bonus damage per level of the character.
+     * @param inmagicb sets the bonus magical damage per level of the character.
+     * @param indefb sets the bonus defense per level of the character.
      * @param incdmul sets the cooldown per level of the character.
      *
      * The constructor uses the attackspeed value to set the initial attackcooldown
      */
-    Hero(std::string innev, int inhp, int indmg, double inaspeed, int inexpreq = 1, int inhpb = 1, int indmgb = 1, double incdmul = 1) 
-        :Unit(innev,inhp,indmg,inaspeed), exp_per_level(inexpreq), hp_per_level(inhpb), dmg_per_level(indmgb), cdmul_per_level(incdmul) {}
+    Hero(std::string innev, int inhp, Damage indmg, int indef, double inaspeed, int inexpreq = 1, int inhpb = 1, int inphysb = 1,int inmagicb = 1 ,int indefb = 1 ,double incdmul = 1) 
+        :Unit(innev,inhp,indmg,indef,inaspeed), exp_per_level(inexpreq), hp_per_level(inhpb), physicaldmg_per_level(inphysb),magicaldmg_per_level(inmagicb) ,defense_per_level(indefb) ,cdmul_per_level(incdmul) {}
 };

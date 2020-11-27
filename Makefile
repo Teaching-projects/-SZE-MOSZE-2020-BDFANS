@@ -12,19 +12,19 @@ valflag := --error-exitcode=1 --leak-check=full
 build: $(OBJS)
 	$(CC) $(CFLAGS) -o battle $(OBJS)
 
-Unit.o: Unit.cpp Unit.h JSON.h
+Unit.o: Unit.cpp Unit.h JSON.h Damage.h
 	$(CC) $(CFLAGS) -c Unit.cpp
 
-Hero.o: Hero.cpp Hero.h JSON.h
+Hero.o: Hero.cpp Hero.h JSON.h Damage.h
 	$(CC) $(CFLAGS) -c Hero.cpp
 
 JSON.o: JSON.cpp JSON.h
 	$(CC) $(CFLAGS) -c JSON.cpp
 
-Monster.o: Monster.cpp Monster.h
+Monster.o: Monster.cpp Monster.h Damage.h
 	$(CC) $(CFLAGS) -c Monster.cpp
 
-main.o: main.cpp Hero.h JSON.h Monster.h
+main.o: main.cpp Hero.h JSON.h Monster.h Damage.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 clean:

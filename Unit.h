@@ -13,16 +13,19 @@
  */
 
 #pragma once
+
+#include "Damage.h"
 #include <iostream>
 
 class Unit
 {
-	protected:
+protected:
 
 	std::string name; ///< Character's name 
 	int maxhealth; ///< Character's total health pool 
 	int akthealth = maxhealth; ///< current health before character dies
-	int damage; ///< the damage the character deals with a single attack
+	Damage damage; ///< Damage is a struct which contains int physical and int magical dmg. Physical damage can be reduced by defense.
+	int defense; ///< Defense can only block physical damage;
 	double attackspeed; ///< the number of times the character can attack in a second
 	double attackcooldown; ///< the remaining time, until the character can attack again
 
@@ -46,11 +49,11 @@ class Unit
 	 */
 	virtual void attack(Unit& target);
 
-	public:
+public:
 
 	///this is a getter function for name
 	std::string getName() const { return name; }
-	
+
 	///this is a getter function for Max Health points
 	int getMaxHealthPoints() const { return maxhealth; }
 
@@ -60,9 +63,14 @@ class Unit
 	* @param i sets the current health;
 	*/
 	void setAktHealth(int i) { akthealth = i; }
+	///this is a getter function for defense
+	int getDefense() const { return defense; }
 
-	///this is a getter function for damage
-	int getDamage() const { return damage; }
+	Damage getDamage() const { return Damage; }
+	///this is a getter function for physical damage
+	int getPhysicalDamage() const { return damage.physical; }
+	///this is a getter function for magical damage
+	int getMagicalDamage() const { return damage.magical; }
 	///this is a getter function for attaclspeed
 	double getAttackCoolDown() const { return attackspeed; }
 

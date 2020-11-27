@@ -7,9 +7,10 @@
 
  void Unit::attack(Unit& target)
 {
-	if (target.akthealth > damage)
+	int effectivedmg = damage.magical + (damage.physical - target.defense);
+	if (target.akthealth > effectivedmg)
 	{
-		target.akthealth -= damage;
+		target.akthealth -= effectivedmg;
 	}
 	else
 	{
