@@ -88,7 +88,8 @@ TEST(Monster, constructor) {
 	EXPECT_EQ(a.getName(), "a");
 	EXPECT_EQ(a.getMaxHealthPoints(), 4);
 	EXPECT_EQ(a.getHealthPoints(), 4);
-	EXPECT_EQ(a.getDamage(), dmg);
+	EXPECT_EQ(a.getPhysicalDamage(), 3);
+	EXPECT_EQ(a.getMagicalDamage(), 1);
 	EXPECT_EQ(a.getDefense(), 1);
 	EXPECT_EQ(a.getAttackCoolDown(), 2);
 }
@@ -112,7 +113,8 @@ TEST(Hero, constructor) {
 	EXPECT_EQ(h.getName(), "h");
 	EXPECT_EQ(h.getMaxHealthPoints(), 4);
 	EXPECT_EQ(h.getHealthPoints(), 4);
-	EXPECT_EQ(h.getDamage(), dmg);
+	EXPECT_EQ(h.getPhysicalDamage(), 1);
+	EXPECT_EQ(h.getMagicalDamage(), 1);
 	EXPECT_EQ(h.getDefense(), 1);
 	EXPECT_EQ(h.getAttackCoolDown(), 2);
 	EXPECT_EQ(h.getLevel(), 1);
