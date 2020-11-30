@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrongindexexception_61',['WrongIndexException',['../class_map_1_1_wrong_index_exception.html',1,'Map']]]
+  ['_7egame_59',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]]
 ];
