@@ -14,7 +14,7 @@ Map::Map(std::string filename) {
     loadedmap = loadMap(filename);
 }
 
-void Map::loadMap(){
+void Map::loadMap(std::string filename){
     std::ifstream infile(filename);
     if (infile)
     {

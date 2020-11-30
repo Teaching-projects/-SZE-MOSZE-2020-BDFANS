@@ -52,7 +52,7 @@ public:
 
     Map() {};
 
-    void loadMap();
+    void loadMap(std::string filename);
 
     /**
      * @brief Return the type of tile located at the coordinates
