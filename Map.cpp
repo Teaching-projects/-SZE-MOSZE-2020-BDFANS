@@ -59,7 +59,7 @@ void Map::loadMap(std::string filename){
     }
     else
     {
-        throw std::exception();
+        throw std::runtime_error;
     }
 
 }

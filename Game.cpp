@@ -1,7 +1,7 @@
 
 #include "Game.h"
 
-Game::Game(std::string mapfilenev) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero() {
+Game::Game(std::string mapfilenev) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {
 
 	Map newMap(mapfilenev);
 	setMap(newMap);
@@ -11,7 +11,7 @@ Game::Game(std::string mapfilenev) : isHeroSet(false), isMonsterSet(false), isMa
 void Game::setMap(Map map) {
 	if (!isStarted) {
 		if (!isHeroSet and !isMonsterSet) {
-
+	
 			newMap = map;
 			isMapSet = true;
 
@@ -73,11 +73,11 @@ void Game::run() {
 		}
 		if (m_locations.empty()) std::cout << hero.getName() << " cleared the map." << std::endl;
 		else std::cout << "The hero died." << std::endl;
-	} else throw NotInitializedException("Can't start the game.") << std::endl ;
+	} else throw NotInitializedException("Can't start the game.");
 }
 
 
-int Game::stepOn(std::string command) {
+bool Game::stepOn(std::string command) {
 	bool ok = true;
 	if (command=="west" && newMap.get(h_location.first-1, h_location.second)==Map::type::Free){
 		h_location.first -= 1;
@@ -118,7 +118,7 @@ void Game::showMap() {
 		for (int j = 0; j < width; j++) {
 			try {
 				if (newMap.get(j, i) == type::Wall) std::cout << "#";
-				else if (hero.posy == i && hero.posx == j) std::cout << "H";
+				else if (h_location.first == i && h_location.second == j) std::cout << "H";
 				else {
 					int monstercount = getMonsterCountOnOnePos(j, i);
 					if (monstercount == 1) std::cout << "M";
