@@ -37,7 +37,9 @@ class Map
 public:
 
     ///The exception thrown when the map is indexed outside of its bounds
-    class WrongIndexException :public std::runtime_error {  };
+    class WrongIndexException : public std::runtime_error {
+    public:
+        WrongIndexException(const std::string& errMsg) : std::runtime_error(errMsg) {}
 
     /**
      * @brief Construct a new Map object

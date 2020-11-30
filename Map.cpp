@@ -59,7 +59,7 @@ void Map::loadMap(std::string filename){
     }
     else
     {
-        throw std::runtime_error;
+        throw Map::WrongIndexException("Couldn't load the map!");
     }
 
 }
@@ -73,6 +73,6 @@ type Map::get(int x, int y) const
     }
     else
     {
-        throw WrongIndexException();
+        throw Map::WrongIndexException("Cant access the coords.");
     }
 }
