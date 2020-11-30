@@ -100,7 +100,7 @@ public:
     Game();
 
     ///This is a constructor for game with the map initialized.
-    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {};
+    Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {};
 
     ///This is a destructor for game
     ~Game() { delete hero; }
