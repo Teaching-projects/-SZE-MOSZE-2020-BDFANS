@@ -50,6 +50,8 @@ public:
      */
     Map(std::string filename);
 
+    loadMap();
+
     /**
      * @brief Return the type of tile located at the coordinates
      * 
