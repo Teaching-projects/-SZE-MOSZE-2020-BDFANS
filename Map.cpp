@@ -11,7 +11,7 @@
  * @param filename the name of the file used to generate the map
  */
 Map::Map(std::string filename) {
-    loadedmap = loadMap(filename);
+    loadMap(filename);
 }
 
 void Map::loadMap(std::string filename){
