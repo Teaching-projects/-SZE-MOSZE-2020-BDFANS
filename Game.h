@@ -23,35 +23,35 @@
 
 class Game
 {
-    private:
-        bool isHeroSet; //< Gives true if the hero is already set on the map.
-        bool isMonsterSet; //< Gives true if the monster is already set on the map.
-        bool isMapSet; //< Gives true if the map is already set.
-        bool isStarted; //< Gives true if the game has already started.
-        Map newMap; //< The map we are playing on.
-        Hero* hero; //< The hero who plays.
-        std::pair <int, int> h_location; //< The hero's location. (int, int)
-        std::list<std::pair<Monster, std::pair<int, int>>> m_locations; //< Monsters list with locations.
+private:
+    bool isHeroSet; //< Gives true if the hero is already set on the map.
+    bool isMonsterSet; //< Gives true if the monster is already set on the map.
+    bool isMapSet; //< Gives true if the map is already set.
+    bool isStarted; //< Gives true if the game has already started.
+    Map newMap; //< The map we are playing on.
+    Hero* hero; //< The hero who plays.
+    std::pair <int, int> h_location; //< The hero's location. (int, int)
+    std::list<std::pair<Monster, std::pair<int, int>>> m_locations; //< Monsters list with locations.
 
-        /**
-         * @param int x Is the first coord.
-         * @param int y Is the second coord.
-         *
-         * This function counts the monsters in one position
-         */
-        int getMonsterCountOnOnePos(int x, int y) const;
+    /**
+     * @param int x Is the first coord.
+     * @param int y Is the second coord.
+     *
+     * This function counts the monsters in one position
+     */
+    int getMonsterCountOnOnePos(int x, int y) const;
 
-        /**
-         * @param command - where we want to go
-         *
-         * This function is responsible for the movement of the character.
-         * Also returns a true or false if the step was valid or not. 
-         */
-        bool stepOn(string command);
+    /**
+     * @param command - where we want to go
+     *
+     * This function is responsible for the movement of the character.
+     * Also returns a true or false if the step was valid or not.
+     */
+    bool stepOn(string command);
 
-    public:
+public:
 
-    
+
     /** this is a setter function for the map.
      *
      *@throw Exception this function throws an exception if we still have units on the map.
@@ -91,19 +91,19 @@ class Game
      *
      *@throw Exception this function throws an exception if the map or hero or monster is not set.
      */
-    void Game::run();
+    void run();
 
     /// This function shows the map with our current location
-    void Game::showMap();
+    void showMap();
 
     ///this is a constructor for empty game.
-    Game::Game();
+    Game() : newMap(Map()), isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false) {};
 
     ///This is a constructor for game with the map initialized.
-    Game::Game(string mapfilename);
+    Game(string& mapfilename) : newMap(mapfilename), isMapSet(false), hero{ nullptr }, isHeroSet(false), isStarted(false) {};
 
     ///This is a destructor for game
-    ~Game();
+    ~Game() { delete hero; }
 
     class OccupiedException : public std::runtime_error {
         public:

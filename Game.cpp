@@ -1,17 +1,6 @@
 
 #include "Game.h"
 
-Game::Game(std::string mapfilenev) : isMapSet(false),isHeroSet(false), isMonsterSet(false), isStarted(false), hero(nullptr){
-
-	Map newMap(mapfilenev);
-	setMap(newMap);
-	isMapSet = true;
-}
-
-Game::~Game() {
-
-}
-
 void Game::setMap(Map map) {
 	if (!isStarted) {
 		if (!isHeroSet and !isMonsterSet) {
@@ -52,10 +41,14 @@ void Game::putMonster(Monster monster, int x, int y) {
 
 void Game::run() {
 	if (isMapSet and isHeroSet and isMonsterSet) {
-		std::string input;
 		isStarted = true;
 		while (hero->isAlive() && !m_locations.empty()) {
+			std::string input = "";
+			isStarted = true;
 			Game::showMap();
+			std::cout << "Please enter where do u want to go (east, north, west, south): ";
+			std::getline(cin, input);
+			std::cout << std::endl;
 			if (Game::stepOn(input)) {
 				if (getMonsterCountOnOnePos(h_location.first, h_location.second) > 0) {
 					auto i = m_locations.begin();
@@ -65,12 +58,15 @@ void Game::run() {
 							if (hero->isAlive()) {
 								i = m_locations.erase(i);
 							}
-						} else i++;
+						}
+						else i++;
 					}
 				}
 			}
-		} else std::cout;
-	} else throw NotInitializedException("Can't start the game.");
+		}
+		if (m_locations.empty()) std::cout << hero->getName() << " cleared the map." << std::endl;
+		else std::cout << "The hero died." << std::endl;
+	} else throw NotInitializedException("Can't start the game.") << std::endl ;
 }
 
 

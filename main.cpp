@@ -99,9 +99,9 @@ int main(int argc, char** argv){
         std::string x_koord, y_koord;
         std::cout << "Give the x coordinate for the hero, " << hero.getName() << ": ";
         std::getline(std::cin, x_koord);
-        std::cout << endl << "The y coordinate: ";
+        std::cout << std::endl << "The y coordinate: ";
         std::getline(std::cin, y_koord);
-        std::cout << endl;
+        std::cout << std::endl;
         int x = std::stoi(x_koord);
         int y = std::stoi(y_koord);
         game.putHero(hero, x, y);
