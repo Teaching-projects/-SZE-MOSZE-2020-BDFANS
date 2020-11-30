@@ -97,7 +97,7 @@ public:
     void showMap();
 
     ///this is a constructor for empty game.
-    Game() : hero(nullptr),isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false) {};
+    Game() : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {};
 
     ///This is a constructor for game with the map initialized.
     Game(std::string& mapfilename);
