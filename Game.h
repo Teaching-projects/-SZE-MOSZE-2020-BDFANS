@@ -97,10 +97,10 @@ public:
     void showMap();
 
     ///this is a constructor for empty game.
-    Game() : newMap(Map()), isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false) {};
+    Game() : isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false), hero() {};
 
     ///This is a constructor for game with the map initialized.
-    Game(string& mapfilename) : newMap(mapfilename), isMapSet(false), hero{ nullptr }, isHeroSet(false), isStarted(false) {};
+    Game(string& mapfilename);
 
     ///This is a destructor for game
     ~Game() { delete hero; }

@@ -1,6 +1,13 @@
 
 #include "Game.h"
 
+Game::Game(std::string mapfilenev) : isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false), hero() {
+
+	Map newMap(mapfilenev);
+	setMap(newMap);
+}
+
+
 void Game::setMap(Map map) {
 	if (!isStarted) {
 		if (!isHeroSet and !isMonsterSet) {
@@ -70,7 +77,7 @@ void Game::run() {
 }
 
 
-int Game::stepOn(string command) {
+int Game::stepOn(std::string command) {
 	bool ok = true;
 	if (command=="west" && newMap.get(h_location.first-1, h_location.second)==Map::type::Free){
 		h_location.first -= 1;
