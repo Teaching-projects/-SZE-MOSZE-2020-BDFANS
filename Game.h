@@ -24,12 +24,12 @@
 class Game
 {
 private:
+    Hero hero; //< The hero who plays.
     bool isHeroSet; //< Gives true if the hero is already set on the map.
     bool isMonsterSet; //< Gives true if the monster is already set on the map.
     bool isMapSet; //< Gives true if the map is already set.
     bool isStarted; //< Gives true if the game has already started.
     Map newMap; //< The map we are playing on.
-    Hero* hero; //< The hero who plays.
     std::pair <int, int> h_location; //< The hero's location. (int, int)
     std::list<std::pair<Monster, std::pair<int, int>>> m_locations; //< Monsters list with locations.
 
@@ -97,13 +97,13 @@ public:
     void showMap();
 
     ///this is a constructor for empty game.
-    Game() : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {};
+    Game();
 
     ///This is a constructor for game with the map initialized.
-    Game(std::string& mapfilename);
+    Game(std::string& mapfilename) : hero(), isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false) {};
 
     ///This is a destructor for game
-    ~Game() { delete hero; }
+    ~Game() { }
 
     class OccupiedException : public std::runtime_error {
         public:

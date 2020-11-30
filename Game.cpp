@@ -1,7 +1,7 @@
 
 #include "Game.h"
 
-Game::Game(std::string mapfilenev) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {
+Game::Game(std::string mapfilenev) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero() {
 
 	Map newMap(mapfilenev);
 	setMap(newMap);
@@ -23,7 +23,7 @@ void Game::putHero(Hero hero, int x, int y) {
 	if (!isHeroSet) {
 		if (isMapSet) {
 			if (!isStarted) {
-				if (newMap.get(x, y) == Map::type::Free) {
+				if (newMap.get(x, y) == type::Free) {
 
 					h_location = std::make_pair(x, y);
 					hero = new Hero(hero);
@@ -37,7 +37,7 @@ void Game::putHero(Hero hero, int x, int y) {
 
 void Game::putMonster(Monster monster, int x, int y) {
 	if (isMapSet) {
-		if (newMap.get(x, y) == Map::type::Free) {
+		if (newMap.get(x, y) == type::Free) {
 
 			m_locations.push_back(std::make_pair(monster, std::make_pair(x, y)));
 			isMonsterSet = true;
@@ -49,20 +49,20 @@ void Game::putMonster(Monster monster, int x, int y) {
 void Game::run() {
 	if (isMapSet and isHeroSet and isMonsterSet) {
 		isStarted = true;
-		while (hero->isAlive() && !m_locations.empty()) {
+		while (hero.isAlive() && !m_locations.empty()) {
 			std::string input = "";
 			isStarted = true;
 			Game::showMap();
 			std::cout << "Please enter where do u want to go (east, north, west, south): ";
-			std::getline(cin, input);
+			std::getline(std::cin, input);
 			std::cout << std::endl;
 			if (Game::stepOn(input)) {
 				if (getMonsterCountOnOnePos(h_location.first, h_location.second) > 0) {
 					auto i = m_locations.begin();
 					while (i != m_locations.end() && !m_locations.empty()) {
 						if (i->second.first == h_location.first && i->second.second == h_location.second) {
-							hero->fightTilDeath(i->first);
-							if (hero->isAlive()) {
+							hero.fightTilDeath(i->first);
+							if (hero.isAlive()) {
 								i = m_locations.erase(i);
 							}
 						}
@@ -71,7 +71,7 @@ void Game::run() {
 				}
 			}
 		}
-		if (m_locations.empty()) std::cout << hero->getName() << " cleared the map." << std::endl;
+		if (m_locations.empty()) std::cout << hero.getName() << " cleared the map." << std::endl;
 		else std::cout << "The hero died." << std::endl;
 	} else throw NotInitializedException("Can't start the game.") << std::endl ;
 }
@@ -117,8 +117,8 @@ void Game::showMap() {
 		std::cout << "|";
 		for (int j = 0; j < width; j++) {
 			try {
-				if (newMap.get(j, i) == Map::type::Wall) std::cout << "#";
-				else if ((hero.posy == i) and (hero.posx == j)) std::cout << "H";
+				if (newMap.get(j, i) == type::Wall) std::cout << "#";
+				else if (hero.posy == i && hero.posx == j) std::cout << "H";
 				else {
 					int monstercount = getMonsterCountOnOnePos(j, i);
 					if (monstercount == 1) std::cout << "M";
