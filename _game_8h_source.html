@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_game.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game.html">Game</a></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_hero.html">Hero</a> hero; <span class="comment">//&lt; The hero who plays.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_hero.html">Hero</a>* hero; <span class="comment">//&lt; The hero who plays.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> isHeroSet; <span class="comment">//&lt; Gives true if the hero is already set on the map.</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> isMonsterSet; <span class="comment">//&lt; Gives true if the monster is already set on the map.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> isMapSet; <span class="comment">//&lt; Gives true if the map is already set.</span></div>
@@ -110,9 +110,9 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a>();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_game.html#a3876b1ca516ea549b57de515b25c6acc">  103</a></span>&#160;    <a class="code" href="class_game.html#a3876b1ca516ea549b57de515b25c6acc">Game</a>(std::string&amp; mapfilename) : hero(), isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false) {};</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_game.html#a3876b1ca516ea549b57de515b25c6acc">  103</a></span>&#160;    <a class="code" href="class_game.html#a3876b1ca516ea549b57de515b25c6acc">Game</a>(std::string&amp; mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {};</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">  106</a></span>&#160;    <a class="code" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>() { }</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">  106</a></span>&#160;    <a class="code" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a>() { <span class="keyword">delete</span> hero; }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="class_game_1_1_occupied_exception.html">  108</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_game_1_1_occupied_exception.html">OccupiedException</a> : <span class="keyword">public</span> std::runtime_error {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">public</span>:</div>
