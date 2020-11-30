@@ -66,7 +66,7 @@ public:
     int getMapWidth() const {
         int lenght = 0;
         for (auto element : loadedmap) {
-            if ((int)element.size() > length) { lenght = element.size() };
+            if ((int)element.size() > lenght) { lenght = element.size(); }
         }
         return lenght;
     }
