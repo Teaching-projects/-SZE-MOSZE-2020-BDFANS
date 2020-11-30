@@ -14,6 +14,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 #include <vector>
 
 
@@ -60,6 +61,15 @@ public:
      */
     type get(int x, int y) const;
 
+    int getMapHeigth() const { return loadedmap.size(); }
+
+    int getMapWidth() const {
+        int lenght = 0;
+        for (auto element : loadedmap) {
+            if ((int)element.size() > length) { lenght = element.size() };
+        }
+        return lenght;
+    }
     ///return the width of the map
     int getlenX() const
     {

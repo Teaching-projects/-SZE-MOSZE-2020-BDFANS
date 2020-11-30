@@ -26,6 +26,9 @@ Monster.o: Monster.cpp Monster.h Damage.h
 
 Map.o: Map.cpp Map.h
 	$(CC) $(CFLAGS) -c Map.cpp
+
+Game.o: Map.h Unit.h Hero.h Monster.h Game.cpp Game.h
+	$(CC) $(CFLAGS) -c Game.cpp
   
 main.o: main.cpp Hero.h JSON.h Monster.h Damage.h
 	$(CC) $(CFLAGS) -c main.cpp
