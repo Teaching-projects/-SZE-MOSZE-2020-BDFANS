@@ -1,7 +1,7 @@
 
 #include "Game.h"
 
-Game::Game(std::string mapfilenev) : isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false), hero() {
+Game::Game(std::string mapfilenev) :hero(), isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false), {
 
 	Map newMap(mapfilenev);
 	setMap(newMap);

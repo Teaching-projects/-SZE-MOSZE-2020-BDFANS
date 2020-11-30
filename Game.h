@@ -47,7 +47,7 @@ private:
      * This function is responsible for the movement of the character.
      * Also returns a true or false if the step was valid or not.
      */
-    bool stepOn(string command);
+    bool stepOn(std::string command);
 
 public:
 
@@ -97,10 +97,10 @@ public:
     void showMap();
 
     ///this is a constructor for empty game.
-    Game() : isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false), hero() {};
+    Game() : hero(),isMapSet(false), isHeroSet(false), isMonsterSet(false), isStarted(false), {};
 
     ///This is a constructor for game with the map initialized.
-    Game(string& mapfilename);
+    Game(std::string& mapfilename);
 
     ///This is a destructor for game
     ~Game() { delete hero; }
