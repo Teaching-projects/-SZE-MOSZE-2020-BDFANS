@@ -75,7 +75,7 @@ void Game::run() {
 
 
 int Game::stepOn(string command) {
-	bool ok;
+	bool ok = true;
 	if (command=="west" && newMap.get(h_location.first-1, h_location.second)==Map::type::Free){
 		h_location.first -= 1;
 	}else if (command == "east" && newMap.get(h_location.first + 1, h_location.second) == Map::type::Free) {
