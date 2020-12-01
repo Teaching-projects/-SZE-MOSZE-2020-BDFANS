@@ -78,7 +78,7 @@ int main(int argc, char** argv){
 
         Game game(mapfnev);
         std::list <Monster> m_loc;
-        Hero hero{ Hero::parse(hero_file) };
+        Hero hero(Hero::parse(hero_file));
         for (const auto& m_file : monster_files) {
             m_loc.push_back(Monster::parse(m_file));
         }
