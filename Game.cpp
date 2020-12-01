@@ -1,9 +1,8 @@
 
 #include "Game.h"
 
-Game::Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {
+Game::Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr), newMap(mapfilename) {
 
-	Map newMap(mapfilename);
 	setMap(newMap);
 }
 
