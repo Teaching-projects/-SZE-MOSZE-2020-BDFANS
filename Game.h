@@ -24,6 +24,18 @@
 class Game
 {
 private:
+    const std::string TOP_LEFT = "\u2554";
+    const std::string TOP_RIGHT = "\u2557";
+    const std::string BOTTOM_LEFT = "\u255A";
+    const std::string BOTTOM_RIGHT = "\u255D";
+    const std::string HORIZONTAL = "\u2550\u2550";
+    const std::string VERTICAL = "\u2551";
+    const std::string FREE = "\u2591\u2591";
+    const std::string WALL = "\u2588\u2588";
+    const std::string SINGLEMONSTER = "M\u2591";
+    const std::string MULTIPLEMONSTERS = "MM";
+    const std::string HERO = "\u2523\u252B";
+
     bool isHeroSet; //< Gives true if the hero is already set on the map.
     bool isMonsterSet; //< Gives true if the monster is already set on the map.
     bool isMapSet; //< Gives true if the map is already set.
@@ -102,6 +114,7 @@ public:
     Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), gamehero(), newMap(mapfilename) {};
 
     ///This is a destructor for game
+    ~Game();
 
     class OccupiedException : public std::runtime_error {
         public:

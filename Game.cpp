@@ -79,13 +79,13 @@ void Game::run() {
 
 bool Game::stepOn(std::string command) {
 	bool ok = true;
-	if (command=="west" && newMap.get(gamehero.x -1, gamehero.y)==type::Free){
+	if (command=="west" && newMap.get(gamehero.x -1, gamehero.y) == type::Free){
 		gamehero.x -= 1;
 	}else if (command == "east" && newMap.get(gamehero.x + 1, gamehero) == type::Free) {
 		gamehero.x += 1;
 	}else if (command == "north" && newMap.get(gamehero.x, gamehero.y - 1) == type::Free) {
 		gamehero.y -= 1;
-	}else if (command == "south" && newMap.get(h_location.first, h_location.second + 1) == type::Free) {
+	}else if (command == "south" && newMap.get(gamehero.x, gamehero.y + 1) == type::Free) {
 		gamehero.y += 1;
 	}
 	else { ok = false; }
@@ -111,25 +111,27 @@ void Game::showMap() {
 	int width = newMap.getMapWidth();
 	int heigth = newMap.getMapHeigth();
 
-	std::cout << "|"; for (int i = 0; i < width; i++) std::cout << "--"; std::cout << "|" << std::endl;
+	std::cout << TOP_LEFT ; for (int i = 0; i < width; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
 
 	for (int i = 0; i < heigth; i++) {
-		std::cout << "|";
+		std::cout << VERTICAL;
 		for (int j = 0; j < width; j++) {
 			try {
-				if (newMap.get(j, i) == type::Wall) std::cout << "#";
-				else if (gamehero.x == i && gamehero.y == j) std::cout << "H";
+				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
+				else if (gamehero.x == i && gamehero.y == j) std::cout << HERO;
 				else {
 					int monstercount = getMonsterCountOnOnePos(j, i);
-					if (monstercount == 1) std::cout << "M";
-					else if (monstercount > 1) std::cout << "MM";
+					if (monstercount == 1) std::cout << SINGLEMONSTER;
+					else if (monstercount > 1) std::cout << MULTIPLEMONSTERS;
 					else std::cout << " ";
 				}
 			}
-			catch (Map::WrongIndexException& e) { std::cout << "#"; }
+			catch (Map::WrongIndexException& e) { std::cout << WALL; }
 		}
-		std::cout << "|\n";
+		std::cout << VERTICAL << "\n";
 	}
 
-	std::cout << "|"; for (int i = 0; i < width; i++) std::cout << "__"; std::cout << "|" << std::endl;
+	std::cout << BOTTOM_LEFT; for (int i = 0; i < width; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
 }
+
+Game::~Game() {}
