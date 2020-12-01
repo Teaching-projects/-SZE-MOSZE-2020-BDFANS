@@ -3,7 +3,7 @@
 
 Game::Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), hero(nullptr) {
 
-	Map newMap(mapfilenev);
+	Map newMap(mapfilename);
 	setMap(newMap);
 }
 
