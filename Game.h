@@ -28,7 +28,7 @@ private:
     bool isMonsterSet; //< Gives true if the monster is already set on the map.
     bool isMapSet; //< Gives true if the map is already set.
     bool isStarted; //< Gives true if the game has already started.
-    Hero* hero; //< The hero who plays.
+    Hero gamehero; //< The hero who plays.
     Map newMap; //< The map we are playing on.
     std::pair <int, int> h_location; //< The hero's location. (int, int)
     std::list<std::pair<Monster, std::pair<int, int>>> m_locations; //< Monsters list with locations.

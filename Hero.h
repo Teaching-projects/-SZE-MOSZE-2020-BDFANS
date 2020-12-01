@@ -29,6 +29,8 @@ class Hero :public Unit
     
     
     public:
+        int x = 0;
+        int y = 0;
     ///this is a getter function for current exp
 	int getExp() const { return exp; }
     ///this is a getter function for current lvl
