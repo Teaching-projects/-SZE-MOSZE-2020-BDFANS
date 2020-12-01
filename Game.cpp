@@ -24,9 +24,9 @@ void Game::putHero(Hero hero, int x, int y) {
 			if (!isStarted) {
 				if (newMap.get(x, y) == type::Free) {
 
-					gamehero = new Hero(gamehero);
-					gamehero.x = x;
-					gamehero.y = y;
+					gamehero = new Hero(hero);
+					gamehero->x = x;
+					gamehero->y = y;
 					isHeroSet = true;
 
 				}else throw OccupiedException("Can't put a hero to this position.");
@@ -49,7 +49,7 @@ void Game::putMonster(Monster monster, int x, int y) {
 void Game::run() {
 	if (isMapSet and isHeroSet and isMonsterSet) {
 		isStarted = true;
-		while (gamehero.isAlive() && !m_locations.empty()) {
+		while (gamehero->isAlive() && !m_locations.empty()) {
 			std::string input = "";
 			isStarted = true;
 			Game::showMap();
@@ -57,12 +57,12 @@ void Game::run() {
 			std::getline(std::cin, input);
 			std::cout << std::endl;
 			if (Game::stepOn(input)) {
-				if (getMonsterCountOnOnePos(gamehero.x, gamehero.y) > 0) {
+				if (getMonsterCountOnOnePos(gamehero->x, gamehero->y) > 0) {
 					auto i = m_locations.begin();
 					while (i != m_locations.end() && !m_locations.empty()) {
-						if (i->second.first == gamehero.x && i->second.second == gamehero.y) {
-							gamehero.fightTilDeath(i->first);
-							if (gamehero.isAlive()) {
+						if (i->second.first == gamehero->x && i->second.second == gamehero->y) {
+							gamehero->fightTilDeath(i->first);
+							if (gamehero->isAlive()) {
 								i = m_locations.erase(i);
 							}
 						}
@@ -71,7 +71,7 @@ void Game::run() {
 				}
 			}
 		}
-		if (m_locations.empty()) std::cout << gamehero.getName() << " cleared the map." << std::endl;
+		if (m_locations.empty()) std::cout << gamehero->getName() << " cleared the map." << std::endl;
 		else std::cout << "The hero died." << std::endl;
 	} else throw NotInitializedException("Can't start the game.");
 }
@@ -79,14 +79,14 @@ void Game::run() {
 
 bool Game::stepOn(std::string command) {
 	bool ok = true;
-	if (command=="west" && newMap.get(gamehero.x -1, gamehero.y) == type::Free){
-		gamehero.x -= 1;
-	}else if (command == "east" && newMap.get(gamehero.x + 1, gamehero) == type::Free) {
-		gamehero.x += 1;
-	}else if (command == "north" && newMap.get(gamehero.x, gamehero.y - 1) == type::Free) {
-		gamehero.y -= 1;
-	}else if (command == "south" && newMap.get(gamehero.x, gamehero.y + 1) == type::Free) {
-		gamehero.y += 1;
+	if (command=="west" && newMap.get(gamehero->x -1, gamehero->y) == type::Free){
+		gamehero->x -= 1;
+	}else if (command == "east" && newMap.get(gamehero->x + 1, gamehero->y) == type::Free) {
+		gamehero->x += 1;
+	}else if (command == "north" && newMap.get(gamehero->x, gamehero->y - 1) == type::Free) {
+		gameher->y -= 1;
+	}else if (command == "south" && newMap.get(gamehero->x, gamehero-> + 1) == type::Free) {
+		gamehero->y += 1;
 	}
 	else { ok = false; }
 
@@ -118,7 +118,7 @@ void Game::showMap() {
 		for (int j = 0; j < width; j++) {
 			try {
 				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
-				else if (gamehero.x == i && gamehero.y == j) std::cout << HERO;
+				else if (gamehero->x == i && gamehero->y == j) std::cout << HERO;
 				else {
 					int monstercount = getMonsterCountOnOnePos(j, i);
 					if (monstercount == 1) std::cout << SINGLEMONSTER;
