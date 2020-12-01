@@ -1,7 +1,7 @@
 
 #include "Game.h"
 
-Game::Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), gamehero(), newMap(mapfilename) {
+Game::Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), gamehero(nullptr), newMap(mapfilename) {
 
 	setMap(newMap);
 }
@@ -24,7 +24,7 @@ void Game::putHero(Hero hero, int x, int y) {
 			if (!isStarted) {
 				if (newMap.get(x, y) == type::Free) {
 
-					gamehero = hero;
+					gamehero = new Hero(gamehero);
 					gamehero.x = x;
 					gamehero.y = y;
 					isHeroSet = true;
@@ -133,5 +133,3 @@ void Game::showMap() {
 
 	std::cout << BOTTOM_LEFT; for (int i = 0; i < width; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
 }
-
-Game::~Game() {}
