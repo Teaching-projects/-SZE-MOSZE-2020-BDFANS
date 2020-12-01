@@ -75,8 +75,7 @@ int main(int argc, char** argv){
         std::cout << "Please add a map file." << std::endl;
         std::string mapfnev;
         std::getline(std::cin, mapfnev);
-        Map map(mapfnev);
-        Game game{};
+        Game game{mapfnev};
         game.setMap(map);
         std::list <Monster> m_loc;
         Hero hero{ Hero::parse(hero_file) };
