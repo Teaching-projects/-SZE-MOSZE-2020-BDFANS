@@ -80,6 +80,9 @@ class Hero :public Unit
      * This function will run untill an unit has atleast one health
      */
     void fightTilDeath(Unit& defender);
+
+    ///Constructor for empty hero
+    Hero() {};
         
     /**
      * @brief Construct a new Unit object
