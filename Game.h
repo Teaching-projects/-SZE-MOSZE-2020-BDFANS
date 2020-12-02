@@ -43,6 +43,7 @@ private:
     Hero* gamehero; //< The hero who plays.
     Map newMap; //< The map we are playing on.
     std::list<std::pair<Monster, std::pair<int, int>>> m_locations; //< Monsters list with locations.
+    std::pair<int, int > h_location;
 
     /**
      * @param int x Is the first coord.
