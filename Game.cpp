@@ -4,7 +4,7 @@
 
 void Game::setMap(Map map) {
 	if (!isStarted) {
-		if (!isHeroSet and !isMonsterSet) {
+		if (!isHeroSet && !isMonsterSet) {
 	
 			newMap = map;
 			isMapSet = true;
@@ -41,7 +41,7 @@ void Game::putMonster(Monster monster, int x, int y) {
 }
 
 void Game::run() {
-	if (isMapSet and isHeroSet and isMonsterSet) {
+	if (isMapSet && isHeroSet && isMonsterSet) {
 		isStarted = true;
 		while (gamehero->isAlive() && !m_locations.empty()) {
 			std::string input = "";
@@ -77,13 +77,13 @@ bool Game::stepOn(std::string command) {
 	int x = h_location.first;
 	int y = h_location.second;
 
-	if (command=="west" && newMap.get(x - 1, y) == type::Free && heroIsOnMap(x-1, y)){
+	if (command=="west" && heroIsOnMap(x - 1, y) && newMap.get(x - 1, y) == type::Free){
 		h_location.first = x - 1;
-	}else if (command == "east" && newMap.get(x + 1, y) == type::Free && heroIsOnMap(x + 1, y)) {
+	}else if (command == "east" && heroIsOnMap(x + 1, y) && newMap.get(x + 1, y) == type::Free) {
 		h_location.first = x + 1;
-	}else if (command == "north" && newMap.get(x, y - 1) == type::Free && heroIsOnMap(x, y - 1)) {
+	}else if (command == "north" && heroIsOnMap(x, y - 1) && newMap.get(x, y - 1) == type::Free) {
 		h_location.second = y - 1;
-	}else if (command == "south" && newMap.get(x, y + 1) == type::Free && heroIsOnMap(x, y + 1)) {
+	}else if (command == "south" && heroIsOnMap(x, y + 1) && newMap.get(x, y + 1) == type::Free) {
 		h_location.second = y +1;
 	}
 	else { ok = false; }
