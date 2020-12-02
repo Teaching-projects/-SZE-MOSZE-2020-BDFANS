@@ -10,33 +10,36 @@
  * 
  * @param filename the name of the file used to generate the map
  */
-Map::Map(std::string filename)
-{
+Map::Map(std::string filename) {
+    loadMap(filename);
+}
+
+void Map::loadMap(std::string filename){
     std::ifstream infile(filename);
-    if(infile)
+    if (infile)
     {
         std::string instring;
         //generate initial map
         int inX = 0;
         int inY = 0;
-        while(std::getline(infile,instring))
+        while (std::getline(infile, instring))
         {
             inY++;
-            inX = std::max(inX,(int)instring.length());
+            inX = std::max(inX, (int)instring.length());
         }
         lenX = inX;
         lenY = inY;
-        loadedmap = MAPMATRIX(lenY,std::vector<type>(lenX,type::Wall));
+        loadedmap = MAPMATRIX(lenY, std::vector<type>(lenX, type::Wall));
 
         //load map features
         infile.clear();
         infile.seekg(0);
         inY = 0;
-        while(std::getline(infile,instring))
+        while (std::getline(infile, instring))
         {
-            for(inX = 0; inX < (int)instring.length(); inX++)
+            for (inX = 0; inX < (int)instring.length(); inX++)
             {
-                switch(instring[inX])
+                switch (instring[inX])
                 {
                 case '#':
                     loadedmap[inY][inX] = type::Wall;
@@ -56,10 +59,10 @@ Map::Map(std::string filename)
     }
     else
     {
-        throw std::exception();
+        throw Map::WrongIndexException("Couldn't load the map!");
     }
 
-}    
+}
 
 
 type Map::get(int x, int y) const
@@ -70,6 +73,6 @@ type Map::get(int x, int y) const
     }
     else
     {
-        throw WrongIndexException();
+        throw Map::WrongIndexException("Cant access the coords.");
     }
 }

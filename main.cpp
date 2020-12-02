@@ -11,6 +11,7 @@
 #include "Damage.h"
 #include "Hero.h"
 #include "Monster.h"
+#include "Game.h"
 
 
 
@@ -69,5 +70,44 @@ int main(int argc, char** argv){
                   << "  ACD: "<<hero.getAttackCoolDown()<<std::endl
                   ;
     } catch (const JSON::ParseException& e) {bad_exit(4);}
+
+    try {
+        std::cout << "Please add a map file." << std::endl;
+        std::string mapfnev = "";
+        std::getline(std::cin, mapfnev);
+
+        Game game{ mapfnev };
+        std::list <Monster> m_loc;
+        Hero hero{ Hero::parse(hero_file) };
+        for (const auto& m_file : monster_files) {
+            m_loc.push_back(Monster::parse(m_file));
+        }
+        for (const auto& i : m_loc) {
+            std::string x_koord, y_koord;
+            game.showMap();
+            std::cout << "Give the x coordinate for the monster, " << i.getName() << ": ";
+            std::getline(std::cin, x_koord);
+            std::cout << std::endl << "The y coordinate: ";
+            std::getline(std::cin, y_koord);
+            std::cout << std::endl;
+            int x = std::stoi(x_koord);
+            int y = std::stoi(y_koord);
+            game.putMonster(i, x, y);
+        }
+        game.showMap();
+        std::string x_koord, y_koord;
+        std::cout << "Give the x coordinate for the hero, " << hero.getName() << ": ";
+        std::getline(std::cin, x_koord);
+        std::cout << std::endl << "The y coordinate: ";
+        std::getline(std::cin, y_koord);
+        std::cout << std::endl;
+        int x = std::stoi(x_koord);
+        int y = std::stoi(y_koord);
+        game.putHero(hero, x, y);
+
+        game.run();
+    }
+    catch (const JSON::ParseException& e) { bad_exit(4); }
+
     return 0;
 }

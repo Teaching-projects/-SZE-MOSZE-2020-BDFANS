@@ -20,12 +20,12 @@ class Hero :public Unit
     
 	int exp = 0; ///< Hero's current exp
 	int lvl = 1; ///< Hero's current lvl
-    const int exp_per_level; ///< Exp required for the next lvl
-    const int hp_per_level; ///< HP bonus after a lvling up
-    const int physicaldmg_per_level;///< Physical damage bonus after lvling up
-    const int magicaldmg_per_level;///< Magical damage bonus per lvl
-    const int defense_per_level;///< Defense bonus after lvling up
-    const double cdmul_per_level; ///< Cooldown multiplier bonus after lvling up
+    int exp_per_level; ///< Exp required for the next lvl
+    int hp_per_level; ///< HP bonus after a lvling up
+    int physicaldmg_per_level;///< Physical damage bonus after lvling up
+    int magicaldmg_per_level;///< Magical damage bonus per lvl
+    int defense_per_level;///< Defense bonus after lvling up
+    double cdmul_per_level; ///< Cooldown multiplier bonus after lvling up
     
     
     public:
@@ -78,6 +78,9 @@ class Hero :public Unit
      * This function will run untill an unit has atleast one health
      */
     void fightTilDeath(Unit& defender);
+
+    ///Constructor for empty hero
+    Hero() {};
         
     /**
      * @brief Construct a new Unit object

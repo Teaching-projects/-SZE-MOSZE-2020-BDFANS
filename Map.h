@@ -14,6 +14,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 #include <vector>
 
 
@@ -36,8 +37,10 @@ class Map
 public:
 
     ///The exception thrown when the map is indexed outside of its bounds
-    class WrongIndexException :public std::exception {  };
-
+    class WrongIndexException : public std::runtime_error {
+    public:
+        WrongIndexException(const std::string& errMsg) : std::runtime_error(errMsg) {};
+    };
     /**
      * @brief Construct a new Map object
      * 
@@ -47,7 +50,11 @@ public:
      * Use '#', whitespace and linebreak characters to create the map. invalid characters get ignored when generating the map
      * Undefined regions become "Wall" type on default
      */
-    Map(std::string filename);
+    Map(std::string filename) ;
+
+    Map() {};
+
+    void loadMap(std::string filename);
 
     /**
      * @brief Return the type of tile located at the coordinates
@@ -60,6 +67,15 @@ public:
      */
     type get(int x, int y) const;
 
+    int getMapHeigth() const { return loadedmap.size(); }
+
+    int getMapWidth() const {
+        int lenght = 0;
+        for (auto element : loadedmap) {
+            if ((int)element.size() > lenght) { lenght = element.size(); }
+        }
+        return lenght;
+    }
     ///return the width of the map
     int getlenX() const
     {

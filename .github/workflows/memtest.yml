@@ -25,6 +25,3 @@ jobs:
 
             - name: Running memtest
               run: make memtest
-
-            - run: ./outcheck.sh battle scenario1.json output1.txt
-            - run: ./outcheck.sh battle scenario2.json output2.txt
