@@ -1,11 +1,6 @@
 
 #include "Game.h"
 
-Game::Game(std::string mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), gamehero(nullptr), newMap(mapfilename) {
-
-	setMap(newMap);
-}
-
 
 void Game::setMap(Map map) {
 	if (!isStarted) {
@@ -84,8 +79,8 @@ bool Game::stepOn(std::string command) {
 	}else if (command == "east" && newMap.get(gamehero->x + 1, gamehero->y) == type::Free) {
 		gamehero->x += 1;
 	}else if (command == "north" && newMap.get(gamehero->x, gamehero->y - 1) == type::Free) {
-		gameher->y -= 1;
-	}else if (command == "south" && newMap.get(gamehero->x, gamehero-> + 1) == type::Free) {
+		gamehero->y -= 1;
+	}else if (command == "south" && newMap.get(gamehero->x, gamehero->y + 1) == type::Free) {
 		gamehero->y += 1;
 	}
 	else { ok = false; }

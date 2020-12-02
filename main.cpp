@@ -76,7 +76,7 @@ int main(int argc, char** argv){
         std::string mapfnev = "";
         std::getline(std::cin, mapfnev);
 
-        Game game(mapfnev);
+        Game game{ mapfnev };
         std::list <Monster> m_loc;
         Hero hero{ Hero::parse(hero_file) };
         for (const auto& m_file : monster_files) {
