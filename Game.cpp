@@ -117,7 +117,7 @@ void Game::showMap() {
 					int monstercount = getMonsterCountOnOnePos(j, i);
 					if (monstercount == 1) std::cout << SINGLEMONSTER;
 					else if (monstercount > 1) std::cout << MULTIPLEMONSTERS;
-					else std::cout << " ";
+					else std::cout << FREE;
 				}
 			}
 			catch (Map::WrongIndexException& e) { std::cout << WALL; }
