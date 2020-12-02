@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gainexp_88',['gainExp',['../class_hero.html#a0d5fae39aa8389ff508acbfaad90dad1',1,'Hero']]],
-  ['game_89',['Game',['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../class_game.html#a4826d5d4e1c4a355c203df5c4fceb650',1,'Game::Game(std::string mapfilename)']]],
+  ['game_89',['Game',['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../class_game.html#a3876b1ca516ea549b57de515b25c6acc',1,'Game::Game(std::string &amp;mapfilename)']]],
   ['get_90',['get',['../class_j_s_o_n.html#a6e05c25394240770da452ee6c13ed5bf',1,'JSON::get()'],['../class_map.html#ac15534a6935a350741d52b45385b2fec',1,'Map::get()']]],
   ['getattackcooldown_91',['getAttackCoolDown',['../class_unit.html#a5ba9ff456bd52cff5e94ddc159b376a1',1,'Unit']]],
   ['getdamage_92',['getDamage',['../class_unit.html#a83bf3fcbd94e455174cbfa2f59dcc109',1,'Unit']]],
