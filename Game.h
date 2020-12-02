@@ -104,6 +104,13 @@ public:
      *@throw Exception this function throws an exception if the map or hero or monster is not set.
      */
     void run();
+    /**
+     *@param x is the unit's x coord
+     *@param y is the unit's y coord
+     *
+     *This function checks if the unit is on the map
+    */
+    bool heroIsOnMap(int x, int y);
 
     /// This function shows the map with our current location
     void showMap();

@@ -50,6 +50,7 @@ void Game::run() {
 			std::getline(std::cin, input);
 			std::cout << std::endl;
 			if (Game::stepOn(input)) {
+				Game::showMap();
 				if (getMonsterCountOnOnePos(h_location.first, h_location.second) > 0) {
 					auto i = m_locations.begin();
 					while (i != m_locations.end() && !m_locations.empty() && gamehero->isAlive()) {
@@ -73,14 +74,17 @@ void Game::run() {
 
 bool Game::stepOn(std::string command) {
 	bool ok = true;
-	if (command=="west" && newMap.get(h_location.first -1, h_location.second) == type::Free){
-		h_location.first -= 1;
-	}else if (command == "east" && newMap.get(h_location.first + 1, h_location.second) == type::Free) {
-		h_location.first += 1;
-	}else if (command == "north" && newMap.get(h_location.first,h_location.second - 1) == type::Free) {
-		h_location.second -= 1;
-	}else if (command == "south" && newMap.get(h_location.first, h_location.second + 1) == type::Free) {
-		h_location.second += 1;
+	int x = h_location.first;
+	int y = h_location.second;
+
+	if (command=="west" && newMap.get(x - 1, y) == type::Free && heroIsOnMap(x-1, y)){
+		h_location.first = x - 1;
+	}else if (command == "east" && newMap.get(x + 1, y) == type::Free && heroIsOnMap(x + 1, y)) {
+		h_location.first = x + 1;
+	}else if (command == "north" && newMap.get(x, y - 1) == type::Free && heroIsOnMap(x, y - 1)) {
+		h_location.second = y - 1;
+	}else if (command == "south" && newMap.get(x, y + 1) == type::Free && heroIsOnMap(x, y + 1)) {
+		h_location.second = y +1;
 	}
 	else { ok = false; }
 
@@ -99,6 +103,15 @@ int Game::getMonsterCountOnOnePos(int x, int y) const
 	return db;
 }
 
+bool Game::heroIsOnMap(int x, int y) {
+	bool onMap = false;
+	if (x <= newMap.getMapWidth() && y <= newMap.getMapHeigth()) {
+		onMap = true;
+	}
+	else { std::cout << "End of the map. \n"; }
+
+	return onMap;
+}
 
 
 void Game::showMap() {
@@ -112,7 +125,7 @@ void Game::showMap() {
 		for (int j = 0; j < width; j++) {
 			try {
 				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
-				else if (gamehero != nullptr && h_location.first == i && h_location.second == j) std::cout << HERO;
+				else if (gamehero != nullptr && h_location.first == j && h_location.second == i) std::cout << HERO;
 				else {
 					int monstercount = getMonsterCountOnOnePos(j, i);
 					if (monstercount == 1) std::cout << SINGLEMONSTER;
