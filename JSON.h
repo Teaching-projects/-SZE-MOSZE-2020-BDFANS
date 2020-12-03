@@ -19,13 +19,25 @@
 #include <iostream>
 #include <type_traits>
 #include <any>
+#include <variant>
+#include <list>
+
+
+#define JSONDATA std::variant<std::string,int,double,JSON::list>
 
 class JSON
 {
+
+public:
+
+    ///Definition of multiple data containing list
+    typedef std::list<std::variant<std::string,int,double>> list;
+
+private:
     /**Stores the  processed JSON data in a map
     *Storage format: "[key]:[value]"
     */
-    std::map<std::string,std::string> json_list;
+    std::map<std::string,JSONDATA> json_list;
 
     /**
     * @brief this function parses JSON data from an inputstream
@@ -34,9 +46,11 @@ class JSON
     *
     * @throw ParseException this function throws an exception if the parsing fails
     */
-    static std::map<std::string,std::string> jsonparse_i(std::istream& stream);
+    static std::map<std::string,JSONDATA> jsonparse_i(std::istream& stream);
 
 public:
+
+
     ///This is the exception thrown when the JSON parsing fails
     class ParseException :public std::exception
     {   };
@@ -48,7 +62,7 @@ public:
     *
     * @throw ParseException this function throws an exception if the parsing fails  
     */
-    static std::map<std::string,std::string> parseFromFile(std::string filename);
+    static std::map<std::string,JSONDATA> parseFromFile(std::string filename);
 
     /**
     * @brief this function parses JSON data from a text
@@ -57,7 +71,7 @@ public:
     *
     * @throw ParseException this function throws an exception if the parsing fails
     */
-    static std::map<std::string,std::string> jsonparse_s(std::string json_in);
+    static std::map<std::string,JSONDATA> jsonparse_s(std::string json_in);
 
 
 
@@ -85,32 +99,34 @@ public:
             
             if(json_list.count(key) > 0)
             {
-                std::string val = json_list.find(key)->second;
-                
-                if (std::is_same<T, int>::value)
+
                 {
-                    outval = stoi(val);
-                }
-                else if  (std::is_same<T, double>::value)
+                    JSONDATA val = json_list.find(key)->second;
+                    if (std::is_same<T, JSON::list>::value)
                     {
-                        outval = stod(val);
+                        outval = std::get<JSON::list>(val);
                     }
-                    else
+                    else if (std::is_same<T, int>::value)
                     {
+                        outval = std::get<int>(val);
+                    }
+                    else if  (std::is_same<T, double>::value)
+                        {
+                            outval = std::get<double>(val); 
+                        }
+                        else{
                         if  (std::is_same<T, std::string>::value)
                         {
-                            outval = val;
+                            outval = std::get<std::string>(val);
                         } 
-                    }    
-                    
+                    } 
+                }    
                 return std::any_cast<T>(outval);
             }
             else
             {
                 throw std::exception();
             }
-            
-        return static_cast<T>(NULL);
     }
 
 
@@ -119,5 +135,5 @@ public:
     *
     * @param in_list the input map containing processed JSON data
     */
-    JSON(const std::map<std::string,std::string>& in_list) :json_list(in_list) {}
+    JSON(const std::map<std::string,JSONDATA>& in_list) :json_list(in_list) {}
 };
