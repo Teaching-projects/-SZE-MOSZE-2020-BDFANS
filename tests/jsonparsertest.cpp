@@ -8,12 +8,12 @@
 #include <map>
 
 
-std::map<std::string, std::string> make_compmap()
+std::map<std::string, JSONDATA> make_compmap()
 {
-	std::map<std::string, std::string> comp;
+	std::map<std::string, JSONDATA> comp;
 	comp.insert({ "str1", "test" });
-	comp.insert({ "int1", "2" });
-	comp.insert({ "int2", "3.3" });
+	comp.insert({ "int1", 2 });
+	comp.insert({ "int2", 3.3 });
 	comp.insert({ "str2", "tset" });
 
 	return comp;
@@ -21,19 +21,19 @@ std::map<std::string, std::string> make_compmap()
 //fileparser tests
 //normal fileparse test
 TEST(Fileparser, fileparse) {
-	std::map<std::string, std::string> comp = make_compmap();
+	std::map<std::string, JSONDATA> comp = make_compmap();
 	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/jsonparsertest.txt"), comp);
 }
 
 //file with no whitespaces
 TEST(Fileparser, no_whitespaces) {
-	std::map<std::string, std::string> comp = make_compmap();
+	std::map<std::string, JSONDATA> comp = make_compmap();
 	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/nowhitespace.txt"), comp);
 }
 
 //file with many whitespaces
 TEST(Fileparser, many_whitespaces) {
-	std::map<std::string, std::string> comp = make_compmap();
+	std::map<std::string, JSONDATA> comp = make_compmap();
 	ASSERT_EQ(JSON::parseFromFile("parsertestfiles/manywhitespace.txt"), comp);
 }
 
@@ -46,7 +46,33 @@ TEST(Fileparser, invalid_file) {
 //stringparseing test
 TEST(Stringparser, stringparse) {
 	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\" }";
-	std::map<std::string, std::string> comp = make_compmap();
+	std::map<std::string, JSONDATA> comp = make_compmap();
+	ASSERT_EQ(JSON::jsonparse_s(instring), comp);
+}
+
+//arraytest(String)
+TEST(Stringparser, arrayparse)
+{
+	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" : [ \"a\", \"b\", \"c\" ] }";
+	std::map<std::string, JSONDATA> comp = make_compmap();
+	JSON::list comparray;
+	comparray.push_back("a");
+	comparray.push_back("b");
+	comparray.push_back("c");
+	comp.insert({ "array",comparray });
+	ASSERT_EQ(JSON::jsonparse_s(instring), comp);
+}
+
+//arraytest(int)
+TEST(Stringparser, numberarrayparse)
+{
+	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" : [ 1, 2, 3 ] }";
+	std::map<std::string, JSONDATA> comp = make_compmap();
+	JSON::list comparray;
+	comparray.push_back(1);
+	comparray.push_back(2);
+	comparray.push_back(3);
+	comp.insert({ "array",comparray });
 	ASSERT_EQ(JSON::jsonparse_s(instring), comp);
 }
 
@@ -81,42 +107,60 @@ TEST(Parsingerror, broken_numvalue_separators) {
 	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
 }
 
+//broken array start
+TEST(parsingerror, broken_array_start)
+{
+	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" :  \"a\", \"b\", \"c\" ] }";
+
+	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+}
+
+//broken array end
+TEST(parsingerror, broken_array_end)
+{
+	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" : [ \"a\", \"b\", \"c\"  }";
+
+	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+}
+
+
+//key in array error
+TEST(parsingerror, key_in_array)
+{
+	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" : [ \"a\", \"arraykey\" : \"b\", \"c\" ] }";
+
+	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+}
+
 //Monster tests
 //constructor
 TEST(Monster, constructor) {
-	Damage dmg(3, 1);
-	Monster a = Monster("a", 4, 3, 1, 1, 2);
+	Monster a = Monster("a", 4, 3, 0, 0, 2);
 	EXPECT_EQ(a.getName(), "a");
 	EXPECT_EQ(a.getMaxHealthPoints(), 4);
 	EXPECT_EQ(a.getHealthPoints(), 4);
 	EXPECT_EQ(a.getPhysicalDamage(), 3);
-	EXPECT_EQ(a.getMagicalDamage(), 1);
-	EXPECT_EQ(a.getDefense(), 1);
 	EXPECT_EQ(a.getAttackCoolDown(), 2);
 }
 
 //attack tests
 //attackdc test
 TEST(Attacktest, attackcd) {
-	Monster a = Monster("a", 10, 1, 1, 1, 1);
-	Monster h = Monster("h", 10, 1, 1, 1, 10);
+	Monster a = Monster("a", 10, 1, 0, 0, 1);
+	Monster h = Monster("h", 10, 1, 0, 0, 10);
 	Unit::attackcd(h,a);
 	EXPECT_EQ(h.getHealthPoints(), 9);
 	EXPECT_EQ(a.getHealthPoints(), 10);
 }
 
-
 //hero tests
 //constructor
 TEST(Hero, constructor) {
-	Damage dmg(3, 2);
-	Hero h = Hero("h", 4, 1, 1, 1 ,2,3,2,3,0.2);
+	Hero h = Hero("h", 4, 3, 0, 0, 2,3,2,3, 0, 0, 0.2);
 	EXPECT_EQ(h.getName(), "h");
 	EXPECT_EQ(h.getMaxHealthPoints(), 4);
 	EXPECT_EQ(h.getHealthPoints(), 4);
-	EXPECT_EQ(h.getPhysicalDamage(), 1);
-	EXPECT_EQ(h.getMagicalDamage(), 1);
-	EXPECT_EQ(h.getDefense(), 1);
+	EXPECT_EQ(h.getPhysicalDamage(), 3);
 	EXPECT_EQ(h.getAttackCoolDown(), 2);
 	EXPECT_EQ(h.getLevel(), 1);
 	EXPECT_EQ(h.getExp(), 0);
@@ -124,17 +168,16 @@ TEST(Hero, constructor) {
 
 //XP gain test
 TEST(Hero, xpGain) {
-	Monster a = Monster("a", 3, 1, 0, 1, 1);
-	Hero h = Hero("h", 10, 5, 2, 2, 1, 100);
+	Monster a = Monster("a", 3, 1, 0, 0, 1);
+	Hero h = Hero("h", 10, 5, 0, 0, 1, 100);
 	h.attack(a);
 	EXPECT_EQ(h.getExp(), 3);
 }
 
 //fighttildeath test
 TEST(Hero, fightildeath) {
-
-	Monster a = Monster("a", 10, 1, 1, 1,1);
-	Hero h = Hero("h", 10, 2, 1, 1, 1, 100);
+	Monster a = Monster("a", 10, 1, 0, 0, 1);
+	Hero h = Hero("h", 10, 2, 0, 0, 1, 100);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.isAlive(), true);
 	EXPECT_EQ(a.isAlive(), false);
@@ -142,17 +185,16 @@ TEST(Hero, fightildeath) {
 
 //lvlup test
 TEST(Hero, lvlup) {
-
-	Monster a = Monster("a", 13, 1, 1, 1, 4);
-	Hero h = Hero("h", 10, 1, 1, 1,2, 7,2,1,1,1,0.3);
+	Monster a = Monster("a", 13, 1, 0, 0, 4);
+	Hero h = Hero("h", 10, 1, 0, 0, 2, 7,2,2, 2, 3, 0.3);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.getLevel(), 2);
 	EXPECT_EQ(h.getMaxHealthPoints(), 12);
-	EXPECT_EQ(h.getPhysicalDamage(), 2);
-	EXPECT_EQ(h.getMagicalDamage(), 2);
-	EXPECT_EQ(h.getDefense(), 2);
+	EXPECT_EQ(h.getPhysicalDamage(), 3);
 	EXPECT_EQ(h.getExp(), 6);
 	EXPECT_EQ(h.getAttackCoolDown(), 2*0.3);
+	EXPECT_EQ(h.getMagicalDamage(), 2);
+	EXPECT_EQ(h.getDefense(), 3);
 }
 
 //Map test

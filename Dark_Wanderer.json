@@ -8,7 +8,7 @@
     "base_attack_cooldown" : 1.1,
     "experience_per_level" : 20,
     "health_point_bonus_per_level" : 5,
-    "damage_bonus_per_level" : 1,
+    "physical_damage_bonus_per_level" : 1,
     "magical_damage_bonus_per_level" : 1,
     "cooldown_multiplier_per_level": 0.9
 }
