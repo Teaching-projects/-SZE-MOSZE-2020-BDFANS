@@ -135,7 +135,7 @@ TEST(parsingerror, key_in_array)
 //Monster tests
 //constructor
 TEST(Monster, constructor) {
-	Monster a = Monster("a", 4, 3, 2);
+	Monster a = Monster("a", 4, 3, 0, 0, 2);
 	EXPECT_EQ(a.getName(), "a");
 	EXPECT_EQ(a.getMaxHealthPoints(), 4);
 	EXPECT_EQ(a.getHealthPoints(), 4);
@@ -146,18 +146,17 @@ TEST(Monster, constructor) {
 //attack tests
 //attackdc test
 TEST(Attacktest, attackcd) {
-	Monster a = Monster("a", 10, 1, 1);
-	Monster h = Monster("h", 10, 1, 10);
+	Monster a = Monster("a", 10, 1, 0, 0, 1);
+	Monster h = Monster("h", 10, 1, 0, 0 10);
 	Unit::attackcd(h,a);
 	EXPECT_EQ(h.getHealthPoints(), 9);
 	EXPECT_EQ(a.getHealthPoints(), 10);
 }
 
-
 //hero tests
 //constructor
 TEST(Hero, constructor) {
-	Hero h = Hero("h", 4, 3, 2,3,2,3,0.2);
+	Hero h = Hero("h", 4, 3, 0, 0, 2,3,2,3, 0, 0, 0.2);
 	EXPECT_EQ(h.getName(), "h");
 	EXPECT_EQ(h.getMaxHealthPoints(), 4);
 	EXPECT_EQ(h.getHealthPoints(), 4);
@@ -169,16 +168,16 @@ TEST(Hero, constructor) {
 
 //XP gain test
 TEST(Hero, xpGain) {
-	Monster a = Monster("a", 3, 1, 1);
-	Hero h = Hero("h", 10, 5, 1, 100);
+	Monster a = Monster("a", 3, 1, 0, 0, 1);
+	Hero h = Hero("h", 10, 5, 0, 0, 1, 100);
 	h.attack(a);
 	EXPECT_EQ(h.getExp(), 3);
 }
 
 //fighttildeath test
 TEST(Hero, fightildeath) {
-	Monster a = Monster("a", 10, 1, 1);
-	Hero h = Hero("h", 10, 2, 1, 100);
+	Monster a = Monster("a", 10, 1, 0, 0, 1);
+	Hero h = Hero("h", 10, 2, 0, 0, 1, 100);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.isAlive(), true);
 	EXPECT_EQ(a.isAlive(), false);
@@ -186,14 +185,16 @@ TEST(Hero, fightildeath) {
 
 //lvlup test
 TEST(Hero, lvlup) {
-	Monster a = Monster("a", 13, 1, 4);
-	Hero h = Hero("h", 10, 1, 2, 7,2,2,0.3);
+	Monster a = Monster("a", 13, 1, 0, 0, 4);
+	Hero h = Hero("h", 10, 1, 0, 0, 2, 7,2,2, 2, 3, 0.3);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.getLevel(), 2);
 	EXPECT_EQ(h.getMaxHealthPoints(), 12);
 	EXPECT_EQ(h.getDamage(), 3);
 	EXPECT_EQ(h.getExp(), 6);
 	EXPECT_EQ(h.getAttackCoolDown(), 2*0.3);
+	EXPECT_EQ(h.getMagicalDamage(), 2);
+	EXPECT_EQ(h.getDefense(), 3);
 }
 
 //Map test
