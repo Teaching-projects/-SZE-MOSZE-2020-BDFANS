@@ -139,7 +139,7 @@ TEST(Monster, constructor) {
 	EXPECT_EQ(a.getName(), "a");
 	EXPECT_EQ(a.getMaxHealthPoints(), 4);
 	EXPECT_EQ(a.getHealthPoints(), 4);
-	EXPECT_EQ(a.getDamage(), 3);
+	EXPECT_EQ(a.getPhysicalDamage(), 3);
 	EXPECT_EQ(a.getAttackCoolDown(), 2);
 }
 
@@ -147,7 +147,7 @@ TEST(Monster, constructor) {
 //attackdc test
 TEST(Attacktest, attackcd) {
 	Monster a = Monster("a", 10, 1, 0, 0, 1);
-	Monster h = Monster("h", 10, 1, 0, 0 10);
+	Monster h = Monster("h", 10, 1, 0, 0, 10);
 	Unit::attackcd(h,a);
 	EXPECT_EQ(h.getHealthPoints(), 9);
 	EXPECT_EQ(a.getHealthPoints(), 10);
@@ -160,7 +160,7 @@ TEST(Hero, constructor) {
 	EXPECT_EQ(h.getName(), "h");
 	EXPECT_EQ(h.getMaxHealthPoints(), 4);
 	EXPECT_EQ(h.getHealthPoints(), 4);
-	EXPECT_EQ(h.getDamage(), 3);
+	EXPECT_EQ(h.getPhysicalDamage(), 3);
 	EXPECT_EQ(h.getAttackCoolDown(), 2);
 	EXPECT_EQ(h.getLevel(), 1);
 	EXPECT_EQ(h.getExp(), 0);
@@ -190,7 +190,7 @@ TEST(Hero, lvlup) {
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.getLevel(), 2);
 	EXPECT_EQ(h.getMaxHealthPoints(), 12);
-	EXPECT_EQ(h.getDamage(), 3);
+	EXPECT_EQ(h.getPhysicalDamage(), 3);
 	EXPECT_EQ(h.getExp(), 6);
 	EXPECT_EQ(h.getAttackCoolDown(), 2*0.3);
 	EXPECT_EQ(h.getMagicalDamage(), 2);
