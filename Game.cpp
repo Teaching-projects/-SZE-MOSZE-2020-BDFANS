@@ -150,15 +150,15 @@ void Game::showHeroVision() {
 	int xmax = h_location.first + radius;
 	if (xmax > width) { xmax = width; }
 	int ymin = h_location.second - radius;
-	if (ymin < 0) { xmin = 0; }
+	if (ymin < 0) { ymin = 0; }
 	int ymax = h_location.second + radius;
 	if (ymax > height) { ymax = height; }
 	
 	std::cout << TOP_LEFT; for (int i = xmin; i < xmax; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
 
-	for (int i = xmin; i < xmax; i++) {
+	for (int i = ymin; i < ymax; i++) {
 		std::cout << VERTICAL;
-		for (int j = ymin; j < ymax; j++) {
+		for (int j = xmin; j < xmax; j++) {
 			try {
 				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
 				else if (gamehero != nullptr && h_location.first == j && h_location.second == i) std::cout << HERO;
