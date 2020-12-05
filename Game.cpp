@@ -142,33 +142,23 @@ void Game::showMap() {
 }
 
 void Game::showHeroVision() {
-
-	int west = 0;
-	int north = 0;
-	int east = newMap.getMapWidth();
-	int south = newMap.getMapHeigth();
-
-	if (h_location.first >= gamehero->getLightRadius()) {
-		west = h_location.first - gamehero->getLightRadius();
-	}
-
-	if (h_location.second >= gamehero->getLightRadius()) {
-		north = h_location.second - gamehero->getLightRadius();
-	}
-
-	if (newMap.getMapWidth() > h_location.first + gamehero->getLightRadius()) {
-		east = h_location.first + gamehero->getLightRadius() + 1;
-	}
-
-	if (newMap.getMapHeigth() > h_location.second + gamehero->getLightRadius()) {
-		south = h_location.second + gamehero->getLightRadius() + 1;
-	}
+	int width = newMap.getMapWidth();
+	int height = newMap.getMapHeigth();
+	int radius = gamehero->getLightRadius;
+	int xmin = h_location.first - radius;
+	if (xmin < 0) { xmin = 0; }
+	int xmax = h_location.first + radius;
+	if (xmax > width) { xmax = width - 1; }
+	int ymin = h_location.second - radius;
+	if (ymin < 0) { xmin = 0; }
+	int ymax = h_location.second + radius;
+	if (ymax > height) { ymax = height; }
 	
-	std::cout << TOP_LEFT; for (int i = west; i < east; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
+	std::cout << TOP_LEFT; for (int i = xmin; i < xmax; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
 
-	for (int i = west; i < east; i++) {
+	for (int i = xmin; i < xmax; i++) {
 		std::cout << VERTICAL;
-		for (int j = north; j < south; j++) {
+		for (int j = ymin; j < ymax; j++) {
 			try {
 				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
 				else if (gamehero != nullptr && h_location.first == j && h_location.second == i) std::cout << HERO;
@@ -183,5 +173,5 @@ void Game::showHeroVision() {
 		}
 		std::cout << VERTICAL << "\n";
 	}
-	std::cout << BOTTOM_LEFT; for (int i = west; i < east; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
+	std::cout << BOTTOM_LEFT; for (int i = xmin; i < xmax; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
 }
