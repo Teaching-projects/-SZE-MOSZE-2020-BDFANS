@@ -147,11 +147,11 @@ void Game::showHeroVision() {
 	int radius = gamehero->getLightRadius();
 	int xmin = h_location.first - radius;
 	if (xmin < 0) { xmin = 0; }
-	int xmax = h_location.first + radius;
+	int xmax = h_location.first + radius + 1;
 	if (xmax > width) { xmax = width; }
 	int ymin = h_location.second - radius;
 	if (ymin < 0) { ymin = 0; }
-	int ymax = h_location.second + radius;
+	int ymax = h_location.second + radius + 1;
 	if (ymax > height) { ymax = height; }
 	
 	std::cout << TOP_LEFT; for (int i = xmin; i < xmax; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
