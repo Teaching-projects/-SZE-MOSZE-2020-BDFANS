@@ -51,7 +51,7 @@ private:
 public:
 
 
-    ///This is the exception thrown when the JSON parsing fails
+    ///This is the exception is thrown when the JSON parsing fails
     class ParseException :public std::exception
     {   };
 
