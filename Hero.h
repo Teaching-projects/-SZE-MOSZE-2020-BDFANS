@@ -26,8 +26,8 @@ class Hero :public Unit
     int magicaldmg_per_level;///< Magical damage bonus per lvl
     int defense_per_level;///< Defense bonus after lvling up
     double cdmul_per_level; ///< Cooldown multiplier bonus after lvling up
-    int light_radius;
-    int light_radius_per_level;
+    int light_radius; ///< How far our hero can see.
+    int light_radius_per_level; ///< How far our hero can see after lvling up
     
     
     public:
@@ -102,6 +102,8 @@ class Hero :public Unit
      * @param inmagicb sets the bonus magical damage per level of the character.
      * @param indefb sets the bonus defense per level of the character.
      * @param incdmul sets the cooldown per level of the character.
+     * @param inlr sets the light radius of the character.
+     * @param inlrb sets the light radius per level of the character.
      *
      * The constructor uses the attackspeed value to set the initial attackcooldown
      */
