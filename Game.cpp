@@ -148,7 +148,7 @@ void Game::showHeroVision() {
 	int xmin = h_location.first - radius;
 	if (xmin < 0) { xmin = 0; }
 	int xmax = h_location.first + radius;
-	if (xmax > width) { xmax = width - 1; }
+	if (xmax > width) { xmax = width; }
 	int ymin = h_location.second - radius;
 	if (ymin < 0) { xmin = 0; }
 	int ymax = h_location.second + radius;
