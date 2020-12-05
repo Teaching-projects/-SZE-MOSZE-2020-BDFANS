@@ -26,6 +26,7 @@ enum type {Free,Wall};
 class Map
 {
 
+protected:
     //The actual map stored in a vector matrix of "type"
     MAPMATRIX loadedmap;
     ///Width of the map

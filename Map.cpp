@@ -24,8 +24,12 @@ void Map::loadMap(std::string filename){
         int inY = 0;
         while (std::getline(infile, instring))
         {
+            if(instring.size() > 0)
+            {
             inY++;
             inX = std::max(inX, (int)instring.length());
+            }
+            else {}
         }
         lenX = inX;
         lenY = inY;
@@ -37,6 +41,7 @@ void Map::loadMap(std::string filename){
         inY = 0;
         while (std::getline(infile, instring))
         {
+            if(instring.size() > 0) {
             for (inX = 0; inX < (int)instring.length(); inX++)
             {
                 switch (instring[inX])
@@ -54,6 +59,7 @@ void Map::loadMap(std::string filename){
                 }
             }
             inY++;
+            }
         }
         infile.close();
     }
