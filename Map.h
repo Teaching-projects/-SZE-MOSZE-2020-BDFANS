@@ -8,7 +8,7 @@
  * @version 0.4.0
  *
  *
- * @date 2020-11-13
+ * @date 2020-11-26
  *
  */
 #pragma once
@@ -26,6 +26,7 @@ enum type {Free,Wall};
 class Map
 {
 
+protected:
     //The actual map stored in a vector matrix of "type"
     MAPMATRIX loadedmap;
     ///Width of the map
@@ -54,6 +55,13 @@ public:
 
     Map() {};
 
+
+    /**
+     * @brief loads and generates the map from file
+     * 
+     * @param filename name of the file used to generate the map.
+     * 
+     */
     void loadMap(std::string filename);
 
     /**
@@ -67,8 +75,18 @@ public:
      */
     type get(int x, int y) const;
 
+    /**
+     * @brief count the heigth of the map
+     * 
+     * @return int 
+     */
     int getMapHeigth() const { return loadedmap.size(); }
 
+    /**
+     * @brief count the width of the map
+     * 
+     * @return int 
+     */
     int getMapWidth() const {
         int lenght = 0;
         for (auto element : loadedmap) {

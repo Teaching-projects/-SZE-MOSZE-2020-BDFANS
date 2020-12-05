@@ -3,6 +3,7 @@
 #include "../Hero.h"
 #include "../Monster.h"
 #include "../Map.h"
+#include "../MarkedMap.h"
 #include <gtest/gtest.h>
 #include <iostream>
 #include <map>
@@ -148,7 +149,7 @@ TEST(Monster, constructor) {
 TEST(Attacktest, attackcd) {
 	Monster a = Monster("a", 10, 1, 0, 0, 1);
 	Monster h = Monster("h", 10, 1, 0, 0, 10);
-	Unit::attackcd(h,a);
+	Unit::attackcd(h, a);
 	EXPECT_EQ(h.getHealthPoints(), 9);
 	EXPECT_EQ(a.getHealthPoints(), 10);
 }
@@ -156,7 +157,7 @@ TEST(Attacktest, attackcd) {
 //hero tests
 //constructor
 TEST(Hero, constructor) {
-	Hero h = Hero("h", 4, 3, 0, 0, 2,3,2,3, 0, 0, 0.2);
+	Hero h = Hero("h", 4, 3, 0, 0, 2, 3, 2, 3, 0, 0, 0.2);
 	EXPECT_EQ(h.getName(), "h");
 	EXPECT_EQ(h.getMaxHealthPoints(), 4);
 	EXPECT_EQ(h.getHealthPoints(), 4);
@@ -186,13 +187,13 @@ TEST(Hero, fightildeath) {
 //lvlup test
 TEST(Hero, lvlup) {
 	Monster a = Monster("a", 13, 1, 0, 0, 4);
-	Hero h = Hero("h", 10, 1, 0, 0, 2, 7,2,2, 2, 3, 0.3);
+	Hero h = Hero("h", 10, 1, 0, 0, 2, 7, 2, 2, 2, 3, 0.3);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.getLevel(), 2);
 	EXPECT_EQ(h.getMaxHealthPoints(), 12);
 	EXPECT_EQ(h.getPhysicalDamage(), 3);
 	EXPECT_EQ(h.getExp(), 6);
-	EXPECT_EQ(h.getAttackCoolDown(), 2*0.3);
+	EXPECT_EQ(h.getAttackCoolDown(), 2 * 0.3);
 	EXPECT_EQ(h.getMagicalDamage(), 2);
 	EXPECT_EQ(h.getDefense(), 3);
 }
@@ -200,17 +201,17 @@ TEST(Hero, lvlup) {
 //Map test
 //constructor
 TEST(Map, constructorNgettest) {
-	Map test = Map("parsertestfiles/Testmap.txt");
+	Map test = Map("maptestfiles/Testmap.txt");
 	EXPECT_EQ(test.getlenX(), 14);
 	EXPECT_EQ(test.getlenY(), 7);
 
-	std::string expected =  "##############\n";
-				expected += "#   #  ####  #\n";
-				expected += "# ####  ##  ##\n";
-				expected += "#   #  ##  ###\n";
-				expected += "### # ##  ####\n";
-				expected += "#        #####\n";
-				expected += "##############\n";
+	std::string expected = "##############\n";
+	expected += "#   #  ####  #\n";
+	expected += "# ####  ##  ##\n";
+	expected += "#   #  ##  ###\n";
+	expected += "### # ##  ####\n";
+	expected += "#        #####\n";
+	expected += "##############\n";
 
 
 	std::string output;
@@ -236,12 +237,74 @@ TEST(Map, constructorNgettest) {
 
 //get exception
 TEST(Map, WrongIndexException) {
-	Map test = Map("parsertestfiles/Testmap.txt");
+	Map test = Map("maptestfiles/Testmap.txt");
 	EXPECT_EQ(test.getlenX(), 14);
 	EXPECT_EQ(test.getlenY(), 7);
 
-	ASSERT_THROW(test.get(10,30), Map::WrongIndexException);
+	ASSERT_THROW(test.get(10, 30), Map::WrongIndexException);
 
+}
+
+//MarkedMap test
+//constructor
+TEST(MarkedMap, constructorNgettest) {
+	MarkedMap test = MarkedMap("maptestfiles/MTestmap.txt");
+	EXPECT_EQ(test.getlenX(), 14);
+	EXPECT_EQ(test.getlenY(), 7);
+
+	std::string expected =  "##############\n";
+				expected += "#   #  ####  #\n";
+				expected += "# ####  ##  ##\n";
+				expected += "#   #  ##  ###\n";
+				expected += "### # ##  ####\n";
+				expected += "#         ####\n";
+				expected += "##############\n";
+
+
+	std::string output;
+
+	for (int i = 0; i < test.getlenY(); i++)
+	{
+		for (int j = 0; j < test.getlenX(); j++)
+		{
+			switch (test.get(j, i))
+			{
+			case Free:
+				output += ' ';
+				break;
+			case Wall:
+				output += '#';
+				break;
+			}
+		}
+		output += '\n';
+	}
+	EXPECT_EQ(expected, output);
+}
+
+//getposition tests
+TEST(MarkedMap, getpositions) {
+	MarkedMap test = MarkedMap("maptestfiles/MTestmap.txt");
+	EXPECT_EQ(test.getHeroPosition(), std::make_pair(2,1));
+	std::list<std::pair<int,int>> m1,m2,m3;
+	m1.push_back(std::make_pair(2, 3));
+	m1.push_back(std::make_pair(3, 4));
+	m1.push_back(std::make_pair(6, 5));
+	EXPECT_EQ(test.getMonsterPositions('1'), m1);
+	m2.push_back(std::make_pair(6, 2));
+	m2.push_back(std::make_pair(7, 2));
+	m2.push_back(std::make_pair(3, 3));
+	EXPECT_EQ(test.getMonsterPositions('2'), m2);
+	m3.push_back(std::make_pair(6, 3));
+	EXPECT_EQ(test.getMonsterPositions('3'), m3);
+}
+
+//exception tests
+TEST(MarkedMap, exceptions) {
+	MarkedMap test = MarkedMap("maptestfiles/Testmap.txt");
+	EXPECT_THROW(test.getHeroPosition(), MarkedMap::NoInstanceException);
+	EXPECT_THROW(test.getMonsterPositions('6'), MarkedMap::NoInstanceException);
+	EXPECT_THROW(test.loadMap("maptestfiles/MTestmapHeroes.txt"), MarkedMap::MultipleHeroException);
 }
 
 int main(int argc, char** argv)
