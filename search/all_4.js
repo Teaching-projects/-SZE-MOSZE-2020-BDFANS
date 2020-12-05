@@ -10,11 +10,16 @@ var searchData=
   ['getdefense_19',['getDefense',['../class_unit.html#aaf09131352e419af78ff0807fa8ddda3',1,'Unit']]],
   ['getexp_20',['getExp',['../class_hero.html#aca45aa10e1caefaf84a22ed42fd4f7df',1,'Hero']]],
   ['gethealthpoints_21',['getHealthPoints',['../class_unit.html#ad5296f2ce5cb21eb323d5eb0bc104eba',1,'Unit']]],
-  ['getlenx_22',['getlenX',['../class_map.html#a5592d5c9914ec51d7a9f834fc4570012',1,'Map']]],
-  ['getleny_23',['getlenY',['../class_map.html#ad437e102eb0dc43003f745e577d54b18',1,'Map']]],
-  ['getlevel_24',['getLevel',['../class_hero.html#a17e77f3769e62aeb4e1807bbfc720f47',1,'Hero']]],
-  ['getmagicaldamage_25',['getMagicalDamage',['../class_unit.html#a732bd9a8aac310db5fcdfdb872555221',1,'Unit']]],
-  ['getmaxhealthpoints_26',['getMaxHealthPoints',['../class_unit.html#a371a9431c2bbcab1f5373fe72a346ff4',1,'Unit']]],
-  ['getname_27',['getName',['../class_unit.html#a0497994e384db5c080ec78e9b645fa40',1,'Unit']]],
-  ['getphysicaldamage_28',['getPhysicalDamage',['../class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5',1,'Unit']]]
+  ['getheroposition_22',['getHeroPosition',['../class_marked_map.html#aaa25768bfdd3ea4b21e847882a3f9ccd',1,'MarkedMap']]],
+  ['getlenx_23',['getlenX',['../class_map.html#a5592d5c9914ec51d7a9f834fc4570012',1,'Map']]],
+  ['getleny_24',['getlenY',['../class_map.html#ad437e102eb0dc43003f745e577d54b18',1,'Map']]],
+  ['getlevel_25',['getLevel',['../class_hero.html#a17e77f3769e62aeb4e1807bbfc720f47',1,'Hero']]],
+  ['getlightradius_26',['getLightRadius',['../class_hero.html#abb3f50ace2a337b9dfaa4d32c58f4307',1,'Hero']]],
+  ['getmagicaldamage_27',['getMagicalDamage',['../class_unit.html#a732bd9a8aac310db5fcdfdb872555221',1,'Unit']]],
+  ['getmapheigth_28',['getMapHeigth',['../class_map.html#a0b915bae065c7685bfc9302e146b165c',1,'Map']]],
+  ['getmapwidth_29',['getMapWidth',['../class_map.html#ae10f08208cda780d6ff5997190953e58',1,'Map']]],
+  ['getmaxhealthpoints_30',['getMaxHealthPoints',['../class_unit.html#a371a9431c2bbcab1f5373fe72a346ff4',1,'Unit']]],
+  ['getmonsterpositions_31',['getMonsterPositions',['../class_marked_map.html#a2418a7ae3845fde7cc3bbbb09a5bc00c',1,'MarkedMap']]],
+  ['getname_32',['getName',['../class_unit.html#a0497994e384db5c080ec78e9b645fa40',1,'Unit']]],
+  ['getphysicaldamage_33',['getPhysicalDamage',['../class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5',1,'Unit']]]
 ];

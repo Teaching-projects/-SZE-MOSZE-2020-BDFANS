@@ -64,7 +64,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">JSON.h File Reference</div>  </div>
 </div><!--header-->
@@ -75,18 +76,22 @@ $(function() {
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;any&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for JSON.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_j_s_o_n_8h__incl.png" border="0" usemap="#_j_s_o_n_8h" alt=""/></div>
 <map name="_j_s_o_n_8h" id="_j_s_o_n_8h">
-<area shape="rect" title=" " alt="" coords="227,5,293,32"/>
+<area shape="rect" title=" " alt="" coords="336,5,403,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,64,107"/>
 <area shape="rect" title=" " alt="" coords="88,80,139,107"/>
 <area shape="rect" title=" " alt="" coords="163,80,250,107"/>
 <area shape="rect" title=" " alt="" coords="275,80,355,107"/>
 <area shape="rect" title=" " alt="" coords="379,80,471,107"/>
 <area shape="rect" title=" " alt="" coords="495,80,542,107"/>
+<area shape="rect" title=" " alt="" coords="566,80,634,107"/>
+<area shape="rect" title=" " alt="" coords="659,80,701,107"/>
 </map>
 </div>
 </div>
@@ -98,8 +103,14 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">header for <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> class  <a href="class_j_s_o_n.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n_1_1_parse_exception.html">JSON::ParseException</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the exception thrown when the <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> parsing fails.  <a href="class_j_s_o_n_1_1_parse_exception.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the exception is thrown when the <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> parsing fails.  <a href="class_j_s_o_n_1_1_parse_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a45a8cab318a635a98857b5dcbec5e1fd"><td class="memItemLeft" align="right" valign="top"><a id="a45a8cab318a635a98857b5dcbec5e1fd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>JSONDATA</b>&#160;&#160;&#160;std::variant&lt;std::string,int,double,<a class="el" href="class_j_s_o_n.html#ae8a84a3194f215ba7dd89eb206656f8a">JSON::list</a>&gt;</td></tr>
+<tr class="separator:a45a8cab318a635a98857b5dcbec5e1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

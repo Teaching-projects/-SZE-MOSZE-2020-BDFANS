@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['magical_36',['magical',['../struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4',1,'Damage']]],
-  ['map_37',['Map',['../class_map.html',1,'Map'],['../class_map.html#ab124c12c6c9dec693aedb1a4b6384ecd',1,'Map::Map()']]],
-  ['map_2eh_38',['Map.h',['../_map_8h.html',1,'']]],
-  ['maxhealth_39',['maxhealth',['../class_unit.html#a6f9d1ac08692874b85317ac4ebb33ae9',1,'Unit']]],
-  ['monster_40',['Monster',['../class_monster.html',1,'Monster'],['../class_monster.html#ab3fc8db2433483a883e4211b7cf0eee1',1,'Monster::Monster()']]],
-  ['monster_2eh_41',['Monster.h',['../_monster_8h.html',1,'']]]
+  ['lenx_41',['lenX',['../class_map.html#afd64277d6a616796b87745d191f6ccd0',1,'Map']]],
+  ['leny_42',['lenY',['../class_map.html#a2cf44ea9dc33605c98e1c7a050d32dc8',1,'Map']]],
+  ['list_43',['list',['../class_j_s_o_n.html#ae8a84a3194f215ba7dd89eb206656f8a',1,'JSON']]],
+  ['loadmap_44',['loadMap',['../class_map.html#a88f6ac563ccd978ca08e4f4cec9b441b',1,'Map::loadMap()'],['../class_marked_map.html#a18a5089be2b8c36ffe164c42bb7840a4',1,'MarkedMap::loadMap()']]]
 ];

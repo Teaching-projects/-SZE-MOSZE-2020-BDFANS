@@ -1,0 +1,4 @@
+<map id="MarkedMap::MultipleHeroException" name="MarkedMap::MultipleHeroException">
+<area shape="rect" id="node1" title="This exception is thrown when the inputmap contains more than one heroes." alt="" coords="5,80,260,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="77,5,188,32"/>
+</map>

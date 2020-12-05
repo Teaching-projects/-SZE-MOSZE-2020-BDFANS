@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['physical_132',['physical',['../struct_damage.html#aee70c6c924eac810d02f61efbc90c719',1,'Damage']]]
+  ['name_159',['name',['../class_unit.html#a03a2344fa6977a2ce44b320e44bc9caa',1,'Unit']]]
 ];

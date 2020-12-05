@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['magical_129',['magical',['../struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4',1,'Damage']]],
-  ['maxhealth_130',['maxhealth',['../class_unit.html#a6f9d1ac08692874b85317ac4ebb33ae9',1,'Unit']]]
+  ['lenx_155',['lenX',['../class_map.html#afd64277d6a616796b87745d191f6ccd0',1,'Map']]],
+  ['leny_156',['lenY',['../class_map.html#a2cf44ea9dc33605c98e1c7a050d32dc8',1,'Map']]]
 ];

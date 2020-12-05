@@ -65,6 +65,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_j_s_o_n-members.html">List of all members</a>  </div>
@@ -81,8 +82,15 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n_1_1_parse_exception.html">ParseException</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the exception thrown when the <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> parsing fails.  <a href="class_j_s_o_n_1_1_parse_exception.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the exception is thrown when the <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> parsing fails.  <a href="class_j_s_o_n_1_1_parse_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ae8a84a3194f215ba7dd89eb206656f8a"><td class="memItemLeft" align="right" valign="top"><a id="ae8a84a3194f215ba7dd89eb206656f8a"></a>
+typedef std::list&lt; std::variant&lt; std::string, int, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#ae8a84a3194f215ba7dd89eb206656f8a">list</a></td></tr>
+<tr class="memdesc:ae8a84a3194f215ba7dd89eb206656f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of multiple data containing list. <br /></td></tr>
+<tr class="separator:ae8a84a3194f215ba7dd89eb206656f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -93,18 +101,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e05c25394240770da452ee6c13ed5bf"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#a6e05c25394240770da452ee6c13ed5bf">get</a> (std::string key)</td></tr>
 <tr class="memdesc:a6e05c25394240770da452ee6c13ed5bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of the first variable associated with a given key.  <a href="class_j_s_o_n.html#a6e05c25394240770da452ee6c13ed5bf">More...</a><br /></td></tr>
 <tr class="separator:a6e05c25394240770da452ee6c13ed5bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3bd0e0877d5ccefc5d8ff64941cc61b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#aa3bd0e0877d5ccefc5d8ff64941cc61b">JSON</a> (const std::map&lt; std::string, std::string &gt; &amp;in_list)</td></tr>
-<tr class="memdesc:aa3bd0e0877d5ccefc5d8ff64941cc61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> object.  <a href="class_j_s_o_n.html#aa3bd0e0877d5ccefc5d8ff64941cc61b">More...</a><br /></td></tr>
-<tr class="separator:aa3bd0e0877d5ccefc5d8ff64941cc61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c40b17d4ccfdc6da3b5c10ae3a9d6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#a85c40b17d4ccfdc6da3b5c10ae3a9d6c">JSON</a> (const std::map&lt; std::string, JSONDATA &gt; &amp;in_list)</td></tr>
+<tr class="memdesc:a85c40b17d4ccfdc6da3b5c10ae3a9d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> object.  <a href="class_j_s_o_n.html#a85c40b17d4ccfdc6da3b5c10ae3a9d6c">More...</a><br /></td></tr>
+<tr class="separator:a85c40b17d4ccfdc6da3b5c10ae3a9d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a328cd86cebbc2483302d19dac1a8d8a2"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#a328cd86cebbc2483302d19dac1a8d8a2">parseFromFile</a> (std::string filename)</td></tr>
-<tr class="memdesc:a328cd86cebbc2483302d19dac1a8d8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function parses <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> data from a file  <a href="class_j_s_o_n.html#a328cd86cebbc2483302d19dac1a8d8a2">More...</a><br /></td></tr>
-<tr class="separator:a328cd86cebbc2483302d19dac1a8d8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a277166a6472fb12bef34c0fd72c9c277"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#a277166a6472fb12bef34c0fd72c9c277">jsonparse_s</a> (std::string json_in)</td></tr>
-<tr class="memdesc:a277166a6472fb12bef34c0fd72c9c277"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function parses <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> data from a text  <a href="class_j_s_o_n.html#a277166a6472fb12bef34c0fd72c9c277">More...</a><br /></td></tr>
-<tr class="separator:a277166a6472fb12bef34c0fd72c9c277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38e7d1ce861ad80f91410a78472570f"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, JSONDATA &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#aa38e7d1ce861ad80f91410a78472570f">parseFromFile</a> (std::string filename)</td></tr>
+<tr class="memdesc:aa38e7d1ce861ad80f91410a78472570f"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function parses <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> data from a file  <a href="class_j_s_o_n.html#aa38e7d1ce861ad80f91410a78472570f">More...</a><br /></td></tr>
+<tr class="separator:aa38e7d1ce861ad80f91410a78472570f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4690ef76a94ea20c283d8a2618c17511"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, JSONDATA &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_j_s_o_n.html#a4690ef76a94ea20c283d8a2618c17511">jsonparse_s</a> (std::string json_in)</td></tr>
+<tr class="memdesc:a4690ef76a94ea20c283d8a2618c17511"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function parses <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> data from a text  <a href="class_j_s_o_n.html#a4690ef76a94ea20c283d8a2618c17511">More...</a><br /></td></tr>
+<tr class="separator:a4690ef76a94ea20c283d8a2618c17511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>header for <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> class </p>
@@ -112,8 +120,8 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.5.0</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2020-11-27 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa3bd0e0877d5ccefc5d8ff64941cc61b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3bd0e0877d5ccefc5d8ff64941cc61b">&#9670;&nbsp;</a></span>JSON()</h2>
+<a id="a85c40b17d4ccfdc6da3b5c10ae3a9d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c40b17d4ccfdc6da3b5c10ae3a9d6c">&#9670;&nbsp;</a></span>JSON()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,7 +132,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">JSON::JSON </td>
           <td>(</td>
-          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::map&lt; std::string, JSONDATA &gt; &amp;&#160;</td>
           <td class="paramname"><em>in_list</em></td><td>)</td>
           <td></td>
         </tr>
@@ -216,8 +224,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a277166a6472fb12bef34c0fd72c9c277"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a277166a6472fb12bef34c0fd72c9c277">&#9670;&nbsp;</a></span>jsonparse_s()</h2>
+<a id="a4690ef76a94ea20c283d8a2618c17511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4690ef76a94ea20c283d8a2618c17511">&#9670;&nbsp;</a></span>jsonparse_s()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +234,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, std::string &gt; JSON::jsonparse_s </td>
+          <td class="memname">std::map&lt; std::string, JSONDATA &gt; JSON::jsonparse_s </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>json_in</em></td><td>)</td>
@@ -249,15 +257,15 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_j_s_o_n_1_1_parse_exception.html" title="This is the exception thrown when the JSON parsing fails.">ParseException</a></td><td>this function throws an exception if the parsing fails </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_j_s_o_n_1_1_parse_exception.html" title="This is the exception is thrown when the JSON parsing fails.">ParseException</a></td><td>this function throws an exception if the parsing fails </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a328cd86cebbc2483302d19dac1a8d8a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a328cd86cebbc2483302d19dac1a8d8a2">&#9670;&nbsp;</a></span>parseFromFile()</h2>
+<a id="aa38e7d1ce861ad80f91410a78472570f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38e7d1ce861ad80f91410a78472570f">&#9670;&nbsp;</a></span>parseFromFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +274,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, std::string &gt; JSON::parseFromFile </td>
+          <td class="memname">std::map&lt; std::string, JSONDATA &gt; JSON::parseFromFile </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -289,7 +297,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_j_s_o_n_1_1_parse_exception.html" title="This is the exception thrown when the JSON parsing fails.">ParseException</a></td><td>this function throws an exception if the parsing fails <br  />
+    <tr><td class="paramname"><a class="el" href="class_j_s_o_n_1_1_parse_exception.html" title="This is the exception is thrown when the JSON parsing fails.">ParseException</a></td><td>this function throws an exception if the parsing fails <br  />
  </td></tr>
   </table>
   </dd>
