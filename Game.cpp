@@ -45,12 +45,12 @@ void Game::run() {
 		isStarted = true;
 		while (gamehero->isAlive() && !m_locations.empty()) {
 			std::string input = "";
-			Game::showMap();
+			Game::showHeroVision();
 			std::cout << "Please enter where do u want to go (east, north, west, south): ";
 			std::getline(std::cin, input);
 			std::cout << std::endl;
 			if (Game::stepOn(input)) {
-				Game::showMap();
+				Game::showHeroVision();
 				if (getMonsterCountOnOnePos(h_location.first, h_location.second) > 0) {
 					auto i = m_locations.begin();
 					while (i != m_locations.end() && !m_locations.empty() && gamehero->isAlive()) {
