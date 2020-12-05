@@ -27,8 +27,7 @@ protected:
 	Damage damage; ///< Damage is a struct which contains int physical and int magical dmg. Physical damage can be reduced by defense.
 	int defense; ///< Defense can only block physical damage;
 	double attackspeed; ///< the number of times the character can attack in a second
-	double attackcooldown; ///< the remaining time, until the character can attack again
-	int light_radius; 
+	double attackcooldown; ///< the remaining time, until the character can attack again 
 
 	/**
 	 * @brief Set the Attack Cooldown object
@@ -87,7 +86,7 @@ public:
 	 *
 	 * The constructor uses the attackspeed value to set the initial attackcooldown
 	 */
-	Unit(std::string inn = "default", int inh = 1,int inphys = 1, int inmagic = 1, int indef=1, double ins = 1, int inlr = 1) :name(inn), maxhealth(inh), damage(inphys,inmagic) ,defense(indef), attackspeed(ins)
+	Unit(std::string inn = "default", int inh = 1,int inphys = 1, int inmagic = 1, int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(inphys,inmagic) ,defense(indef), attackspeed(ins)
 	{
 		attackcooldown = attackspeed;
 	}
