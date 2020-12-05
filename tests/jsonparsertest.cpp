@@ -157,7 +157,7 @@ TEST(Attacktest, attackcd) {
 //hero tests
 //constructor
 TEST(Hero, constructor) {
-	Hero h = Hero("h", 4, 3, 0, 0, 2, 3, 2, 3, 0, 0, 0.2);
+	Hero h = Hero("h", 4, 3, 0, 0, 2, 3, 2, 3, 0, 0, 0.2, 1, 1);
 	EXPECT_EQ(h.getName(), "h");
 	EXPECT_EQ(h.getMaxHealthPoints(), 4);
 	EXPECT_EQ(h.getHealthPoints(), 4);
@@ -165,6 +165,7 @@ TEST(Hero, constructor) {
 	EXPECT_EQ(h.getAttackCoolDown(), 2);
 	EXPECT_EQ(h.getLevel(), 1);
 	EXPECT_EQ(h.getExp(), 0);
+	EXPECT_EQ(h.getLightRadius(), 1);
 }
 
 //XP gain test
@@ -187,7 +188,7 @@ TEST(Hero, fightildeath) {
 //lvlup test
 TEST(Hero, lvlup) {
 	Monster a = Monster("a", 13, 1, 0, 0, 4);
-	Hero h = Hero("h", 10, 1, 0, 0, 2, 7, 2, 2, 2, 3, 0.3);
+	Hero h = Hero("h", 10, 1, 0, 0, 2, 7, 2, 2, 2, 3, 0.3, 1, 1);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.getLevel(), 2);
 	EXPECT_EQ(h.getMaxHealthPoints(), 12);
@@ -196,6 +197,7 @@ TEST(Hero, lvlup) {
 	EXPECT_EQ(h.getAttackCoolDown(), 2 * 0.3);
 	EXPECT_EQ(h.getMagicalDamage(), 2);
 	EXPECT_EQ(h.getDefense(), 3);
+	EXPECT_EQ(h.getLightRadius(), 2);
 }
 
 //Map test

@@ -26,6 +26,8 @@ class Hero :public Unit
     int magicaldmg_per_level;///< Magical damage bonus per lvl
     int defense_per_level;///< Defense bonus after lvling up
     double cdmul_per_level; ///< Cooldown multiplier bonus after lvling up
+    int light_radius; ///< How far our hero can see.
+    int light_radius_per_level; ///< How far our hero can see after lvling up
     
     
     public:
@@ -33,6 +35,9 @@ class Hero :public Unit
 	int getExp() const { return exp; }
     ///this is a getter function for current lvl
 	int getLevel() const { return lvl; }
+
+    ///this is a getter function for light radius
+    int getLightRadius() const { return light_radius; }
 
     /**
     * @brief JSON parser for Hero class
@@ -97,9 +102,11 @@ class Hero :public Unit
      * @param inmagicb sets the bonus magical damage per level of the character.
      * @param indefb sets the bonus defense per level of the character.
      * @param incdmul sets the cooldown per level of the character.
+     * @param inlr sets the light radius of the character.
+     * @param inlrb sets the light radius per level of the character.
      *
      * The constructor uses the attackspeed value to set the initial attackcooldown
      */
-    Hero(std::string innev, int inhp,int inphys, int inmagic ,int indef, double inaspeed, int inexpreq = 1, int inhpb = 1, int inphysb = 1,int inmagicb = 1 ,int indefb = 1 ,double incdmul = 1)
-        :Unit(innev,inhp,inphys,inmagic,indef,inaspeed), exp_per_level(inexpreq), hp_per_level(inhpb), physicaldmg_per_level(inphysb),magicaldmg_per_level(inmagicb) ,defense_per_level(indefb) ,cdmul_per_level(incdmul) {}
+    Hero(std::string innev, int inhp,int inphys, int inmagic ,int indef, double inaspeed, int inexpreq = 1, int inhpb = 1, int inphysb = 1,int inmagicb = 1 ,int indefb = 1 ,double incdmul = 1, int inlr = 1, int inlrb = 1)
+        :Unit(innev,inhp,inphys,inmagic,indef,inaspeed), exp_per_level(inexpreq), hp_per_level(inhpb), physicaldmg_per_level(inphysb),magicaldmg_per_level(inmagicb) ,defense_per_level(indefb) ,cdmul_per_level(incdmul), light_radius(inlr), light_radius_per_level(inlrb) {}
 };

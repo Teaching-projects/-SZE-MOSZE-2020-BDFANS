@@ -114,6 +114,9 @@ public:
 
     /// This function shows the map with our current location
     void showMap();
+    
+    ///This function shows the hero's current vision
+    void showHeroVision();
 
     ///this is a constructor for empty game.
     Game();

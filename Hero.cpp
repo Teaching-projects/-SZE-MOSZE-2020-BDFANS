@@ -16,8 +16,8 @@ void Hero::gainExp(int xp) {
 			defense += defense_per_level;
 			attackspeed *= cdmul_per_level;
 			akthealth = maxhealth;
-
 			attackcooldown = attackspeed;
+			light_radius += light_radius_per_level;
 		}
 	}
 }
@@ -71,6 +71,8 @@ void Hero::fightTilDeath(Unit& defender)
 		int indefb = 1;
         int inexpreq = 1;
         double incdmul = 1;
+		int inlr = 1;
+		int inlrb = 1;
 		try
 		{
 		innev = data.get<std::string>("name");
@@ -89,6 +91,8 @@ void Hero::fightTilDeath(Unit& defender)
 		inmagicb = data.get <int>("magical_damage_bonus_per_level");
 		indefb = data.get<int>("defense_bonus_per_level");
 		incdmul = data.get<double>("cooldown_multiplier_per_level");
+		inlr = data.get<int>("light_radius");
+		inlrb = data.get<int>("light_radius_bonus_per_level");
 		}
 		catch(const std::exception& e)
 		{
@@ -96,7 +100,7 @@ void Hero::fightTilDeath(Unit& defender)
 		}
 		
 		
-		return Hero(innev,inhp,inphys,inmagic,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul);
+		return Hero(innev,inhp,inphys,inmagic,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul,inlr,inlrb);
 
 	}
 	catch(const JSON::ParseException& e)

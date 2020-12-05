@@ -27,7 +27,7 @@ protected:
 	Damage damage; ///< Damage is a struct which contains int physical and int magical dmg. Physical damage can be reduced by defense.
 	int defense; ///< Defense can only block physical damage;
 	double attackspeed; ///< the number of times the character can attack in a second
-	double attackcooldown; ///< the remaining time, until the character can attack again
+	double attackcooldown; ///< the remaining time, until the character can attack again 
 
 	/**
 	 * @brief Set the Attack Cooldown object
@@ -71,7 +71,7 @@ public:
 	int getPhysicalDamage() const { return damage.physical; }
 	///this is a getter function for magical damage
 	int getMagicalDamage() const { return damage.magical; }
-	///this is a getter function for attaclspeed
+	///this is a getter function for attackspeed
 	double getAttackCoolDown() const { return attackspeed; }
 
 	/**
