@@ -140,3 +140,48 @@ void Game::showMap() {
 
 	std::cout << BOTTOM_LEFT; for (int i = 0; i < width; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
 }
+
+void Game::showHeroVision() {
+
+	int west = 0;
+	int north = 0;
+	int east = newMap.getMapWidth();
+	int south = newMap.getMapHeigth();
+
+	if (h_location.first >= gamehero->getLightRadius()) {
+		west = h_location.first - gamehero->getLightRadius();
+	}
+
+	if (h_location.second >= gamehero->getLightRadius()) {
+		north = h_location.second - gamehero->getLightRadius();
+	}
+
+	if (newMap.getMapWidth() > h_location.first + gamehero->getLightRadius()) {
+		east = h_location.first + gamehero->getLightRadius() + 1;
+	}
+
+	if (newMap.getMapHeigth() > h_location.second + gamehero->getLightRadius()) {
+		south = h_location.second + gamehero->getLightRadius() + 1;
+	}
+	
+	std::cout << TOP_LEFT; for (int i = west; i < east; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
+
+	for (int i = west; i < east; i++) {
+		std::cout << VERTICAL;
+		for (int j = north; j < south; j++) {
+			try {
+				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
+				else if (gamehero != nullptr && h_location.first == j && h_location.second == i) std::cout << HERO;
+				else {
+					int monstercount = getMonsterCountOnOnePos(j, i);
+					if (monstercount == 1) std::cout << SINGLEMONSTER;
+					else if (monstercount > 1) std::cout << MULTIPLEMONSTERS;
+					else std::cout << FREE;
+				}
+			}
+			catch (Map::WrongIndexException& e) { std::cout << WALL; }
+		}
+		std::cout << VERTICAL << "\n";
+	}
+	std::cout << BOTTOM_LEFT; for (int i = west; i < east; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
+}
