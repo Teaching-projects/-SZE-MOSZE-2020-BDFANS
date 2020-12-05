@@ -144,7 +144,7 @@ void Game::showMap() {
 void Game::showHeroVision() {
 	int width = newMap.getMapWidth();
 	int height = newMap.getMapHeigth();
-	int radius = gamehero->getLightRadius;
+	int radius = gamehero->getLightRadius();
 	int xmin = h_location.first - radius;
 	if (xmin < 0) { xmin = 0; }
 	int xmax = h_location.first + radius;
