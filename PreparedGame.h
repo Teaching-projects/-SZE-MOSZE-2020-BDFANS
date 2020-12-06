@@ -1,14 +1,14 @@
 /**
- * @file Game.h
- * @class Game
+ * @file PreparedGame.h
+ * @class PreparedGame
  *
  * @author BDFANS
  *
- * @brief header for Game class
- * @version 0.7.0
+ * @brief header for PreparedGame class
+ * @version 0.8.0
  *
  *
- * @date 2020-11-30
+ * @date 2020-12-06
  *
  */
 #pragma once
@@ -18,7 +18,12 @@
 
 class PreparedGame : Game {
     public:
+        /**
+         *This function prepares the game from a file.
+         *@param string jsongame is the preparedgame file.
+         */
         PreparedGame(std::string jsongame);
 
+        ///This function runs the game.
         void runGame();
 };

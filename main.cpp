@@ -72,8 +72,8 @@ int main(int argc, char** argv){
     } catch (const JSON::ParseException& e) {bad_exit(4);}
 
     try {
-        PreparedGame game = PreparedGame("game.json");
-        game.run();
+        PreparedGame game = PreparedGame("preparedgame.json");
+        game.runGame();
     }
     catch (const JSON::ParseException& e) { bad_exit(4); }
 

@@ -108,15 +108,6 @@ private:
     ///This function shows the hero's current vision
     void showHeroVision();
 
-    ///this is a constructor for empty game.
-    Game();
-
-    ///This is a constructor for game with the map initialized.
-    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
-
-    ///This is a destructor for game
-    ~Game() { delete gamehero; };
-
 public:
 
     /**
@@ -125,6 +116,15 @@ public:
      *@throw Exception this function throws an exception if the map or hero or monster is not set.
      */
     void run();
+
+    ///this is a constructor for empty game.
+    Game();
+
+    ///This is a constructor for game with the map initialized.
+    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
+
+    ///This is a destructor for game
+    ~Game() { delete gamehero; };
 
     class OccupiedException : public std::runtime_error {
         public:

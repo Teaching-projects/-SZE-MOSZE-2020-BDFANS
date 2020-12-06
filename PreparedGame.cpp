@@ -38,3 +38,7 @@ PreparedGame::PreparedGame(std::string jsongame) {
 		}
 	}
 }
+
+PreparedGame::runGame() {
+	Game::run();
+}
