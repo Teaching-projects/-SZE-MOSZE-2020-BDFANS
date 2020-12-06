@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gainexp_12',['gainExp',['../class_hero.html#a0d5fae39aa8389ff508acbfaad90dad1',1,'Hero']]],
-  ['game_13',['Game',['../class_game.html',1,'Game'],['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../class_game.html#a3876b1ca516ea549b57de515b25c6acc',1,'Game::Game(std::string &amp;mapfilename)']]],
+  ['game_13',['Game',['../class_game.html',1,'']]],
   ['game_2eh_14',['Game.h',['../_game_8h.html',1,'']]],
   ['gamealreadystartedexception_15',['GameAlreadyStartedException',['../class_game_1_1_game_already_started_exception.html',1,'Game']]],
   ['get_16',['get',['../class_j_s_o_n.html#a6e05c25394240770da452ee6c13ed5bf',1,'JSON::get()'],['../class_map.html#ac15534a6935a350741d52b45385b2fec',1,'Map::get()']]],
