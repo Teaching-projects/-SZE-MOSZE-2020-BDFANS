@@ -1,7 +1,7 @@
 {
   "map" : "markedmap.txt",
   "hero" : "unit/Dark_Wanderer.json",
-  "monster1" : "unit/Fallen.json",
-  "monster2" : "unit/Zombie.json",
-  "monster3" : "unit/Blood_Raven.json"
+  "monster-1" : "unit/Fallen.json",
+  "monster-2" : "unit/Zombie.json",
+  "monster-3" : "unit/Blood_Raven.json"
 }
