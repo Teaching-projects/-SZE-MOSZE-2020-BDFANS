@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - gh-pages
-      - light-radius
+      - PreparedGame
 
 jobs:
     generate_documentation:

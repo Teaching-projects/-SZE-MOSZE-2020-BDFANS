@@ -61,9 +61,6 @@ private:
      */
     bool stepOn(std::string command);
 
-public:
-
-
     /** this is a setter function for the map.
      *
      *@throw Exception this function throws an exception if we still have units on the map.
@@ -85,7 +82,6 @@ public:
      */
     void putHero(Hero hero, int x, int y);
 
-
     /**
      *@param monster is the monster we want to put on the map.
      *@param x is the x coord
@@ -99,12 +95,6 @@ public:
     void putMonster(Monster monster, int x, int y);
 
     /**
-     *This function is responsible for the gameplay
-     *
-     *@throw Exception this function throws an exception if the map or hero or monster is not set.
-     */
-    void run();
-    /**
      *@param x is the unit's x coord
      *@param y is the unit's y coord
      *
@@ -114,7 +104,7 @@ public:
 
     /// This function shows the map with our current location
     void showMap();
-    
+
     ///This function shows the hero's current vision
     void showHeroVision();
 
@@ -122,10 +112,19 @@ public:
     Game();
 
     ///This is a constructor for game with the map initialized.
-    Game(std::string &mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
+    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
 
     ///This is a destructor for game
     ~Game() { delete gamehero; };
+
+public:
+
+    /**
+     *This function is responsible for the gameplay
+     *
+     *@throw Exception this function throws an exception if the map or hero or monster is not set.
+     */
+    void run();
 
     class OccupiedException : public std::runtime_error {
         public:
