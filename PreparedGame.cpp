@@ -28,7 +28,7 @@ PreparedGame::PreparedGame(std::string jsongame) {
 	std::string aktmfnev="";
 
 	for (int i = 0; i < monsterdb; i++) {
-		aktmfnev = json.get<std::string>("monster-" + std::to_string(i + 1));
+		aktmfnev = data.get<std::string>("monster-" + std::to_string(i + 1));
 		Monster monster = Monster::parse(aktmfnev);
 		std::list<std::pair<int, int>> monster_locations;
 		monster_locations = map.getMonsterPositions((char)(i + '1'));
@@ -39,6 +39,6 @@ PreparedGame::PreparedGame(std::string jsongame) {
 	}
 }
 
-PreparedGame::runGame() {
+void PreparedGame::runGame() {
 	Game::run();
 }

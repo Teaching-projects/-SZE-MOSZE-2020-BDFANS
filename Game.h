@@ -61,6 +61,24 @@ private:
      */
     bool stepOn(std::string command);
 
+public:
+
+    /**
+     *This function is responsible for the gameplay
+     *
+     *@throw Exception this function throws an exception if the map or hero or monster is not set.
+     */
+    void run();
+
+    ///this is a constructor for empty game.
+    Game();
+
+    ///This is a constructor for game with the map initialized.
+    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
+
+    ///This is a destructor for game
+    ~Game() { delete gamehero; };
+
     /** this is a setter function for the map.
      *
      *@throw Exception this function throws an exception if we still have units on the map.
@@ -107,24 +125,6 @@ private:
 
     ///This function shows the hero's current vision
     void showHeroVision();
-
-public:
-
-    /**
-     *This function is responsible for the gameplay
-     *
-     *@throw Exception this function throws an exception if the map or hero or monster is not set.
-     */
-    void run();
-
-    ///this is a constructor for empty game.
-    Game();
-
-    ///This is a constructor for game with the map initialized.
-    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
-
-    ///This is a destructor for game
-    ~Game() { delete gamehero; };
 
     class OccupiedException : public std::runtime_error {
         public:
