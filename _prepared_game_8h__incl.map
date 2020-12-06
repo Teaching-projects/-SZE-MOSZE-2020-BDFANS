@@ -1,0 +1,13 @@
+<map id="PreparedGame.h" name="PreparedGame.h">
+<area shape="rect" id="node1" title=" " alt="" coords="260,5,391,32"/>
+<area shape="rect" id="node2" href="$_game_8h.html" title=" " alt="" coords="195,80,269,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="329,229,388,256"/>
+<area shape="rect" id="node3" href="$_map_8h.html" title=" " alt="" coords="250,155,313,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="23,379,103,405"/>
+<area shape="rect" id="node7" href="$_unit_8h.html" title=" " alt="" coords="52,229,113,256"/>
+<area shape="rect" id="node9" href="$_hero_8h.html" title=" " alt="" coords="50,155,115,181"/>
+<area shape="rect" id="node10" href="$_monster_8h.html" title=" " alt="" coords="139,155,226,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="388,155,431,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="242,229,305,256"/>
+<area shape="rect" id="node8" href="$_damage_8h.html" title="header for Damage struct" alt="" coords="59,304,149,331"/>
+</map>
