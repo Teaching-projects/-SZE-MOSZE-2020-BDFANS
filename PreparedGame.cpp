@@ -3,7 +3,7 @@
 #include "MarkedMap.h"
 #include "JSON.h"
 
-PreparedGame::PreparedGame(std::string jsongame) {
+PreparedGame::PreparedGame(std::string& jsongame) {
 	JSON data = JSON::parseFromFile(jsongame); 
 	std::string mapfnev = data.get<std::string>("map");
 	MarkedMap map(mapfnev);
@@ -14,8 +14,6 @@ PreparedGame::PreparedGame(std::string jsongame) {
 	std::pair<int, int> hero_location = map.getHeroPosition();
 	putHero(gamehero, hero_location.first, hero_location.second);
 
-	std::string monsterfnev = data.get<std::string>("monster");
-	Monster monster = Monster::parse(monsterfnev);
 	int monsterdb = 0;
 	while (true) {
 		std::string akt = "monster-" + std::to_string(monsterdb + 1);
