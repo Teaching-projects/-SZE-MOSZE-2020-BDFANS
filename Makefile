@@ -1,4 +1,4 @@
-OBJS := Unit.o Hero.o JSON.o Monster.o main.o Map.o Game.o MarkedMap.o
+OBJS := Unit.o Hero.o JSON.o Monster.o main.o Map.o Game.o MarkedMap.o PreparedGame.o
 CFLAGS := -std=c++17 -Wall -Wextra -Werror
 CC := g++-9
 
@@ -32,8 +32,11 @@ Game.o: Map.h Unit.h Hero.h Monster.h Game.cpp Game.h
 
 MarkedMap.o: MarkedMap.cpp MarkedMap.h
 	$(CC) $(CFLAGS) -c MarkedMap.cpp
-  
-main.o: main.cpp Hero.h JSON.h Monster.h Damage.h Game.h
+
+PreparedGame.o: PreparedGame.cpp PreparedGame.h MarkedMap.h JSON.h Game.h
+	$(CC) $(CFLAGS) -c PreparedGame.cpp
+
+main.o: main.cpp Hero.h JSON.h Monster.h Damage.h Game.h PreparedGame.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 clean:

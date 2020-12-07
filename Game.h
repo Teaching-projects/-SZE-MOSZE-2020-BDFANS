@@ -63,6 +63,21 @@ private:
 
 public:
 
+    /**
+     *This function is responsible for the gameplay
+     *
+     *@throw Exception this function throws an exception if the map or hero or monster is not set.
+     */
+    void run();
+
+    ///this is a constructor for empty game.
+    Game() :isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), gamehero(nullptr){};
+
+    ///This is a constructor for game with the map initialized.
+    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
+
+    ///This is a destructor for game
+    ~Game() { delete gamehero; };
 
     /** this is a setter function for the map.
      *
@@ -85,7 +100,6 @@ public:
      */
     void putHero(Hero hero, int x, int y);
 
-
     /**
      *@param monster is the monster we want to put on the map.
      *@param x is the x coord
@@ -99,12 +113,6 @@ public:
     void putMonster(Monster monster, int x, int y);
 
     /**
-     *This function is responsible for the gameplay
-     *
-     *@throw Exception this function throws an exception if the map or hero or monster is not set.
-     */
-    void run();
-    /**
      *@param x is the unit's x coord
      *@param y is the unit's y coord
      *
@@ -114,18 +122,9 @@ public:
 
     /// This function shows the map with our current location
     void showMap();
-    
+
     ///This function shows the hero's current vision
     void showHeroVision();
-
-    ///this is a constructor for empty game.
-    Game();
-
-    ///This is a constructor for game with the map initialized.
-    Game(std::string &mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
-
-    ///This is a destructor for game
-    ~Game() { delete gamehero; };
 
     class OccupiedException : public std::runtime_error {
         public:
