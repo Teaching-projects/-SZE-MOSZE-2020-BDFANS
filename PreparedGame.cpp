@@ -31,8 +31,8 @@ PreparedGame::PreparedGame(std::string jsongame) {
 		std::list<std::pair<int, int>> monster_locations;
 		monster_locations = map.getMonsterPositions((char)(i + '1'));
 
-		for (auto i = monster_locations.begin(); i != monster_locations.end(); i++) {
-			putMonster(monster, i->first, i->second);
+		for (auto j = monster_locations.begin(); j != monster_locations.end(); j++) {
+			putMonster(monster, j->first, i->second);
 		}
 	}
 }
