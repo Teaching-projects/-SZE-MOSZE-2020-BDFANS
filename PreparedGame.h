@@ -22,7 +22,7 @@ class PreparedGame : Game {
          *This function prepares the game from a file.
          *@param string jsongame is the preparedgame file.
          */
-        PreparedGame(std::string jsongame);
+        PreparedGame(std::string& jsongame);
 
         ///This function runs the game.
         void runGame();

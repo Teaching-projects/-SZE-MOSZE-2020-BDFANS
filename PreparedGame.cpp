@@ -3,7 +3,7 @@
 #include "MarkedMap.h"
 #include "JSON.h"
 
-PreparedGame::PreparedGame(std::string jsongame) {
+PreparedGame::PreparedGame(std::string& jsongame) {
 	JSON data = JSON::parseFromFile(jsongame); 
 	std::string mapfnev = data.get<std::string>("map");
 	MarkedMap map(mapfnev);
