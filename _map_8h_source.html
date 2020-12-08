@@ -93,9 +93,9 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_map_1_1_wrong_index_exception.html">   41</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_map_1_1_wrong_index_exception.html">WrongIndexException</a> : <span class="keyword">public</span> std::runtime_error {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_map_1_1_wrong_index_exception.html">WrongIndexException</a>(<span class="keyword">const</span> std::string&amp; errMsg) : std::runtime_error(errMsg) {};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_map_1_1_wrong_index_exception.html">WrongIndexException</a>(<span class="keyword">const</span> std::string&amp; errMsg) : std::runtime_error(errMsg) {};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="class_map.html">Map</a>(std::string filename) ;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_map.html">Map</a>(std::string filename) ;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_map.html">Map</a>() {};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>

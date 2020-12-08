@@ -70,7 +70,7 @@ $(function() {
 : <a class="el" href="class_unit.html#a99cdb47609963a65e9d71a3c452ad612">Unit</a>
 </li>
 <li>attack()
-: <a class="el" href="class_hero.html#abdbfbaf32d3d54eb4f2c11a145ade1ec">Hero</a>
+: <a class="el" href="class_hero.html#a9d50aa244fb0a457ccbb388c584221bb">Hero</a>
 , <a class="el" href="class_unit.html#ae5d85e2b13c9a046789514deb0050459">Unit</a>
 </li>
 <li>attackcd()
@@ -132,8 +132,17 @@ $(function() {
 <li>getExp()
 : <a class="el" href="class_hero.html#aca45aa10e1caefaf84a22ed42fd4f7df">Hero</a>
 </li>
+<li>getFreeTexture()
+: <a class="el" href="class_game.html#a397d21f7880603af9a266f2c15b21c6c">Game</a>
+</li>
 <li>getHealthPoints()
 : <a class="el" href="class_unit.html#ad5296f2ce5cb21eb323d5eb0bc104eba">Unit</a>
+</li>
+<li>getHero()
+: <a class="el" href="class_game.html#a675df477a4caf4b7539594da488546c1">Game</a>
+</li>
+<li>getHeroPos()
+: <a class="el" href="class_game.html#ad15c49e33baff452c5495a8d187f8621">Game</a>
 </li>
 <li>getHeroPosition()
 : <a class="el" href="class_marked_map.html#aaa25768bfdd3ea4b21e847882a3f9ccd">MarkedMap</a>
@@ -153,6 +162,9 @@ $(function() {
 <li>getMagicalDamage()
 : <a class="el" href="class_unit.html#a732bd9a8aac310db5fcdfdb872555221">Unit</a>
 </li>
+<li>getmap()
+: <a class="el" href="class_game.html#abd2ce44471bb7debfb966c628905965e">Game</a>
+</li>
 <li>getMapHeigth()
 : <a class="el" href="class_map.html#a0b915bae065c7685bfc9302e146b165c">Map</a>
 </li>
@@ -162,14 +174,26 @@ $(function() {
 <li>getMaxHealthPoints()
 : <a class="el" href="class_unit.html#a371a9431c2bbcab1f5373fe72a346ff4">Unit</a>
 </li>
+<li>getMonsterCountOnOnePos()
+: <a class="el" href="class_game.html#a9ae0292a453ed2527920020fad1e354e">Game</a>
+</li>
 <li>getMonsterPositions()
 : <a class="el" href="class_marked_map.html#a2418a7ae3845fde7cc3bbbb09a5bc00c">MarkedMap</a>
+</li>
+<li>getMonstersonPos()
+: <a class="el" href="class_game.html#ade1ec0712c929aee2e46f11c108ed646">Game</a>
 </li>
 <li>getName()
 : <a class="el" href="class_unit.html#a0497994e384db5c080ec78e9b645fa40">Unit</a>
 </li>
 <li>getPhysicalDamage()
 : <a class="el" href="class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5">Unit</a>
+</li>
+<li>getTexture()
+: <a class="el" href="class_unit.html#a0e64c72915d850545d109de0bb2dc4b1">Unit</a>
+</li>
+<li>getWallTexture()
+: <a class="el" href="class_game.html#acf9be6ef1c59a4c2a0c47db9da97dfd0">Game</a>
 </li>
 </ul>
 
@@ -226,7 +250,7 @@ $(function() {
 : <a class="el" href="class_map.html#ab124c12c6c9dec693aedb1a4b6384ecd">Map</a>
 </li>
 <li>MarkedMap()
-: <a class="el" href="class_marked_map.html#a618f75da9dc21d4ba9a81f22b91a0e89">MarkedMap</a>
+: <a class="el" href="class_marked_map.html#a5bf2032d693c9eed1defddfb5a796a43">MarkedMap</a>
 </li>
 <li>maxhealth
 : <a class="el" href="class_unit.html#a6f9d1ac08692874b85317ac4ebb33ae9">Unit</a>
@@ -245,8 +269,20 @@ $(function() {
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
+<li>operator*=()
+: <a class="el" href="struct_damage.html#ab96d6cf6a07e31ee7765f605a6e0961c">Damage</a>
+</li>
+<li>operator+=()
+: <a class="el" href="struct_damage.html#a56892fc4291b8fd516e734817cc45c44">Damage</a>
+</li>
 <li>operator&lt;&lt;
 : <a class="el" href="class_unit.html#a7886e99105dd39f73b39f45a6863d1df">Unit</a>
+</li>
+<li>out_stream
+: <a class="el" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">TextRenderer</a>
+</li>
+<li>outfilename
+: <a class="el" href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">SVGRenderer</a>
 </li>
 </ul>
 
@@ -278,6 +314,20 @@ $(function() {
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
+<li>registerRenderer()
+: <a class="el" href="class_game.html#a765c1d582f92b865b67afb0a91a79798">Game</a>
+, <a class="el" href="class_prepared_game.html#ade007b1d2616f5ca5e596263c29a3fae">PreparedGame</a>
+</li>
+<li>render()
+: <a class="el" href="class_character_s_v_g_renderer.html#af8b23b13589f58e2dd8158737e8a517f">CharacterSVGRenderer</a>
+, <a class="el" href="class_hero_text_renderer.html#a5c13892c383249589cec736c60ee8e15">HeroTextRenderer</a>
+, <a class="el" href="class_observer_s_v_g_renderer.html#a7c245506ba6208e5983341c896292558">ObserverSVGRenderer</a>
+, <a class="el" href="class_observer_text_renderer.html#ac59617b76331a37c11cda00cc503396b">ObserverTextRenderer</a>
+, <a class="el" href="class_renderer.html#a163cf08569a69166eec6df31f257f4c1">Renderer</a>
+</li>
+<li>renderall()
+: <a class="el" href="class_game.html#a62bcdc7de33e742cc3ee75a312f47ca2">Game</a>
+</li>
 <li>run()
 : <a class="el" href="class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa">Game</a>
 </li>
@@ -294,24 +344,34 @@ $(function() {
 <li>setAttackCooldown()
 : <a class="el" href="class_unit.html#a82400a76b04a7bf2a9c60a37b4e5245e">Unit</a>
 </li>
+<li>setFreeTexture()
+: <a class="el" href="class_game.html#ad53ddf4f5b0e5e5bc9f2516faf12c4e1">Game</a>
+</li>
 <li>setHealthPoints()
 : <a class="el" href="class_unit.html#a6b28bebce697a1ce22695b6d416f3784">Unit</a>
 </li>
 <li>setMap()
-: <a class="el" href="class_game.html#ab83e25f737717d7bb4ec95b22efc82d9">Game</a>
+: <a class="el" href="class_game.html#a2da2d4e53f7b25a9763b45ce3439628a">Game</a>
 </li>
-<li>showHeroVision()
-: <a class="el" href="class_game.html#a488a04e1e0a8b188e843fa4711208cfc">Game</a>
+<li>setTexture()
+: <a class="el" href="class_unit.html#a3cc5a79f795b055efccf626e5cf7da06">Unit</a>
 </li>
-<li>showMap()
-: <a class="el" href="class_game.html#a8233972ea1eddd11d563bfa857f4e1e2">Game</a>
+<li>setWallTexture()
+: <a class="el" href="class_game.html#af4b1ab6b06c3dd9f20fb50790c6eccc6">Game</a>
+</li>
+</ul>
+
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>texture
+: <a class="el" href="class_unit.html#a5910a62914eba6cd7e75b35f74d7b765">Unit</a>
 </li>
 </ul>
 
 
 <h3><a id="index_u"></a>- u -</h3><ul>
 <li>Unit()
-: <a class="el" href="class_unit.html#a29723c3bf2780f4991bb9fa152e4ba05">Unit</a>
+: <a class="el" href="class_unit.html#a57d3d307cfc18152ce320de4663bd676">Unit</a>
 </li>
 </ul>
 

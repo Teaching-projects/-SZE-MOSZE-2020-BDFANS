@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['noinstanceexception_92',['NoInstanceException',['../class_marked_map_1_1_no_instance_exception.html',1,'MarkedMap']]],
-  ['notinitializedexception_93',['NotInitializedException',['../class_game_1_1_not_initialized_exception.html',1,'Game']]]
+  ['map_118',['Map',['../class_map.html',1,'']]],
+  ['markedmap_119',['MarkedMap',['../class_marked_map.html',1,'']]],
+  ['monster_120',['Monster',['../class_monster.html',1,'']]],
+  ['multipleheroexception_121',['MultipleHeroException',['../class_marked_map_1_1_multiple_hero_exception.html',1,'MarkedMap']]]
 ];

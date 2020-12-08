@@ -84,34 +84,36 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> Returndmg;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="struct_damage.html">Damage</a>&amp; operator+=(<span class="keyword">const</span> <a class="code" href="struct_damage.html">Damage</a>&amp; dmg) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> += dmg.<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> += dmg.<a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="struct_damage.html">Damage</a>&amp; operator*=(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; multi) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> = <a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> * multi;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> = <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> * multi;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_damage.html">Damage</a>&amp; dmg)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> == dmg.<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> &amp;&amp; <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> == dmg.<a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, <span class="keyword">const</span> <a class="code" href="struct_damage.html">Damage</a>&amp; dmg) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Physical: &quot;</span> &lt;&lt; dmg.<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> &lt;&lt; <span class="stringliteral">&quot;, Magical: &quot;</span> &lt;&lt; dmg.<a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_damage.html#a56892fc4291b8fd516e734817cc45c44">   31</a></span>&#160;    <a class="code" href="struct_damage.html">Damage</a>&amp; <a class="code" href="struct_damage.html#a56892fc4291b8fd516e734817cc45c44">operator+=</a>(<span class="keyword">const</span> <a class="code" href="struct_damage.html">Damage</a>&amp; dmg) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> += dmg.<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> += dmg.<a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_damage.html#ab96d6cf6a07e31ee7765f605a6e0961c">   39</a></span>&#160;    <a class="code" href="struct_damage.html">Damage</a>&amp; <a class="code" href="struct_damage.html#ab96d6cf6a07e31ee7765f605a6e0961c">operator*=</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; multi) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> = <a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> * multi;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> = <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> * multi;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_damage.html">Damage</a>&amp; dmg)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> == dmg.<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> &amp;&amp; <a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a> == dmg.<a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">friend</span> std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, <span class="keyword">const</span> <a class="code" href="struct_damage.html">Damage</a>&amp; dmg) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Physical: &quot;</span> &lt;&lt; dmg.<a class="code" href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">physical</a> &lt;&lt; <span class="stringliteral">&quot;, Magical: &quot;</span> &lt;&lt; dmg.<a class="code" href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">magical</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astruct_damage_html"><div class="ttname"><a href="struct_damage.html">Damage</a></div><div class="ttdoc">Damage is a struct which contains int physical and int magical dmg.</div><div class="ttdef"><b>Definition:</b> Damage.h:18</div></div>
 <div class="ttc" id="astruct_damage_html_aee70c6c924eac810d02f61efbc90c719"><div class="ttname"><a href="struct_damage.html#aee70c6c924eac810d02f61efbc90c719">Damage::physical</a></div><div class="ttdeci">int physical</div><div class="ttdoc">Physical damage can be reduced by defense.</div><div class="ttdef"><b>Definition:</b> Damage.h:19</div></div>
+<div class="ttc" id="astruct_damage_html_ab96d6cf6a07e31ee7765f605a6e0961c"><div class="ttname"><a href="struct_damage.html#ab96d6cf6a07e31ee7765f605a6e0961c">Damage::operator*=</a></div><div class="ttdeci">Damage &amp; operator*=(const int &amp;multi)</div><div class="ttdoc">Multiplies both physical and magical damage by multi.</div><div class="ttdef"><b>Definition:</b> Damage.h:39</div></div>
+<div class="ttc" id="astruct_damage_html_a56892fc4291b8fd516e734817cc45c44"><div class="ttname"><a href="struct_damage.html#a56892fc4291b8fd516e734817cc45c44">Damage::operator+=</a></div><div class="ttdeci">Damage &amp; operator+=(const Damage &amp;dmg)</div><div class="ttdoc">Adds dmg to both physical and magical damage.</div><div class="ttdef"><b>Definition:</b> Damage.h:31</div></div>
 <div class="ttc" id="astruct_damage_html_a496876891f196c2b4ac9afe9f31b77b4"><div class="ttname"><a href="struct_damage.html#a496876891f196c2b4ac9afe9f31b77b4">Damage::magical</a></div><div class="ttdeci">int magical</div><div class="ttdoc">Magical damage can't be reduced by defense.</div><div class="ttdef"><b>Definition:</b> Damage.h:20</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
