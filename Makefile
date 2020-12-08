@@ -1,4 +1,4 @@
-OBJS := Unit.o Hero.o JSON.o Monster.o main.o Map.o Game.o MarkedMap.o PreparedGame.o HeroTextRenderer.o ObserverTextRenderer.o ObserverSVGRenderer.o CharacterSVGRenderer.o
+OBJS := Unit.o Hero.o JSON.o Monster.o main.o Map.o Game.o MarkedMap.o PreparedGame.o HeroTextRenderer.o ObserverTextRenderer.o SVGRenderer.o ObserverSVGRenderer.o CharacterSVGRenderer.o
 CFLAGS := -std=c++17 -Wall -Wextra -Werror
 CC := g++-9
 
@@ -38,6 +38,9 @@ HeroTextRenderer.o: HeroTextRenderer.cpp HeroTextRenderer.h TextRenderer.h
 
 ObserverTextRenderer.o: ObserverTextRenderer.cpp ObserverTextRenderer.h TextRenderer.h
 	$(CC) $(CFLAGS) -c ObserverTextRenderer.cpp
+
+SVGRenderer.o: SVGRenderer.cpp SVGRenderer.h
+	$(CC) $(CFLAGS) -c SVGRenderer.cpp
 
 ObserverSVGRenderer.o: ObserverSVGRenderer.cpp ObserverSVGRenderer.h SVGRenderer.h
 	$(CC) $(CFLAGS) -c ObserverSVGRenderer.cpp
