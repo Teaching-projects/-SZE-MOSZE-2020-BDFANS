@@ -39,7 +39,7 @@ public:
     void setOutputStream(std::ostream& o) {out_stream.copyfmt(o);}
 
     TextRenderer()  :out_stream(std::cout) {}
-    TextRenderer(std::ostream& in) :out_stream(in) {}
+    explicit TextRenderer(std::ostream& in) :out_stream(in) {}
 
     virtual ~TextRenderer() {}
 };

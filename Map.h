@@ -42,6 +42,7 @@ public:
     public:
         explicit WrongIndexException(const std::string& errMsg) : std::runtime_error(errMsg) {};
     };
+    
     /**
      * @brief Construct a new Map object
      * 
@@ -51,7 +52,7 @@ public:
      * Use '#', whitespace and linebreak characters to create the map. invalid characters get ignored when generating the map
      * Undefined regions become "Wall" type on default
      */
-    explicit Map(std::string filename) ;
+    explicit Map(const std::string& filename) ;
 
     Map() {};
 

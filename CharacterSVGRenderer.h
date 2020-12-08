@@ -10,5 +10,5 @@ public:
 
     void render(const Game& ingame) const override;
 
-    CharacterSVGRenderer(std::string ofilename) :SVGRenderer(ofilename) {};
+    explicit CharacterSVGRenderer(const std::string& ofilename) :SVGRenderer(ofilename) {};
 };

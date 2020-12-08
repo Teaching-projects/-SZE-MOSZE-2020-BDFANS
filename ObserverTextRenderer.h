@@ -23,7 +23,7 @@ public:
 
     void render(const Game& ingame) const override;
 
-    ObserverTextRenderer(std::ostream& in) :TextRenderer(in) {};
+    explicit ObserverTextRenderer(std::ostream& in) :TextRenderer(in) {};
 
     ObserverTextRenderer() :TextRenderer() {}
 };

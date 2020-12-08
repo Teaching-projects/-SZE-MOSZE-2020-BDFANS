@@ -14,6 +14,6 @@ protected:
 
 public:
 
-    SVGRenderer(std::string ofilename) :outfilename(ofilename) {}
+    explicit SVGRenderer(const std::string& ofilename) :outfilename(ofilename) {}
 
 };
