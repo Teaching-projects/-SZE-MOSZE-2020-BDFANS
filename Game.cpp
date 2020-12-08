@@ -45,12 +45,12 @@ void Game::run() {
 		isStarted = true;
 		while (gamehero->isAlive() && !m_locations.empty()) {
 			std::string input = "";
-			Game::showHeroVision();
+			//Game::showHeroVision();
 			std::cout << "Please enter where do u want to go (east, north, west, south): ";
 			std::getline(std::cin, input);
 			std::cout << std::endl;
 			if (Game::stepOn(input)) {
-				Game::showHeroVision();
+				Game::renderall();
 				if (getMonsterCountOnOnePos(h_location.first, h_location.second) > 0) {
 					auto i = m_locations.begin();
 					while (i != m_locations.end() && !m_locations.empty() && gamehero->isAlive()) {
@@ -113,65 +113,46 @@ bool Game::heroIsOnMap(int x, int y) {
 	return onMap;
 }
 
+    void Game::registerRenderer(Renderer* inrender)
+	{
+		rendererlist.push_back(inrender);
+	}
+    
 
-void Game::showMap() {
-	int width = newMap.getMapWidth();
-	int heigth = newMap.getMapHeigth();
-
-	std::cout << TOP_LEFT ; for (int i = 0; i < width; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
-
-	for (int i = 0; i < heigth; i++) {
-		std::cout << VERTICAL;
-		for (int j = 0; j < width; j++) {
-			try {
-				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
-				else if (gamehero != nullptr && h_location.first == j && h_location.second == i) std::cout << HERO;
-				else {
-					int monstercount = getMonsterCountOnOnePos(j, i);
-					if (monstercount == 1) std::cout << SINGLEMONSTER;
-					else if (monstercount > 1) std::cout << MULTIPLEMONSTERS;
-					else std::cout << FREE;
-				}
-			}
-			catch (Map::WrongIndexException& e) { std::cout << WALL; }
+    void Game::renderall()
+	{
+		for(auto& iterator : rendererlist) 
+    	{
+			iterator->render(*this);
 		}
-		std::cout << VERTICAL << "\n";
 	}
 
-	std::cout << BOTTOM_LEFT; for (int i = 0; i < width; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
-}
-
-void Game::showHeroVision() {
-	int width = newMap.getMapWidth();
-	int height = newMap.getMapHeigth();
-	int radius = gamehero->getLightRadius();
-	int xmin = h_location.first - radius;
-	if (xmin < 0) { xmin = 0; }
-	int xmax = h_location.first + radius + 1;
-	if (xmax > width) { xmax = width; }
-	int ymin = h_location.second - radius;
-	if (ymin < 0) { ymin = 0; }
-	int ymax = h_location.second + radius + 1;
-	if (ymax > height) { ymax = height; }
-	
-	std::cout << TOP_LEFT; for (int i = xmin; i < xmax; i++) std::cout << HORIZONTAL; std::cout << TOP_RIGHT << std::endl;
-
-	for (int i = ymin; i < ymax; i++) {
-		std::cout << VERTICAL;
-		for (int j = xmin; j < xmax; j++) {
-			try {
-				if (newMap.get(j, i) == type::Wall) std::cout << WALL;
-				else if (gamehero != nullptr && h_location.first == j && h_location.second == i) std::cout << HERO;
-				else {
-					int monstercount = getMonsterCountOnOnePos(j, i);
-					if (monstercount == 1) std::cout << SINGLEMONSTER;
-					else if (monstercount > 1) std::cout << MULTIPLEMONSTERS;
-					else std::cout << FREE;
+	std::list<Monster> Game::getMonstersonPos(int x, int y) const
+	{
+		std::pair<int,int> location(x,y);
+		std::list<Monster> outlist;
+		if(newMap.get(x, y) != type::Wall && location != getHeroPos())
+		{
+			for (auto i = m_locations.begin(); i != m_locations.end(); i++)
+			{
+				if(i->second == location)
+				{
+					outlist.push_back(i->first);
 				}
+				else {}
 			}
-			catch (Map::WrongIndexException& e) { std::cout << WALL; }
 		}
-		std::cout << VERTICAL << "\n";
+		else {}
+			
+		return outlist;
 	}
-	std::cout << BOTTOM_LEFT; for (int i = xmin; i < xmax; i++) std::cout << HORIZONTAL; std::cout << BOTTOM_RIGHT << std::endl;
+
+Game::~Game() 
+{
+	delete gamehero;
+
+	for(auto&& iterator : rendererlist) 
+    {
+		delete iterator;
+	}
 }

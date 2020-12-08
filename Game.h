@@ -21,37 +21,25 @@
 #include <string>
 #include <list>
 
+#include "Renderer.h"
+
 class Game
 {
 private:
-    const std::string TOP_LEFT = "\u2554";
-    const std::string TOP_RIGHT = "\u2557";
-    const std::string BOTTOM_LEFT = "\u255A";
-    const std::string BOTTOM_RIGHT = "\u255D";
-    const std::string HORIZONTAL = "\u2550\u2550";
-    const std::string VERTICAL = "\u2551";
-    const std::string FREE = "\u2591\u2591";
-    const std::string WALL = "\u2588\u2588";
-    const std::string SINGLEMONSTER = "M\u2591";
-    const std::string MULTIPLEMONSTERS = "MM";
-    const std::string HERO = "\u2523\u252B";
+    bool isHeroSet; ///< Gives true if the hero is already set on the map.
+    bool isMonsterSet; ///< Gives true if the monster is already set on the map.
+    bool isMapSet; ///< Gives true if the map is already set.
+    bool isStarted; ///< Gives true if the game has already started.
+    Hero* gamehero; ///< The hero who plays.
+    Map newMap; ///< The map we are playing on.
+    std::list<std::pair<Monster, std::pair<int, int>>> m_locations; ///< Monsters list with locations.
+    std::pair<int, int > h_location; ///< Heroe's location
 
-    bool isHeroSet; //< Gives true if the hero is already set on the map.
-    bool isMonsterSet; //< Gives true if the monster is already set on the map.
-    bool isMapSet; //< Gives true if the map is already set.
-    bool isStarted; //< Gives true if the game has already started.
-    Hero* gamehero; //< The hero who plays.
-    Map newMap; //< The map we are playing on.
-    std::list<std::pair<Monster, std::pair<int, int>>> m_locations; //< Monsters list with locations.
-    std::pair<int, int > h_location;
+    std::list<Renderer*> rendererlist; ///< The list of renderers being used by the game
 
-    /**
-     * @param int x Is the first coord.
-     * @param int y Is the second coord.
-     *
-     * This function counts the monsters in one position
-     */
-    int getMonsterCountOnOnePos(int x, int y) const;
+    std::string wall_texture; ///< texturefile of wall
+    std::string free_texture; ///< texturefile of free space
+
 
     /**
      * @param command - where we want to go
@@ -66,10 +54,40 @@ public:
 
     /** this is a setter function for the map.
      *
-     *@throw Exception this function throws an exception if we still have units on the map.
-     *@throw Exception this function throws an exception if the game is still running
+     *@throw AlreadyHasUnitException this function throws an exception if we still have units on the map.
+     *@throw GameAlreadyStartedException this function throws an exception if the game is still running
      */
     void setMap(Map map);
+
+    /**
+     * @brief returns the stored map
+     * 
+     * @return Map 
+     */
+    Map getmap() const {return newMap;};
+
+    /**
+     * @param int x Is the first coord.
+     * @param int y Is the second coord.
+     *
+     * This function counts the monsters in one position
+     */
+    int getMonsterCountOnOnePos(int x, int y) const;
+    
+
+    /**
+     * @brief return the heroe's pointer
+     * 
+     * @return Hero* 
+     */
+    Hero* getHero() const {return gamehero;}
+
+    /**
+     * @brief return the heroe's location
+     * 
+     * @return std::pair<int, int> 
+     */
+    std::pair<int, int> getHeroPos() const {return h_location;}
 
     /**
      *@param hero is the hero we want to put on the map.
@@ -78,10 +96,10 @@ public:
      *
      *This function puts the hero to the given coords.
      *
-     *@throw Exception this function throws an exception if we have already a hero on the map.
-     *@throw Exception this function throws an exception if the coords are not valid.
-     *@throw Exception this function throws an exception if the game is running.
-     *@throw Exception this function throws an exception if we dont have a map to put on
+     *@throw AlreadyHasHeroException this function throws an exception if we have already a hero on the map.
+     *@throw OccupiedException this function throws an exception if the coords are not valid.
+     *@throw GameAlreadyStartedException this function throws an exception if the game is running.
+     *@throw WrongIndexException this function throws an exception if we dont have a map to put on
      */
     void putHero(Hero hero, int x, int y);
 
@@ -93,15 +111,15 @@ public:
      *
      *This function puts a monster on the map.
      *
-     *@throw Exception this function throws an exception if the coords are not valid.
-     *@throw Exception this function throws an exception if we dont have a map to put on.
+     *@throw OccupiedException this function throws an exception if the coords are not valid.
+     *@throw WrongIndexException this function throws an exception if we dont have a map to put on.
     */
     void putMonster(Monster monster, int x, int y);
 
     /**
      *This function is responsible for the gameplay
      *
-     *@throw Exception this function throws an exception if the map or hero or monster is not set.
+     *@throw NotInitializedException this function throws an exception if the map or hero or monster is not set.
      */
     void run();
     /**
@@ -112,11 +130,47 @@ public:
     */
     bool heroIsOnMap(int x, int y);
 
-    /// This function shows the map with our current location
-    void showMap();
+    /**
+     * @brief this function registers new renderers
+     * 
+     * @param inrender 
+     */
+    void registerRenderer(Renderer* inrender);
     
-    ///This function shows the hero's current vision
-    void showHeroVision();
+    /**
+     * @brief This runs all registered renderers
+     */
+    void renderall();
+
+    /**
+     * @brief Get a list of monsters on a certain coordinate. Returns empty list, if there are no monsters on map
+     * 
+     * @param x the X coordinate
+     * @param y the Y coordinate
+     * @return std::list<Monster> generated list of monsters
+     * 
+     */
+    std::list<Monster> getMonstersonPos(int x, int y) const;
+
+    /**
+     * @brief Set the access path to the walls texture
+     * 
+     * @param filename the name of the file containing the texture
+     */
+    void setWallTexture(std::string filename) {wall_texture = filename;};
+
+    /**
+     * @brief Set the access path to the free space texture
+     * 
+     * @param filename the name of the file containing the texture
+     */
+    void setFreeTexture(std::string filename) {free_texture = filename;};
+
+    ///this is the getter function for the wall_texture
+    std::string getWallTexture() const {return wall_texture;};
+
+    ///this is the getter function for the free_texture
+    std::string getFreeTexture() const {return free_texture;};
 
     ///this is a constructor for empty game.
     Game();
@@ -125,7 +179,7 @@ public:
     Game(std::string &mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
 
     ///This is a destructor for game
-    ~Game() { delete gamehero; };
+    ~Game();
 
     class OccupiedException : public std::runtime_error {
         public:

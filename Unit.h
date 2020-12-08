@@ -29,6 +29,8 @@ protected:
 	double attackspeed; ///< the number of times the character can attack in a second
 	double attackcooldown; ///< the remaining time, until the character can attack again 
 
+	std::string texture; ///< The Units texture
+
 	/**
 	 * @brief Set the Attack Cooldown object
 	 *
@@ -126,5 +128,15 @@ public:
 	* @param in sets the current health
 	*/
 	void setHealthPoints(int in);
+
+	/**
+	 * @brief Set function for the texture parameter
+	 * 
+	 * @param filename name of the texture file
+	 */
+	void setTexture(std::string filename) {texture = filename;}
+
+	///this is the getter function for the texture
+	std::string getTexture() {return texture;}
 
 };
