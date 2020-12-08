@@ -36,9 +36,25 @@ protected:
 
 public:
 
+    /**
+     * @brief Set the out_stream object
+     * 
+     * @param o  the ostream used to change out_stream
+     */
     void setOutputStream(std::ostream& o) {out_stream.copyfmt(o);}
 
+    /**
+     * @brief Construct a new TextRenderer object
+     * 
+     * uses std::cout as default ostream
+     */
     TextRenderer()  :out_stream(std::cout) {}
+
+    /**
+     * @brief Construct a new TextRenderer object
+     * 
+     * @param in the ostream object used as the ostream
+     */
     explicit TextRenderer(std::ostream& in) :out_stream(in) {}
 
     virtual ~TextRenderer() {}

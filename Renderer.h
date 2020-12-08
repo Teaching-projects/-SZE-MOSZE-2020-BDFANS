@@ -30,6 +30,6 @@ public:
      */
     virtual void render(const Game& ingame) const =0;
 
-
+    ///virtual destructor for futureproofing
     virtual ~Renderer() {}
 };

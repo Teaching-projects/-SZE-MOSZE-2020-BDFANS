@@ -21,9 +21,21 @@ class ObserverTextRenderer: public TextRenderer
 
 public:
 
+    /**
+     * @brief The function used to render the specified game instanse in text form 
+     * 
+     * @param ingame the game instance being rendered.
+     * 
+     */
     void render(const Game& ingame) const override;
 
+    /**
+     * @brief Construct a new ObserverTextRenderer object
+     * 
+     * @param in The ostream instance being used by the renderer
+     */
     explicit ObserverTextRenderer(std::ostream& in) :TextRenderer(in) {};
 
+    ///Default constructor
     ObserverTextRenderer() :TextRenderer() {}
 };

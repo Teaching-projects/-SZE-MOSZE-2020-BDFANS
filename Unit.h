@@ -93,6 +93,7 @@ public:
 		attackcooldown = attackspeed;
 	}
 
+	///Virtual destructor to avoid potential memoryleak with Hero class
 	virtual ~Unit();
 
 	/**

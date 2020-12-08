@@ -18,7 +18,8 @@
 
 #include "HeroTextRenderer.h"
 #include "ObserverTextRenderer.h"
-
+#include "ObserverSVGRenderer.h"
+#include "CharacterSVGRenderer.h"
 
 
 
@@ -48,6 +49,8 @@ int main(int argc, char** argv){
 
         std::ofstream in("log.txt");
         game.registerRenderer(new ObserverTextRenderer(in));
+
+        //game.registerRenderer(new HeroSVGRenderer("pretty.svg"));
 
         game.runGame();
     }
