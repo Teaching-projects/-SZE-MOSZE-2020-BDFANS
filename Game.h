@@ -182,27 +182,31 @@ public:
     ///this is the getter function for the free_texture
     std::string getFreeTexture() const {return free_texture;};
 
-
+    ///This exception is thrown when the target location on the map is already occupied
     class OccupiedException : public std::runtime_error {
         public:
             explicit OccupiedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
     };
 
+    ///This exception is thrown when attemptint to place a hero on a map that already has a hero
     class AlreadyHasHeroException : public std::runtime_error {
         public:
             explicit AlreadyHasHeroException(const std::string& errMsg) : std::runtime_error(errMsg) {}
     };
 
+    ///This exception is thrown when attemptint to place a hero on top a monster
     class AlreadyHasUnitException :public std::runtime_error {
         public:
             explicit AlreadyHasUnitException(const std::string& errMsg) : std::runtime_error(errMsg){}
     };
 
+    ///This exception is thrown when attempting to run the same game instance twice
     class GameAlreadyStartedException : public std::runtime_error {
         public:
             explicit GameAlreadyStartedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
     };
 
+    ///This exception is thrown when attempting to run the game without proper initialization
     class NotInitializedException : public std::runtime_error {
         public:
             explicit NotInitializedException(const std::string& errMsg) : std::runtime_error(errMsg) {}

@@ -1,3 +1,16 @@
+/**
+ * @file SVGRenderer.h
+ * @class SVGRenderer
+ * 
+ * @author BDFANS
+ * 
+ * @brief The abstract class used as the interface for text based maprendering solutions 
+ * 
+ * @version 0.9.0
+ * 
+ * @date 2020-12-07
+ * 
+ */
 #pragma once
 
 #include "Renderer.h"

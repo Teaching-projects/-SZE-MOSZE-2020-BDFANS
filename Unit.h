@@ -61,10 +61,14 @@ public:
 
 	///this is a getter function for the current health points 
 	int getHealthPoints() const { return akthealth; }
-	/**this is a setter for the current health points
+
+	/**
+	* @brief this is a setter for the current health points
+
 	* @param i sets the current health;
 	*/
 	void setAktHealth(int i) { akthealth = i; }
+
 	///this is a getter function for defense
 	int getDefense() const { return defense; }
 	///this getter function returns a damage struct
@@ -120,12 +124,13 @@ public:
 	static Unit praseUnit(std::string fnev);
 
 	/**
-	 * checks if character is still alive
+	 * @brief checks if character is still alive
 	 * @return with true or false
 	 */
 	bool isAlive();
 
-	/**this is a setter for current health points
+	/**
+	* @brief this is a setter for current health points
 	* @param in sets the current health
 	*/
 	void setHealthPoints(int in);
