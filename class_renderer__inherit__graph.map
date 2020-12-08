@@ -2,8 +2,8 @@
 <area shape="rect" id="node1" title="The abstract virtual class used as the base interface for all maprendering classes." alt="" coords="331,5,413,32"/>
 <area shape="rect" id="node2" href="$class_s_v_g_renderer.html" title=" " alt="" coords="230,80,338,107"/>
 <area shape="rect" id="node5" href="$class_text_renderer.html" title="The abstract class used as the interface for text based maprendering solutions." alt="" coords="407,80,515,107"/>
-<area shape="rect" id="node3" href="$class_character_s_v_g_renderer.html" title=" " alt="" coords="5,155,176,181"/>
-<area shape="rect" id="node4" href="$class_observer_s_v_g_renderer.html" title=" " alt="" coords="201,155,367,181"/>
-<area shape="rect" id="node6" href="$class_hero_text_renderer.html" title=" " alt="" coords="392,155,531,181"/>
+<area shape="rect" id="node3" href="$class_character_s_v_g_renderer.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="5,155,176,181"/>
+<area shape="rect" id="node4" href="$class_observer_s_v_g_renderer.html" title="The renderer for the entire map in SVG form." alt="" coords="201,155,367,181"/>
+<area shape="rect" id="node6" href="$class_hero_text_renderer.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="392,155,531,181"/>
 <area shape="rect" id="node7" href="$class_observer_text_renderer.html" title="The renderer for the entire map in text form." alt="" coords="555,155,722,181"/>
 </map>

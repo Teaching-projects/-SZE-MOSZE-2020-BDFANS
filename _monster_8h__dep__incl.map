@@ -1,9 +1,9 @@
 <map id="Monster.h" name="Monster.h">
 <area shape="rect" id="node1" title=" " alt="" coords="409,5,496,32"/>
 <area shape="rect" id="node2" href="$_game_8h.html" title=" " alt="" coords="416,80,489,107"/>
-<area shape="rect" id="node3" href="$_character_s_v_g_renderer_8h_source.html" title=" " alt="" coords="5,155,188,181"/>
-<area shape="rect" id="node4" href="$_hero_text_renderer_8h.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="212,155,363,181"/>
+<area shape="rect" id="node3" href="$_character_s_v_g_renderer_8h.html" title=" " alt="" coords="5,155,188,181"/>
+<area shape="rect" id="node4" href="$_hero_text_renderer_8h.html" title=" " alt="" coords="212,155,363,181"/>
 <area shape="rect" id="node5" href="$_prepared_game_8h.html" title=" " alt="" coords="387,155,518,181"/>
 <area shape="rect" id="node6" href="$_observer_text_renderer_8h.html" title=" " alt="" coords="542,155,721,181"/>
-<area shape="rect" id="node7" href="$_observer_s_v_g_renderer_8h_source.html" title=" " alt="" coords="745,155,923,181"/>
+<area shape="rect" id="node7" href="$_observer_s_v_g_renderer_8h.html" title=" " alt="" coords="745,155,923,181"/>
 </map>

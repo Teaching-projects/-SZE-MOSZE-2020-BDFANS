@@ -93,18 +93,22 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> setOutputStream(std::ostream&amp; o) {<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>.copyfmt(o);}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_text_renderer.html">TextRenderer</a>()  :<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>(std::cout) {}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_text_renderer.html">TextRenderer</a>(std::ostream&amp; in) :<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>(in) {}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_text_renderer.html">TextRenderer</a>() {}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_text_renderer.html#ab01146d936463d300d72f8f7bff5b482">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_text_renderer.html#ab01146d936463d300d72f8f7bff5b482">setOutputStream</a>(std::ostream&amp; o) {<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>.copyfmt(o);}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_text_renderer.html#a2ffb5baddcc264fbaccda8fb7c660814">   51</a></span>&#160;    <a class="code" href="class_text_renderer.html#a2ffb5baddcc264fbaccda8fb7c660814">TextRenderer</a>()  :<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>(std::cout) {}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_text_renderer.html#a08af08d380f131808d9ecd060c5cfb60">   58</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_text_renderer.html#a08af08d380f131808d9ecd060c5cfb60">TextRenderer</a>(std::ostream&amp; in) :<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>(in) {}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_text_renderer.html">TextRenderer</a>() {}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">The abstract virtual class used as the base interface for all maprendering classes.</div><div class="ttdef"><b>Definition:</b> Renderer.h:20</div></div>
+<div class="ttc" id="aclass_text_renderer_html_a2ffb5baddcc264fbaccda8fb7c660814"><div class="ttname"><a href="class_text_renderer.html#a2ffb5baddcc264fbaccda8fb7c660814">TextRenderer::TextRenderer</a></div><div class="ttdeci">TextRenderer()</div><div class="ttdoc">Construct a new TextRenderer object.</div><div class="ttdef"><b>Definition:</b> TextRenderer.h:51</div></div>
 <div class="ttc" id="aclass_text_renderer_html_a109a51dcbbf672d267d6a83488833c0d"><div class="ttname"><a href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">TextRenderer::out_stream</a></div><div class="ttdeci">std::ostream &amp; out_stream</div><div class="ttdoc">The outputstream used by the renderer.</div><div class="ttdef"><b>Definition:</b> TextRenderer.h:35</div></div>
 <div class="ttc" id="aclass_text_renderer_html"><div class="ttname"><a href="class_text_renderer.html">TextRenderer</a></div><div class="ttdoc">The abstract class used as the interface for text based maprendering solutions.</div><div class="ttdef"><b>Definition:</b> TextRenderer.h:32</div></div>
 <div class="ttc" id="a_renderer_8h_html"><div class="ttname"><a href="_renderer_8h.html">Renderer.h</a></div></div>
+<div class="ttc" id="aclass_text_renderer_html_ab01146d936463d300d72f8f7bff5b482"><div class="ttname"><a href="class_text_renderer.html#ab01146d936463d300d72f8f7bff5b482">TextRenderer::setOutputStream</a></div><div class="ttdeci">void setOutputStream(std::ostream &amp;o)</div><div class="ttdoc">Set the out_stream object.</div><div class="ttdef"><b>Definition:</b> TextRenderer.h:44</div></div>
+<div class="ttc" id="aclass_text_renderer_html_a08af08d380f131808d9ecd060c5cfb60"><div class="ttname"><a href="class_text_renderer.html#a08af08d380f131808d9ecd060c5cfb60">TextRenderer::TextRenderer</a></div><div class="ttdeci">TextRenderer(std::ostream &amp;in)</div><div class="ttdoc">Construct a new TextRenderer object.</div><div class="ttdef"><b>Definition:</b> TextRenderer.h:58</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

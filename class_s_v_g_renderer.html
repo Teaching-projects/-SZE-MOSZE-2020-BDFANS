@@ -78,8 +78,8 @@ Inheritance diagram for SVGRenderer:</div>
 <div class="center"><img src="class_s_v_g_renderer__inherit__graph.png" border="0" usemap="#_s_v_g_renderer_inherit__map" alt="Inheritance graph"/></div>
 <map name="_s_v_g_renderer_inherit__map" id="_s_v_g_renderer_inherit__map">
 <area shape="rect" title=" " alt="" coords="133,80,241,107"/>
-<area shape="rect" href="class_character_s_v_g_renderer.html" title=" " alt="" coords="5,155,176,181"/>
-<area shape="rect" href="class_observer_s_v_g_renderer.html" title=" " alt="" coords="201,155,367,181"/>
+<area shape="rect" href="class_character_s_v_g_renderer.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="5,155,176,181"/>
+<area shape="rect" href="class_observer_s_v_g_renderer.html" title="The renderer for the entire map in SVG form." alt="" coords="201,155,367,181"/>
 <area shape="rect" href="class_renderer.html" title="The abstract virtual class used as the base interface for all maprendering classes." alt="" coords="146,5,227,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -95,14 +95,14 @@ Collaboration diagram for SVGRenderer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a74ddddc62becc29e605997149577051b"><td class="memItemLeft" align="right" valign="top"><a id="a74ddddc62becc29e605997149577051b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SVGRenderer</b> (const std::string &amp;ofilename)</td></tr>
+<tr class="memitem:a74ddddc62becc29e605997149577051b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">SVGRenderer</a> (const std::string &amp;ofilename)</td></tr>
+<tr class="memdesc:a74ddddc62becc29e605997149577051b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_s_v_g_renderer.html">SVGRenderer</a> object.  <a href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">More...</a><br /></td></tr>
 <tr class="separator:a74ddddc62becc29e605997149577051b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a58a6d1a20ec1433282d044f267338e6a"><td class="memItemLeft" align="right" valign="top"><a id="a58a6d1a20ec1433282d044f267338e6a"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getImage</b> (std::string filename, int x, int y) const</td></tr>
+<tr class="memitem:a58a6d1a20ec1433282d044f267338e6a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_v_g_renderer.html#a58a6d1a20ec1433282d044f267338e6a">getImage</a> (std::string filename, int x, int y) const</td></tr>
+<tr class="memdesc:a58a6d1a20ec1433282d044f267338e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates an SVG injection at the specified position  <a href="class_s_v_g_renderer.html#a58a6d1a20ec1433282d044f267338e6a">More...</a><br /></td></tr>
 <tr class="separator:a58a6d1a20ec1433282d044f267338e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -112,6 +112,95 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:a360ecd491439f29cb5ba377736f1cd0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; the name of the file used as the output <br /></td></tr>
 <tr class="separator:a360ecd491439f29cb5ba377736f1cd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a74ddddc62becc29e605997149577051b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ddddc62becc29e605997149577051b">&#9670;&nbsp;</a></span>SVGRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SVGRenderer::SVGRenderer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ofilename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_s_v_g_renderer.html">SVGRenderer</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ofilename</td><td>the name of the output file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a58a6d1a20ec1433282d044f267338e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a6d1a20ec1433282d044f267338e6a">&#9670;&nbsp;</a></span>getImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string SVGRenderer::getImage </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>creates an SVG injection at the specified position </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>name of the SVG file displayed </td></tr>
+    <tr><td class="paramname">x</td><td>the x position of the image (1 = 10 pixel) </td></tr>
+    <tr><td class="paramname">y</td><td>the y position of the image (1 = 10 pixel) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string returns a SVG formated imagerefence </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_s_v_g_renderer_8h_source.html">SVGRenderer.h</a></li>
 <li>SVGRenderer.cpp</li>

@@ -82,7 +82,7 @@ Inheritance diagram for TextRenderer:</div>
 <div class="center"><img src="class_text_renderer__inherit__graph.png" border="0" usemap="#_text_renderer_inherit__map" alt="Inheritance graph"/></div>
 <map name="_text_renderer_inherit__map" id="_text_renderer_inherit__map">
 <area shape="rect" title="The abstract class used as the interface for text based maprendering solutions." alt="" coords="109,80,217,107"/>
-<area shape="rect" href="class_hero_text_renderer.html" title=" " alt="" coords="5,155,144,181"/>
+<area shape="rect" href="class_hero_text_renderer.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="5,155,144,181"/>
 <area shape="rect" href="class_observer_text_renderer.html" title="The renderer for the entire map in text form." alt="" coords="169,155,335,181"/>
 <area shape="rect" href="class_renderer.html" title="The abstract virtual class used as the base interface for all maprendering classes." alt="" coords="122,5,203,32"/>
 </map>
@@ -99,16 +99,23 @@ Collaboration diagram for TextRenderer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab01146d936463d300d72f8f7bff5b482"><td class="memItemLeft" align="right" valign="top"><a id="ab01146d936463d300d72f8f7bff5b482"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setOutputStream</b> (std::ostream &amp;o)</td></tr>
+<tr class="memitem:ab01146d936463d300d72f8f7bff5b482"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_renderer.html#ab01146d936463d300d72f8f7bff5b482">setOutputStream</a> (std::ostream &amp;o)</td></tr>
+<tr class="memdesc:ab01146d936463d300d72f8f7bff5b482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the out_stream object.  <a href="class_text_renderer.html#ab01146d936463d300d72f8f7bff5b482">More...</a><br /></td></tr>
 <tr class="separator:ab01146d936463d300d72f8f7bff5b482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08af08d380f131808d9ecd060c5cfb60"><td class="memItemLeft" align="right" valign="top"><a id="a08af08d380f131808d9ecd060c5cfb60"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>TextRenderer</b> (std::ostream &amp;in)</td></tr>
+<tr class="memitem:a2ffb5baddcc264fbaccda8fb7c660814"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_renderer.html#a2ffb5baddcc264fbaccda8fb7c660814">TextRenderer</a> ()</td></tr>
+<tr class="memdesc:a2ffb5baddcc264fbaccda8fb7c660814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_text_renderer.html" title="The abstract class used as the interface for text based maprendering solutions.">TextRenderer</a> object.  <a href="class_text_renderer.html#a2ffb5baddcc264fbaccda8fb7c660814">More...</a><br /></td></tr>
+<tr class="separator:a2ffb5baddcc264fbaccda8fb7c660814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08af08d380f131808d9ecd060c5cfb60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_text_renderer.html#a08af08d380f131808d9ecd060c5cfb60">TextRenderer</a> (std::ostream &amp;in)</td></tr>
+<tr class="memdesc:a08af08d380f131808d9ecd060c5cfb60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_text_renderer.html" title="The abstract class used as the interface for text based maprendering solutions.">TextRenderer</a> object.  <a href="class_text_renderer.html#a08af08d380f131808d9ecd060c5cfb60">More...</a><br /></td></tr>
 <tr class="separator:a08af08d380f131808d9ecd060c5cfb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_renderer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_renderer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_renderer.html">Renderer</a></td></tr>
 <tr class="memitem:a163cf08569a69166eec6df31f257f4c1 inherit pub_methods_class_renderer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a163cf08569a69166eec6df31f257f4c1">render</a> (const <a class="el" href="class_game.html">Game</a> &amp;ingame) const =0</td></tr>
 <tr class="memdesc:a163cf08569a69166eec6df31f257f4c1 inherit pub_methods_class_renderer"><td class="mdescLeft">&#160;</td><td class="mdescRight">The interface function used to render the specified game instanse.  <a href="class_renderer.html#a163cf08569a69166eec6df31f257f4c1">More...</a><br /></td></tr>
 <tr class="separator:a163cf08569a69166eec6df31f257f4c1 inherit pub_methods_class_renderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba42b60392775e4a492c4d14d4fff29f inherit pub_methods_class_renderer"><td class="memItemLeft" align="right" valign="top"><a id="aba42b60392775e4a492c4d14d4fff29f"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#aba42b60392775e4a492c4d14d4fff29f">~Renderer</a> ()</td></tr>
+<tr class="memdesc:aba42b60392775e4a492c4d14d4fff29f inherit pub_methods_class_renderer"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual destructor for futureproofing <br /></td></tr>
+<tr class="separator:aba42b60392775e4a492c4d14d4fff29f inherit pub_methods_class_renderer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -122,7 +129,105 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <dl class="section author"><dt>Author</dt><dd>BDFANS</dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.9.0</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2020-12-06 </dd></dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2ffb5baddcc264fbaccda8fb7c660814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ffb5baddcc264fbaccda8fb7c660814">&#9670;&nbsp;</a></span>TextRenderer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextRenderer::TextRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_text_renderer.html" title="The abstract class used as the interface for text based maprendering solutions.">TextRenderer</a> object. </p>
+<p>uses std::cout as default ostream </p>
+
+</div>
+</div>
+<a id="a08af08d380f131808d9ecd060c5cfb60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08af08d380f131808d9ecd060c5cfb60">&#9670;&nbsp;</a></span>TextRenderer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextRenderer::TextRenderer </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_text_renderer.html" title="The abstract class used as the interface for text based maprendering solutions.">TextRenderer</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>the ostream object used as the ostream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab01146d936463d300d72f8f7bff5b482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab01146d936463d300d72f8f7bff5b482">&#9670;&nbsp;</a></span>setOutputStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextRenderer::setOutputStream </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the out_stream object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>the ostream used to change out_stream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_text_renderer_8h_source.html">TextRenderer.h</a></li>
 </ul>
 </div><!-- contents -->
