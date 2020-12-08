@@ -17,7 +17,7 @@ class HeroTextRenderer: public TextRenderer
 {
 
 public:
-    void render(const Game& ingame) const;
+    void render(const Game& ingame) const override;
 
     HeroTextRenderer(std::ostream& in) :TextRenderer(in) {};
 

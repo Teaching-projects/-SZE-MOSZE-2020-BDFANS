@@ -47,17 +47,32 @@ private:
      * This function is responsible for the movement of the character.
      * Also returns a true or false if the step was valid or not.
      */
-    bool stepOn(std::string command);
+    bool stepOn(const std::string& command);
 
 public:
 
+    /**
+     *This function is responsible for the gameplay
+     *
+     *@throw NotInitializedException this function throws an exception if the map or hero or monster is not set.
+     */
+    void run();
+
+    ///this is a constructor for empty game.
+    Game() :isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), gamehero(nullptr){};
+
+    ///This is a constructor for game with the map initialized.
+    explicit Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
+
+    ///This is a destructor for game
+    ~Game();
 
     /** this is a setter function for the map.
      *
      *@throw AlreadyHasUnitException this function throws an exception if we still have units on the map.
      *@throw GameAlreadyStartedException this function throws an exception if the game is still running
      */
-    void setMap(Map map);
+    void setMap(const Map& map);
 
     /**
      * @brief returns the stored map
@@ -103,7 +118,6 @@ public:
      */
     void putHero(Hero hero, int x, int y);
 
-
     /**
      *@param monster is the monster we want to put on the map.
      *@param x is the x coord
@@ -116,13 +130,9 @@ public:
     */
     void putMonster(Monster monster, int x, int y);
 
+
     /**
-     *This function is responsible for the gameplay
-     *
-     *@throw NotInitializedException this function throws an exception if the map or hero or monster is not set.
-     */
-    void run();
-    /**
+
      *@param x is the unit's x coord
      *@param y is the unit's y coord
      *
@@ -157,14 +167,14 @@ public:
      * 
      * @param filename the name of the file containing the texture
      */
-    void setWallTexture(std::string filename) {wall_texture = filename;};
+    void setWallTexture(const std::string& filename) {wall_texture = filename;};
 
     /**
      * @brief Set the access path to the free space texture
      * 
      * @param filename the name of the file containing the texture
      */
-    void setFreeTexture(std::string filename) {free_texture = filename;};
+    void setFreeTexture(const std::string& filename) {free_texture = filename;};
 
     ///this is the getter function for the wall_texture
     std::string getWallTexture() const {return wall_texture;};
@@ -172,37 +182,29 @@ public:
     ///this is the getter function for the free_texture
     std::string getFreeTexture() const {return free_texture;};
 
-    ///this is a constructor for empty game.
-    Game();
-
-    ///This is a constructor for game with the map initialized.
-    Game(std::string &mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
-
-    ///This is a destructor for game
-    ~Game();
 
     class OccupiedException : public std::runtime_error {
         public:
-            OccupiedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
+            explicit OccupiedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
     };
 
     class AlreadyHasHeroException : public std::runtime_error {
         public:
-            AlreadyHasHeroException(const std::string& errMsg) : std::runtime_error(errMsg) {}
+            explicit AlreadyHasHeroException(const std::string& errMsg) : std::runtime_error(errMsg) {}
     };
 
     class AlreadyHasUnitException :public std::runtime_error {
         public:
-            AlreadyHasUnitException(const std::string& errMsg) : std::runtime_error(errMsg){}
+            explicit AlreadyHasUnitException(const std::string& errMsg) : std::runtime_error(errMsg){}
     };
 
     class GameAlreadyStartedException : public std::runtime_error {
         public:
-            GameAlreadyStartedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
+            explicit GameAlreadyStartedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
     };
 
     class NotInitializedException : public std::runtime_error {
         public:
-            NotInitializedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
+            explicit NotInitializedException(const std::string& errMsg) : std::runtime_error(errMsg) {}
     };
 };

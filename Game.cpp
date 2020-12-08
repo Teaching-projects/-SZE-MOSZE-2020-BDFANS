@@ -2,7 +2,7 @@
 #include "Game.h"
 
 
-void Game::setMap(Map map) {
+void Game::setMap(const Map& map) {
 	if (!isStarted) {
 		if (!isHeroSet && !isMonsterSet) {
 	
@@ -45,12 +45,11 @@ void Game::run() {
 		isStarted = true;
 		while (gamehero->isAlive() && !m_locations.empty()) {
 			std::string input = "";
-			//Game::showHeroVision();
+			Game::renderall();
 			std::cout << "Please enter where do u want to go (east, north, west, south): ";
 			std::getline(std::cin, input);
 			std::cout << std::endl;
 			if (Game::stepOn(input)) {
-				Game::renderall();
 				if (getMonsterCountOnOnePos(h_location.first, h_location.second) > 0) {
 					auto i = m_locations.begin();
 					while (i != m_locations.end() && !m_locations.empty() && gamehero->isAlive()) {
@@ -72,7 +71,7 @@ void Game::run() {
 }
 
 
-bool Game::stepOn(std::string command) {
+bool Game::stepOn(const std::string& command) {
 	bool ok = true;
 	int x = h_location.first;
 	int y = h_location.second;

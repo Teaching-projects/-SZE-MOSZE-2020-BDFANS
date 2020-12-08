@@ -73,7 +73,7 @@ class Hero :public Unit
      *
      * This function also prevents negative values by treating any possible negative result as 0
      */
-    void attack(Unit& target);
+    void attack(Unit& target) override;
 
     /**
      * @brief this function executes the fight
@@ -107,6 +107,6 @@ class Hero :public Unit
      *
      * The constructor uses the attackspeed value to set the initial attackcooldown
      */
-    Hero(std::string innev, int inhp,int inphys, int inmagic ,int indef, double inaspeed, int inexpreq = 1, int inhpb = 1, int inphysb = 1,int inmagicb = 1 ,int indefb = 1 ,double incdmul = 1, int inlr = 1, int inlrb = 1)
+    Hero(const std::string& innev, int inhp,int inphys, int inmagic ,int indef, double inaspeed, int inexpreq = 1, int inhpb = 1, int inphysb = 1,int inmagicb = 1 ,int indefb = 1 ,double incdmul = 1, int inlr = 1, int inlrb = 1)
         :Unit(innev,inhp,inphys,inmagic,indef,inaspeed), exp_per_level(inexpreq), hp_per_level(inhpb), physicaldmg_per_level(inphysb),magicaldmg_per_level(inmagicb) ,defense_per_level(indefb) ,cdmul_per_level(incdmul), light_radius(inlr), light_radius_per_level(inlrb) {}
 };

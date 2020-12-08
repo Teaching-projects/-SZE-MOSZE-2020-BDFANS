@@ -40,7 +40,7 @@ public:
     ///The exception thrown when the map is indexed outside of its bounds
     class WrongIndexException : public std::runtime_error {
     public:
-        WrongIndexException(const std::string& errMsg) : std::runtime_error(errMsg) {};
+        explicit WrongIndexException(const std::string& errMsg) : std::runtime_error(errMsg) {};
     };
     /**
      * @brief Construct a new Map object
@@ -51,7 +51,7 @@ public:
      * Use '#', whitespace and linebreak characters to create the map. invalid characters get ignored when generating the map
      * Undefined regions become "Wall" type on default
      */
-    Map(std::string filename) ;
+    explicit Map(std::string filename) ;
 
     Map() {};
 

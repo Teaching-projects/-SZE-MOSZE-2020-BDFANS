@@ -21,7 +21,7 @@ class ObserverTextRenderer: public TextRenderer
 
 public:
 
-    void render(const Game& ingame) const;
+    void render(const Game& ingame) const override;
 
     ObserverTextRenderer(std::ostream& in) :TextRenderer(in) {};
 

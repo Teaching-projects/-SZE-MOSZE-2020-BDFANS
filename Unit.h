@@ -88,7 +88,7 @@ public:
 	 *
 	 * The constructor uses the attackspeed value to set the initial attackcooldown
 	 */
-	Unit(std::string inn = "default", int inh = 1,int inphys = 1, int inmagic = 1, int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(inphys,inmagic) ,defense(indef), attackspeed(ins)
+	Unit(const std::string& inn = "default", int inh = 1,int inphys = 1, int inmagic = 1, int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(inphys,inmagic) ,defense(indef), attackspeed(ins)
 	{
 		attackcooldown = attackspeed;
 	}
@@ -134,7 +134,7 @@ public:
 	 * 
 	 * @param filename name of the texture file
 	 */
-	void setTexture(std::string filename) {texture = filename;}
+	void setTexture(const std::string& filename) {texture = filename;}
 
 	///this is the getter function for the texture
 	std::string getTexture() {return texture;}

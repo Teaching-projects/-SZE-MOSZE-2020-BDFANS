@@ -27,6 +27,7 @@ struct Damage {
 		return Returndmg;
 	}
 
+	///Adds dmg to both physical and magical damage
 	Damage& operator+=(const Damage& dmg) {
 		physical += dmg.physical;
 		magical += dmg.magical;
@@ -34,6 +35,7 @@ struct Damage {
 		return *this;
 	}
 
+	///Multiplies both physical and magical damage by multi
 	Damage& operator*=(const int& multi) {
 		physical = physical * multi;
 		magical = magical * multi;

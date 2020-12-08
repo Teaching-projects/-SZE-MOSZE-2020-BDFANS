@@ -7,8 +7,8 @@ class ObserverSVGRenderer : public SVGRenderer
 {
 
 public:
-    void render(const Game& ingame) const;
+    void render(const Game& ingame) const override;
 
-    ObserverSVGRenderer(std::string ofilename) :SVGRenderer(ofilename) {};
+    explicit ObserverSVGRenderer(const std::string& ofilename) :SVGRenderer(ofilename) {};
 
 };
