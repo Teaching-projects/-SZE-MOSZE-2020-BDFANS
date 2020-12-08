@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-OBJS := Unit.o Hero.o JSON.o Monster.o main.o Map.o Game.o MarkedMap.o HeroTextRenderer.o ObserverTextRenderer.o
-=======
-OBJS := Unit.o Hero.o JSON.o Monster.o main.o Map.o Game.o MarkedMap.o PreparedGame.o
->>>>>>> master
+OBJS := Unit.o Hero.o JSON.o Monster.o main.o Map.o Game.o MarkedMap.o PreparedGame.o HeroTextRenderer.o ObserverTextRenderer.o
 CFLAGS := -std=c++17 -Wall -Wextra -Werror
 CC := g++-9
 
