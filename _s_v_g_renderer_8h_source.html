@@ -67,30 +67,31 @@ $(function() {
 <div class="title">SVGRenderer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_renderer_8h.html">Renderer.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_s_v_g_renderer.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_s_v_g_renderer.html">SVGRenderer</a>: <span class="keyword">virtual</span> <a class="code" href="class_renderer.html">Renderer</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">   11</a></span>&#160;    std::string <a class="code" href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">outfilename</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::string <a class="code" href="class_s_v_g_renderer.html#a58a6d1a20ec1433282d044f267338e6a">getImage</a>(std::string filename, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">   30</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">SVGRenderer</a>(<span class="keyword">const</span> std::string&amp; ofilename) :<a class="code" href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">outfilename</a>(ofilename) {}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<a href="_s_v_g_renderer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_renderer_8h.html">Renderer.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_s_v_g_renderer.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_s_v_g_renderer.html">SVGRenderer</a>: <span class="keyword">virtual</span> <a class="code" href="class_renderer.html">Renderer</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">   24</a></span>&#160;    std::string <a class="code" href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">outfilename</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::string <a class="code" href="class_s_v_g_renderer.html#a58a6d1a20ec1433282d044f267338e6a">getImage</a>(std::string filename, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">   43</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">SVGRenderer</a>(<span class="keyword">const</span> std::string&amp; ofilename) :<a class="code" href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">outfilename</a>(ofilename) {}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">The abstract virtual class used as the base interface for all maprendering classes.</div><div class="ttdef"><b>Definition:</b> Renderer.h:20</div></div>
-<div class="ttc" id="aclass_s_v_g_renderer_html"><div class="ttname"><a href="class_s_v_g_renderer.html">SVGRenderer</a></div><div class="ttdef"><b>Definition:</b> SVGRenderer.h:7</div></div>
+<div class="ttc" id="aclass_s_v_g_renderer_html"><div class="ttname"><a href="class_s_v_g_renderer.html">SVGRenderer</a></div><div class="ttdoc">The abstract class used as the interface for text based maprendering solutions.</div><div class="ttdef"><b>Definition:</b> SVGRenderer.h:20</div></div>
 <div class="ttc" id="a_renderer_8h_html"><div class="ttname"><a href="_renderer_8h.html">Renderer.h</a></div></div>
-<div class="ttc" id="aclass_s_v_g_renderer_html_a360ecd491439f29cb5ba377736f1cd0e"><div class="ttname"><a href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">SVGRenderer::outfilename</a></div><div class="ttdeci">std::string outfilename</div><div class="ttdoc">&lt; the name of the file used as the output</div><div class="ttdef"><b>Definition:</b> SVGRenderer.h:11</div></div>
-<div class="ttc" id="aclass_s_v_g_renderer_html_a74ddddc62becc29e605997149577051b"><div class="ttname"><a href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">SVGRenderer::SVGRenderer</a></div><div class="ttdeci">SVGRenderer(const std::string &amp;ofilename)</div><div class="ttdoc">Construct a new SVGRenderer object.</div><div class="ttdef"><b>Definition:</b> SVGRenderer.h:30</div></div>
+<div class="ttc" id="aclass_s_v_g_renderer_html_a360ecd491439f29cb5ba377736f1cd0e"><div class="ttname"><a href="class_s_v_g_renderer.html#a360ecd491439f29cb5ba377736f1cd0e">SVGRenderer::outfilename</a></div><div class="ttdeci">std::string outfilename</div><div class="ttdoc">&lt; the name of the file used as the output</div><div class="ttdef"><b>Definition:</b> SVGRenderer.h:24</div></div>
+<div class="ttc" id="aclass_s_v_g_renderer_html_a74ddddc62becc29e605997149577051b"><div class="ttname"><a href="class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b">SVGRenderer::SVGRenderer</a></div><div class="ttdeci">SVGRenderer(const std::string &amp;ofilename)</div><div class="ttdoc">Construct a new SVGRenderer object.</div><div class="ttdef"><b>Definition:</b> SVGRenderer.h:43</div></div>
 <div class="ttc" id="aclass_s_v_g_renderer_html_a58a6d1a20ec1433282d044f267338e6a"><div class="ttname"><a href="class_s_v_g_renderer.html#a58a6d1a20ec1433282d044f267338e6a">SVGRenderer::getImage</a></div><div class="ttdeci">std::string getImage(std::string filename, int x, int y) const</div><div class="ttdoc">creates an SVG injection at the specified position</div><div class="ttdef"><b>Definition:</b> SVGRenderer.cpp:4</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

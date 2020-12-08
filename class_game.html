@@ -89,14 +89,19 @@ Inheritance diagram for Game:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_1_1_already_has_hero_exception.html">AlreadyHasHeroException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This exception is thrown when attemptint to place a hero on a map that already has a hero.  <a href="class_game_1_1_already_has_hero_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_1_1_already_has_unit_exception.html">AlreadyHasUnitException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This exception is thrown when attemptint to place a hero on top a monster.  <a href="class_game_1_1_already_has_unit_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_1_1_game_already_started_exception.html">GameAlreadyStartedException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This exception is thrown when attempting to run the same game instance twice.  <a href="class_game_1_1_game_already_started_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_1_1_not_initialized_exception.html">NotInitializedException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This exception is thrown when attempting to run the game without proper initialization.  <a href="class_game_1_1_not_initialized_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_1_1_occupied_exception.html">OccupiedException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This exception is thrown when the target location on the map is already occupied.  <a href="class_game_1_1_occupied_exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -401,9 +406,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>This function puts the hero to the given coords.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_game_1_1_already_has_hero_exception.html">AlreadyHasHeroException</a></td><td>this function throws an exception if we have already a hero on the map. </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_game_1_1_occupied_exception.html">OccupiedException</a></td><td>this function throws an exception if the coords are not valid. </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_game_1_1_game_already_started_exception.html">GameAlreadyStartedException</a></td><td>this function throws an exception if the game is running. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_game_1_1_already_has_hero_exception.html" title="This exception is thrown when attemptint to place a hero on a map that already has a hero.">AlreadyHasHeroException</a></td><td>this function throws an exception if we have already a hero on the map. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_game_1_1_occupied_exception.html" title="This exception is thrown when the target location on the map is already occupied.">OccupiedException</a></td><td>this function throws an exception if the coords are not valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_game_1_1_game_already_started_exception.html" title="This exception is thrown when attempting to run the same game instance twice.">GameAlreadyStartedException</a></td><td>this function throws an exception if the game is running. </td></tr>
     <tr><td class="paramname">WrongIndexException</td><td>this function throws an exception if we dont have a map to put on </td></tr>
   </table>
   </dd>
@@ -453,7 +458,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>This function puts a monster on the map.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_game_1_1_occupied_exception.html">OccupiedException</a></td><td>this function throws an exception if the coords are not valid. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_game_1_1_occupied_exception.html" title="This exception is thrown when the target location on the map is already occupied.">OccupiedException</a></td><td>this function throws an exception if the coords are not valid. </td></tr>
     <tr><td class="paramname">WrongIndexException</td><td>this function throws an exception if we dont have a map to put on. </td></tr>
   </table>
   </dd>
@@ -504,7 +509,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>This function is responsible for the gameplay</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_game_1_1_not_initialized_exception.html">NotInitializedException</a></td><td>this function throws an exception if the map or hero or monster is not set. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_game_1_1_not_initialized_exception.html" title="This exception is thrown when attempting to run the game without proper initialization.">NotInitializedException</a></td><td>this function throws an exception if the map or hero or monster is not set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -563,8 +568,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>this is a setter function for the map.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_game_1_1_already_has_unit_exception.html">AlreadyHasUnitException</a></td><td>this function throws an exception if we still have units on the map. </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_game_1_1_game_already_started_exception.html">GameAlreadyStartedException</a></td><td>this function throws an exception if the game is still running </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_game_1_1_already_has_unit_exception.html" title="This exception is thrown when attemptint to place a hero on top a monster.">AlreadyHasUnitException</a></td><td>this function throws an exception if we still have units on the map. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_game_1_1_game_already_started_exception.html" title="This exception is thrown when attempting to run the same game instance twice.">GameAlreadyStartedException</a></td><td>this function throws an exception if the game is still running </td></tr>
   </table>
   </dd>
 </dl>

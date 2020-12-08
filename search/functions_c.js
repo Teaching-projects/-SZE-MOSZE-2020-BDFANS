@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['setakthealth_214',['setAktHealth',['../class_unit.html#a3bdff78a6fa0bf000db28e3a9c979d06',1,'Unit']]],
-  ['setattackcooldown_215',['setAttackCooldown',['../class_unit.html#a82400a76b04a7bf2a9c60a37b4e5245e',1,'Unit']]],
-  ['setfreetexture_216',['setFreeTexture',['../class_game.html#ad53ddf4f5b0e5e5bc9f2516faf12c4e1',1,'Game']]],
-  ['sethealthpoints_217',['setHealthPoints',['../class_unit.html#a6b28bebce697a1ce22695b6d416f3784',1,'Unit']]],
-  ['setmap_218',['setMap',['../class_game.html#a2da2d4e53f7b25a9763b45ce3439628a',1,'Game']]],
-  ['setoutputstream_219',['setOutputStream',['../class_text_renderer.html#ab01146d936463d300d72f8f7bff5b482',1,'TextRenderer']]],
-  ['settexture_220',['setTexture',['../class_unit.html#a3cc5a79f795b055efccf626e5cf7da06',1,'Unit']]],
-  ['setwalltexture_221',['setWallTexture',['../class_game.html#af4b1ab6b06c3dd9f20fb50790c6eccc6',1,'Game']]],
-  ['svgrenderer_222',['SVGRenderer',['../class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b',1,'SVGRenderer']]]
+  ['registerrenderer_216',['registerRenderer',['../class_game.html#a765c1d582f92b865b67afb0a91a79798',1,'Game::registerRenderer()'],['../class_prepared_game.html#ade007b1d2616f5ca5e596263c29a3fae',1,'PreparedGame::registerRenderer()']]],
+  ['render_217',['render',['../class_character_s_v_g_renderer.html#af8b23b13589f58e2dd8158737e8a517f',1,'CharacterSVGRenderer::render()'],['../class_hero_text_renderer.html#a5c13892c383249589cec736c60ee8e15',1,'HeroTextRenderer::render()'],['../class_observer_s_v_g_renderer.html#a7c245506ba6208e5983341c896292558',1,'ObserverSVGRenderer::render()'],['../class_observer_text_renderer.html#ac59617b76331a37c11cda00cc503396b',1,'ObserverTextRenderer::render()'],['../class_renderer.html#a163cf08569a69166eec6df31f257f4c1',1,'Renderer::render()']]],
+  ['renderall_218',['renderall',['../class_game.html#a62bcdc7de33e742cc3ee75a312f47ca2',1,'Game']]],
+  ['run_219',['run',['../class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa',1,'Game']]],
+  ['rungame_220',['runGame',['../class_prepared_game.html#a397e75f00cbd8e370edf74fc42a3ae29',1,'PreparedGame']]]
 ];

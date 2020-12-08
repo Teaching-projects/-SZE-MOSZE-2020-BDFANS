@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loadmap_195',['loadMap',['../class_map.html#a88f6ac563ccd978ca08e4f4cec9b441b',1,'Map::loadMap()'],['../class_marked_map.html#a18a5089be2b8c36ffe164c42bb7840a4',1,'MarkedMap::loadMap()']]]
+  ['json_198',['JSON',['../class_j_s_o_n.html#a85c40b17d4ccfdc6da3b5c10ae3a9d6c',1,'JSON']]],
+  ['jsonparse_5fs_199',['jsonparse_s',['../class_j_s_o_n.html#a4690ef76a94ea20c283d8a2618c17511',1,'JSON']]]
 ];

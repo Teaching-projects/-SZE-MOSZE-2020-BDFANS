@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['textrenderer_2eh_153',['TextRenderer.h',['../_text_renderer_8h.html',1,'']]]
+  ['svgrenderer_2eh_156',['SVGRenderer.h',['../_s_v_g_renderer_8h.html',1,'']]]
 ];

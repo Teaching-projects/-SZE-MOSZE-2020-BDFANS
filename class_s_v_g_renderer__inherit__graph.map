@@ -1,5 +1,5 @@
 <map id="SVGRenderer" name="SVGRenderer">
-<area shape="rect" id="node1" title=" " alt="" coords="133,80,241,107"/>
+<area shape="rect" id="node1" title="The abstract class used as the interface for text based maprendering solutions." alt="" coords="133,80,241,107"/>
 <area shape="rect" id="node3" href="$class_character_s_v_g_renderer.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="5,155,176,181"/>
 <area shape="rect" id="node4" href="$class_observer_s_v_g_renderer.html" title="The renderer for the entire map in SVG form." alt="" coords="201,155,367,181"/>
 <area shape="rect" id="node2" href="$class_renderer.html" title="The abstract virtual class used as the base interface for all maprendering classes." alt="" coords="146,5,227,32"/>

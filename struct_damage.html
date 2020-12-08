@@ -80,11 +80,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9ab48dfc686ebcde0fb8ac3f9b5b3d34"><td class="memItemLeft" align="right" valign="top"><a id="a9ab48dfc686ebcde0fb8ac3f9b5b3d34"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Damage</b> (int pdmg, int mdmg)</td></tr>
+<tr class="memitem:a9ab48dfc686ebcde0fb8ac3f9b5b3d34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_damage.html#a9ab48dfc686ebcde0fb8ac3f9b5b3d34">Damage</a> (int pdmg, int mdmg)</td></tr>
+<tr class="memdesc:a9ab48dfc686ebcde0fb8ac3f9b5b3d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="struct_damage.html" title="Damage is a struct which contains int physical and int magical dmg.">Damage</a> object.  <a href="struct_damage.html#a9ab48dfc686ebcde0fb8ac3f9b5b3d34">More...</a><br /></td></tr>
 <tr class="separator:a9ab48dfc686ebcde0fb8ac3f9b5b3d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4996f589f0cac3019b278d0babba8742"><td class="memItemLeft" align="right" valign="top"><a id="a4996f589f0cac3019b278d0babba8742"></a>
-<a class="el" href="struct_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="struct_damage.html">Damage</a> &amp;dmg)</td></tr>
+<a class="el" href="struct_damage.html">Damage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_damage.html#a4996f589f0cac3019b278d0babba8742">operator+</a> (const <a class="el" href="struct_damage.html">Damage</a> &amp;dmg)</td></tr>
+<tr class="memdesc:a4996f589f0cac3019b278d0babba8742"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds dmg to both physical and magical damage and return a new damage object <br /></td></tr>
 <tr class="separator:a4996f589f0cac3019b278d0babba8742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56892fc4291b8fd516e734817cc45c44"><td class="memItemLeft" align="right" valign="top"><a id="a56892fc4291b8fd516e734817cc45c44"></a>
 <a class="el" href="struct_damage.html">Damage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_damage.html#a56892fc4291b8fd516e734817cc45c44">operator+=</a> (const <a class="el" href="struct_damage.html">Damage</a> &amp;dmg)</td></tr>
@@ -95,7 +96,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab96d6cf6a07e31ee7765f605a6e0961c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies both physical and magical damage by multi. <br /></td></tr>
 <tr class="separator:ab96d6cf6a07e31ee7765f605a6e0961c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add7a701492e4c76fff1301b3be68ade9"><td class="memItemLeft" align="right" valign="top"><a id="add7a701492e4c76fff1301b3be68ade9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="struct_damage.html">Damage</a> &amp;dmg) const</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_damage.html#add7a701492e4c76fff1301b3be68ade9">operator==</a> (const <a class="el" href="struct_damage.html">Damage</a> &amp;dmg) const</td></tr>
+<tr class="memdesc:add7a701492e4c76fff1301b3be68ade9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the two objects physical and magical damage is equal. <br /></td></tr>
 <tr class="separator:add7a701492e4c76fff1301b3be68ade9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -111,13 +113,99 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a77b67856255747a59320dd2a22572fd1"><td class="memItemLeft" align="right" valign="top"><a id="a77b67856255747a59320dd2a22572fd1"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;out, const <a class="el" href="struct_damage.html">Damage</a> &amp;dmg)</td></tr>
+<tr class="memitem:a77b67856255747a59320dd2a22572fd1"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_damage.html#a77b67856255747a59320dd2a22572fd1">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="struct_damage.html">Damage</a> &amp;dmg)</td></tr>
+<tr class="memdesc:a77b67856255747a59320dd2a22572fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the damage values in the following format.  <a href="struct_damage.html#a77b67856255747a59320dd2a22572fd1">More...</a><br /></td></tr>
 <tr class="separator:a77b67856255747a59320dd2a22572fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="struct_damage.html" title="Damage is a struct which contains int physical and int magical dmg.">Damage</a> is a struct which contains int physical and int magical dmg. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9ab48dfc686ebcde0fb8ac3f9b5b3d34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ab48dfc686ebcde0fb8ac3f9b5b3d34">&#9670;&nbsp;</a></span>Damage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Damage::Damage </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pdmg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mdmg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="struct_damage.html" title="Damage is a struct which contains int physical and int magical dmg.">Damage</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pdmg</td><td>the input physical damage </td></tr>
+    <tr><td class="paramname">mdmg</td><td>the input magicad damage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a77b67856255747a59320dd2a22572fd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b67856255747a59320dd2a22572fd1">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_damage.html">Damage</a> &amp;&#160;</td>
+          <td class="paramname"><em>dmg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Outputs the damage values in the following format. </p>
+<p>"Physical: " &lt;&lt; dmg.physical &lt;&lt; ", Magical: " &lt;&lt; dmg.magical </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="_damage_8h_source.html">Damage.h</a></li>
 </ul>
 </div><!-- contents -->
