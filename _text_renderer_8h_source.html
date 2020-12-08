@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> setOutputStream(std::ostream&amp; o) {<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>.copyfmt(o);}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_text_renderer.html">TextRenderer</a>()  :<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>(std::cout) {}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_text_renderer.html">TextRenderer</a>(std::ostream&amp; in) :<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>(in) {}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_text_renderer.html">TextRenderer</a>(std::ostream&amp; in) :<a class="code" href="class_text_renderer.html#a109a51dcbbf672d267d6a83488833c0d">out_stream</a>(in) {}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_text_renderer.html">TextRenderer</a>() {}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
