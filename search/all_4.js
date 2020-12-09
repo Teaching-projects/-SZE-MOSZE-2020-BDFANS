@@ -21,14 +21,12 @@ var searchData=
   ['getlightradius_32',['getLightRadius',['../class_hero.html#abb3f50ace2a337b9dfaa4d32c58f4307',1,'Hero']]],
   ['getmagicaldamage_33',['getMagicalDamage',['../class_unit.html#a732bd9a8aac310db5fcdfdb872555221',1,'Unit']]],
   ['getmap_34',['getmap',['../class_game.html#abd2ce44471bb7debfb966c628905965e',1,'Game']]],
-  ['getmapheigth_35',['getMapHeigth',['../class_map.html#a0b915bae065c7685bfc9302e146b165c',1,'Map']]],
-  ['getmapwidth_36',['getMapWidth',['../class_map.html#ae10f08208cda780d6ff5997190953e58',1,'Map']]],
-  ['getmaxhealthpoints_37',['getMaxHealthPoints',['../class_unit.html#a371a9431c2bbcab1f5373fe72a346ff4',1,'Unit']]],
-  ['getmonstercountononepos_38',['getMonsterCountOnOnePos',['../class_game.html#a9ae0292a453ed2527920020fad1e354e',1,'Game']]],
-  ['getmonsterpositions_39',['getMonsterPositions',['../class_marked_map.html#a2418a7ae3845fde7cc3bbbb09a5bc00c',1,'MarkedMap']]],
-  ['getmonstersonpos_40',['getMonstersonPos',['../class_game.html#ade1ec0712c929aee2e46f11c108ed646',1,'Game']]],
-  ['getname_41',['getName',['../class_unit.html#a0497994e384db5c080ec78e9b645fa40',1,'Unit']]],
-  ['getphysicaldamage_42',['getPhysicalDamage',['../class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5',1,'Unit']]],
-  ['gettexture_43',['getTexture',['../class_unit.html#a0e64c72915d850545d109de0bb2dc4b1',1,'Unit']]],
-  ['getwalltexture_44',['getWallTexture',['../class_game.html#acf9be6ef1c59a4c2a0c47db9da97dfd0',1,'Game']]]
+  ['getmaxhealthpoints_35',['getMaxHealthPoints',['../class_unit.html#a371a9431c2bbcab1f5373fe72a346ff4',1,'Unit']]],
+  ['getmonstercountononepos_36',['getMonsterCountOnOnePos',['../class_game.html#a9ae0292a453ed2527920020fad1e354e',1,'Game']]],
+  ['getmonsterpositions_37',['getMonsterPositions',['../class_marked_map.html#a2418a7ae3845fde7cc3bbbb09a5bc00c',1,'MarkedMap']]],
+  ['getmonstersonpos_38',['getMonstersonPos',['../class_game.html#ade1ec0712c929aee2e46f11c108ed646',1,'Game']]],
+  ['getname_39',['getName',['../class_unit.html#a0497994e384db5c080ec78e9b645fa40',1,'Unit']]],
+  ['getphysicaldamage_40',['getPhysicalDamage',['../class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5',1,'Unit']]],
+  ['gettexture_41',['getTexture',['../class_unit.html#a0e64c72915d850545d109de0bb2dc4b1',1,'Unit']]],
+  ['getwalltexture_42',['getWallTexture',['../class_game.html#acf9be6ef1c59a4c2a0c47db9da97dfd0',1,'Game']]]
 ];
