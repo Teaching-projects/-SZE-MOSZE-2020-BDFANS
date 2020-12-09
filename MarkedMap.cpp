@@ -86,7 +86,7 @@
                     break;
 
                 default:
-                    if(instring[inX] >= '0' && instring[inX] <= '9')
+                    if(instring[inX] >= '1' && instring[inX] <= '9')
                     {
                         if(monster_pos.count(instring[inX]) > 0)
                         {

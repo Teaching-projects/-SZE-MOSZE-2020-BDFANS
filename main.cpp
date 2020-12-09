@@ -14,6 +14,12 @@
 #include "Game.h"
 #include "PreparedGame.h"
 
+#include <fstream>
+
+#include "HeroTextRenderer.h"
+#include "ObserverTextRenderer.h"
+#include "ObserverSVGRenderer.h"
+#include "CharacterSVGRenderer.h"
 
 
 
@@ -38,6 +44,16 @@ int main(int argc, char** argv){
 
     try {
         PreparedGame game = PreparedGame(argv[1]);
+        
+        game.registerRenderer(new HeroTextRenderer());  
+
+        std::ofstream in("log.txt");
+        game.registerRenderer(new ObserverTextRenderer(in));
+
+        game.registerRenderer(new CharacterSVGRenderer("pretty.svg"));
+
+        game.registerRenderer(new ObserverSVGRenderer("gamemaster.svg"));
+
         game.runGame();
     }
     catch (const JSON::ParseException& e) { bad_exit(4); }

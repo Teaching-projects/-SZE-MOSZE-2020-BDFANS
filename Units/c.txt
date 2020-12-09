@@ -1,6 +1,0 @@
-{
-  "name" : "Sally",
-  "hp" : 2000,
-  "dmg" : 350,
-  "attackcooldown" : 3
-}

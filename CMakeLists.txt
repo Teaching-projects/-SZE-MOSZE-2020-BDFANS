@@ -17,5 +17,6 @@ include_directories(${GTEST_INCLUDE_DIRS})
  
 # Link tester with what we want to test 
 # and the GTest and pthread library
-add_executable(jparsetest tests/jsonparsertest.cpp JSON.cpp Hero.cpp Monster.cpp Unit.cpp Map.cpp MarkedMap.cpp)
+set(SOURCES tests/jsonparsertest.cpp JSON.cpp Hero.cpp Monster.cpp Unit.cpp Map.cpp MarkedMap.cpp Game.cpp PreparedGame.cpp HeroTextRenderer.cpp ObserverTextRenderer.cpp SVGRenderer.cpp ObserverSVGRenderer.cpp CharacterSVGRenderer.cpp)
+add_executable(jparsetest ${SOURCES})
 target_link_libraries(jparsetest ${GTEST_LIBRARIES} pthread)

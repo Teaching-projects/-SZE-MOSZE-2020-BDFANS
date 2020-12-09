@@ -6,5 +6,6 @@
     "damage": 8,
     "defense":2,
     "attack_cooldown" : 1.2,
-    "race" : "undead"
+    "race" : "undead",
+    "texture" : "Blood_Raven.svg"
 }

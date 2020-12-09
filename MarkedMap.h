@@ -27,13 +27,13 @@ public:
     ///This exception is thrown when a positionfinder function can't find its target
     class NoInstanceException : public std::runtime_error {
        public:
-        NoInstanceException(const std::string& errMsg) : std::runtime_error(errMsg) {};
+        explicit NoInstanceException(const std::string& errMsg) : std::runtime_error(errMsg) {};
     };
 
     ///This exception is thrown when the inputmap contains more than one heroes
     class MultipleHeroException : public std::runtime_error {
        public:
-        MultipleHeroException(const std::string& errMsg) : std::runtime_error(errMsg) {};
+        explicit MultipleHeroException(const std::string& errMsg) : std::runtime_error(errMsg) {};
     };
 
     /**
@@ -74,5 +74,5 @@ public:
      * 
      * @param filename name of the file used to generate the map and location data.
      */
-    MarkedMap(std::string filename) :hero_pos(std::make_pair(-1,-1)) {loadMap(filename);};
+    explicit MarkedMap(const std::string& filename) :hero_pos(std::make_pair(-1,-1)) {loadMap(filename);};
 };

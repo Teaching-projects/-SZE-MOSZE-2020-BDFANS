@@ -22,8 +22,15 @@ class PreparedGame : Game {
          *This function prepares the game from a file.
          *@param string jsongame is the preparedgame file.
          */
-        PreparedGame(std::string jsongame);
+        explicit PreparedGame(std::string jsongame);
 
         ///This function runs the game.
         void runGame();
+
+        /**
+        * @brief this function registers new renderers
+        * 
+        * @param inrender the input renderer
+        */
+        void registerRenderer(Renderer* inrender);
 };

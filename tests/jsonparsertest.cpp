@@ -8,6 +8,11 @@
 #include <iostream>
 #include <map>
 
+#include "../PreparedGame.h"
+#include "../HeroTextRenderer.h"
+#include "../ObserverTextRenderer.h"
+#include "../CharacterSVGRenderer.h"
+#include "../ObserverSVGRenderer.h"
 
 std::map<std::string, JSONDATA> make_compmap()
 {
@@ -79,49 +84,30 @@ TEST(Stringparser, numberarrayparse)
 
 //Error tests
 //broken JSON keyformat
-TEST(Parsingerror, broken_key) {
+TEST(Parsingerror, broken_input) {
 	std::string instring = "{	3 \"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3, \"str2\" : \"tset\" }";
 
-	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+	EXPECT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
 
-}
+	instring = "{	\"str1\" : \"test\", \"int1\" % 2, \"int2\" : 3, \"str2\" : \"tset\" }";
 
-//broken key/value separator
-TEST(Parsingerror, broken_separator) {
-	std::string instring = "{	\"str1\" : \"test\", \"int1\" % 2, \"int2\" : 3, \"str2\" : \"tset\" }";
+	EXPECT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+	
+	instring = "{	\"str1\" : \"test\", \"int1\" : 2two, \"int2\" : 3, \"str2\" : \"tset\" }";
 
-	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+	EXPECT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+	
+	instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3.3, \"str2\" : \"tset\" }";
 
-}
+	EXPECT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+	
+	instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" :  \"a\", \"b\", \"c\" ] }";
 
-//illegal character in number value
-TEST(Parsingerror, broken_numvalue) {
-	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2two, \"int2\" : 3, \"str2\" : \"tset\" }";
+	EXPECT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+	
+	instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" : [ \"a\", \"b\", \"c\"  }";
 
-	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
-}
-
-//multiple decimal separator error
-TEST(Parsingerror, broken_numvalue_separators) {
-	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3.3, \"str2\" : \"tset\" }";
-
-	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
-}
-
-//broken array start
-TEST(parsingerror, broken_array_start)
-{
-	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" :  \"a\", \"b\", \"c\" ] }";
-
-	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
-}
-
-//broken array end
-TEST(parsingerror, broken_array_end)
-{
-	std::string instring = "{	\"str1\" : \"test\", \"int1\" : 2, \"int2\" : 3.3, \"str2\" : \"tset\", \"array\" : [ \"a\", \"b\", \"c\"  }";
-
-	ASSERT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
+	EXPECT_THROW(JSON::jsonparse_s(instring), JSON::ParseException);
 }
 
 
@@ -135,51 +121,73 @@ TEST(parsingerror, key_in_array)
 
 //Monster tests
 //constructor
-TEST(Monster, constructor) {
-	Monster a = Monster("a", 4, 3, 0, 0, 2);
+TEST(Monster, constructorNgettest) {
+	Monster a = Monster("a", 4, 3, 7, 4, 2, "example");
 	EXPECT_EQ(a.getName(), "a");
 	EXPECT_EQ(a.getMaxHealthPoints(), 4);
 	EXPECT_EQ(a.getHealthPoints(), 4);
 	EXPECT_EQ(a.getPhysicalDamage(), 3);
+	EXPECT_EQ(a.getMagicalDamage(), 7);
+	EXPECT_EQ(a.getDefense(), 4);
 	EXPECT_EQ(a.getAttackCoolDown(), 2);
+	EXPECT_EQ(a.getTexture(), "example");
 }
 
 //attack tests
 //attackdc test
 TEST(Attacktest, attackcd) {
-	Monster a = Monster("a", 10, 1, 0, 0, 1);
-	Monster h = Monster("h", 10, 1, 0, 0, 10);
+	Monster a = Monster("a", 10, 0, 1, 0, 1, "");
+	Monster h = Monster("h", 10, 0, 1, 0, 10, "");
 	Unit::attackcd(h, a);
 	EXPECT_EQ(h.getHealthPoints(), 9);
 	EXPECT_EQ(a.getHealthPoints(), 10);
 }
 
+//Defense and damage test
+TEST(Attacktest, DefensenDamage) {
+	Monster a = Monster("a", 10, 101, 0, 100, 1, "");
+	Monster h = Monster("h", 10, 0, 8, 100, 1, "");
+	Unit::attackcd(h, a);
+	EXPECT_EQ(h.getHealthPoints(), 10);
+	EXPECT_EQ(a.getHealthPoints(), 2);
+	Unit::attackcd(a, h);
+	EXPECT_EQ(h.getHealthPoints(), 9);
+	EXPECT_EQ(a.getHealthPoints(), 2);
+	Monster c = Monster("c", 10, 100, 0, 100, 1, "");
+	Unit::attackcd(c, a);
+	EXPECT_EQ(a.getHealthPoints(), 2);
+
+}
+
 //hero tests
 //constructor
-TEST(Hero, constructor) {
-	Hero h = Hero("h", 4, 3, 0, 0, 2, 3, 2, 3, 0, 0, 0.2, 1, 1);
+TEST(Hero, constructorNgettest) {
+	Hero h = Hero("h", 4, 3, 2, 5, 2, "test", 3, 2, 3, 0, 0, 0.2, 2, 1);
 	EXPECT_EQ(h.getName(), "h");
 	EXPECT_EQ(h.getMaxHealthPoints(), 4);
 	EXPECT_EQ(h.getHealthPoints(), 4);
 	EXPECT_EQ(h.getPhysicalDamage(), 3);
+	EXPECT_EQ(h.getMagicalDamage(), 2);
+	EXPECT_EQ(h.getDefense(), 5);
 	EXPECT_EQ(h.getAttackCoolDown(), 2);
 	EXPECT_EQ(h.getLevel(), 1);
+	EXPECT_EQ(h.getTexture(), "test");
 	EXPECT_EQ(h.getExp(), 0);
-	EXPECT_EQ(h.getLightRadius(), 1);
+	EXPECT_EQ(h.getLightRadius(), 2);
 }
 
 //XP gain test
 TEST(Hero, xpGain) {
-	Monster a = Monster("a", 3, 1, 0, 0, 1);
-	Hero h = Hero("h", 10, 5, 0, 0, 1, 100);
+	Monster a = Monster("a", 3, 1, 0, 0, 1, "");
+	Hero h = Hero("h", 10, 5, 0, 0, 1, "", 100);
 	h.attack(a);
 	EXPECT_EQ(h.getExp(), 3);
 }
 
 //fighttildeath test
 TEST(Hero, fightildeath) {
-	Monster a = Monster("a", 10, 1, 0, 0, 1);
-	Hero h = Hero("h", 10, 2, 0, 0, 1, 100);
+	Monster a = Monster("a", 10, 1, 0, 0, 1, "");
+	Hero h = Hero("h", 10, 2, 0, 0, 1, "", 100);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.isAlive(), true);
 	EXPECT_EQ(a.isAlive(), false);
@@ -187,8 +195,8 @@ TEST(Hero, fightildeath) {
 
 //lvlup test
 TEST(Hero, lvlup) {
-	Monster a = Monster("a", 13, 1, 0, 0, 4);
-	Hero h = Hero("h", 10, 1, 0, 0, 2, 7, 2, 2, 2, 3, 0.3, 1, 1);
+	Monster a = Monster("a", 13, 1, 0, 0, 4, "");
+	Hero h = Hero("h", 10, 1, 0, 0, 2, "", 7, 2, 2, 2, 3, 0.3, 1, 3);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.getLevel(), 2);
 	EXPECT_EQ(h.getMaxHealthPoints(), 12);
@@ -197,7 +205,7 @@ TEST(Hero, lvlup) {
 	EXPECT_EQ(h.getAttackCoolDown(), 2 * 0.3);
 	EXPECT_EQ(h.getMagicalDamage(), 2);
 	EXPECT_EQ(h.getDefense(), 3);
-	EXPECT_EQ(h.getLightRadius(), 2);
+	EXPECT_EQ(h.getLightRadius(), 4);
 }
 
 //Map test
@@ -254,13 +262,13 @@ TEST(MarkedMap, constructorNgettest) {
 	EXPECT_EQ(test.getlenX(), 14);
 	EXPECT_EQ(test.getlenY(), 7);
 
-	std::string expected =  "##############\n";
-				expected += "#   #  ####  #\n";
-				expected += "# ####  ##  ##\n";
-				expected += "#   #  ##  ###\n";
-				expected += "### # ##  ####\n";
-				expected += "#         ####\n";
-				expected += "##############\n";
+	std::string expected = "##############\n";
+	expected += "#   #  ####  #\n";
+	expected += "# ####  ##  ##\n";
+	expected += "#   #  ##  ###\n";
+	expected += "### # ##  ####\n";
+	expected += "#         ####\n";
+	expected += "##############\n";
 
 
 	std::string output;
@@ -287,8 +295,8 @@ TEST(MarkedMap, constructorNgettest) {
 //getposition tests
 TEST(MarkedMap, getpositions) {
 	MarkedMap test = MarkedMap("maptestfiles/MTestmap.txt");
-	EXPECT_EQ(test.getHeroPosition(), std::make_pair(2,1));
-	std::list<std::pair<int,int>> m1,m2,m3;
+	EXPECT_EQ(test.getHeroPosition(), std::make_pair(2, 1));
+	std::list<std::pair<int, int>> m1, m2, m3;
 	m1.push_back(std::make_pair(2, 3));
 	m1.push_back(std::make_pair(3, 4));
 	m1.push_back(std::make_pair(6, 5));
@@ -307,6 +315,127 @@ TEST(MarkedMap, exceptions) {
 	EXPECT_THROW(test.getHeroPosition(), MarkedMap::NoInstanceException);
 	EXPECT_THROW(test.getMonsterPositions('6'), MarkedMap::NoInstanceException);
 	EXPECT_THROW(test.loadMap("maptestfiles/MTestmapHeroes.txt"), MarkedMap::MultipleHeroException);
+}
+
+//Game tests
+//constructor, getter functions, put functions and exception detections
+TEST(Game, constructNgetNputtests) {
+	Game test = Game();
+	EXPECT_EQ(test.getHero(), nullptr);
+	EXPECT_EQ(test.getHeroPos().first, 0);
+	EXPECT_EQ(test.getHeroPos().second, 0);
+	EXPECT_THROW(test.putHero(Hero("h", 10, 5, 0, 0, 1, ""), 0, 0), Map::WrongIndexException);
+	EXPECT_THROW(test.putMonster(Monster::parse("Zombie.json"), 3, 5), Map::WrongIndexException);
+	test.setFreeTexture("freed");
+	EXPECT_EQ(test.getFreeTexture(), "freed");
+	test.setWallTexture("walled");
+	EXPECT_EQ(test.getWallTexture(), "walled");
+
+	std::string filename = "maptestfiles/Testmap.txt";
+	Game test2 = Game(filename);
+	EXPECT_THROW(test2.run(), Game::NotInitializedException);
+	EXPECT_THROW(test2.putHero(Hero("h", 10, 5, 0, 0, 1, ""), 0, 0), Game::OccupiedException);
+	EXPECT_NO_THROW(test2.putHero(Hero("h", 10, 5, 0, 0, 1, ""), 1, 2));
+	EXPECT_EQ(test2.getHeroPos().first, 1);
+	EXPECT_EQ(test2.getHeroPos().second, 2);
+	EXPECT_THROW(test2.putHero(Hero("h", 10, 5, 0, 0, 1, ""), 1, 1), Game::AlreadyHasHeroException);
+	EXPECT_THROW(test2.putMonster(Monster::parse("Zombie.json"), 0, 0), Game::OccupiedException);
+	EXPECT_THROW(test2.putMonster(Monster::parse("Zombie.json"), 1, 2), Game::OccupiedException);
+	EXPECT_NO_THROW(test2.putMonster(Monster::parse("Zombie.json"), 2, 1));
+	EXPECT_NO_THROW(test2.putMonster(Monster::parse("Zombie.json"), 2, 1));
+	EXPECT_NO_THROW(test2.putMonster(Monster::parse("Fallen.json"), 2, 1));
+	EXPECT_NO_THROW(test2.putMonster(Monster::parse("Fallen.json"), 3, 1));
+}
+
+//Testing monstercounting
+TEST(Game, monstercounttest) {
+	
+	std::string filename = "maptestfiles/Testmap.txt";
+	Game test2 = Game(filename);
+	EXPECT_EQ(test2.getMonsterCountOnOnePos(1, 1), 0);
+	test2.putMonster(Monster::parse("Zombie.json"), 1, 1);
+	EXPECT_EQ(test2.getMonsterCountOnOnePos(1, 1), 1);
+	test2.putMonster(Monster::parse("Fallen.json"), 1, 1);
+	EXPECT_EQ(test2.getMonsterCountOnOnePos(1, 1), 2);
+}
+
+//Gametests
+//run and render test
+TEST(Game, runNrendertest) {
+	std::string filename = "maptestfiles/Testmap.txt";
+	Game test2 = Game(filename);
+	test2.putHero(Hero::parse("Dark_Wanderer.json"), 1, 2);
+	test2.putMonster(Monster::parse("Zombie.json"), 2, 1);
+	test2.putMonster(Monster::parse("Zombie.json"), 2, 1);
+	test2.putMonster(Monster::parse("Fallen.json"), 2, 1);
+	test2.putMonster(Monster::parse("Fallen.json"), 3, 1);
+	test2.setWallTexture("wall.svg");
+	test2.setFreeTexture("free.svg");
+
+	test2.registerRenderer(new HeroTextRenderer());
+	test2.registerRenderer(new HeroTextRenderer());
+
+	std::ofstream intxt("testlog.txt");
+	test2.registerRenderer(new ObserverTextRenderer(intxt));
+	test2.registerRenderer(new CharacterSVGRenderer("testpretty.svg"));
+	test2.registerRenderer(new ObserverSVGRenderer("testgamemaster.svg"));
+	
+	std::ifstream in("gameinputs/gametestmove.txt");
+	std::streambuf* cinbuf = std::cin.rdbuf();
+	std::cin.rdbuf(in.rdbuf());
+
+	std::ofstream out("couttext.txt");
+	std::streambuf* coutbuf = std::cout.rdbuf();
+	std::cout.rdbuf(out.rdbuf());
+
+
+	EXPECT_NO_THROW(test2.run());
+	std::cin.rdbuf(cinbuf);
+	std::cout.rdbuf(coutbuf);
+
+
+	std::ifstream filecomp1, filecomp2;
+	char comp1, comp2;
+	ASSERT_NO_THROW(filecomp1.open("couttext.txt"));
+	ASSERT_NO_THROW(filecomp2.open("renderertestfiles/couttextcompare.txt"));
+	while (!filecomp1.get(comp1) && !filecomp2.get(comp2))
+	{
+		EXPECT_EQ(comp1, comp2);
+	}
+	filecomp1.close(); 
+	filecomp2.close();
+	ASSERT_NO_THROW(filecomp1.open("testlog.txt"));
+	ASSERT_NO_THROW(filecomp2.open("renderertestfiles/logcompare.txt"));
+	while (!filecomp1.get(comp1) && !filecomp2.get(comp2))
+	{
+		EXPECT_EQ(comp1, comp2);
+	}
+	filecomp1.close();
+	filecomp2.close();
+	ASSERT_NO_THROW(filecomp1.open("testpretty.svg"));
+	ASSERT_NO_THROW(filecomp2.open("renderertestfiles/prettycompare.svg"));
+	while (!filecomp1.get(comp1) && !filecomp2.get(comp2))
+	{
+		EXPECT_EQ(comp1, comp2);
+	}
+	filecomp1.close();
+	filecomp2.close();
+	ASSERT_NO_THROW(filecomp1.open("testgamemaster.svg"));
+	ASSERT_NO_THROW(filecomp2.open("renderertestfiles/gamemastercompare.svg"));
+	while (!filecomp1.get(comp1) && !filecomp2.get(comp2))
+	{
+		EXPECT_EQ(comp1, comp2);
+	}
+	filecomp1.close();
+	filecomp2.close();
+}
+
+//PreparedGame
+//Construct
+TEST(PreparedGame, construct)
+{
+	std::string filename = "preparedgame.json";
+	PreparedGame game = PreparedGame(filename);
 }
 
 int main(int argc, char** argv)

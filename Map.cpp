@@ -10,7 +10,7 @@
  * 
  * @param filename the name of the file used to generate the map
  */
-Map::Map(std::string filename) {
+Map::Map(const std::string& filename) {
     loadMap(filename);
 }
 

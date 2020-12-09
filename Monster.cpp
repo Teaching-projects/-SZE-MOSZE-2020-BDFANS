@@ -10,6 +10,7 @@ Monster Monster::parse(std::string filename)
 		int inphys = 0;
 		int inmagic = 0;
 		double inaspeed = 1.0;
+		std::string intexture = "";
 		try
 		{
 		innev = data.get<std::string>("name");
@@ -22,11 +23,15 @@ Monster Monster::parse(std::string filename)
 		}
 		indef = data.get<int>("defense");
 		inaspeed = data.get<double>("attack_cooldown");
+		if(data.count("texture") > 0)
+		{
+			intexture = data.get<std::string>("texture");
+		}
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << "[ERROR] Missing value from input data! Make sure the JSON input data is valid!\n";
 		}
 		
-    return Monster(innev,inhp,inphys,inmagic,indef,inaspeed);
+    return Monster(innev,inhp,inphys,inmagic,indef,inaspeed,intexture);
 }
