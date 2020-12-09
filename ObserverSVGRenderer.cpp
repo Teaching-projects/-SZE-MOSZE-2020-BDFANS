@@ -2,8 +2,8 @@
 
 void ObserverSVGRenderer::render(const Game& ingame) const
 {
-    const int& width = ingame.getmap().getMapWidth();
-	const int& heigth = ingame.getmap().getMapHeigth();
+    const int& width = ingame.getmap().getlenX();
+	const int& heigth = ingame.getmap().getlenX();
     const std::pair<int, int>& hero_location = ingame.getHeroPos();
 
     std::ofstream outfile;

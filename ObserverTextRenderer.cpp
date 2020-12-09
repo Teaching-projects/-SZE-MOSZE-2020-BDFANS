@@ -2,8 +2,8 @@
 
 void ObserverTextRenderer::render(const Game& ingame) const
 {
-    const int& width = ingame.getmap().getMapWidth();
-	const int& heigth = ingame.getmap().getMapHeigth();
+    const int& width = ingame.getmap().getlenX();
+	const int& heigth = ingame.getmap().getlenY();
     const std::pair<int, int>& hero_location = ingame.getHeroPos();
 
 	out_stream << TOP_LEFT ; for (int i = 0; i < width; i++) out_stream << HORIZONTAL; out_stream << TOP_RIGHT << "\n";

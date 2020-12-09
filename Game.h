@@ -49,6 +49,11 @@ private:
      */
     bool stepOn(const std::string& command);
 
+    /**
+     * @brief This runs all registered renderers
+     */
+    void renderall();
+
 public:
 
     /**
@@ -147,10 +152,7 @@ public:
      */
     void registerRenderer(Renderer* inrender);
     
-    /**
-     * @brief This runs all registered renderers
-     */
-    void renderall();
+    
 
     /**
      * @brief Get a list of monsters on a certain coordinate. Returns empty list, if there are no monsters on map

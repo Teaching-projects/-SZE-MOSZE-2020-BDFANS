@@ -31,7 +31,7 @@ void Game::putHero(Hero hero, int x, int y) {
 
 void Game::putMonster(Monster monster, int x, int y) {
 	if (isMapSet) {
-		if (newMap.get(x, y) == type::Free) {
+		if(newMap.get(x, y) == type::Free && !(h_location.first == x && h_location.second == y)) {
 
 			m_locations.push_back(std::make_pair(monster, std::make_pair(x, y)));
 			isMonsterSet = true;
@@ -104,7 +104,7 @@ int Game::getMonsterCountOnOnePos(int x, int y) const
 
 bool Game::heroIsOnMap(int x, int y) {
 	bool onMap = false;
-	if (x <= newMap.getMapWidth() && y <= newMap.getMapHeigth()) {
+	if (x <= newMap.getlenX() && y <= newMap.getlenY()) {
 		onMap = true;
 	}
 	else { std::cout << "End of the map. \n"; }

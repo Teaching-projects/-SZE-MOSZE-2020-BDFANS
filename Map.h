@@ -76,25 +76,7 @@ public:
      */
     type get(int x, int y) const;
 
-    /**
-     * @brief count the heigth of the map
-     * 
-     * @return int 
-     */
-    int getMapHeigth() const { return loadedmap.size(); }
 
-    /**
-     * @brief count the width of the map
-     * 
-     * @return int 
-     */
-    int getMapWidth() const {
-        int lenght = 0;
-        for (auto element : loadedmap) {
-            if ((int)element.size() > lenght) { lenght = element.size(); }
-        }
-        return lenght;
-    }
     ///return the width of the map
     int getlenX() const
     {

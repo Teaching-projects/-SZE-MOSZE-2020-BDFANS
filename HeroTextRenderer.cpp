@@ -2,8 +2,8 @@
 
 void HeroTextRenderer::render(const Game& ingame) const
 {
-    const int& width = ingame.getmap().getMapWidth();
-	const int& height = ingame.getmap().getMapHeigth();
+    const int& width = ingame.getmap().getlenX();
+	const int& height = ingame.getmap().getlenY();
 	int radius = ingame.getHero()->getLightRadius();
     const std::pair<int, int>& hero_location = ingame.getHeroPos();
 	int xmin = hero_location.first - radius;
