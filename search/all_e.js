@@ -6,8 +6,7 @@ var searchData=
   ['sethealthpoints_101',['setHealthPoints',['../class_unit.html#a6b28bebce697a1ce22695b6d416f3784',1,'Unit']]],
   ['setmap_102',['setMap',['../class_game.html#a2da2d4e53f7b25a9763b45ce3439628a',1,'Game']]],
   ['setoutputstream_103',['setOutputStream',['../class_text_renderer.html#ab01146d936463d300d72f8f7bff5b482',1,'TextRenderer']]],
-  ['settexture_104',['setTexture',['../class_unit.html#a3cc5a79f795b055efccf626e5cf7da06',1,'Unit']]],
-  ['setwalltexture_105',['setWallTexture',['../class_game.html#af4b1ab6b06c3dd9f20fb50790c6eccc6',1,'Game']]],
-  ['svgrenderer_106',['SVGRenderer',['../class_s_v_g_renderer.html',1,'SVGRenderer'],['../class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b',1,'SVGRenderer::SVGRenderer()']]],
-  ['svgrenderer_2eh_107',['SVGRenderer.h',['../_s_v_g_renderer_8h.html',1,'']]]
+  ['setwalltexture_104',['setWallTexture',['../class_game.html#af4b1ab6b06c3dd9f20fb50790c6eccc6',1,'Game']]],
+  ['svgrenderer_105',['SVGRenderer',['../class_s_v_g_renderer.html',1,'SVGRenderer'],['../class_s_v_g_renderer.html#a74ddddc62becc29e605997149577051b',1,'SVGRenderer::SVGRenderer()']]],
+  ['svgrenderer_2eh_106',['SVGRenderer.h',['../_s_v_g_renderer_8h.html',1,'']]]
 ];
