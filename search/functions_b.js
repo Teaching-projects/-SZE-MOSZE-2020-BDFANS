@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['parse_204',['parse',['../class_hero.html#a204672cf3e463ae45726cd9fa80a9910',1,'Hero::parse()'],['../class_monster.html#a9334a9e26ffc92f1c4fedaa6b129764c',1,'Monster::parse()']]],
-  ['parsefromfile_205',['parseFromFile',['../class_j_s_o_n.html#aa38e7d1ce861ad80f91410a78472570f',1,'JSON']]],
-  ['praseunit_206',['praseUnit',['../class_unit.html#a273239f361d35d5e76b5ecba6a17cb80',1,'Unit']]],
-  ['preparedgame_207',['PreparedGame',['../class_prepared_game.html#a16e240b4e7668be9f10f8ab0d272a874',1,'PreparedGame']]],
-  ['puthero_208',['putHero',['../class_game.html#a2c9bbc80ff60480af1bbdf06cd3380a7',1,'Game']]],
-  ['putmonster_209',['putMonster',['../class_game.html#a5fc59a7c9f21b26c9b6502217dc5aa5d',1,'Game']]]
+  ['setakthealth_149',['setAktHealth',['../class_unit.html#a3bdff78a6fa0bf000db28e3a9c979d06',1,'Unit']]],
+  ['setattackcooldown_150',['setAttackCooldown',['../class_unit.html#a82400a76b04a7bf2a9c60a37b4e5245e',1,'Unit']]],
+  ['sethealthpoints_151',['setHealthPoints',['../class_unit.html#a6b28bebce697a1ce22695b6d416f3784',1,'Unit']]],
+  ['setmap_152',['setMap',['../class_game.html#ab83e25f737717d7bb4ec95b22efc82d9',1,'Game']]],
+  ['showherovision_153',['showHeroVision',['../class_game.html#a488a04e1e0a8b188e843fa4711208cfc',1,'Game']]],
+  ['showmap_154',['showMap',['../class_game.html#a8233972ea1eddd11d563bfa857f4e1e2',1,'Game']]]
 ];

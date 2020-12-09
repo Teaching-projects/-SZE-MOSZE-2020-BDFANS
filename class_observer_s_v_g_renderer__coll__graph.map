@@ -1,5 +1,0 @@
-<map id="ObserverSVGRenderer" name="ObserverSVGRenderer">
-<area shape="rect" id="node1" title="The renderer for the entire map in SVG form." alt="" coords="5,155,172,181"/>
-<area shape="rect" id="node2" href="$class_s_v_g_renderer.html" title="The abstract class used as the interface for text based maprendering solutions." alt="" coords="35,80,143,107"/>
-<area shape="rect" id="node3" href="$class_renderer.html" title="The abstract virtual class used as the base interface for all maprendering classes." alt="" coords="48,5,129,32"/>
-</map>

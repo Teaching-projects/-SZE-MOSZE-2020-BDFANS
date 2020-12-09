@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['loadmap_194',['loadMap',['../class_map.html#a88f6ac563ccd978ca08e4f4cec9b441b',1,'Map::loadMap()'],['../class_marked_map.html#a18a5089be2b8c36ffe164c42bb7840a4',1,'MarkedMap::loadMap()']]]
+  ['map_138',['Map',['../class_map.html#ab124c12c6c9dec693aedb1a4b6384ecd',1,'Map']]],
+  ['markedmap_139',['MarkedMap',['../class_marked_map.html#a5bf2032d693c9eed1defddfb5a796a43',1,'MarkedMap::MarkedMap()'],['../class_marked_map.html#a618f75da9dc21d4ba9a81f22b91a0e89',1,'MarkedMap::MarkedMap(std::string filename)']]],
+  ['monster_140',['Monster',['../class_monster.html#ab3fc8db2433483a883e4211b7cf0eee1',1,'Monster']]]
 ];

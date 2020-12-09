@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['observersvgrenderer_129',['ObserverSVGRenderer',['../class_observer_s_v_g_renderer.html',1,'']]],
-  ['observertextrenderer_130',['ObserverTextRenderer',['../class_observer_text_renderer.html',1,'']]],
-  ['occupiedexception_131',['OccupiedException',['../class_game_1_1_occupied_exception.html',1,'Game']]]
+  ['parseexception_95',['ParseException',['../class_j_s_o_n_1_1_parse_exception.html',1,'JSON']]],
+  ['preparedgame_96',['PreparedGame',['../class_prepared_game.html',1,'']]]
 ];
