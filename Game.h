@@ -67,7 +67,7 @@ public:
     Game() :isHeroSet(false), isMonsterSet(false), isMapSet(false), isStarted(false), gamehero(nullptr){};
 
     ///This is a constructor for game with the map initialized.
-    Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
+    explicit Game(std::string& mapfilename) : isHeroSet(false), isMonsterSet(false), isMapSet(true), isStarted(false), gamehero(nullptr), newMap(Map(mapfilename)) {};
 
     ///This is a destructor for game
     ~Game();

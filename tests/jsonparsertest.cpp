@@ -331,7 +331,8 @@ TEST(Game, constructNgetNputtests) {
 	test.setWallTexture("walled");
 	EXPECT_EQ(test.getWallTexture(), "walled");
 
-	Game test2 = Game("maptestfiles/Testmap.txt");
+	std::string filename = "maptestfiles/Testmap.txt";
+	Game test2 = Game(filename);
 	EXPECT_THROW(test2.run(), Game::NotInitializedException);
 	EXPECT_THROW(test2.putHero(Hero("h", 10, 5, 0, 0, 1, ""), 0, 0), Game::OccupiedException);
 	EXPECT_NO_THROW(test2.putHero(Hero("h", 10, 5, 0, 0, 1, ""), 1, 2));
@@ -348,7 +349,9 @@ TEST(Game, constructNgetNputtests) {
 
 //Testing monstercounting
 TEST(Game, monstercounttest) {
-	Game test2 = Game("maptestfiles/Testmap.txt");
+	
+	std::string filename = "maptestfiles/Testmap.txt";
+	Game test2 = Game(filename);
 	EXPECT_EQ(test2.getMonsterCountOnOnePos(1, 1), 0);
 	test2.putMonster(Monster::parse("Zombie.json"), 1, 1);
 	EXPECT_EQ(test2.getMonsterCountOnOnePos(1, 1), 1);
@@ -359,7 +362,8 @@ TEST(Game, monstercounttest) {
 //Gametests
 //run and render test
 TEST(Game, runNrendertest) {
-	Game test2 = Game("maptestfiles/Testmap.txt");
+	std::string filename = "maptestfiles/Testmap.txt";
+	Game test2 = Game(filename);
 	test2.putHero(Hero::parse("Dark_Wanderer.json"), 1, 2);
 	test2.putMonster(Monster::parse("Zombie.json"), 2, 1);
 	test2.putMonster(Monster::parse("Zombie.json"), 2, 1);
@@ -430,7 +434,8 @@ TEST(Game, runNrendertest) {
 //Construct
 TEST(PreparedGame, construct)
 {
-	PreparedGame game = PreparedGame("preparedgame.json");
+	std::string filename = "preparedgame.json";
+	PreparedGame game = PreparedGame(filename);
 }
 
 int main(int argc, char** argv)
