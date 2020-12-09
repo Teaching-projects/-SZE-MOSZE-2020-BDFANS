@@ -9,7 +9,7 @@ void ObserverSVGRenderer::render(const Game& ingame) const
     std::ofstream outfile;
     outfile.open(outfilename, std::ofstream::out | std::ofstream::trunc);
 
-    outfile << "<svg width=\"" << width << "\"  height=\"" << heigth << "\" xmlns=\"http://www.w3.org/2000/svg\">\n";
+    outfile << "<svg width=\"" << std::to_string(width*10) << "\"  height=\"" << std::to_string(heigth*10) << "\" xmlns=\"http://www.w3.org/2000/svg\">\n";
 
 	for (int i = 0; i < heigth; i++) {
 		for (int j = 0; j < width; j++) {

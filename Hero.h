@@ -96,6 +96,7 @@ class Hero :public Unit
      * @param inmagic sets the magical damage of the character.
      * @param indef sets the defense of the character.
      * @param inaspeed sets the attackspeed of the character.
+     * @param intexture sets the name of the texture file (*.SVG). The default is empty string
      * @param inexpreq sets the required experience of the character.
      * @param inhbp sets the bonus health per level of the character.
      * @param inphysb sets the bonus damage per level of the character.
@@ -107,6 +108,6 @@ class Hero :public Unit
      *
      * The constructor uses the attackspeed value to set the initial attackcooldown
      */
-    Hero(const std::string& innev, int inhp,int inphys, int inmagic ,int indef, double inaspeed, int inexpreq = 1, int inhpb = 1, int inphysb = 1,int inmagicb = 1 ,int indefb = 1 ,double incdmul = 1, int inlr = 1, int inlrb = 1)
-        :Unit(innev,inhp,inphys,inmagic,indef,inaspeed), exp_per_level(inexpreq), hp_per_level(inhpb), physicaldmg_per_level(inphysb),magicaldmg_per_level(inmagicb) ,defense_per_level(indefb) ,cdmul_per_level(incdmul), light_radius(inlr), light_radius_per_level(inlrb) {}
+    Hero(const std::string& innev, int inhp,int inphys, int inmagic ,int indef, double inaspeed,const std::string& intexture, int inexpreq = 1, int inhpb = 1, int inphysb = 1,int inmagicb = 1 ,int indefb = 1 ,double incdmul = 1, int inlr = 1, int inlrb = 1)
+        :Unit(innev,inhp,inphys,inmagic,indef,inaspeed,intexture), exp_per_level(inexpreq), hp_per_level(inhpb), physicaldmg_per_level(inphysb),magicaldmg_per_level(inmagicb) ,defense_per_level(indefb) ,cdmul_per_level(incdmul), light_radius(inlr), light_radius_per_level(inlrb) {}
 };

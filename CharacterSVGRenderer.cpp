@@ -18,7 +18,7 @@ void CharacterSVGRenderer::render(const Game& ingame) const
     std::ofstream outfile;
     outfile.open(outfilename, std::ofstream::out | std::ofstream::trunc);
 
-    outfile << "<svg width=\"" << width << "\"  height=\"" << height << "\" xmlns=\"http://www.w3.org/2000/svg\">\n";
+    outfile << "<svg width=\"" << std::to_string(width*10) << "\"  height=\"" << std::to_string(height*10) << "\" xmlns=\"http://www.w3.org/2000/svg\">\n";
 
 	for (int i = ymin; i < ymax; i++) {
 		for (int j = xmin; j < xmax; j++) {

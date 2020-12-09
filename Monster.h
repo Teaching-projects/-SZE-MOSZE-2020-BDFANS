@@ -43,6 +43,7 @@ class Monster :public Unit
     * @param inmagic sets the magical damage of the monster. The default magical damage is 0
     * @param indef sets the defense of the monster.Te default defense is 1
     * @param insaspeed sets the attackspeed of the monster.The default speed is 1.0
+    * @param intexture sets the name of the texture file (*.SVG). The default is empty string
     */
-    Monster(const std::string& innev,int inhp,int inphys,int inmagic,int indef,double inaspeed) :Unit(innev,inhp,inphys,inmagic,indef,inaspeed)  {}
+    Monster(const std::string& innev,int inhp,int inphys,int inmagic,int indef,double inaspeed,const std::string& intexture) :Unit(innev,inhp,inphys,inmagic,indef,inaspeed,intexture)  {}
 };

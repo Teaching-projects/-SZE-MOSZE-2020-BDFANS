@@ -8,6 +8,12 @@ PreparedGame::PreparedGame(std::string jsongame) {
 	std::string mapfnev = data.get<std::string>("map");
 	MarkedMap map(mapfnev);
 	setMap(map);
+	if(data.count("free_texture") > 0)
+	Game::setFreeTexture(data.get<std::string>("free_texture"));
+	else {}
+	if(data.count("wall_texture") > 0)
+	Game::setWallTexture(data.get<std::string>("wall_texture"));
+	else {}
 
 	std::string herofnev = data.get<std::string>("hero");
 	Hero gamehero = Hero::parse(herofnev);

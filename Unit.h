@@ -89,10 +89,11 @@ public:
 	 * @param inmagic sets te magical damage of te chharacter. The default magical damage is 1
 	 * @param indef sets the defense of the caracter. The default defense is 1
 	 * @param ins sets the attackspeed of the character. The default speed is 1
-	 *
+	 * @param intexture sets the name of the texture file (*.SVG). The default is empty string
+	 * 
 	 * The constructor uses the attackspeed value to set the initial attackcooldown
 	 */
-	Unit(const std::string& inn = "default", int inh = 1,int inphys = 1, int inmagic = 1, int indef=1, double ins = 1) :name(inn), maxhealth(inh), damage(inphys,inmagic) ,defense(indef), attackspeed(ins)
+	Unit(const std::string& inn = "default", int inh = 1,int inphys = 1, int inmagic = 1, int indef=1, double ins = 1, const std::string& intexture = "") :name(inn), maxhealth(inh), damage(inphys,inmagic) ,defense(indef), attackspeed(ins), texture(intexture)
 	{
 		attackcooldown = attackspeed;
 	}
@@ -134,13 +135,6 @@ public:
 	* @param in sets the current health
 	*/
 	void setHealthPoints(int in);
-
-	/**
-	 * @brief Set function for the texture parameter
-	 * 
-	 * @param filename name of the texture file
-	 */
-	void setTexture(const std::string& filename) {texture = filename;}
 
 	///this is the getter function for the texture
 	std::string getTexture() {return texture;}

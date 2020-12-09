@@ -17,7 +17,7 @@
 #include <string>
 #include <fstream>
 
-class SVGRenderer: virtual Renderer
+class SVGRenderer: public virtual Renderer
 {
 protected:
     ///< the name of the file used as the output

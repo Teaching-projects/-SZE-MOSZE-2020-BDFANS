@@ -62,8 +62,9 @@ Ahol a \# karakter a falakat, a H a hőst, a számok a különböző szörnyeket
 A program a futása során több különböző módon is kiiratja a játék jelenlegi állásat. Ezek a következők:
 
     1. standard kimenetre szöveges formátumban azt amit a hős lát.
-    2. A log.txt fájlba szöveges formátumban az egész pályát.
+    2. A log.txt fájlba szöveges formátumban a játék kezdetétől annak összes állapotát.
     3. A pretty.svg fájlba SVG formátumban azt amit a hős lát.
+    4. A gamemaster.svg fájlba SVG formátumban a játék jelenlegi állásat
 
 # Dokumentáció
 

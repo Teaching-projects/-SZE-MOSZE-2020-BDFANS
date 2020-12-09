@@ -73,6 +73,7 @@ void Hero::fightTilDeath(Unit& defender)
         double incdmul = 1;
 		int inlr = 1;
 		int inlrb = 1;
+		std::string intexture = "";
 		try
 		{
 		innev = data.get<std::string>("name");
@@ -93,6 +94,10 @@ void Hero::fightTilDeath(Unit& defender)
 		incdmul = data.get<double>("cooldown_multiplier_per_level");
 		inlr = data.get<int>("light_radius");
 		inlrb = data.get<int>("light_radius_bonus_per_level");
+		if(data.count("texture") > 0)
+		{
+			intexture = data.get<std::string>("texture");
+		}
 		}
 		catch(const std::exception& e)
 		{
@@ -100,7 +105,7 @@ void Hero::fightTilDeath(Unit& defender)
 		}
 		
 		
-		return Hero(innev,inhp,inphys,inmagic,indef,inaspeed,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul,inlr,inlrb);
+		return Hero(innev,inhp,inphys,inmagic,indef,inaspeed,intexture,inexpreq,inhpb,inphysb,inmagicb,indefb,incdmul,inlr,inlrb);
 
 	}
 	catch(const JSON::ParseException& e)

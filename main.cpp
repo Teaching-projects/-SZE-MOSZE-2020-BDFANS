@@ -50,7 +50,9 @@ int main(int argc, char** argv){
         std::ofstream in("log.txt");
         game.registerRenderer(new ObserverTextRenderer(in));
 
-        //game.registerRenderer(new HeroSVGRenderer("pretty.svg"));
+        game.registerRenderer(new CharacterSVGRenderer("pretty.svg"));
+
+        game.registerRenderer(new ObserverSVGRenderer("gamemaster.svg"));
 
         game.runGame();
     }
