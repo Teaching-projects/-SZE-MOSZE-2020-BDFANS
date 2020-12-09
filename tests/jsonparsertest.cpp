@@ -188,7 +188,7 @@ TEST(Hero, fightildeath) {
 //lvlup test
 TEST(Hero, lvlup) {
 	Monster a = Monster("a", 13, 1, 0, 0, 4,"");
-	Hero h = Hero("h", 10, 1, 0, 0, 2, 7, "", 2, 2, 2, 3, 0.3, 1, 1);
+	Hero h = Hero("h", 10, 1, 0, 0, 2, "", 7, 2, 2, 2, 3, 0.3, 1, 1);
 	h.fightTilDeath(a);
 	EXPECT_EQ(h.getLevel(), 2);
 	EXPECT_EQ(h.getMaxHealthPoints(), 12);
