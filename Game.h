@@ -55,10 +55,11 @@ private:
 
 public:
 
+
     /**
-     *This function is responsible for the gameplay
+     * @brief This function is responsible for the gameplay
      *
-     *@throw NotInitializedException this function throws an exception if the map or hero or monster is not set.
+     * @throw NotInitializedException this function throws an exception if the map or hero or monster is not set.
      */
     void run();
 
@@ -71,10 +72,11 @@ public:
     ///This is a destructor for game
     ~Game();
 
-    /** this is a setter function for the map.
-     *
-     *@throw AlreadyHasUnitException this function throws an exception if we still have units on the map.
-     *@throw GameAlreadyStartedException this function throws an exception if the game is still running
+    /**
+     * @brief  this is a setter function for the map.
+     * 
+     * @throw AlreadyHasUnitException this function throws an exception if we still have units on the map.
+     * @throw GameAlreadyStartedException this function throws an exception if the game is still running
      */
     void setMap(const Map& map);
 
@@ -86,10 +88,12 @@ public:
     Map getmap() const {return newMap;};
 
     /**
+     * @brief This function counts the monsters in one position
+     * 
      * @param int x Is the first coord.
      * @param int y Is the second coord.
-     *
-     * This function counts the monsters in one position
+     * 
+     * @return returns the number of monsters
      */
     int getMonsterCountOnOnePos(int x, int y) const;
     
@@ -113,7 +117,7 @@ public:
      *@param x is the x coord.
      *@param y is the y coord.
      *
-     *This function puts the hero to the given coords.
+     *@brief This function puts the hero to the given coords.
      *
      *@throw AlreadyHasHeroException this function throws an exception if we have already a hero on the map.
      *@throw OccupiedException this function throws an exception if the coords are not valid.
@@ -127,7 +131,7 @@ public:
      *@param x is the x coord
      *@param y is the y coord
      *
-     *This function puts a monster on the map.
+     *@brief This function puts a monster on the map.
      *
      *@throw OccupiedException this function throws an exception if the coords are not valid.
      *@throw WrongIndexException this function throws an exception if we dont have a map to put on.
@@ -136,11 +140,10 @@ public:
 
 
     /**
-
      *@param x is the unit's x coord
      *@param y is the unit's y coord
      *
-     *This function checks if the unit is on the map
+     *@brief This function checks if the unit is on the map
     */
     bool heroIsOnMap(int x, int y);
 

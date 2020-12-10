@@ -2,8 +2,8 @@
 
 | Név | Github azonosító  | Javasolt relatív érdemjegy | Becsült óra | Indoklás  | 
 | --- | ---- | --- | ------------------ | --------- |
-| Tóth András | @TAndras | +2 | 80-100 | Önként vállalta a nehezebb feladatokat és mindennel időben kész volt. Fejlesztési feladatok folyamatos résztvevője volt és a tananyaghoz kapcsolódó feladatokat is szépen megoldotta, illetve megtanulta. Csapattagok bármilyen kérdéssel fordulhattak hozzá és sok esetben segítséget is nyújtott számukra. Review-olásban jó észrevételei voltak.  |
-| Lucza Dennis | @LuczaDennis |  -  |  60-70 |  -  |
+| Tóth András | @TAndras | +1 | 80-100 | Önként vállalta a nehezebb feladatokat és mindennel időben kész volt. Fejlesztési feladatok folyamatos résztvevője volt és a tananyaghoz kapcsolódó feladatokat is szépen megoldotta, illetve megtanulta. Csapattagok bármilyen kérdéssel fordulhattak hozzá és sok esetben segítséget is nyújtott számukra. Review-olásban jó észrevételei voltak.  |
+| Lucza Dennis | @LuczaDennis |  0  |  60-70 |  Folyamatos résztvevője volt a fejlesztési feladatoknak, és Késedelmei is csak technikai problémák miatt voltak. A rá kitűzött feladatokat szépen megoldotta, illetve a tananyagot megtanulta  |
 | Gesztesi Szabolcs | @gesztesisz | -3 | 0 | Az Attackspeed feladatot megpróbálta megoldani, de technikai okok miatt nem tudta befejezni.  |
 
 
@@ -81,7 +81,7 @@
 
 # Mindenféle számok
 
- - Összes cpp kódsor : 1817
+ - Összes cpp kódsor : 1815
  - Egyéb kódsor (make,doxyfile,shellscript, ...) : ~800
  - cppcheck
    - warning : 0
@@ -92,12 +92,13 @@
  
 # Implicit megtanult dolgok
 Olyanok, amik nem a tárgy anyaga, de muszáj/hasznos volt elsajátítani:
- - alapvető shell/python scripting
+ - alapvető shell
  - `std::variant`
- - SVG rendering
- - parsefile
+ - `std::any`
+ - SVG formátum és minimális XML
+ - JSON formátum
 
-# Feedback (optional)
+# Feedback
  
-Melyik részt találtátok a leghasznosabbnak, miért. Használtátok-e az itt megszerzett dolgokat esetleg közben máskor. Volt-e olyan, amit hiányoltatok a tárgyból. Utólag visszagondolva is jó volt-e az online videósdi?
-
+A unittesztek és a cpplang sokat segített a program hibáinak a felderítésében és kijavításában. A unittesztek sok időt spóroltak a hibakeresés során és többször volt olyan, hogy a unitteszt írása után fedeztünk fel egy bugot, vagy hibás működést.
+A github is hasznosnak bizonyult a különböző feladatrészek párhuzamos fejlesztése során.

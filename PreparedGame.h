@@ -21,8 +21,8 @@
 class PreparedGame : Game {
     public:
         /**
-         *This function prepares the game from a file.
-         *@param string jsongame is the preparedgame file.
+         * @brief This function prepares the game from a file.
+         * @param string jsongame is the preparedgame file.
          */
         explicit PreparedGame(std::string jsongame);
 

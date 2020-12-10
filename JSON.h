@@ -34,8 +34,10 @@ public:
     typedef std::list<std::variant<std::string,int,double>> list;
 
 private:
-    /**Stores the  processed JSON data in a map
-    *Storage format: "[key]:[value]"
+    /**
+    * @brief Stores the processed JSON data in a map
+    *
+    * Storage format: "[key]:[value]"
     */
     std::map<std::string,JSONDATA> json_list;
 
@@ -87,7 +89,7 @@ public:
     *
     * @param key the object key the function searches for
     *
-    * The output typename(T) can be int, double, or string
+    * The output typename(T) can be int, double, string, or JSON::list
     *
     * @throw Exception this function throws an exception if the function can't find the key, or can't process the output type
     */   
