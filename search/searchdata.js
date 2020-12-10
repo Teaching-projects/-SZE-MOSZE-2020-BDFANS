@@ -7,7 +7,8 @@ var indexSectionsWithContent =
   4: "adlmnopt",
   5: "l",
   6: "t",
-  7: "o"
+  7: "o",
+  8: "t"
 };
 
 var indexSectionNames =
@@ -19,7 +20,8 @@ var indexSectionNames =
   4: "variables",
   5: "typedefs",
   6: "enums",
-  7: "related"
+  7: "related",
+  8: "pages"
 };
 
 var indexSectionLabels =
@@ -31,6 +33,7 @@ var indexSectionLabels =
   4: "Variables",
   5: "Typedefs",
   6: "Enumerations",
-  7: "Friends"
+  7: "Friends",
+  8: "Pages"
 };
 
