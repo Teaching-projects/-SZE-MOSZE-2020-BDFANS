@@ -1,5 +1,4 @@
 #include "Monster.h"
-#include "JSON.h"
 
 Monster Monster::parse(std::string filename)
 {

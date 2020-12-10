@@ -11,4 +11,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
    make \
    cmake \
    libgtest-dev\
+   && cd /usr/src/gtest \
+   && cmake CMakeLists.txt \
+   && make \
+   && ln -st /usr/lib/ /usr/src/gtest/libgtest.a \
+   && ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a \
 && rm -rf /var/lib/apt/lists/*

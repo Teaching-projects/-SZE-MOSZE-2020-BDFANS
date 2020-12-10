@@ -19,6 +19,7 @@ Ha a hős egy olyan kockára lép ahol szörnyek találhatók, akkor elkezd azok
 A program sikeres lefutása során szügség van egy térkép fájlra, és több különböző JSON fájltra is szügség van melyeknek a következő változókkal kell rendelkezniük:
 
 "map": A térké a következő stílusu szövegfájlban van megadva
+
 \#\#\#\#\#\#
 
 \# H 1\#

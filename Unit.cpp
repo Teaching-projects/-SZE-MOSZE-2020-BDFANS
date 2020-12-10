@@ -1,9 +1,4 @@
 #include "Unit.h"
-#include <fstream>
-#include <string>
-#include "JSON.h"
-#include <cmath>
-#include <climits>
 
  void Unit::attack(Unit& target)
 {

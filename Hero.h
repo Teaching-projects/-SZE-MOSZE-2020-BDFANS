@@ -14,6 +14,7 @@
 #pragma once
 
 #include "Unit.h"
+#include "JSON.h"
 
 class Hero :public Unit
 {
@@ -59,6 +60,8 @@ class Hero :public Unit
     static Hero parse(std::string filename);
 
     /**
+    * @brief gives xp to hero 
+    * 
     * @param xp is the experience that the hero gains with each attack
 
     * the hero can only collect exp if he is below the max lvl

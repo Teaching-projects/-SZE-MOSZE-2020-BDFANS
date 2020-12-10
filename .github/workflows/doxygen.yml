@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - gh-pages
-      - renderer
+      - Finale
 
 jobs:
     generate_documentation:
