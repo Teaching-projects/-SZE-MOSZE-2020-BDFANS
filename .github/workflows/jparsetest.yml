@@ -9,5 +9,4 @@ jobs:
         container: luczadennis/mosze:latest
         steps:
             - uses: actions/checkout@v2
-            - run: ./gtestinit.sh
             - run: ./jparsetest.sh
