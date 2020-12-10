@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['json_87',['JSON',['../class_j_s_o_n.html',1,'']]]
+  ['hero_120',['Hero',['../class_hero.html',1,'']]],
+  ['herotextrenderer_121',['HeroTextRenderer',['../class_hero_text_renderer.html',1,'']]]
 ];

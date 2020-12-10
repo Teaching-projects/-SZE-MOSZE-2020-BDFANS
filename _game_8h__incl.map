@@ -1,5 +1,5 @@
 <map id="Game.h" name="Game.h">
-<area shape="rect" id="node1" title=" " alt="" coords="220,5,293,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="254,5,328,32"/>
 <area shape="rect" id="node2" href="$_map_8h.html" title=" " alt="" coords="38,80,101,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="191,304,271,331"/>
 <area shape="rect" id="node4" title=" " alt="" coords="110,155,168,181"/>
@@ -7,6 +7,7 @@
 <area shape="rect" id="node8" href="$_hero_8h.html" title=" " alt="" coords="294,80,360,107"/>
 <area shape="rect" id="node9" href="$_monster_8h.html" title=" " alt="" coords="384,80,470,107"/>
 <area shape="rect" id="node10" title=" " alt="" coords="495,80,538,107"/>
+<area shape="rect" id="node11" href="$_renderer_8h.html" title=" " alt="" coords="562,80,654,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="22,155,85,181"/>
 <area shape="rect" id="node7" href="$_damage_8h.html" title="header for Damage struct" alt="" coords="294,229,384,256"/>
 </map>

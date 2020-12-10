@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">BDFANS: RPG
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">A simple RPG game.</div>
   </td>
@@ -84,11 +84,11 @@ $(function() {
 <tr><td><img src="inherit_graph_2.png" border="0" usemap="#_game_1_1_already_has_hero_exception" alt=""/>
 <map name="_game_1_1_already_has_hero_exception" id="_game_1_1_already_has_hero_exception">
 <area shape="rect" title=" " alt="" coords="5,199,116,225"/>
-<area shape="rect" href="class_game_1_1_already_has_hero_exception.html" title=" " alt="" coords="172,5,411,32"/>
-<area shape="rect" href="class_game_1_1_already_has_unit_exception.html" title=" " alt="" coords="174,56,409,83"/>
-<area shape="rect" href="class_game_1_1_game_already_started_exception.html" title=" " alt="" coords="189,107,394,149"/>
-<area shape="rect" href="class_game_1_1_not_initialized_exception.html" title=" " alt="" coords="181,173,401,200"/>
-<area shape="rect" href="class_game_1_1_occupied_exception.html" title=" " alt="" coords="195,224,388,251"/>
+<area shape="rect" href="class_game_1_1_already_has_hero_exception.html" title="This exception is thrown when attemptint to place a hero on a map that already has a hero." alt="" coords="172,5,411,32"/>
+<area shape="rect" href="class_game_1_1_already_has_unit_exception.html" title="This exception is thrown when attemptint to place a hero on top a monster." alt="" coords="174,56,409,83"/>
+<area shape="rect" href="class_game_1_1_game_already_started_exception.html" title="This exception is thrown when attempting to run the same game instance twice." alt="" coords="189,107,394,149"/>
+<area shape="rect" href="class_game_1_1_not_initialized_exception.html" title="This exception is thrown when attempting to run the game without proper initialization." alt="" coords="181,173,401,200"/>
+<area shape="rect" href="class_game_1_1_occupied_exception.html" title="This exception is thrown when the target location on the map is already occupied." alt="" coords="195,224,388,251"/>
 <area shape="rect" href="class_map_1_1_wrong_index_exception.html" title="The exception thrown when the map is indexed outside of its bounds." alt="" coords="191,275,391,301"/>
 <area shape="rect" href="class_marked_map_1_1_multiple_hero_exception.html" title="This exception is thrown when the inputmap contains more than one heroes." alt="" coords="164,325,419,352"/>
 <area shape="rect" href="class_marked_map_1_1_no_instance_exception.html" title="This exception is thrown when a positionfinder function can&#39;t find its target." alt="" coords="170,376,413,403"/>
@@ -111,7 +111,18 @@ $(function() {
 <area shape="rect" href="class_marked_map.html" title="header for MarkedMap class" alt="" coords="104,5,203,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" usemap="#_unit" alt=""/>
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#_renderer" alt=""/>
+<map name="_renderer" id="_renderer">
+<area shape="rect" href="class_renderer.html" title="The abstract virtual class used as the base interface for all maprendering classes." alt="" coords="5,81,87,108"/>
+<area shape="rect" href="class_s_v_g_renderer.html" title="The abstract class used as the interface for text based maprendering solutions." alt="" coords="135,56,243,83"/>
+<area shape="rect" href="class_text_renderer.html" title="The abstract class used as the interface for text based maprendering solutions." alt="" coords="135,107,243,133"/>
+<area shape="rect" href="class_character_s_v_g_renderer.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="291,5,461,32"/>
+<area shape="rect" href="class_observer_s_v_g_renderer.html" title="The renderer for the entire map in SVG form." alt="" coords="293,56,459,83"/>
+<area shape="rect" href="class_hero_text_renderer.html" title="The class resposible for rendering the heroe&#39;s vision in text form." alt="" coords="307,107,445,133"/>
+<area shape="rect" href="class_observer_text_renderer.html" title="The renderer for the entire map in text form." alt="" coords="293,157,459,184"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#_unit" alt=""/>
 <map name="_unit" id="_unit">
 <area shape="rect" href="class_unit.html" title="header for Unit class" alt="" coords="5,31,55,57"/>
 <area shape="rect" href="class_hero.html" title="header for Hero class" alt="" coords="113,5,167,32"/>

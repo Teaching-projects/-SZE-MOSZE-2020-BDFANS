@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">BDFANS: RPG
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
    <div id="projectbrief">A simple RPG game.</div>
   </td>
@@ -67,17 +67,62 @@ $(function() {
 <div class="title">-SZE-MOSZE-2020-BDFANS </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A program jelenlegi működéséért a "Unit" nevezetű osztály felel, ami az egymással harcoló NPC megvalósításáért felelős.</p>
-<p>Ennek az osztálynak 3 belső változója van: string name:Az NPC neve. int health: Az NPC életereje. int damage: Az NPC alapból mennyi életerőt vesz el támadáskor.</p>
-<p>Az osztály létrejöttéért a konstruktornak a bemeneti adatokat 2 szövegfájlal kell megadni, amelyek a kövekező <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> jelölés segítségével:</p>
-<p>{ "name" : [karakter neve], "hp" : [karakter életereje], "dmg" : [karakter támadóereje] }</p>
-<p>A harcot a statikus "Battle(Unit&amp; attacker, Unit&amp; defender)" függvényel lehet, ami a következőképpen működik:</p><ol type="1">
-<li>kiírja a harcoló felek adatait.</li>
-<li>Megkezdődik a harc, amely során az "attacker" meghívja az "attack(Unit&amp; target) függvényt a "defender"-re
-        Az attack(Unit&amp; target) függvény kivonja a támadó sebzését-t, a "target" életerejéből, vagy ha a sebzés magasabb mint a célpont életereje, akkor azt lenullázza. Ezután függvény a csata következményét kiírja.</li>
-<li>Ha a "defendernek" maradt még életereje, akkor ő is meghívja az "attack" függvényt az "attacker"-re</li>
-<li>Ha mindkét félnek maradt még életereje, akkor a függvény a 2. lépéstől megismétlődik.</li>
-</ol>
+<div class="textblock"><p>A program egy egyszerű RPG játékot valósít amely során egy hőst elhelyezünk egy 2 dimentiós térképen különböző szörnyekkel és a cél a hős segítségével az összes szörny megölése. A hős támadás során tapasztalati pontokat szerez, amikből ha elég gyűlik össze, akkor a hős szintet lét és a statisztikási javulnak.</p>
+<p>A program egy bemeneti paramétert vár, ami egy olyan szövegfájlnak a neve, ami követi a <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> stílus szabályait és a következő változókat tartalmazza:</p>
+<ul>
+<li>"map": string - A térkép adatait tartalmazó fájl</li>
+<li>"hero": string - A hős adatait tartalmazó <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> fájl</li>
+<li>"monster-[X]" : string, ahol X 1-től 9-ig számok - A különböző szörnyek adatait tartalmazó <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> fájl</li>
+<li>"wall_texture" : string - A falak terek textúráját tartalmazó SVG fájl</li>
+<li>"free_texture" : string - Az üres terek textúráját tartalmazó SVG fájl</li>
+</ul>
+<p>A program elindítása után, legenerálja a térképet ami után elkezdődik a játék. Ekkor megjlenik a hős által belátható térkép, ami után a program irányjelző bemeneteket fog várni: north:fel south:le east:jobbra west: balra</p>
+<p>Ha a hős egy olyan kockára lép ahol szörnyek találhatók, akkor elkezd azokkal harcolni egészen addig amig ő, vagy a szörnyek mind elesnek. Ha a hőr győzedelmeskedik akkor a játék folytatódik egészen addig amiíg vagy a hős, vagy az összes szörny a térképen elesik.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+JSON és térkép paraméterek</h1>
+<p>A program sikeres lefutása során szügség van egy térkép fájlra, és több különböző <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> fájltra is szügség van melyeknek a következő változókkal kell rendelkezniük:</p>
+<p>"map": A térké a következő stílusu szövegfájlban van megadva</p>
+<p>######</p>
+<p># H 1#</p>
+<p>#2 3##</p>
+<p>####</p>
+<p>Ahol a # karakter a falakat, a H a hőst, a számok a különböző szörnyeket, az üres területek pedig a bejárható tereket jelölik</p>
+<p>"hero.json": A hős adatait tartalmazó <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> fájl a következő változókkal kell ellátni:</p>
+<ul>
+<li>"name": "Prince Aidan of Khanduras" - A hős neve</li>
+<li>"base_health_points": 30 - A hős életereje</li>
+<li>"damage": 3 - A hős fizikus sebzése (A célpont védelme befolyásolja)</li>
+<li>"magical-damage": 2 - A hős mágikus sebzése (A célpont védelme nem befolyásolja)</li>
+<li>"defense": 1 - A hős páncél ponjai ami csökkenti a beérkező fizikai támadásokat (1 defense 1 damaget von le max 0-ig)</li>
+<li>"defense_bonus_per_level": 1 - Szintlépésenként szerzett páncél pontok</li>
+<li>"base_attack_cooldown": 1.1 - a hős támadási sebessége, azaz mennyi időt kell várni két támadás között</li>
+<li>"experience_per_level": 20 - Mennyi tapasztalati pont kell a szintlépéshez</li>
+<li>"health_point_bonus_per_level": 5 - Szintlépésenként szerzett életerő</li>
+<li>"physical_damage_bonus_per_level": 1 - Szintlépésenként szerzett fizikai támadás</li>
+<li>"magical_damage_bonus_per_level": 1 - Szintlépésenként szerzett mágikus támadás</li>
+<li>"cooldown_multiplier_per_level": 0.9 - Szintlépésenként növekvő támadási sebesség (ez az érték összeszorzódik a base_attack_cooldown-al)</li>
+<li>"light_radius": 2 - A hős látótávolsága, azaz a hős hány kocka távolra lát el</li>
+<li>"light_radius_bonus_per_level": 1 - Szintlépésenként szerzett látótávolság</li>
+<li>"texture": "Dark_Wanderer.svg" - A hős textúráját tároló SVG fájl neve</li>
+</ul>
+<p>"monster-[X].json" A szörnyek adatait hasonló módon <a class="el" href="class_j_s_o_n.html" title="header for JSON class">JSON</a> fájlokban tároljuk, amelyek a következő, a heroban is megtalálható változókat tárolják:</p>
+<ul>
+<li>"name": "Fallen" - A szörny neve</li>
+<li>"base_health_points": 10 - A szörny életereje</li>
+<li>"damage": 3 - A szörny fizikai sebzése</li>
+<li>"magical-damage": 2 - A szörny mágikus sebzése</li>
+<li>"defense": 1 - A szörny páncél pontjai</li>
+<li>"base_attack_cooldown": 1.1 - A szörny támadási sebessége</li>
+<li>"texture": "Fallen.svg" - A szörny textúráját tároló SVG fájl neve</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Rendererelők</h1>
+<p>A program a futása során több különböző módon is kiiratja a játék jelenlegi állásat. Ezek a következők: </p><pre class="fragment">1. standard kimenetre szöveges formátumban azt amit a hős lát.
+2. A log.txt fájlba szöveges formátumban a játék kezdetétől annak összes állapotát.
+3. A pretty.svg fájlba SVG formátumban azt amit a hős lát.
+4. A gamemaster.svg fájlba SVG formátumban a játék jelenlegi állásat
+</pre><h1><a class="anchor" id="autotoc_md3"></a>
+Dokumentáció</h1>
 <p>A program dokumentációja az alábbi linken található: <a href="https://teaching-projects.github.io/-SZE-MOSZE-2020-BDFANS">https://teaching-projects.github.io/-SZE-MOSZE-2020-BDFANS</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -1,5 +1,30 @@
 var searchData=
 [
-  ['hero_132',['Hero',['../class_hero.html#ab5920677a4b5cb59d6f513922d037dca',1,'Hero::Hero()'],['../class_hero.html#afd057f90e394bc822f990b4a61994785',1,'Hero::Hero(std::string innev, int inhp, int inphys, int inmagic, int indef, double inaspeed, int inexpreq=1, int inhpb=1, int inphysb=1, int inmagicb=1, int indefb=1, double incdmul=1, int inlr=1, int inlrb=1)']]],
-  ['heroisonmap_133',['heroIsOnMap',['../class_game.html#a0d0e7da95805098f417a496d3d331d37',1,'Game']]]
+  ['gainexp_161',['gainExp',['../class_hero.html#a0d5fae39aa8389ff508acbfaad90dad1',1,'Hero']]],
+  ['game_162',['Game',['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()'],['../class_game.html#a3876b1ca516ea549b57de515b25c6acc',1,'Game::Game(std::string &amp;mapfilename)']]],
+  ['get_163',['get',['../class_j_s_o_n.html#a6e05c25394240770da452ee6c13ed5bf',1,'JSON::get()'],['../class_map.html#ac15534a6935a350741d52b45385b2fec',1,'Map::get()']]],
+  ['getattackcooldown_164',['getAttackCoolDown',['../class_unit.html#a5ba9ff456bd52cff5e94ddc159b376a1',1,'Unit']]],
+  ['getdamage_165',['getDamage',['../class_unit.html#a83bf3fcbd94e455174cbfa2f59dcc109',1,'Unit']]],
+  ['getdefense_166',['getDefense',['../class_unit.html#aaf09131352e419af78ff0807fa8ddda3',1,'Unit']]],
+  ['getexp_167',['getExp',['../class_hero.html#aca45aa10e1caefaf84a22ed42fd4f7df',1,'Hero']]],
+  ['getfreetexture_168',['getFreeTexture',['../class_game.html#a397d21f7880603af9a266f2c15b21c6c',1,'Game']]],
+  ['gethealthpoints_169',['getHealthPoints',['../class_unit.html#ad5296f2ce5cb21eb323d5eb0bc104eba',1,'Unit']]],
+  ['gethero_170',['getHero',['../class_game.html#a675df477a4caf4b7539594da488546c1',1,'Game']]],
+  ['getheropos_171',['getHeroPos',['../class_game.html#ad15c49e33baff452c5495a8d187f8621',1,'Game']]],
+  ['getheroposition_172',['getHeroPosition',['../class_marked_map.html#aaa25768bfdd3ea4b21e847882a3f9ccd',1,'MarkedMap']]],
+  ['getimage_173',['getImage',['../class_s_v_g_renderer.html#a58a6d1a20ec1433282d044f267338e6a',1,'SVGRenderer']]],
+  ['getlenx_174',['getlenX',['../class_map.html#a5592d5c9914ec51d7a9f834fc4570012',1,'Map']]],
+  ['getleny_175',['getlenY',['../class_map.html#ad437e102eb0dc43003f745e577d54b18',1,'Map']]],
+  ['getlevel_176',['getLevel',['../class_hero.html#a17e77f3769e62aeb4e1807bbfc720f47',1,'Hero']]],
+  ['getlightradius_177',['getLightRadius',['../class_hero.html#abb3f50ace2a337b9dfaa4d32c58f4307',1,'Hero']]],
+  ['getmagicaldamage_178',['getMagicalDamage',['../class_unit.html#a732bd9a8aac310db5fcdfdb872555221',1,'Unit']]],
+  ['getmap_179',['getmap',['../class_game.html#abd2ce44471bb7debfb966c628905965e',1,'Game']]],
+  ['getmaxhealthpoints_180',['getMaxHealthPoints',['../class_unit.html#a371a9431c2bbcab1f5373fe72a346ff4',1,'Unit']]],
+  ['getmonstercountononepos_181',['getMonsterCountOnOnePos',['../class_game.html#a9ae0292a453ed2527920020fad1e354e',1,'Game']]],
+  ['getmonsterpositions_182',['getMonsterPositions',['../class_marked_map.html#a2418a7ae3845fde7cc3bbbb09a5bc00c',1,'MarkedMap']]],
+  ['getmonstersonpos_183',['getMonstersonPos',['../class_game.html#ade1ec0712c929aee2e46f11c108ed646',1,'Game']]],
+  ['getname_184',['getName',['../class_unit.html#a0497994e384db5c080ec78e9b645fa40',1,'Unit']]],
+  ['getphysicaldamage_185',['getPhysicalDamage',['../class_unit.html#aabcef04b0c60bdcc886bc3c9d7b048e5',1,'Unit']]],
+  ['gettexture_186',['getTexture',['../class_unit.html#a0e64c72915d850545d109de0bb2dc4b1',1,'Unit']]],
+  ['getwalltexture_187',['getWallTexture',['../class_game.html#acf9be6ef1c59a4c2a0c47db9da97dfd0',1,'Game']]]
 ];
