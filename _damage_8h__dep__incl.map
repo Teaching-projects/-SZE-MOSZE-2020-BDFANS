@@ -1,12 +1,12 @@
 <map id="Damage.h" name="Damage.h">
 <area shape="rect" id="node1" title="header for Damage struct" alt="" coords="408,5,497,32"/>
 <area shape="rect" id="node2" href="$_unit_8h.html" title=" " alt="" coords="422,80,483,107"/>
-<area shape="rect" id="node3" href="$_game_8h.html" title=" " alt="" coords="416,229,489,256"/>
-<area shape="rect" id="node9" href="$_hero_8h.html" title=" " alt="" coords="420,155,485,181"/>
-<area shape="rect" id="node10" href="$_monster_8h.html" title=" " alt="" coords="509,155,596,181"/>
-<area shape="rect" id="node4" href="$_character_s_v_g_renderer_8h.html" title=" " alt="" coords="5,304,188,331"/>
-<area shape="rect" id="node5" href="$_hero_text_renderer_8h.html" title=" " alt="" coords="212,304,363,331"/>
-<area shape="rect" id="node6" href="$_prepared_game_8h.html" title=" " alt="" coords="387,304,518,331"/>
-<area shape="rect" id="node7" href="$_observer_text_renderer_8h.html" title=" " alt="" coords="542,304,721,331"/>
-<area shape="rect" id="node8" href="$_observer_s_v_g_renderer_8h.html" title=" " alt="" coords="745,304,923,331"/>
+<area shape="rect" id="node3" href="$_hero_8h.html" title=" " alt="" coords="371,155,436,181"/>
+<area shape="rect" id="node10" href="$_monster_8h.html" title=" " alt="" coords="460,155,547,181"/>
+<area shape="rect" id="node4" href="$_game_8h.html" title=" " alt="" coords="416,229,489,256"/>
+<area shape="rect" id="node5" href="$_character_s_v_g_renderer_8h.html" title=" " alt="" coords="5,304,188,331"/>
+<area shape="rect" id="node6" href="$_hero_text_renderer_8h.html" title=" " alt="" coords="212,304,363,331"/>
+<area shape="rect" id="node7" href="$_prepared_game_8h.html" title=" " alt="" coords="387,304,518,331"/>
+<area shape="rect" id="node8" href="$_observer_text_renderer_8h.html" title=" " alt="" coords="542,304,721,331"/>
+<area shape="rect" id="node9" href="$_observer_s_v_g_renderer_8h.html" title=" " alt="" coords="745,304,923,331"/>
 </map>
