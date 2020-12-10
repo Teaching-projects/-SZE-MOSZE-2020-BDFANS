@@ -14,8 +14,13 @@
 
 #pragma once
 
+#include "JSON.h"
 #include "Damage.h"
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <cmath>
+#include <climits>
 
 class Unit
 {

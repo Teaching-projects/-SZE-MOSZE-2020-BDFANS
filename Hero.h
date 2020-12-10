@@ -14,6 +14,7 @@
 #pragma once
 
 #include "Unit.h"
+#include "JSON.h"
 
 class Hero :public Unit
 {

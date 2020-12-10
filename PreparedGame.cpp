@@ -1,7 +1,5 @@
 
 #include "PreparedGame.h"
-#include "MarkedMap.h"
-#include "JSON.h"
 
 PreparedGame::PreparedGame(std::string jsongame) {
 	JSON data = JSON::parseFromFile(jsongame); 

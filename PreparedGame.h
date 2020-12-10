@@ -14,6 +14,8 @@
 #pragma once
 
 #include "Game.h"
+#include "MarkedMap.h"
+#include "JSON.h"
 #include <string>
 
 class PreparedGame : Game {

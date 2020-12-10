@@ -1,7 +1,6 @@
 #include <climits>
 
 #include "Hero.h"
-#include "JSON.h"
 
 void Hero::gainExp(int xp) {
 	int maxlvl = 100;
