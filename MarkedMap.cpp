@@ -1,8 +1,5 @@
 #include "MarkedMap.h"
 
-#include <fstream>
-#include <string>
-#include <algorithm>
 
 
     std::pair<int,int> MarkedMap::getHeroPosition() const

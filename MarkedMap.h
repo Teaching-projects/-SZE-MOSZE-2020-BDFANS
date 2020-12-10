@@ -16,6 +16,9 @@
 #include "Map.h"
 #include <map>
 #include <list>
+#include <fstream>
+#include <string>
+#include <algorithm>
 
 class MarkedMap: public Map
 {

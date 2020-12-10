@@ -12,7 +12,6 @@
  */
 #pragma once
 
-#include <iostream>
 
 /// Damage is a struct which contains int physical and int magical dmg.
 struct Damage {
