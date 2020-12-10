@@ -26,7 +26,7 @@
 | makefile | +11 | 1 | @TAndras |
 | refactor | 0 | 1 | @hegyhati |
 | docker | +9 | 1 | @TAndras |
-| jsonpimp | Merge: 12.03 | ... | @LuczaDennis |
+| jsonpimp | Merge: 12.03 | 0 | @LuczaDennis |
 | map | Merge: 11.26 | 0 | @LuczaDennis |
 | game | Merge: 12.02 | 1 | @TAndras |
 | defense | Merge: 11.27 | 2 | @TAndras |
@@ -76,8 +76,7 @@
 | `Damage` | - | - |  
 | `CharacterSVGRenderer` | - | - |  
 | `TextRenderer` | - | - |
-| `SVGRenderer` | - | - |
-| `CharacterSVGRenderer` | - | - |  
+| `SVGRenderer` | - | - | 
 | `Renderer` | - | - |
 
 # Mindenféle számok
